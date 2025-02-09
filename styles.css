@@ -430,6 +430,11 @@ footer > div:not(.socials) {
 		top: 5%;
 		left: 7%;
 	}
+	footer > div:not(.socials) {
+		margin-inline: auto;
+		width: 100%;
+		font-size: 3rem;
+	}
 }
 
 @media (width> 815px) {
