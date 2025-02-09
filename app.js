@@ -162,3 +162,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
   });
   
+
+	window.addEventListener("load", function () {
+		document.querySelector(".rotating-text").style.opacity = "1";
+	});
+
+    $(document).ready(function () {
+        $(".card").tilt({
+            maxTilt: 30,         // Maximum tilt angle
+            perspective: 1000,    // Perspective depth
+            easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth effect
+            speed: 400,          // Speed of transition
+            glare: false,        // Set to true if you want a glare effect
+            scale: 1.05,         // Slight zoom effect
+            reset: true          // Reset tilt when the mouse leaves
+        });
+    });

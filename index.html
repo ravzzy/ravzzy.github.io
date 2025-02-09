@@ -19,6 +19,15 @@
 			referrerpolicy="no-referrer"
 		></script>
 		<script src="./app.js" defer></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="tilt.js"></script>
+
+		<!-- Preventing the page from scrolling to the last position -->
+		<script>
+			window.onbeforeunload = function () {
+				window.scrollTo(0, 0);
+			};
+		</script>
 		<link rel="shortcut icon" href="./images/" type="image/x-icon" />
 		<link rel="icon" href="images/dices.png">
 	</head>
@@ -292,25 +301,25 @@
 				<div class="thin-jp">当社が提供するサービス</div>
 			</div>
 			<div class="cards">
-				<div class="card">
+				<div class="card" data-tilt>
 					<div class="thin">01/</div>
-					<div class="title">MODELLING, ACCCESS & STRATEGY</div>
+					<div class="title">MODELLING, ACCCESS & STRATEGY </div>
 					<!--<div class="thin">CYBERFICTION OFFICIAL WEBSITE OPENED</div> -->
 					<div class="thin-jp">モデリング、アクセス、戦略</div>
 				</div>
-				<div class="card">
+				<div class="card" data-tilt>
 					<div class="thin">02/</div>
 					<div class="title">REAL WORLD EVIDENCE & ANALYTICS</div>
 					<!--<div class="thin">CYBERFICTION FULL 3D AVATAR PRODUCTION</div>-->
 					<div class="thin-jp">現実世界の証拠と分析</div>
 				</div>
-				<div class="card">
+				<div class="card" data-tilt>
 					<div class="thin">03/</div>
 					<div class="title">EVIDENCE REVIEW & SYNTHESIS</div>
 					<!--<div class="thin">CYBERFICTION AVATARS NFT MINTING</div>-->
 					<div class="thin-jp">証拠の検討と統合</div>
 				</div>
-				<div class="card">
+				<div class="card" data-tilt>
 					<div class="thin">04/</div>
 					<div class="title">MEDICAL WRITING & EDITORIAL SUPPORT</div>
 					<div class="thin-jp">
