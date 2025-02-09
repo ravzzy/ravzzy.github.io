@@ -79,7 +79,7 @@ gsap.to('.three', {
 	},
 })
 
-gsap.to('four', {
+gsap.to('.four', {
 	scrollTrigger: {
 		trigger: '.four',
 		start: 'top top',
