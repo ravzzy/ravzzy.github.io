@@ -67,10 +67,10 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 3;
 	opacity: 0;  /* Initially hidden */
 	visibility: hidden;  /* Prevents interaction before animation starts */
-	animation: fadeIn 1s ease-in-out 0.5s forwards; /* Delays visibility for 4s */
+	animation: fadeIn 1s ease-in-out 2s forwards; /* Delays visibility for 4s */
 	transform: scale(0.7); /*reduces the size of the rotating circle logo */
   }
   
@@ -416,6 +416,12 @@ footer > div:not(.socials) {
 	}
 	to {
 		translate: -100% 0;
+	}
+}
+
+@media (width < 500px){
+	.circle-container{
+		transform: scale(0.4);
 	}
 }
 
