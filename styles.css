@@ -32,7 +32,7 @@ body {
 	justify-content: center;
 	align-items: center;
   
-	background-image: url('images/dices.gif');
+	background-image: url('images/dices.png');
 	background-size: cover;
   
 	background-position: center;
@@ -50,7 +50,7 @@ body {
 	font-size: 15px;
 	font-weight: bold;
 	/*color: #333;*/
-	color: black;
+	color: grey;
   }
   
   .rotating-text span {
