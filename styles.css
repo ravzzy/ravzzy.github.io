@@ -16,6 +16,78 @@ body {
 	overflow-x: hidden;
 }
 
+/* The rotating circle */
+.circle {
+	opacity: 0.8;
+	width: 8vw;
+	/* Responsive size (10% of viewport width) */
+	height: 8vw;
+	/* Maintain aspect ratio */
+	max-width: 100px;
+	/* Max size for bigger screens */
+	max-height: 100px;
+	/* Max size for bigger screens */
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  
+	background-image: url('images/dices.gif');
+	background-size: cover;
+  
+	background-position: center;
+	border-radius:50%;
+	animation: rotateText 10s linear infinite;
+	/* Apply rotation animation */
+  }
+  
+  /* Rotating text inside the circle */
+  .rotating-text {
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+	/*color: #333;*/
+	color: black;
+  }
+  
+  .rotating-text span {
+	position: absolute;
+	transform-origin: center center;
+	transform: rotate(0deg);
+  }
+
+  /* The circle container */
+.circle-container {
+	position: fixed;
+	top: 1%;
+	left: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	opacity: 0;  /* Initially hidden */
+	visibility: hidden;  /* Prevents interaction before animation starts */
+	animation: fadeIn 1s ease-in-out 0.5s forwards; /* Delays visibility for 4s */
+	transform: scale(0.7); /*reduces the size of the rotating circle logo */
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	  visibility: hidden;
+	}
+	100% {
+	  opacity: 0.8;
+	  visibility: visible;
+  
+	}
+  }
+  
+  
 nav {
 	padding: 1em;
 	display: flex;
@@ -283,7 +355,6 @@ footer > div:not(.socials) {
 	font-weight: 800;
 	color: transparent;
 	-webkit-text-stroke: 1px white;
-	font-style: italic;
 	line-height: 1;
 	margin-block: 2rem;
 }
@@ -359,13 +430,13 @@ footer > div:not(.socials) {
 		margin-inline: auto;
 		width: 100%;
 		max-width: 1600px;
-		font-size: 8rem;
+		font-size: 5rem;
 	}
 }
 
 @media (width > 1486px) {
 	footer > div:not(.socials) {
-		font-size: 12rem;
+		font-size: 5rem;
 	}
 }
 
