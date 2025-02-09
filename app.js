@@ -10,7 +10,7 @@ let frame = { frame: 1 }
 
 function getImagePaths() {
 	for (let i = 1; i <= FRAMES; i++) {
-		imgPaths.push(`imgs/male${i}.png`)
+		imgPaths.push(`images/male${i}.png`)
 	}
 }
 getImagePaths()
