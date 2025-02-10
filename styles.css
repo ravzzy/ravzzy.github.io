@@ -17,17 +17,14 @@ body {
 }
 
 
-/* The rotating circle */
+/* Disabling the rotating text logo for now */
+/*
 .circle {
 	opacity: 0;
 	width: 8vw;
-	/* Responsive size (10% of viewport width) */
 	height: 8vw;
-	/* Maintain aspect ratio */
 	max-width: 100px;
-	/* Max size for bigger screens */
 	max-height: 100px;
-	/* Max size for bigger screens */
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -39,39 +36,40 @@ body {
 	background-position: center;
 	border-radius:50%;
 	animation: rotateText 10s linear infinite;
-	/* Apply rotation animation */
 	-webkit-animation: rotateText 10s linear infinite; /* Safari Fix for rotating text being clipped */
 
-  }
+  /*} */
   
   /* Rotating text inside the circle */
+  /*
   .rotating-text {
 	opacity: 0; /* Initially hidden and loaded via java script */
-	display: flex;
+	/*display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 15px;
 	font-weight: bold;
 	/*color: #333;*/
-	color: rgb(67, 67, 67);
-    will-change: transform; /* Safari Fix for rotating text being clipped */
-    transform-style: preserve-3d; /* Safari Fix for rotating text being clipped */
-    backface-visibility: hidden; /* Safari Fix for rotating text being clipped */
-    -webkit-transform-style: preserve-3d;  /* Safari Fix for rotating text being clipped */
-    -webkit-backface-visibility: hidden;  /* Safari Fix for rotating text being clipped */
+	/*color: rgb(67, 67, 67);
+	 will-change: transform; /* Safari Fix for rotating text being clipped */
+    /*transform-style: preserve-3d; /* Safari Fix for rotating text being clipped */
+   /* backface-visibility: hidden; /* Safari Fix for rotating text being clipped */
+  /*  -webkit-transform-style: preserve-3d;  /* Safari Fix for rotating text being clipped */
+    /*-webkit-backface-visibility: hidden;  /* Safari Fix for rotating text being clipped */
 
-  }
+ /* } */
   
+ /*
   .rotating-text span {
 	position: absolute;
 	transform-origin: center center;
 	transform: rotate(0deg);
 	-webkit-transform-origin: center center; /* Safari Fix for rotating text being clipped */
-    -webkit-transform: rotate(0deg); /* Safari Fix for rotating text being clipped */
-  }
+   /* -webkit-transform: rotate(0deg); /* Safari Fix for rotating text being clipped */
+ /* } */
 
   /* The circle container */
-.circle-container {
+/*.circle-container {
 	position: fixed;
 	top: 1%;
 	left: 5%;
@@ -80,10 +78,10 @@ body {
 	align-items: center;
 	z-index: 3;
 	opacity: 0;  /* Initially hidden */
-	visibility: hidden;  /* Prevents interaction before animation starts */
-	animation: fadeIn 1s ease-in-out 2s forwards; /* Delays visibility for 4s */
-	transform: scale(0.7); /*reduces the size of the rotating circle logo */
-  }
+	/*visibility: hidden;  /* Prevents interaction before animation starts */
+	/*animation: fadeIn 1s ease-in-out 2s forwards; /* Delays visibility for 4s */
+	/*transform: scale(0.7); /*reduces the size of the rotating circle logo */
+ /* } */
   
   /* Fade-in animation */
   @keyframes fadeIn {
@@ -441,11 +439,11 @@ footer > div:not(.socials) {
 }
 
 @media (width < 500px){
-	.circle-container{
+/*.circle-container{
 		transform: scale(0.5);
 		top: 5%;
 		left: 7%;
-	}
+	} */
 	footer > div:not(.socials) {
 		margin-inline: auto;
 		width: 100%;

@@ -14,7 +14,7 @@ const initialFrame = 1 // Initial frame
 let frame = { frame: 1 }
 
 function getImagePaths() {
-	for (let i = initialFrame; i <= FRAMES; i++) { // 88 is the first frame
+	for (let i = initialFrame; i <= FRAMES; i++) { 
 		imgPaths.push(`images/out-${i}.png`)
 	}
 }
@@ -161,6 +161,7 @@ gsap.to(rgb, {
 	},
 })
 
+/* Disabling the rotating text logo for now
 // JavaScript to adjust rotation based on scroll and position letters along the top of the circle
 document.addEventListener('DOMContentLoaded', function () {
 	const text = document.querySelector('.rotating-text');
@@ -196,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	window.addEventListener("load", function () {
 		document.querySelector(".circle").style.opacity = "0.9";
 	});
-
+*/
     $(document).ready(function () {
         $(".card").tilt({
             maxTilt: 30,         // Maximum tilt angle
