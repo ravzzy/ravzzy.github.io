@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="contactus.css">
 		<title>Home</title>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
@@ -21,6 +22,7 @@
 		<script src="./app.js" defer></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="tilt.js"></script>
+		        <link rel="stylesheet" href="./static/css/main.css">
 
 		<!-- Preventing the page from scrolling to the last position -->
 		<script>
@@ -404,7 +406,39 @@
 					</div>
 				</div>
 			</div>
+			<main>
+            <form action="" method="POST" class="form"  id="form">
+				<!-- change the key, upto 250 per month free -->
+				<input type="hidden" name="access_key" value="2d3b2745-1b24-4a2f-877b-3e324322475f">
+				<!-- For testing purpose email will be sent to testmail2025@sharklasers.com -->
+                <div class="input-group">
+                    <input type="text" name="first_name" id="first-name" placeholder="First name">
+                    <label for="first-name">First name</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+                    <label for="last-name">Last name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
+                    <label for="e-mail">e-mail</label>
+                </div>
+
+                <div class="textarea-group">
+                    <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+                    <label for="message">Message</label>
+                </div>
+
+               <div class="button-div">
+                    <button type="submit">SEND</button>
+                </div>
+				<div id="result"></div>
+            </form>
+		</main>
 			<div class="vertical-line"></div>
+		
 			<footer>
 				<div class="socials">
 					<a href="" class="btn">Email</a>
