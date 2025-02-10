@@ -296,3 +296,36 @@ window.addEventListener("resize", hideSecondVerticalLine);
 window.addEventListener("load", function () {
 	document.querySelector(".logo-image").style.opacity = "1";
 });
+
+window.addEventListener("load", function () {
+	document.querySelector(".navbar").style.opacity = "1";
+});
+
+window.addEventListener("load", function () {
+	document.querySelector(".designer-footer").style.opacity = "1";
+});
+
+
+// Optional: Add a small fade-in effect for dropdown
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("mouseenter", function () {
+            const menu = this.querySelector(".dropdown-menu");
+            menu.style.opacity = "0";
+            menu.style.display = "block";
+            setTimeout(() => {
+                menu.style.opacity = "1";
+            }, 10);
+        });
+
+        dropdown.addEventListener("mouseleave", function () {
+            const menu = this.querySelector(".dropdown-menu");
+            menu.style.opacity = "0";
+            setTimeout(() => {
+                menu.style.display = "none";
+            }, 200);
+        });
+    });
+});
