@@ -485,12 +485,16 @@ footer > div:not(.socials) {
 		color: #bf152a;
 	}
 
-	.page two {
+	.page.two {  /* Correct way to target <section class="page two"> */
 		margin-top: 2em;
 	}
+	
+	.page .right {  /* Correct way to target <div class="right"> inside .page */
+		margin-top: 5em;
+	}
 
-	.page right {
-		margin-top: 10em;
+	.fat {
+		margin-bottom: 1em; /* Adjust the space as needed */
 	}
 
     .cards {
