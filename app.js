@@ -167,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.querySelector(".rotating-text").style.opacity = "1";
 	});
 
+	window.addEventListener("load", function () {
+		document.querySelector(".circle").style.opacity = "0.9";
+	});
+
     $(document).ready(function () {
         $(".card").tilt({
             maxTilt: 30,         // Maximum tilt angle
@@ -179,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-	const form = document.getElementById('form');
+const form = document.getElementById('form');
 const result = document.getElementById('result');
 
 form.addEventListener('submit', function (e) {
