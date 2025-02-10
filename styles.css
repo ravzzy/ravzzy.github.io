@@ -557,7 +557,7 @@ footer > div:not(.socials) {
 	.logo-image{
 		transform: scale(0.2);
 		left: -40%;
-		top: -1.5%;
+		top: 2%;
 	}
 
 	footer > div:not(.socials) {
