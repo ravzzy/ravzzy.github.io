@@ -14,9 +14,16 @@ const initialFrame = 1 // Initial frame
 let frame = { frame: 1 }
 
 function getImagePaths() {
-	for (let i = initialFrame; i <= FRAMES; i++) { 
-		imgPaths.push(`images/out-${i}.png`)
-	}
+    imgPaths = []; // Reset the image paths array
+    const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+
+    for (let i = initialFrame; i <= FRAMES; i++) { 
+        if (isMobile) {
+            imgPaths.push(`images/mob-${i}.png`); // Mobile version
+        } else {
+            imgPaths.push(`images/out-${i}.png`); // Desktop version
+        }
+}
 }
 getImagePaths()
 
