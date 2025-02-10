@@ -44,6 +44,8 @@ body {
 	border-radius:50%;
 	animation: rotateText 10s linear infinite;
 	/* Apply rotation animation */
+	-webkit-animation: rotateText 10s linear infinite; /* Safari Fix for rotating text being clipped */
+
   }
   
   /* Rotating text inside the circle */
@@ -56,12 +58,20 @@ body {
 	font-weight: bold;
 	/*color: #333;*/
 	color: rgb(67, 67, 67);
+    will-change: transform; /* Safari Fix for rotating text being clipped */
+    transform-style: preserve-3d; /* Safari Fix for rotating text being clipped */
+    backface-visibility: hidden; /* Safari Fix for rotating text being clipped */
+    -webkit-transform-style: preserve-3d;  /* Safari Fix for rotating text being clipped */
+    -webkit-backface-visibility: hidden;  /* Safari Fix for rotating text being clipped */
+
   }
   
   .rotating-text span {
 	position: absolute;
 	transform-origin: center center;
 	transform: rotate(0deg);
+	-webkit-transform-origin: center center; /* Safari Fix for rotating text being clipped */
+    -webkit-transform: rotate(0deg); /* Safari Fix for rotating text being clipped */
   }
 
   /* The circle container */
