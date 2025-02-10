@@ -74,8 +74,8 @@ window.addEventListener('resize', () => {
 
 function resizeCanvas() {
     // Match canvas size to the viewport
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth * window.devicePixelRatio;
+    canvas.height = window.innerHeight * window.devicePixelRatio;
 
     render(); // Re-draw image after resizing
 }
