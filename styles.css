@@ -74,9 +74,9 @@ body {
 
 /* Hover Effect */
 .nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.06);
     color: black;
-    border-radius: 5px;
+	border-radius: 5em;
 }
 
 /* Dropdown Menu */
@@ -85,7 +85,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     backdrop-filter: blur(10px);
     list-style: none;
     padding: 10px 0;
@@ -112,7 +112,7 @@ body {
 
 /* Change color on hover */
 .dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.06);
     color: black;
 }
 
