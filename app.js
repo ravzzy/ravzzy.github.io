@@ -6,13 +6,16 @@ const ctx = canvas.getContext('2d')
 canvas.height = 1080
 canvas.width = 1920
 
+
+
 let imgPaths = []
-const FRAMES = 300
+const FRAMES = 790 // Total number of frames
+const initialFrame = 88 // Initial frame
 let frame = { frame: 1 }
 
 function getImagePaths() {
-	for (let i = 1; i <= FRAMES; i++) {
-		imgPaths.push(`images/male${i}.png`)
+	for (let i = initialFrame; i <= FRAMES; i++) { // 88 is the first frame
+		imgPaths.push(`images/out-${i}.png`)
 	}
 }
 getImagePaths()
@@ -31,7 +34,7 @@ getImages()
 gsap.registerPlugin(ScrollTrigger)
 
 gsap.to(frame, {
-	frame: FRAMES - 1,
+	frame: (FRAMES-initialFrame) - 1,
 	snap: 'frame',
 	// ease: 'none',
 	scrollTrigger: {
@@ -47,9 +50,19 @@ gsap.to(frame, {
 })
 
 function render() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.drawImage(imgs[frame.frame], 0, 0)
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    let img = imgs[frame.frame];
+
+    if (img) {
+        let scale = Math.max(canvas.width / img.width, canvas.height / img.height); // Scale factor
+        let x = (canvas.width - img.width * scale) / 2; // Centering X
+        let y = (canvas.height - img.height * scale) / 2; // Centering Y
+
+        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+    }
 }
+
 
 imgs[1].onload = render
 
@@ -58,6 +71,7 @@ window.addEventListener('resize', () => {
 	// canvas.width = window.innerWidth
 	render()
 })
+
 
 gsap.to('.two', {
 	scrollTrigger: {
@@ -240,3 +254,4 @@ form.addEventListener('submit', function (e) {
 window.onload = hideSecondVerticalLine;
 window.addEventListener("resize", hideSecondVerticalLine);
 */
+
