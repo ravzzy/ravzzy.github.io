@@ -229,3 +229,13 @@ form.addEventListener('submit', function (e) {
       event.preventDefault(); // Disable View Source (Ctrl+U)
     }
   });
+
+  function hideSecondVerticalLine() {
+	let lines = document.querySelectorAll(".vertical-line");
+	if (lines.length >= 2 && window.innerWidth <= 430) { // iPhone 14 & 14 Pro Max
+		lines[1].style.display = "none";
+	}
+}
+
+window.onload = hideSecondVerticalLine;
+window.addEventListener("resize", hideSecondVerticalLine);
