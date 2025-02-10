@@ -16,6 +16,19 @@ body {
 	overflow-x: hidden;
 }
 
+.logo-image{
+	width: 500px;  /* Adjust as needed */
+    height: 80px;  /* Adjust as needed */
+	background-image: url('images/rooting_research_transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;  /* Stays in place */
+    display: flex;
+	z-index: 3;
+	top: -2%;
+	left: -12%;
+	transform: scale(0.3);
+}
 
 /* Disabling the rotating text logo for now */
 /*

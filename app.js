@@ -96,9 +96,9 @@ function updateOpacity() {
     const canvas = document.getElementById("canvas");
 
     if (isMobile) {
-        canvas.style.opacity = "0.5"; // Mobile opacity
+        canvas.style.opacity = "0.4"; // Mobile opacity
     } else {
-        canvas.style.opacity = "1"; // Desktop opacity
+        canvas.style.opacity = "0.4"; // Desktop opacity
     }
 }
 
