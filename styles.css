@@ -16,10 +16,10 @@ body {
 	overflow-x: hidden;
 }
 
-html, body {
-    max-width: 100vw;  /* Prevents going beyond screen width */
-    overflow-x: hidden;  /* Disables horizontal scrolling */
-}
+/* html, body {
+    max-width: 100vw;  Prevents going beyond screen width
+    overflow-x: hidden;  Disables horizontal scrolling 
+} */
 
 /* The rotating circle */
 .circle {
@@ -449,9 +449,10 @@ footer > div:not(.socials) {
         flex-direction: column; /* Stack cards for better fit */
     }
 
-	#form {
-        display: none !important;  /* Hides the contact us form */
+/*	#form {
+        display: none !important;  /* Hides the contact us form 
     }
+	*/
 }
 
 @media (width> 815px) {

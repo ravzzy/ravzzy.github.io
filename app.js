@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	  const scrollPosition = window.scrollY;
 	  const rotationAmount = scrollPosition / 3; // Control the scroll-to-rotate speed
 	  text.style.transform = `rotate(${rotationAmount}deg)`; // Rotate the text around the circle
-	  document.querySelector('.dice').style.transform = `rotate(${rotationAmount}deg)`; // Rotate the dice along with the text
+	  //document.querySelector('.dice').style.transform = `rotate(${rotationAmount}deg)`; // Rotate the dice along with the text
 	});
   });
   
@@ -230,7 +230,7 @@ form.addEventListener('submit', function (e) {
     }
   });
 
-  function hideSecondVerticalLine() {
+/*  function hideSecondVerticalLine() {
 	let lines = document.querySelectorAll(".vertical-line");
 	if (lines.length >= 2 && window.innerWidth <= 430) { // iPhone 14 & 14 Pro Max
 		lines[1].style.display = "none";
@@ -239,3 +239,4 @@ form.addEventListener('submit', function (e) {
 
 window.onload = hideSecondVerticalLine;
 window.addEventListener("resize", hideSecondVerticalLine);
+*/
