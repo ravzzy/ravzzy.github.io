@@ -486,7 +486,7 @@ footer > div:not(.socials) {
 	}
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) { /* Desktop */
 	.text-spin {
 		left: -100%;
 		font-size: 8rem;
@@ -509,7 +509,7 @@ footer > div:not(.socials) {
 	}
 
 	.hero-title {
-		font-size: 10rem;
+		font-size: 6rem; /* Adjust this for changing the text size for Desktop */
 	}
 
 	.hero-content {
