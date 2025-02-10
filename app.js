@@ -292,3 +292,6 @@ window.onload = hideSecondVerticalLine;
 window.addEventListener("resize", hideSecondVerticalLine);
 */
 
+window.addEventListener("load", function () {
+	document.querySelector(".logo-image").style.opacity = "1";
+});

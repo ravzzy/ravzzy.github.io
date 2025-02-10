@@ -28,6 +28,7 @@ body {
 	top: -2%;
 	left: -12%;
 	transform: scale(0.3);
+	opacity :0;
 }
 
 /* Disabling the rotating text logo for now */
@@ -458,6 +459,12 @@ footer > div:not(.socials) {
 		left: 7%;
 	} */
 
+	.logo-image{
+		transform: scale(0.2);
+		left: -40%;
+		top: -1.5%;
+	}
+
 	footer > div:not(.socials) {
 		margin-inline: auto;
 		width: 100%;
@@ -467,6 +474,25 @@ footer > div:not(.socials) {
 	.hero-title {
         font-size: 3rem;  /* Adjust large text */
     }
+
+	.hero-title {
+		margin-top: 2em;
+	}
+	.hero-content{
+		margin-top: 5em;
+	}
+	.right-content p:nth-of-type(2) {
+		color: #bf152a;
+	}
+
+	.page two {
+		margin-top: 2em;
+	}
+
+	.page right {
+		margin-top: 10em;
+	}
+
     .cards {
         flex-direction: column; /* Stack cards for better fit */
     }
