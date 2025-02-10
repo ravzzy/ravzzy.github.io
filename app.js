@@ -72,6 +72,24 @@ window.addEventListener('resize', () => {
 	render()
 })
 
+function resizeCanvas() {
+    const devicePixelRatio = window.devicePixelRatio || 1; // Handle high-DPI screens
+
+    // Set canvas size based on screen size
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+
+    ctx.scale(devicePixelRatio, devicePixelRatio); // Adjust for high-DPI displays
+    render(); // Redraw image to fit new size
+}
+
+// Initial resize
+resizeCanvas();
+
+// Resize when window size changes
+window.addEventListener('resize', resizeCanvas);
+
+
 
 gsap.to('.two', {
 	scrollTrigger: {
