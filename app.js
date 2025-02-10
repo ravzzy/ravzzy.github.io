@@ -217,3 +217,11 @@ form.addEventListener('submit', function (e) {
       }, 3000);
     });
 });
+
+
+  document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+      event.preventDefault(); // Disable View Source (Ctrl+U)
+    }
+  });
