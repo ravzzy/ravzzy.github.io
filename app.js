@@ -139,6 +139,7 @@ gsap.to('.four', {
 	},
 })
 
+
 gsap.to('.loader-img', {
 	rotation: 360,
 	duration: 1.5,
