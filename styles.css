@@ -129,6 +129,7 @@ body {
 	justify-content: space-evenly;
 	cursor: pointer;
 	transition: right 0.7s;
+	opacity: 0;
   }
   
   .change .hamburger-menu {
@@ -195,7 +196,7 @@ body {
   }
 
   .sidebar {
-	width: 12em;
+	width: 15em;
 	height: 50vh;
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.06);
@@ -204,7 +205,6 @@ body {
 	top: 0;
 	right: -40rem;
 	transition: right 0.5s;
-	z-index: 4;
   }
   
   /* way to make sure the side bar background matches the site background 
@@ -230,8 +230,8 @@ body {
   
   
   .menu-link {
-	font-size: 1rem;
-	font-weight: 400;
+	font-size: 1.2rem;
+	font-weight: 800;
 	color: black;
 	position: relative;
   }

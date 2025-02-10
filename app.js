@@ -334,3 +334,9 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
 	document.querySelector(".container").classList.toggle("change");
   });
+
+
+  window.addEventListener("load", function () {
+	document.querySelector(".hamburger-menu").style.opacity = "1";
+});
+
