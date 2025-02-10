@@ -91,6 +91,23 @@ function resizeCanvas() {
 window.addEventListener("load", resizeCanvas);
 window.addEventListener("resize", resizeCanvas);
 
+function updateOpacity() {
+    const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+    const canvas = document.getElementById("canvas");
+
+    if (isMobile) {
+        canvas.style.opacity = "0.5"; // Mobile opacity
+    } else {
+        canvas.style.opacity = "1"; // Desktop opacity
+    }
+}
+
+// Run when page loads
+window.addEventListener("load", updateOpacity);
+
+// Run on window resize (e.g., rotating phone)
+window.addEventListener("resize", updateOpacity);
+
 
 gsap.to('.two', {
 	scrollTrigger: {
