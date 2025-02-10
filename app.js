@@ -9,8 +9,8 @@ canvas.width = 1920
 
 
 let imgPaths = []
-const FRAMES = 790 // Total number of frames
-const initialFrame = 88 // Initial frame
+const FRAMES = 697 // Total number of frames
+const initialFrame = 1 // Initial frame
 let frame = { frame: 1 }
 
 function getImagePaths() {
