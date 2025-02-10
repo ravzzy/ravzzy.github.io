@@ -73,22 +73,16 @@ window.addEventListener('resize', () => {
 })
 
 function resizeCanvas() {
-    const devicePixelRatio = window.devicePixelRatio || 1; // Handle high-DPI screens
+    // Match canvas size to the viewport
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    // Set canvas size based on screen size
-    canvas.width = window.innerWidth * devicePixelRatio;
-    canvas.height = window.innerHeight * devicePixelRatio;
-
-    ctx.scale(devicePixelRatio, devicePixelRatio); // Adjust for high-DPI displays
-    render(); // Redraw image to fit new size
+    render(); // Re-draw image after resizing
 }
 
-// Initial resize
-resizeCanvas();
-
-// Resize when window size changes
-window.addEventListener('resize', resizeCanvas);
-
+// Run resize function on load & when resizing the screen
+window.addEventListener("load", resizeCanvas);
+window.addEventListener("resize", resizeCanvas);
 
 
 gsap.to('.two', {

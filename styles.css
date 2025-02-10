@@ -168,8 +168,8 @@ canvas {
 }
 
 .hero-title {
-	z-index: -2;
-	font-size: 7rem;
+	z-index: -1;
+	font-size: 4rem;
 	animation: marquee 20s linear infinite;
 }
 
