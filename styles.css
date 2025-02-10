@@ -40,8 +40,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Transparent */
-    backdrop-filter: blur(10px); /* Glass effect */
+    /*background: rgba(255, 255, 255, 0.1); */ /* Transparent */
+   /* backdrop-filter: blur(10px); /* Glass effect */
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end; /* Moves everything to the right */
