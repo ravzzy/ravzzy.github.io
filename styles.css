@@ -181,11 +181,10 @@ nav a {
 	right: 17rem;
 }
 
-
 .line {
 	width: 100%;
 	height: 0.2rem;
-	background-color: #fff;
+	background-color: black;
 	box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
 }
 
@@ -245,7 +244,7 @@ nav a {
 	width: 15em;
 	height: 50vh;
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.06);
+	background-color: rgba(0, 0, 0, 0.41);
 	backdrop-filter: blur(10px);
 	opacity: 0.8;
 	top: 0;

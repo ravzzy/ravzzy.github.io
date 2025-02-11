@@ -340,17 +340,20 @@ window.addEventListener("load", function () {
 	document.querySelector(".hamburger-menu").style.opacity = "1";
 });
 
+
+// dynamic text colour change logic based on background colour for hamburger/sidebar
 function adjustTextColor() {
     const menuLinks = document.querySelectorAll(".menu-link");
-
-    // Get the section currently in view
+    const menuLines = document.querySelectorAll(".hamburger-menu .line"); // Hamburger menu lines
+    const hamburgerMenu = document.querySelector(".hamburger-menu"); // Select the entire menu button
     let sections = document.querySelectorAll("section");
     let currentSection = null;
 
+    // Detect the current section in view
     sections.forEach(section => {
         let rect = section.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            currentSection = section; // The section in the middle of the viewport
+            currentSection = section;
         }
     });
 
@@ -365,14 +368,13 @@ function adjustTextColor() {
 
     // Convert RGBA to brightness
     function getBrightness(rgba) {
-        let match = rgba.match(/\d+(\.\d+)?/g); // Extract numbers (handles decimals)
+        let match = rgba.match(/\d+(\.\d+)?/g);
         if (!match || match.length < 3) {
             logMessage("❌ Failed to extract RGB values!");
-            return 255; // Default to white if no color found
+            return 255;
         }
 
-        let [r, g, b, a = 1] = match.map(Number); // Extract RGB & Alpha values
-
+        let [r, g, b, a = 1] = match.map(Number);
         logMessage(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
 
         // Blend with white if transparent
@@ -387,15 +389,20 @@ function adjustTextColor() {
 
     let brightness = getBrightness(bgColor);
 
+    // Change menu link text color
     menuLinks.forEach(link => {
-        if (brightness < 150) {
-            link.style.color = "white";
-            logMessage(`✅ Text Color Set to WHITE (Brightness: ${brightness})`);
-        } else {
-            link.style.color = "black";
-            logMessage(`✅ Text Color Set to BLACK (Brightness: ${brightness})`);
-        }
+        link.style.color = brightness < 150 ? "white" : "black";
     });
+
+    // Change hamburger menu lines (X icon inside menu)
+    menuLines.forEach(line => {
+        line.style.backgroundColor = brightness < 150 ? "white" : "black";
+    });
+
+    // Change close button (X) when sidebar is open
+    if (document.querySelector(".container").classList.contains("change")) {
+        hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
+    }
 }
 
 // Log messages to console and webpage
@@ -409,6 +416,8 @@ function logMessage(message) {
     }
 }
 
-// Run on page load & when scrolling
+// Run on page load, scroll & when sidebar opens/closes
 window.addEventListener("load", adjustTextColor);
 window.addEventListener("scroll", adjustTextColor);
+document.querySelector(".hamburger-menu").addEventListener("click", adjustTextColor);
+
