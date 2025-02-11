@@ -17,19 +17,28 @@ body {
 }
 
 #debug-log {
-    position: fixed; /* Sticks it to the screen */
-    bottom: 10px; /* Adjust placement */
-    right: 10px; /* Moves it to bottom-right */
-    width: 300px; /* Set a width */
-    height: 150px; /* Set a height */
-    overflow-y: auto; /* Enables scrolling for long logs */
-    background: rgba(0, 0, 0, 0.8); /* Dark background */
-    color: white; /* White text for contrast */
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: monospace;
-    z-index: 9999; /* Ensures it stays above everything */
+	position: fixed;
+	/* Sticks it to the screen */
+	bottom: 10px;
+	/* Adjust placement */
+	right: 10px;
+	/* Moves it to bottom-right */
+	width: 300px;
+	/* Set a width */
+	height: 150px;
+	/* Set a height */
+	overflow-y: auto;
+	/* Enables scrolling for long logs */
+	background: rgba(0, 0, 0, 0.8);
+	/* Dark background */
+	color: white;
+	/* White text for contrast */
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	font-family: monospace;
+	z-index: 9999;
+	/* Ensures it stays above everything */
 }
 
 .logo-image {
@@ -221,6 +230,9 @@ nav a {
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.2s;
+	display: none;
+	/* Hides the close button */
+
 }
 
 .change .hamburger-menu:hover span {
@@ -244,12 +256,13 @@ nav a {
 	width: 15em;
 	height: 50vh;
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.41);
-	backdrop-filter: blur(10px);
+	background-color: rgba(0, 0, 0, 0.592);
+	backdrop-filter: blur(30px);
 	opacity: 0.8;
 	top: 0;
 	right: -40rem;
 	transition: right 0.5s;
+	z-index: 5;
 }
 
 /* way to make sure the side bar background matches the site background 
@@ -410,16 +423,20 @@ section {
 
 canvas {
 
-		display: block; /* Removes inline spacing issues */
-		width: 100vw; /* Covers full screen width */
-		height: 100vh; /* Covers full screen height */
-		position: fixed;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%); /* Ensures it's centered */
-	
-		z-index: -1;
-		touch-action: none;
+	display: block;
+	/* Removes inline spacing issues */
+	width: 100vw;
+	/* Covers full screen width */
+	height: 100vh;
+	/* Covers full screen height */
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Ensures it's centered */
+
+	z-index: -1;
+	touch-action: none;
 	/* Prevents unwanted scrolling on touch screens */
 
 }
@@ -726,17 +743,29 @@ footer>div:not(.socials) {
 		left: 7%;
 	} */
 
-body{
-	overflow-x: hidden; /* Prevents horizontal scrolling */
-	touch-action: pan-y; /* Ensures smooth vertical scrolling */
-}
+	body {
+		overflow-x: hidden;
+		/* Prevents horizontal scrolling */
+		touch-action: pan-y;
+		/* Ensures smooth vertical scrolling */
+	}
+
+	/* hide the cross button */
+
+	.change .line-1,
+	.change .line-2,
+	.change .line-3 {
+		transform: none !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
 
 
 
 	.logo-image {
 		transform: scale(0.2);
-		left: -40%;
-		top: 20%;
+		left: -45%;
+		top: 0%;
 	}
 
 	.navbar {
@@ -756,7 +785,7 @@ body{
 	}
 
 	.hero-title {
-		margin-top: 2em;
+		margin-top: 3em;
 	}
 
 	.hero-content {
@@ -787,6 +816,17 @@ body{
 		/* Stack cards for better fit */
 	}
 
+	.designer-footer {
+		position: fixed;
+		bottom: 5px;
+		/* Adjust spacing from bottom */
+		right: 0%;
+		/* Adjust spacing from right */
+		opacity: 0;
+		transform: scale(0.5);
+		z-index: 3;
+	}
+	
 	/*	#form {
         display: none !important;  /* Hides the contact us form 
     }
