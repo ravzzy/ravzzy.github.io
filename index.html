@@ -1,84 +1,80 @@
 <!-- Author - ravzzy -->
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles.css" />
-		<link rel="stylesheet" href="contactus.css">
-		<title>Home - Rooting Research</title>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-			integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-			integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<link rel="shortcut icon" href="./images/" type="image/x-icon" />
-		<link rel="icon" href="images/dices.png">
-	</head>
-	<body class="loading">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="contactus.css">
+	<title>Home - Rooting Research</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+		integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="shortcut icon" href="./images/" type="image/x-icon" />
+	<link rel="icon" href="images/dices.png">
+</head>
+
+<body class="loading">
 
 	<div class="logo-image"></div>
 
-    <!-- Transparent Navigation Menu -->
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Services ▼</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <li><a href="#">Service 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-	  <!-- Menu on the right side of the home page for Mobile Only-->
-	  <div class="container">
-		<div class="hamburger-menu">
-		  <div class="line line-1"></div>
-		  <div class="line line-2"></div>
-		  <div class="line line-3"></div>
-		  <span>Close</span>
-		</div>
-		
-		    <!--Homepage side bar options-->
-			<section class="sidebar">
-				<ul class="menu">
-				  <li class="menu-item">
-					<a href="#home" class="menu-link" data-content="Home">Home</a>
-				  </li>
-				  <li class="menu-item">
-					<a href="#about-us" class="menu-link" data-content="About Us">About Us</a>
-				  </li>
-				  <li class="menu-item">
-					<a href="#team" class="menu-link" data-content="Team">Team</a>
-				  </li>
-		  
-				  <li class="menu-item">
-					<a href="#commercialservices" class="menu-link" data-content="Services">Services</a>
-				  </li>
-		  
-				  <li class="menu-item">
-					<a href="#contact" class="menu-link" data-content="Contact">Contact</a>
-				  </li>
+	<!-- Transparent Navigation Menu -->
+	<nav class="navbar">
+		<ul class="nav-menu">
+			<li><a href="#">Home</a></li>
+			<li class="dropdown">
+				<a href="#">Services ▼</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Service 1</a></li>
+					<li><a href="#">Service 2</a></li>
+					<li><a href="#">Service 3</a></li>
 				</ul>
-			  </section>
+			</li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
 
-<!--Disabling the rotating text logo for now-->
-<!-- <div class="background-image"> -->
-	<!-- Rotating Logo Text-->
-	<!--<div class="circle-container">
+	<!-- Menu on the right side of the home page for Mobile Only-->
+	<div class="container">
+		<div class="hamburger-menu">
+			<div class="line line-1"></div>
+			<div class="line line-2"></div>
+			<div class="line line-3"></div>
+			<span>Close</span>
+		</div>
+
+		<!--Homepage side bar options-->
+		<section class="sidebar">
+			<ul class="menu">
+				<li class="menu-item">
+					<a href="#home" class="menu-link" data-content="Home">Home</a>
+				</li>
+				<li class="menu-item">
+					<a href="#about-us" class="menu-link" data-content="About Us">About Us</a>
+				</li>
+				<li class="menu-item">
+					<a href="#team" class="menu-link" data-content="Team">Team</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="#commercialservices" class="menu-link" data-content="Services">Services</a>
+				</li>
+
+				<li class="menu-item">
+					<a href="#contact" class="menu-link" data-content="Contact">Contact</a>
+				</li>
+			</ul>
+		</section>
+
+		<!--Disabling the rotating text logo for now-->
+		<!-- <div class="background-image"> -->
+		<!-- Rotating Logo Text-->
+		<!--<div class="circle-container">
 	  <div class="circle">
 		<div class="rotating-text">
 		  <span>R</span>
@@ -125,12 +121,7 @@
   </div> -->
 
 		<div class="loader">
-			<img
-				src="./images/loading.png"
-				class="loader-img"
-				alt="Loading"
-				loading="eager"
-			/>
+			<img src="./images/loading.png" class="loader-img" alt="Loading" loading="eager" />
 		</div>
 		<nav class="designer-footer">
 			<h1></h1>
@@ -141,23 +132,24 @@
 			<div class="text-loop">
 				<div class="hero-title">
 					<span> - ROOTING</span> <span>RESEARCH</span> <span>*</span>
-					<span>health economics*</span> <span>outcome research*</span> <span>real world evidence*</span
-					><span>market access*</span>
+					<span>health economics*</span> <span>outcome research*</span> <span>real world
+						evidence*</span><span>market access*</span>
 				</div>
 				<div class="hero-title">
 					<span> - ROOTING</span> <span>RESEARCH</span> <span>*</span>
-					<span>health economics*</span> <span>outcome research*</span> <span>real world evidence*</span
-					><span>market access*</span>
+					<span>health economics*</span> <span>outcome research*</span> <span>real world
+						evidence*</span><span>market access*</span>
 				</div>
 				<div class="hero-title">
 					<span> - ROOTING</span> <span>RESEARCH</span> <span>*</span>
-					<span>health economics*</span> <span>outcome research*</span> <span>real world evidence*</span
-					><span>market access*</span>
+					<span>health economics*</span> <span>outcome research*</span> <span>real world
+						evidence*</span><span>market access*</span>
 				</div>
 			</div>
 			<div class="hero-content">
 				<div class="left-content">
-					A global partner to the pharmaceutical industry in close partnership with academia, patients, public institutions & clinical expert
+					A global partner to the pharmaceutical industry in close partnership with academia, patients, public
+					institutions & clinical expert
 				</div>
 				<div class="right-content">
 					<p>
@@ -179,20 +171,26 @@
 				<div class="thin-jp">医療経済学、アウトカム研究、リアルワールドエビデンスサービスにおいて、クライアントの第一の選択肢となる</div>
 			</div>
 			<div class="right">
-				<div class="thin">DRIVE INNOVATION, BY DEVELOPING NEW SOLUTIONS IN THE HEOR FIELD AND BEING ACTIVE IN THE SCIENTIFIC COMMUNITY, AND ALSO ENABLE BETTER QUALITY AND EFFICIENCY IN HEALTHCARE BY SUPPORTING INFORMED DECISION MAKING</div>
-				<div class="thin-jp">ヘルスケア分野で新たなソリューションを開発し、科学コミュニティで積極的に活動することでイノベーションを推進し、情報に基づいた意思決定をサポートすることでヘルスケアの質と効率を向上させます。</div>
+				<div class="thin">DRIVE INNOVATION, BY DEVELOPING NEW SOLUTIONS IN THE HEOR FIELD AND BEING ACTIVE IN
+					THE SCIENTIFIC COMMUNITY, AND ALSO ENABLE BETTER QUALITY AND EFFICIENCY IN HEALTHCARE BY SUPPORTING
+					INFORMED DECISION MAKING</div>
+				<div class="thin-jp">
+					ヘルスケア分野で新たなソリューションを開発し、科学コミュニティで積極的に活動することでイノベーションを推進し、情報に基づいた意思決定をサポートすることでヘルスケアの質と効率を向上させます。</div>
 			</div>
 		</section>
 		<section class="page three">
 			<div class="left">
 				<div class="fat">WHAT MAKES US UNIQUE</div>
-				<div class="thin">OUR EXPERIENCED PARTNERS ARE ACTIVE IN THE EVERYDAY BUSINESS, CONTRIBUTING WITH METHODOLOGICAL AND STRATEGIC GUIDANCE TO MAKE EACH PROJECT SUCCESSFUL AND ASSURE HIGH QUALITY</div>
+				<div class="thin">OUR EXPERIENCED PARTNERS ARE ACTIVE IN THE EVERYDAY BUSINESS, CONTRIBUTING WITH
+					METHODOLOGICAL AND STRATEGIC GUIDANCE TO MAKE EACH PROJECT SUCCESSFUL AND ASSURE HIGH QUALITY</div>
 				<div class="thin">EVERY CLIENT IS IMPORTANT TO US; WE DON’T APPLY A STANDARD SOLUTION TO PROJECTS</div>
 				<div class="thin-jp">経験豊富なパートナーは日々の業務に積極的に参加し、方法論的かつ戦略的なガイダンスを提供して各プロジェクトを成功させ、高品質を保証します
-					 パートナーとなるよう努めます</div>
+					パートナーとなるよう努めます</div>
 			</div>
 			<div class="right">
-				<div class="thin">OUR ORGANIZATION IS LEAN AND FLEXIBLE, AND CUSTOMERS EXPRESS SATISFACTION WITH RESULTING QUICK TURNAROUND TIMES AND DIRECT COMMUNICATION. WE CONTINUOUSLY DEVELOP NEW KNOWLEDGE AND COMPETENCE IN THE HEOR FIELD, BY BEING ACTIVE RESEARCHERS AND BUILDING EXCELLENT ACADEMIC NETWORKS.
+				<div class="thin">OUR ORGANIZATION IS LEAN AND FLEXIBLE, AND CUSTOMERS EXPRESS SATISFACTION WITH
+					RESULTING QUICK TURNAROUND TIMES AND DIRECT COMMUNICATION. WE CONTINUOUSLY DEVELOP NEW KNOWLEDGE AND
+					COMPETENCE IN THE HEOR FIELD, BY BEING ACTIVE RESEARCHERS AND BUILDING EXCELLENT ACADEMIC NETWORKS.
 				</div>
 				<div class="thin-jp">
 					当社の組織はスリムで柔軟性があり、その結果、迅速な対応と直接的なコミュニケーションが実現し、お客様からご満足いただいています。
@@ -203,12 +201,15 @@
 			<div class="left">
 				<div class="fat">WHO ARE WE?</div>
 				<div class="thin">
-					ROOTING RESEARCH IS AN EXPERIENCED PARTNER IN HEALTH ECONOMICS, OUTCOMES RESEARCH, REAL-WORLD EVIDENCE AND MARKET ACCESS. WE PROVIDE SERVICES IN VALUE STRATEGY, MODELLING, REIMBURSEMENT SUPPORT, EVIDENCE GENERATION, BIOSTATISTICS, STUDY DESIGN AND ANALYSIS.
+					ROOTING RESEARCH IS AN EXPERIENCED PARTNER IN HEALTH ECONOMICS, OUTCOMES RESEARCH, REAL-WORLD
+					EVIDENCE AND MARKET ACCESS. WE PROVIDE SERVICES IN VALUE STRATEGY, MODELLING, REIMBURSEMENT SUPPORT,
+					EVIDENCE GENERATION, BIOSTATISTICS, STUDY DESIGN AND ANALYSIS.
 				</div>
 			</div>
 			<div class="right">
 				<div class="thin-jp">
-					ROOTING RESEARCH は、医療経済学、成果研究、リアルワールドエビデンス、市場アクセスの分野で経験豊富なパートナーです。当社は、価値戦略、モデリング、償還サポート、エビデンス生成、生物統計学、研究設計および分析の分野でサービスを提供しています。
+					ROOTING RESEARCH
+					は、医療経済学、成果研究、リアルワールドエビデンス、市場アクセスの分野で経験豊富なパートナーです。当社は、価値戦略、モデリング、償還サポート、エビデンス生成、生物統計学、研究設計および分析の分野でサービスを提供しています。
 				</div>
 			</div>
 		</section>
@@ -220,17 +221,22 @@
 					<!-- <div class="fat">WITH 10,000 DIGITAL AVATARS.</div> -->
 					<div>
 						<div class="thin">
-							THE COMPANY WAS FOUNDED IN 2025, AND IS LED BY THE FOUNDING PARTNERS AND OUR CEO; EACH WITH 8 TO 16 YEARS’ EXPERIENCE FROM HEOR, BOTH FROM OTHER CONSULTANCIES, THE PHARMACEUTICAL INDUSTRY AND RESEARCH AT THE XYZ INSTITUTE.
-							WE HAVE PROVIDED CONSULTANCY SERVICES AND ADVICE TO MOST LARGE PHARMACEUTICAL COMPANIES, AS WELL AS TO NUMEROUS REGIONAL, NATIONAL AND INTERNATIONAL ORGANISATIONS AND GOVERNMENTAL BODIES. WE PRIMARILY COVER EUROPE AND NORTH AMERICA.
+							THE COMPANY WAS FOUNDED IN 2025, AND IS LED BY THE FOUNDING PARTNERS AND OUR CEO; EACH WITH
+							8 TO 16 YEARS’ EXPERIENCE FROM HEOR, BOTH FROM OTHER CONSULTANCIES, THE PHARMACEUTICAL
+							INDUSTRY AND RESEARCH AT THE XYZ INSTITUTE.
+							WE HAVE PROVIDED CONSULTANCY SERVICES AND ADVICE TO MOST LARGE PHARMACEUTICAL COMPANIES, AS
+							WELL AS TO NUMEROUS REGIONAL, NATIONAL AND INTERNATIONAL ORGANISATIONS AND GOVERNMENTAL
+							BODIES. WE PRIMARILY COVER EUROPE AND NORTH AMERICA.
 						</div>
 						<div class="thin-jp">
-							当社は 2025 年に設立され、創立パートナーと CEO が率いています。各パートナーは、HEOR、その他のコンサルタント会社、製薬業界、XYZ 研究所の研究で 8 ～ 16 年の経験を積んでいます。
+							当社は 2025 年に設立され、創立パートナーと CEO が率いています。各パートナーは、HEOR、その他のコンサルタント会社、製薬業界、XYZ 研究所の研究で 8 ～ 16
+							年の経験を積んでいます。
 
 							当社は、ほとんどの大手製薬会社、および多数の地域、国内、国際組織や政府機関にコンサルティング サービスとアドバイスを提供してきました。主にヨーロッパと北米をカバーしています。
 						</div>
 					</div>
 				</div>
-							<!--
+				<!--
 				<div class="avatars-marquee">
 					<div class="avatars-wrapper">
 						<span>
@@ -395,10 +401,13 @@
 				<h4>ANSHUL SOOD</h4>
 				<p class="thin">FOUNDER / CEO</p>
 				<p class="thin">
-					Anshul is the visionary behind Rooting Research, a company committed to health care research. With a passion for healthcare, Anshul has led the company to through innovation and leadership, and continue to drive company’s goal and future vision.
+					Anshul is the visionary behind Rooting Research, a company committed to health care research. With a
+					passion for healthcare, Anshul has led the company to through innovation and leadership, and
+					continue to drive company’s goal and future vision.
 				</p>
 				<p class="thin-jp">
-					Anshul は、ヘルスケア研究に取り組む企業 Rooting Research の先見の明のある人物です。ヘルスケアに対する情熱を抱く Anshul は、イノベーションとリーダーシップを通じて会社を導き、会社の目標と将来のビジョンを推進し続けています。
+					Anshul は、ヘルスケア研究に取り組む企業 Rooting Research の先見の明のある人物です。ヘルスケアに対する情熱を抱く Anshul
+					は、イノベーションとリーダーシップを通じて会社を導き、会社の目標と将来のビジョンを推進し続けています。
 				</p>
 			</div>
 			<div class="vertical-line"></div>
@@ -415,36 +424,36 @@
 				</div>
 			</div>
 			<main>
-            <form action="" method="POST" class="form"  id="form">
-				<!-- change the key, upto 250 per month free -->
-				<input type="hidden" name="access_key" value="2d3b2745-1b24-4a2f-877b-3e324322475f">
-				<!-- For testing purpose email will be sent to testmail2025@sharklasers.com -->
-                <div class="input-group">
-                    <input type="text" name="first_name" id="first-name" placeholder="First name">
-                    <label for="first-name">First name</label>
-                </div>
-                
-                <div class="input-group">
-                    <input type="text" name="last_name" id="last-name" placeholder="Last Name">
-                    <label for="last-name">Last name</label>
-                </div>
+				<form action="" method="POST" class="form" id="form">
+					<!-- change the key, upto 250 per month free -->
+					<input type="hidden" name="access_key" value="2d3b2745-1b24-4a2f-877b-3e324322475f">
+					<!-- For testing purpose email will be sent to testmail2025@sharklasers.com -->
+					<div class="input-group">
+						<input type="text" name="first_name" id="first-name" placeholder="First name">
+						<label for="first-name">First name</label>
+					</div>
 
-                <div class="input-group">
-                    <input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
-                    <label for="e-mail">e-mail</label>
-                </div>
+					<div class="input-group">
+						<input type="text" name="last_name" id="last-name" placeholder="Last Name">
+						<label for="last-name">Last name</label>
+					</div>
 
-                <div class="textarea-group">
-                    <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
-                    <label for="message">Message</label>
-                </div>
+					<div class="input-group">
+						<input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
+						<label for="e-mail">e-mail</label>
+					</div>
 
-               <div class="button-div">
-                    <button type="submit">SEND</button>
-                </div>
-				<div id="result"></div>
-            </form>
-		</main>
+					<div class="textarea-group">
+						<textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+						<label for="message">Message</label>
+					</div>
+
+					<div class="button-div">
+						<button type="submit">SEND</button>
+					</div>
+					<div id="result"></div>
+				</form>
+			</main>
 			<div class="vertical-line"></div>
 			<footer>
 				<div class="socials">
@@ -468,5 +477,6 @@
 				window.scrollTo(0, 0);
 			};
 		</script>
-	</body>
+</body>
+
 </html>

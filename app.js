@@ -14,16 +14,16 @@ const initialFrame = 1 // Initial frame
 let frame = { frame: 1 }
 
 function getImagePaths() {
-    imgPaths = []; // Reset the image paths array
-    const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+	imgPaths = []; // Reset the image paths array
+	const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
 
-    for (let i = initialFrame; i <= FRAMES; i++) { 
-        if (isMobile) {
-            imgPaths.push(`images/mob-${i}.png`); // Mobile version
-        } else {
-            imgPaths.push(`images/out-${i}.png`); // Desktop version
-        }
-}
+	for (let i = initialFrame; i <= FRAMES; i++) {
+		if (isMobile) {
+			imgPaths.push(`images/mob-${i}.png`); // Mobile version
+		} else {
+			imgPaths.push(`images/out-${i}.png`); // Desktop version
+		}
+	}
 }
 getImagePaths()
 
@@ -41,7 +41,7 @@ getImages()
 gsap.registerPlugin(ScrollTrigger)
 
 gsap.to(frame, {
-	frame: (FRAMES-initialFrame) - 1,
+	frame: (FRAMES - initialFrame) - 1,
 	snap: 'frame',
 	// ease: 'none',
 	scrollTrigger: {
@@ -57,17 +57,17 @@ gsap.to(frame, {
 })
 
 function render() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    let img = imgs[frame.frame];
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if (img) {
-        let scale = Math.max(canvas.width / img.width, canvas.height / img.height); // Scale factor
-        let x = (canvas.width - img.width * scale) / 2; // Centering X
-        let y = (canvas.height - img.height * scale) / 2; // Centering Y
+	let img = imgs[frame.frame];
 
-        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
-    }
+	if (img) {
+		let scale = Math.max(canvas.width / img.width, canvas.height / img.height); // Scale factor
+		let x = (canvas.width - img.width * scale) / 2; // Centering X
+		let y = (canvas.height - img.height * scale) / 2; // Centering Y
+
+		ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+	}
 }
 
 
@@ -80,11 +80,11 @@ window.addEventListener('resize', () => {
 })
 
 function resizeCanvas() {
-    // Match canvas size to the viewport
-    canvas.width = window.innerWidth * window.devicePixelRatio;
-    canvas.height = window.innerHeight * window.devicePixelRatio;
+	// Match canvas size to the viewport
+	canvas.width = window.innerWidth * window.devicePixelRatio;
+	canvas.height = window.innerHeight * window.devicePixelRatio;
 
-    render(); // Re-draw image after resizing
+	render(); // Re-draw image after resizing
 }
 
 // Run resize function on load & when resizing the screen
@@ -92,14 +92,14 @@ window.addEventListener("load", resizeCanvas);
 window.addEventListener("resize", resizeCanvas);
 
 function updateOpacity() {
-    const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
-    const canvas = document.getElementById("canvas");
+	const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+	const canvas = document.getElementById("canvas");
 
-    if (isMobile) {
-        canvas.style.opacity = "0.4"; // Mobile opacity
-    } else {
-        canvas.style.opacity = "0.4"; // Desktop opacity
-    }
+	if (isMobile) {
+		canvas.style.opacity = "0.4"; // Mobile opacity
+	} else {
+		canvas.style.opacity = "0.4"; // Desktop opacity
+	}
 }
 
 // Run when page loads
@@ -223,64 +223,64 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.querySelector(".circle").style.opacity = "0.9";
 	});
 */
-    $(document).ready(function () {
-        $(".card").tilt({
-            maxTilt: 30,         // Maximum tilt angle
-            perspective: 1000,    // Perspective depth
-            easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth effect
-            speed: 400,          // Speed of transition
-            glare: false,        // Set to true if you want a glare effect
-            scale: 1.05,         // Slight zoom effect
-            reset: true          // Reset tilt when the mouse leaves
-        });
-    });
+$(document).ready(function () {
+	$(".card").tilt({
+		maxTilt: 30,         // Maximum tilt angle
+		perspective: 1000,    // Perspective depth
+		easing: "cubic-bezier(.03,.98,.52,.99)", // Smooth effect
+		speed: 400,          // Speed of transition
+		glare: false,        // Set to true if you want a glare effect
+		scale: 1.05,         // Slight zoom effect
+		reset: true          // Reset tilt when the mouse leaves
+	});
+});
 
 const form = document.getElementById('form');
 const result = document.getElementById('result');
 
 form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "Please wait..."
+	e.preventDefault();
+	const formData = new FormData(form);
+	const object = Object.fromEntries(formData);
+	const json = JSON.stringify(object);
+	result.innerHTML = "Please wait..."
 
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: json
-  })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
-        result.innerHTML = "Form submitted successfully";
-      } else {
-        console.log(response);
-        result.innerHTML = json.message;
-      }
-    })
-    .catch(error => {
-      console.log(error);
-      result.innerHTML = "Something went wrong!";
-    })
-    .then(function () {
-      form.reset();
-      setTimeout(() => {
-        result.style.display = "none";
-      }, 3000);
-    });
+	fetch('https://api.web3forms.com/submit', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Accept': 'application/json'
+		},
+		body: json
+	})
+		.then(async (response) => {
+			let json = await response.json();
+			if (response.status == 200) {
+				result.innerHTML = "Form submitted successfully";
+			} else {
+				console.log(response);
+				result.innerHTML = json.message;
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			result.innerHTML = "Something went wrong!";
+		})
+		.then(function () {
+			form.reset();
+			setTimeout(() => {
+				result.style.display = "none";
+			}, 3000);
+		});
 });
 
 
-  document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
-  document.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
-      event.preventDefault(); // Disable View Source (Ctrl+U)
-    }
-  });
+document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
+document.addEventListener("keydown", (event) => {
+	if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+		event.preventDefault(); // Disable View Source (Ctrl+U)
+	}
+});
 
 /*  function hideSecondVerticalLine() {
 	let lines = document.querySelectorAll(".vertical-line");
@@ -308,35 +308,35 @@ window.addEventListener("load", function () {
 
 // Optional: Add a small fade-in effect for dropdown
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll(".dropdown");
+	const dropdowns = document.querySelectorAll(".dropdown");
 
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener("mouseenter", function () {
-            const menu = this.querySelector(".dropdown-menu");
-            menu.style.opacity = "0";
-            menu.style.display = "block";
-            setTimeout(() => {
-                menu.style.opacity = "1";
-            }, 10);
-        });
+	dropdowns.forEach(dropdown => {
+		dropdown.addEventListener("mouseenter", function () {
+			const menu = this.querySelector(".dropdown-menu");
+			menu.style.opacity = "0";
+			menu.style.display = "block";
+			setTimeout(() => {
+				menu.style.opacity = "1";
+			}, 10);
+		});
 
-        dropdown.addEventListener("mouseleave", function () {
-            const menu = this.querySelector(".dropdown-menu");
-            menu.style.opacity = "0";
-            setTimeout(() => {
-                menu.style.display = "none";
-            }, 200);
-        });
-    });
+		dropdown.addEventListener("mouseleave", function () {
+			const menu = this.querySelector(".dropdown-menu");
+			menu.style.opacity = "0";
+			setTimeout(() => {
+				menu.style.display = "none";
+			}, 200);
+		});
+	});
 });
 
 
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
 	document.querySelector(".container").classList.toggle("change");
-  });
+});
 
 
-  window.addEventListener("load", function () {
+window.addEventListener("load", function () {
 	document.querySelector(".hamburger-menu").style.opacity = "1";
 });
 
