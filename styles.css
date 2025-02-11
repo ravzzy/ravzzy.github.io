@@ -16,6 +16,22 @@ body {
 	overflow-x: hidden;
 }
 
+#debug-log {
+    position: fixed; /* Sticks it to the screen */
+    bottom: 10px; /* Adjust placement */
+    right: 10px; /* Moves it to bottom-right */
+    width: 300px; /* Set a width */
+    height: 150px; /* Set a height */
+    overflow-y: auto; /* Enables scrolling for long logs */
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white; /* White text for contrast */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: monospace;
+    z-index: 9999; /* Ensures it stays above everything */
+}
+
 .logo-image {
 	width: 500px;
 	/* Adjust as needed */

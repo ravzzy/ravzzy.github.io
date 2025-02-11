@@ -340,3 +340,75 @@ window.addEventListener("load", function () {
 	document.querySelector(".hamburger-menu").style.opacity = "1";
 });
 
+function adjustTextColor() {
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    // Get the section currently in view
+    let sections = document.querySelectorAll("section");
+    let currentSection = null;
+
+    sections.forEach(section => {
+        let rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            currentSection = section; // The section in the middle of the viewport
+        }
+    });
+
+    if (!currentSection) {
+        console.error("❌ No section detected in view.");
+        return;
+    }
+
+    // Get computed background color of the section
+    const bgColor = window.getComputedStyle(currentSection).backgroundColor;
+    logMessage("🎨 Detected Section Background Color: " + bgColor);
+
+    // Convert RGBA to brightness
+    function getBrightness(rgba) {
+        let match = rgba.match(/\d+(\.\d+)?/g); // Extract numbers (handles decimals)
+        if (!match || match.length < 3) {
+            logMessage("❌ Failed to extract RGB values!");
+            return 255; // Default to white if no color found
+        }
+
+        let [r, g, b, a = 1] = match.map(Number); // Extract RGB & Alpha values
+
+        logMessage(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
+
+        // Blend with white if transparent
+        let blendedR = Math.round(r * a + 255 * (1 - a));
+        let blendedG = Math.round(g * a + 255 * (1 - a));
+        let blendedB = Math.round(b * a + 255 * (1 - a));
+
+        let brightness = (blendedR * 299 + blendedG * 587 + blendedB * 114) / 1000;
+        logMessage(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
+        return brightness;
+    }
+
+    let brightness = getBrightness(bgColor);
+
+    menuLinks.forEach(link => {
+        if (brightness < 150) {
+            link.style.color = "white";
+            logMessage(`✅ Text Color Set to WHITE (Brightness: ${brightness})`);
+        } else {
+            link.style.color = "black";
+            logMessage(`✅ Text Color Set to BLACK (Brightness: ${brightness})`);
+        }
+    });
+}
+
+// Log messages to console and webpage
+function logMessage(message) {
+    console.log(message);
+
+    let logContainer = document.getElementById("debug-log");
+    if (logContainer) {
+        logContainer.innerHTML += message + "<br>";
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
+}
+
+// Run on page load & when scrolling
+window.addEventListener("load", adjustTextColor);
+window.addEventListener("scroll", adjustTextColor);
