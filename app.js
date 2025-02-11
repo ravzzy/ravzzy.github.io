@@ -49,6 +49,9 @@ gsap.to(frame, {
 		start: 'top top',
 		end: '+=700%',
 		scrub: true,
+		invalidateOnRefresh: true, // Ensures it recalculates on resize
+		/* markers: true */ // Set to true for debugging
+
 	},
 	onUpdate: () => {
 		render()
