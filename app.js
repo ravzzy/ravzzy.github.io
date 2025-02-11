@@ -19,9 +19,9 @@ function getImagePaths() {
 
 	for (let i = initialFrame; i <= FRAMES; i++) {
 		if (isMobile) {
-			imgPaths.push(`images/mob-${i}.png`); // Mobile version
+			imgPaths.push(`images/mobile/mob-${i}.png`); // Mobile version
 		} else {
-			imgPaths.push(`images/out-${i}.png`); // Desktop version
+			imgPaths.push(`images/desktop/out-${i}.png`); // Desktop version
 		}
 	}
 }
