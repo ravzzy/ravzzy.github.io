@@ -459,6 +459,32 @@ window.addEventListener("load", adjustTextColor);
 window.addEventListener("scroll", adjustTextColor);
 document.querySelector(".hamburger-menu").addEventListener("click", adjustTextColor);
 
+// make each dropdown item appear sequentially effect
+document.addEventListener("DOMContentLoaded", () => {
+	const dropdown = document.querySelector(".dropdown");
+	const items = document.querySelectorAll(".dropdown-menu li");
+
+	dropdown.addEventListener("mouseenter", () => {
+		items.forEach((item, index) => {
+			item.style.opacity = "0";
+			item.style.transform = "translateY(-10px)";
+			setTimeout(() => {
+				item.style.transition = "opacity 0.3s ease-in-out, transform 0.3s ease-in-out";
+				item.style.opacity = "1";
+				item.style.transform = "translateY(0)";
+			}, index * 200); // 200ms delay between each item
+		});
+	});
+
+	dropdown.addEventListener("mouseleave", () => {
+		items.forEach(item => {
+			item.style.opacity = "0";
+			item.style.transform = "translateY(-10px)";
+		});
+	});
+});
+
+
 // Closes the sidebar when clicking outside of it.
 // Does not close when clicking inside the sidebar or on the hamburger menu.
 
