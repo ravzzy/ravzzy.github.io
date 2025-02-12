@@ -344,11 +344,15 @@ window.addEventListener("load", function () {
 });
 
 
-// dynamic text colour change logic based on background colour for hamburger/sidebar
+// dynamic text colour change logic based on background colour for hamburger/sidebar/dropdown/navbar/designer footer
 function adjustTextColor() {
 	const menuLinks = document.querySelectorAll(".menu-link");
 	const menuLines = document.querySelectorAll(".hamburger-menu .line"); // Hamburger menu lines
+	const navLinks = document.querySelectorAll(".nav-menu a"); // navbar links
 	const hamburgerMenu = document.querySelector(".hamburger-menu"); // Select the entire menu button
+	const footer = document.querySelector(".designer-footer"); // Select the designer footer
+
+
 	let sections = document.querySelectorAll("section");
 	let currentSection = null;
 
@@ -367,18 +371,22 @@ function adjustTextColor() {
 
 	// Get computed background color of the section
 	const bgColor = window.getComputedStyle(currentSection).backgroundColor;
-	logMessage("🎨 Detected Section Background Color: " + bgColor);
+	//logMessage("🎨 Detected Section Background Color: " + bgColor);
+	console.log("🎨 Detected Section Background Color: " + bgColor);
 
 	// Convert RGBA to brightness
 	function getBrightness(rgba) {
 		let match = rgba.match(/\d+(\.\d+)?/g);
 		if (!match || match.length < 3) {
-			logMessage("❌ Failed to extract RGB values!");
+			//logMessage("❌ Failed to extract RGB values!");
+			console.log("❌ Failed to extract RGB values!");
 			return 255;
 		}
 
 		let [r, g, b, a = 1] = match.map(Number);
-		logMessage(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
+		//logMessage(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
+		console.log(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
+
 
 		// Blend with white if transparent
 		let blendedR = Math.round(r * a + 255 * (1 - a));
@@ -386,7 +394,8 @@ function adjustTextColor() {
 		let blendedB = Math.round(b * a + 255 * (1 - a));
 
 		let brightness = (blendedR * 299 + blendedG * 587 + blendedB * 114) / 1000;
-		logMessage(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
+		//logMessage(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
+		console.log(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
 		return brightness;
 	}
 
@@ -395,21 +404,47 @@ function adjustTextColor() {
 	// Change menu link text color
 	menuLinks.forEach(link => {
 		link.style.color = brightness < 150 ? "white" : "black";
+		console.log("✅ Updated menu link text color:", link.style.color);
 	});
 
 	// Change hamburger menu lines (X icon inside menu)
 	menuLines.forEach(line => {
 		line.style.backgroundColor = brightness < 150 ? "white" : "black";
+		console.log("✅ Updated hamburger menu lines:", line.style.color);
+	});
+
+
+	console.log("Current Navbar Background Color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
+	// ✅ Update CSS Variables Instead of Inline Styles
+	document.documentElement.style.setProperty("--nav-bg-color", brightness < 150 ? "white" : "black");
+	document.documentElement.style.setProperty("--nav-text-color", brightness < 150 ? "black" : "white");
+	// ✅ Update Hover Color for Better Contrast
+	document.documentElement.style.setProperty("--nav-hover-color", brightness < 150 ? "grey" : "grey");
+	// ✅ Update CSS Variable for Footer Text Color
+	document.documentElement.style.setProperty("--footer-text-color", brightness < 150 ? "white" : "black");
+
+	console.log("Updated --nav-bg-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
+	console.log("Updated --nav-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-text-color"));
+	console.log("Updated --nav-hover-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-hover-color"));
+	console.log("Updated --footer-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--footer-text-color"));
+
+	// ✅ Apply to `.nav-menu a`
+	navLinks.forEach(link => {
+		link.style.color = "var(--nav-text-color)"; // Use CSS variable
+		console.log("✅ Updated Navbar Text Color:", link.style.color);
 	});
 
 	// Change close button (X) when sidebar is open
 	if (document.querySelector(".container").classList.contains("change")) {
 		hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
+		console.log("✅ Updated ✖ icon colour:", hamburgerMenu.style.color);
+
 	}
 }
 
 // Log messages to console and webpage
-function logMessage(message) {
+//Enable this for Debug log window
+/*function logMessage(message) {
 	console.log(message);
 
 	let logContainer = document.getElementById("debug-log");
@@ -417,7 +452,7 @@ function logMessage(message) {
 		logContainer.innerHTML += message + "<br>";
 		logContainer.scrollTop = logContainer.scrollHeight;
 	}
-}
+}*/
 
 // Run on page load, scroll & when sidebar opens/closes
 window.addEventListener("load", adjustTextColor);

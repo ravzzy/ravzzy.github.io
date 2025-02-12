@@ -16,30 +16,22 @@ body {
 	overflow-x: hidden;
 }
 
+/* 	Enable this for Debug log window
 #debug-log {
 	position: fixed;
-	/* Sticks it to the screen */
 	bottom: 10px;
-	/* Adjust placement */
 	right: 10px;
-	/* Moves it to bottom-right */
 	width: 300px;
-	/* Set a width */
 	height: 150px;
-	/* Set a height */
 	overflow-y: auto;
-	/* Enables scrolling for long logs */
 	background: rgba(0, 0, 0, 0.8);
-	/* Dark background */
 	color: white;
-	/* White text for contrast */
 	padding: 10px;
 	border-radius: 5px;
 	font-size: 12px;
 	font-family: monospace;
 	z-index: 9999;
-	/* Ensures it stays above everything */
-}
+}*/
 
 .logo-image {
 	width: 500px;
@@ -64,6 +56,13 @@ body {
 /* Transparent Navbar */
 /* Navbar container */
 
+:root {
+	--nav-bg-color: black;
+	--nav-text-color: white;
+	--nav-hover-color: rgba(255, 255, 255, 0.2);
+	--footer-text-color: black* Default color */
+		/* Default hover effect */
+}
 
 nav {
 	padding: 1em;
@@ -79,10 +78,13 @@ nav div {
 
 nav a {
 	/* Navbar links */
-	background-color: black;
+	background-color: var(--nav-bg-color);
+	color: var(--nav-text-color);
+
+	/*background-color: black;*/
 	padding: 0.25em 0.75em;
 	border-radius: 5em;
-	color: #f1f1f1;
+	/*color: #f1f1f1;*/
 	text-decoration: none;
 	margin-inline-start: 0.5em;
 }
@@ -120,7 +122,10 @@ nav a {
 /* Menu Items */
 .nav-menu a {
 	text-decoration: none;
-	color: white;
+	background-color: var(--nav-bg-color);
+	color: var(--nav-text-color) !important;
+	/* Ensure text color updates */
+	/*color: white;*/
 	font-size: 10px;
 	padding: 10px 15px;
 	transition: background 0.3s, color 0.3s;
@@ -128,8 +133,12 @@ nav a {
 
 /* Hover Effect */
 .nav-menu a:hover {
-	background: rgba(0, 0, 0, 0.06);
-	color: black;
+	background: var(--nav-hover-color);
+	/* Adjust hover background */
+	color: var(--nav-bg-color);
+	/* Use dynamic color */
+	/*background: rgba(0, 0, 0, 0.06);
+	color: black;*/
 	border-radius: 5em;
 }
 
@@ -139,8 +148,9 @@ nav a {
 	position: absolute;
 	top: 100%;
 	left: 0;
-	background: transparent;
-	backdrop-filter: blur(10px);
+	/*background: transparent;*/
+	/*background: var(--nav-bg-color); /* Dynamic Background */
+	/*	backdrop-filter: blur(10px);*/
 	list-style: none;
 	padding: 10px 0;
 	min-width: 150px;
@@ -160,14 +170,19 @@ nav a {
 .dropdown-menu a {
 	display: block;
 	padding: 10px 15px;
-	color: white;
+	color: var(--nav-text-color);
+	/*color: white;*/
 	transition: background 0.3s, color 0.3s;
 }
 
 /* Change color on hover */
 .dropdown-menu a:hover {
-	background: rgba(0, 0, 0, 0.06);
-	color: black;
+	background: var(--nav-hover-color);
+	/* Dynamic Hover */
+	color: var(--nav-bg-color);
+	/* Use dynamic color */
+	/*background: rgba(0, 0, 0, 0.06);
+	color: black;*/
 }
 
 /* Hamburger Menu for Mobile*/
@@ -393,13 +408,18 @@ nav a {
 
 
 .designer-footer {
+
 	position: fixed;
-	bottom: 10px;
+	bottom: 5px;
 	/* Adjust spacing from bottom */
-	right: 10px;
+	right: 0%;
 	/* Adjust spacing from right */
+	transform: scale(0.7);
 	opacity: 0;
 	z-index: 3;
+	color: var(--footer-text-color);
+	/* Apply the dynamic text color */
+
 }
 
 section {
@@ -736,7 +756,7 @@ footer>div:not(.socials) {
 	}
 }
 
-@media (width < 500px) {
+@media (width < 1200px) {
 	/*.circle-container{
 		transform: scale(0.5);
 		top: 5%;
@@ -817,22 +837,21 @@ footer>div:not(.socials) {
 	}
 
 	.designer-footer {
-		position: fixed;
 		bottom: 5px;
 		/* Adjust spacing from bottom */
 		right: 0%;
 		/* Adjust spacing from right */
 		opacity: 0;
 		transform: scale(0.5);
-		z-index: 3;
 	}
-	
-	/*	#form {
-        display: none !important;  /* Hides the contact us form 
-    }
-	*/
+
+	#form {
+		display: none !important;
+		/* Hides the contact us form */
+	}
 }
 
+/*
 @media (width> 815px) {
 	.text-spin {
 		font-size: 7rem;
@@ -852,7 +871,7 @@ footer>div:not(.socials) {
 	footer>div:not(.socials) {
 		font-size: 5rem;
 	}
-}
+} */
 
 @media (orientation: landscape) {
 
@@ -988,4 +1007,5 @@ footer>div:not(.socials) {
 	.roadmap .cards {
 		justify-content: start;
 	}
+
 }
