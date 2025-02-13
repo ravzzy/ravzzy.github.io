@@ -101,7 +101,7 @@ function updateOpacity() {
 	if (isMobile) {
 		canvas.style.opacity = "0.4"; // Mobile opacity
 	} else {
-		canvas.style.opacity = "0.4"; // Desktop opacity
+		canvas.style.opacity = "1"; // Desktop opacity
 	}
 }
 
