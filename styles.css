@@ -1487,9 +1487,18 @@ footer>div:not(.socials) {
 	}
 } */
 
-@media (orientation: landscape) {
+@media (orientation: landscape) {	/* Desktop */
 
-	/* Desktop */
+
+	.timeline-item.left{
+		max-width: 400px !important;
+	}
+
+	.timeline-item.right{
+		max-width: 400px !important;
+	}
+
+
 	.text-spin {
 		left: -100%;
 		font-size: 8rem;
