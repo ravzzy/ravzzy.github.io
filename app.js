@@ -1,5 +1,6 @@
 /* Author - ravzzy */
 
+/*
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
 
@@ -51,7 +52,7 @@ gsap.to(frame, {
 		scrub: true,
 		invalidateOnRefresh: true, // Ensures it recalculates on resize
 		/* markers: true */ // Set to true for debugging
-
+/*
 	},
 	onUpdate: () => {
 		render()
@@ -111,7 +112,7 @@ window.addEventListener("load", updateOpacity);
 // Run on window resize (e.g., rotating phone)
 window.addEventListener("resize", updateOpacity);
 
-
+/*
 gsap.to('.two', {
 	scrollTrigger: {
 		trigger: '.two',
@@ -142,7 +143,7 @@ gsap.to('.four', {
 	},
 })
 
-
+*/
 gsap.to('.loader-img', {
 	rotation: 360,
 	duration: 1.5,
@@ -150,9 +151,18 @@ gsap.to('.loader-img', {
 	repeatDelay: 0.25,
 })
 
-window.addEventListener('load', e => {
-	document.body.classList.remove('loading')
-})
+// Ensure loader is visible when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loading"); 
+});
+
+// Keep the loader for 2.5 seconds before showing the page
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.body.classList.remove("loading");
+    }, 3000); // 2500ms = 2.5 seconds
+});
+
 
 const rgb = {
 	r: 255,
@@ -163,6 +173,7 @@ const rgb = {
 	bT: 16,
 }
 
+/*
 const rgbTitle = {}
 
 const roadmap = document.querySelector('.roadmap')
@@ -189,6 +200,7 @@ gsap.to(rgb, {
 	},
 })
 
+*/
 /* Disabling the rotating text logo for now
 // JavaScript to adjust rotation based on scroll and position letters along the top of the circle
 document.addEventListener('DOMContentLoaded', function () {
@@ -278,7 +290,7 @@ form.addEventListener('submit', function (e) {
 });
 
 
-document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
+//document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
 document.addEventListener("keydown", (event) => {
 	if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
 		event.preventDefault(); // Disable View Source (Ctrl+U)
@@ -496,6 +508,125 @@ document.addEventListener("click", function (event) {
 	// Check if the sidebar is open and the clicked area is outside the sidebar & hamburger menu
 	if (container.classList.contains("change") && !sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
 		container.classList.remove("change"); // Close sidebar
+	}
+});
+
+
+document.addEventListener("scroll", function () {
+	let items = document.querySelectorAll(".timeline-item, .timeline-connector");
+	items.forEach(item => {
+		let rect = item.getBoundingClientRect();
+		if (rect.top < window.innerHeight * 0.8) {
+			item.classList.add("show");
+		}
+	});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	let dividers = document.querySelectorAll(".timeline-divider");
+	let connectors = document.querySelectorAll(".timeline-connector");
+
+	dividers.forEach((divider, index) => {
+		if (connectors[index]) {
+			let nextElement = connectors[index].nextElementSibling;
+			let dividerTop = divider.offsetTop;
+			let connectorTop = connectors[index].offsetTop;
+			let height = connectorTop - dividerTop - 15;
+			divider.style.height = height + "px";
+
+			if (nextElement && nextElement.classList.contains("timeline-divider")) {
+				nextElement.style.top = (connectorTop + connectors[index].offsetHeight) + "px";
+			}
+		}
+	});
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    function animateText(element) {
+        let textContent = element.textContent.trim();
+        let spans = "";
+
+        textContent.split("").forEach((letter, index) => {
+            spans += `<span style="
+                opacity: 0;
+                display: inline-block; /* Ensures letters align normally */
+                animation: letterFadeIn 0.8s ease-out ${index * 0.08}s forwards;">
+                ${letter === " " ? "&nbsp;" : letter}
+            </span>`;
+        });
+
+        element.innerHTML = spans; // Replace text with animated spans
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateText(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    document.querySelectorAll(".timeline-text.right").forEach((text) => {
+        observer.observe(text);
+    });
+	    document.querySelectorAll(".timeline-text.right").forEach((text) => {
+        observer.observe(text);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+	const header = document.querySelector("header");
+	const swimlane = document.querySelector(".Header-swimlane");
+	let lastScrollY = window.scrollY;
+	let isHidden = false; // Tracks if header & swimlane are hidden
+
+	// Initial values for font size and padding
+	let initialFontSize = 24;
+	let minFontSize = 16;
+	let initialPadding = 20;
+	let minPadding = 5;
+
+	window.addEventListener("scroll", function () {
+		let scrollY = window.scrollY;
+		let shrinkFactor = Math.min(1, scrollY / 200); // Controls shrink speed
+
+		let newFontSize = initialFontSize - shrinkFactor * (initialFontSize - minFontSize);
+		let newPadding = initialPadding - shrinkFactor * (initialPadding - minPadding);
+
+		// Apply shrinking effect
+		header.style.fontSize = `${newFontSize}px`;
+		header.style.padding = `${newPadding}px 0`;
+
+		if (scrollY > 200 && scrollY > lastScrollY && !isHidden) {
+			// Hide both header & swimlane when scrolling down past 200px
+			header.style.transform = "translateY(-160%)";
+			swimlane.style.transform = "translateY(-150%)";
+			isHidden = true;
+		} else if (scrollY < lastScrollY && scrollY < 150 && isHidden) {
+			// Show them again when scrolling up past 150px
+			header.style.transform = "translateY(0)";
+			swimlane.style.transform = "translateY(0)";
+			isHidden = false;
+		}
+
+		lastScrollY = scrollY; // Update last scroll position
+	});
+});
+
+window.addEventListener("scroll", function () {
+	let logo = document.querySelector(".logo-image");
+	if (window.scrollY > 160) {
+		logo.style.opacity = "0";  // Hide the logo
+		logo.style.pointerEvents = "none";  // Prevent interaction
+	} else {
+		logo.style.opacity = "1";  // Show the logo
+		logo.style.pointerEvents = "auto";
 	}
 });
 

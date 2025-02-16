@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+
 body {
 	height: 600vh;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -15,6 +20,463 @@ body {
 	background-color: #f1f1f1;
 	overflow-x: hidden;
 }
+
+
+.Header-swimlane {
+	background-color: #e61618;
+	padding: 10px 0;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45px;
+	z-index: 10;
+	/* Keep swimlane above the header */
+	transition: transform 0.3s ease-out;
+}
+
+header {
+	background-color: white;
+	color: black;
+	padding: 20px;
+	font-size: 24px;
+	width: 100%;
+	position: fixed;
+	top: 45px;
+	left: 0;
+	z-index: 3;
+	/* Keep header below swimlane */
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	transition: transform 0.3s ease-out;
+}
+
+
+.middle-section {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 50px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+	/* Adjust this to match the height of your header */
+
+}
+
+.middle-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #e61618;
+	z-index: 2;
+}
+
+.background-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.timeline-container {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	max-width: 800px;
+	position: relative;
+	margin-top: 150px;
+}
+
+.timeline-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+	position: relative;
+}
+
+.timeline-item {
+	background: white;
+	padding: 20px;
+	margin: 20px 0;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 40%;
+	text-align: center;
+	position: relative;
+	z-index: 3;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.timeline-item.left {
+	left: -90px;
+	/* use this for horizontal alignment */
+	width: 60%;
+	/* Adjust the width as needed */
+	max-width: 400px;
+	/* Set a max width if necessary */
+	max-height: 800px;
+	padding: 20px;
+	/* Adjust padding for spacing */
+	font-size: 18px;
+}
+
+/* first occurence on the left*/
+.timeline-container>div:nth-child(2)>.timeline-item.left {
+	top: 20px !important;
+	/* disables the transition of the first box, so it doesn't look weird on homepage */
+	opacity: 1;
+	/* Fully visible */
+	transform: translateY(0);
+	/* No movement */
+	transition: none;
+	/* Disable transition */
+}
+
+/* 2nd occurence on the left */
+.timeline-container>div:nth-child(8)>.timeline-item.left {
+	top: 350px !important;
+}
+
+/* 3rd occurence on the left */
+.timeline-container>div:nth-child(14)>.timeline-item.left {
+	top: 200px !important;
+}
+
+
+
+.timeline-item.left h2 {
+	text-align: center;
+	font-size: 16px;
+	/* Adjust heading size */
+	font-weight: bold;
+	/* Optional: Adjust weight */
+}
+
+.timeline-item.left p {
+	text-align: center;
+	font-size: 11px;
+	/* Adjust paragraph size */
+	line-height: 1.5;
+	/* Improve readability */
+}
+
+.timeline-item.left img {
+	max-width: 100%;
+	max-height: 100px;
+	height: auto;
+	object-fit: contain;
+}
+
+#bullet_service {
+	text-align: left;
+}
+
+p a {
+	color: #e61618;
+	/* Change text color */
+	text-decoration: none;
+	/* Remove underline */
+	font-weight: bold;
+}
+
+p a:hover {
+	text-decoration: underline;
+	/* Add underline on hover */
+}
+
+.timeline-item.right {
+	left: 100px;
+	/* use this for horizontal alignment */
+	width: 60%;
+	/* Adjust the width as needed */
+	max-width: 400px;
+	/* Set a max width if necessary */
+	max-height: 800px;
+	padding: 20px;
+	/* Adjust padding for spacing */
+	font-size: 18px;
+	/* Modify font size */
+}
+
+/* first occurence on the right*/
+.timeline-container>div:nth-child(5)>.timeline-item.right {
+	top: -150px !important;
+}
+
+/* 2nd occurence on the right*/
+.timeline-container>div:nth-child(11)>.timeline-item.right {
+	top: -200px !important;
+}
+
+
+
+.timeline-item.right h2 {
+	text-align: center;
+	font-size: 16px;
+	/* Adjust heading size */
+	font-weight: bold;
+	/* Optional: Adjust weight */
+}
+
+.timeline-item.right p {
+	text-align: center;
+	font-size: 11px;
+	/* Adjust paragraph size */
+	line-height: 1.5;
+	/* Improve readability */
+}
+
+.timeline-item.right img {
+	max-width: 100%;
+	max-height: 100px !important;
+	height: auto;
+	object-fit: contain;
+	display: block;
+	/* Ensures proper margin auto centering */
+	margin: 0 auto;
+	/* Centers horizontally */
+}
+
+
+.timeline-divider {
+	position: absolute;
+	left: 50%;
+	top: -5%;
+	width: 0.5px;
+	height: 100%;
+	background-color: white;
+	transform: translateX(-50%);
+	z-index: 2;
+}
+
+.timeline-connector {
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	width: 100%;
+	margin: 10px 0;
+	opacity: 0;
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	position: relative;
+	/* Ensure transform works */
+
+}
+
+
+.Header-ticker {
+	position: fixed;
+	left: 0.3%;
+	top: 0;
+	width: 60px;
+	height: 100vh;
+	border-right: 1px solid #c2c2c2;
+	background-color: white;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 3;
+}
+
+.ticker-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	/* Ensure smooth transition */
+	height: 200%;
+	gap: 670px;
+	/* Adds spacing between text elements */
+	height: auto;
+	/* Ensures it scales dynamically */
+	animation: verticalMarquee 20s linear infinite;
+}
+
+.ticker-text {
+	font-size: 18px;
+	color: black;
+	transform: rotate(-90deg);
+	white-space: nowrap;
+}
+
+@keyframes verticalMarquee {
+	from {
+		transform: translateY(-50%);
+	}
+
+	to {
+		transform: translateY(50%);
+	}
+}
+
+
+.timeline-item.show,
+.timeline-connector.show {
+	opacity: 1 !important;
+}
+
+
+.timeline-connector {
+	z-index: 4;
+	position: relative;
+	will-change: transform;
+	/* Optimizes animations */
+
+}
+
+/* below is an important code to align the text between the divider, use developer tool -> copy selector */
+
+/* 1st occurrence */
+.timeline-container>div:nth-child(3) {
+	margin-top: -50px !important;
+}
+
+/* 2nd occurrence */
+.timeline-container>div:nth-child(6) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+/* 3rd occurrence */
+.timeline-container>div:nth-child(9) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+/* 4th occurrence */
+.timeline-container>div:nth-child(12) {
+	margin-top: 50px !important;
+	/* Moves it lower */
+}
+
+/* 5th occurrence */
+.timeline-container>div:nth-child(15) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+
+
+.timeline-text.left {
+	align-self: center;
+	margin-right: auto;
+	margin-left: 0;
+	width: 40%;
+	text-align: right;
+	font-size: 36px;
+	font-weight: bold;
+	color: white;
+	z-index: 3;
+	position: relative;
+}
+
+/* first occurence on the left*/
+.timeline-container>div:nth-child(5)>.timeline-text.left {
+	transform: translateY(-20px);
+	left: -10%;
+	top: 60px !important;
+}
+
+/* first occurence on the left*/
+.timeline-container>div:nth-child(11)>.timeline-text.left {
+	transform: translateY(20px);
+	left: -10%;
+	top: 60px !important;
+}
+
+
+.timeline-text.right {
+	align-self: center;
+	margin-left: auto;
+	margin-right: 0;
+	width: 40%;
+	text-align: left;
+	font-size: 36px;
+	font-weight: bold;
+	color: white;
+	z-index: 3;
+	position: relative;
+}
+
+/* first occurence on the right*/
+.timeline-container>div:nth-child(2)>.timeline-text.right {
+	transform: translateY(-160px);
+	/* Moves it upwards */
+	left: 10%;
+	top: 0 !important;
+}
+
+/* 2nd occurence on the right*/
+.timeline-container>div:nth-child(8)>.timeline-text.right {
+	transform: translateY(-20px);
+	/* Moves it upwards */
+	left: 10%;
+	top: 0 !important;
+}
+
+/* 3rd occurence on the right*/
+.timeline-container>div:nth-child(14)>.timeline-text.right {
+	transform: translateY(-20px);
+	/* Moves it upwards */
+	left: 10%;
+	top: 0 !important;
+}
+
+
+.timeline-text.right.show {
+	opacity: 1;
+	/* Reveal the full text container */
+	transform: translateY(0);
+}
+
+.timeline-text.left.show {
+	opacity: 1;
+	/* Reveal the full text container */
+	transform: translateY(0);
+}
+
+@keyframes letterFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px) scale(0.8);
+		/* Start slightly lower & smaller */
+		filter: blur(4px);
+		/* Blur effect for smooth fade */
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+		/* Normal size & position */
+		filter: blur(0);
+	}
+}
+
+.timeline-text.right span {
+	opacity: 0;
+	display: inline-block;
+	/* Fix stacking issue */
+	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
 
 /* 	Enable this for Debug log window
 #debug-log {
@@ -41,14 +503,14 @@ body {
 	background-image: url('images/rooting_research_transparent.png');
 	background-size: contain;
 	background-repeat: no-repeat;
-	position: absolute;
+	position: fixed;
 	/* Stays in place */
 	display: flex;
-	z-index: 4;
-	top: -2%;
+	z-index: 21;
+	top: 7%;
 	left: -12%;
 	transform: scale(0.3);
-	opacity: 0;
+	opacity: 1;
 }
 
 
@@ -103,7 +565,7 @@ nav a {
 	/* Moves everything to the right */
 	align-items: center;
 	opacity: 0;
-	z-index: 3;
+	z-index: 20;
 }
 
 /* Navigation Menu */
@@ -550,7 +1012,7 @@ canvas {
 }
 
 .loader {
-	display: none;
+	z-index: 9999; /* Ensure it's on top */
 }
 
 body.loading .loader {
@@ -607,10 +1069,6 @@ body.loading .loader {
 	width: 300px;
 }
 
-.roadmap {
-	background-color: rgb(23, 16, 16);
-	padding-block-end: 4em;
-}
 
 section>.title {
 	color: rgb(255, 255, 255);
