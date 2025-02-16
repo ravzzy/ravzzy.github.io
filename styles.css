@@ -102,12 +102,13 @@ header {
 }
 
 .timeline-wrapper {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	align-items: center;
-	position: relative;
+    display: flex;
+    justify-content: flex-start; /* Instead of space-between */
+    align-items: center;
+    gap: 20px; /* Adds spacing between items */
+    width: 100%;
 }
+
 
 .timeline-item {
 	background: white;
@@ -115,7 +116,7 @@ header {
 	margin: 20px 0;
 	border-radius: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	width: 40%;
+	width: 100%;
 	text-align: center;
 	position: relative;
 	z-index: 3;
@@ -376,7 +377,8 @@ p a:hover {
 
 
 .timeline-text.left {
-	transition: color 2s ease-out, opacity 2s ease-out; /* Smooth transition */
+	transition: color 2s ease-out, opacity 2s ease-out;
+	/* Smooth transition */
 	opacity: 1;
 	align-self: center;
 	margin-right: auto;
@@ -392,8 +394,10 @@ p a:hover {
 
 /* When the text is entering the viewport */
 .timeline-text.left.in-view {
-    color: white; /* Transition to yellow */
-    opacity: 1; /* Fully visible */
+	color: white;
+	/* Transition to yellow */
+	opacity: 1;
+	/* Fully visible */
 }
 
 
@@ -415,12 +419,13 @@ p a:hover {
 .timeline-text.right {
 
 
-    opacity: 1;
-    transition: color 2s ease-out, opacity 2s ease-out; /* Smooth transition */
+	opacity: 1;
+	transition: color 2s ease-out, opacity 2s ease-out;
+	/* Smooth transition */
 	align-self: center;
 	margin-left: auto;
 	margin-right: 0;
-	width: 40%;
+/*	width: 40%;*/
 	text-align: left;
 	font-size: 36px;
 	font-weight: bold;
@@ -432,8 +437,10 @@ p a:hover {
 
 /* When the text is entering the viewport */
 .timeline-text.right.in-view {
-    color: white; /* Transition to yellow */
-    opacity: 1; /* Fully visible */
+	color: white;
+	/* Transition to yellow */
+	opacity: 1;
+	/* Fully visible */
 }
 
 
@@ -713,10 +720,11 @@ nav a {
 }
 
 .sidebar {
-	width: 15em;
+	width: 20em;
 	height: 50vh;
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.592);
+	/*background-color: rgba(0, 0, 0, 0.592);*/
+	background-color: #e61618;
 	backdrop-filter: blur(30px);
 	opacity: 0.8;
 	top: 0;
@@ -995,7 +1003,8 @@ canvas {
 }
 
 .loader {
-	z-index: 9999; /* Ensure it's on top */
+	z-index: 9999;
+	/* Ensure it's on top */
 }
 
 body.loading .loader {
@@ -1198,17 +1207,35 @@ footer>div:not(.socials) {
 }
 
 @media (width < 1200px) {
-	/*.circle-container{
-		transform: scale(0.5);
-		top: 5%;
-		left: 7%;
-	} */
+	/* Mobile */
 
 	body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+	}
+
+
+	header {
+		padding: 20px;
+		font-size: 10px;
+		width: 100%;
+		position: fixed;
+		top: 45px;
+		left: 0;
+		z-index: 3;
+		height: 80px;
+	}
+
+	header h1 {
+		margin-top: 35px;
+	}
+
+	.hamburger-menu {
+		top: 1%;
+		right: 10%;
+		z-index: 15;
 	}
 
 	/* hide the cross button */
@@ -1222,17 +1249,116 @@ footer>div:not(.socials) {
 	}
 
 
-
 	.logo-image {
 		transform: scale(0.2);
 		left: -45%;
-		top: 0%;
+		top: 3%;
 	}
 
 	.navbar {
 		display: none;
 		/* Completely hides the navbar on mobile */
 	}
+
+	.Header-ticker {
+		width: 40px;
+
+	}
+
+	/*1st occurence of the timeline divider */
+	body > div.container > div.middle-section > div.timeline-container > div:nth-child(1) {
+			left: 20px; /* Moves it 50px from the top */
+		}
+		
+
+	/* this ensures that the text is resizable */
+	.timeline-text.right.in-view {
+		min-width: 400px !important; /* Forces it to take space */
+		max-width: 100%; /* Ensures it doesn’t get cut off */
+		flex: 1; /* Expands within flex container */
+	}
+	
+	
+
+	/* first occurence of the text box on the left*/
+.timeline-container>div:nth-child(2)>.timeline-item.left {
+	left: 20%;
+	top: 20px !important;
+	width: 600px !important;
+}
+
+	/* first occurence of the right text*/
+.timeline-container>div:nth-child(2)>.timeline-text.right {
+	transform: translateY(-490px);
+	font-size: 25px;
+	/* Moves it upwards */
+	left: -40%;
+}
+
+
+/* 2nd occurence on the left */
+.timeline-container>div:nth-child(8)>.timeline-item.left {
+	top: 350px !important;
+}
+
+/* 3rd occurence on the left */
+.timeline-container>div:nth-child(14)>.timeline-item.left {
+	top: 200px !important;
+}
+
+
+/* 2nd occurence on the right*/
+.timeline-container>div:nth-child(8)>.timeline-text.right {
+	transform: translateY(-20px);
+	/* Moves it upwards */
+	left: 10%;
+	top: 0 !important;
+}
+
+/* 3rd occurence on the right*/
+.timeline-container>div:nth-child(14)>.timeline-text.right {
+	transform: translateY(-20px);
+	/* Moves it upwards */
+	left: 10%;
+	top: 0 !important;
+}
+
+
+
+
+/* below is an important code to align the text between the divider, use developer tool -> copy selector */
+
+/* 1st occurrence */
+.timeline-container>div:nth-child(3) {
+	margin-top: -50px !important;
+}
+
+/* 2nd occurrence */
+.timeline-container>div:nth-child(6) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+/* 3rd occurrence */
+.timeline-container>div:nth-child(9) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+/* 4th occurrence */
+.timeline-container>div:nth-child(12) {
+	margin-top: 50px !important;
+	/* Moves it lower */
+}
+
+/* 5th occurrence */
+.timeline-container>div:nth-child(15) {
+	margin-top: 100px !important;
+	/* Moves it lower */
+}
+
+
+
 
 	footer>div:not(.socials) {
 		margin-inline: auto;

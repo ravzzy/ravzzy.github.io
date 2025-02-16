@@ -567,10 +567,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	let isHidden = false; // Tracks if header & swimlane are hidden
 
 	// Initial values for font size and padding
-	let initialFontSize = 24;
-	let minFontSize = 16;
-	let initialPadding = 20;
-	let minPadding = 5;
+  // Set different values for desktop and mobile
+  let initialFontSize, minFontSize, initialPadding, minPadding;
+
+  function updateValues() {
+	  if (window.innerWidth <= 768) { // Mobile screen sizes
+		  initialFontSize = 12;
+		  minFontSize = 6;
+		  initialPadding = 10;
+		  minPadding = 5;
+	  } else { // Desktop sizes
+		  initialFontSize = 24;
+		  minFontSize = 16;
+		  initialPadding = 20;
+		  minPadding = 5;
+	  }
+  }
+
+  updateValues(); // Set values based on initial screen size
 
 	window.addEventListener("scroll", function () {
 		let scrollY = window.scrollY;
