@@ -102,12 +102,14 @@ header {
 }
 
 .timeline-wrapper {
-    display: flex;
-    justify-content: flex-start; /* Instead of space-between */
-    align-items: center;
-    gap: 20px; /* Adds spacing between items */
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	/* Proper spacing between left and right */
+	align-items: center;
+	gap: 20px;
+	width: 100%;
 }
+
 
 
 .timeline-item {
@@ -130,14 +132,26 @@ header {
 	left: -90px;
 	/* use this for horizontal alignment */
 	width: 60%;
-	/* Adjust the width as needed */
-	max-width: 400px;
+
 	/* Set a max width if necessary */
 	max-height: 800px;
 	padding: 20px;
 	/* Adjust padding for spacing */
 	font-size: 18px;
 }
+
+.timeline-item.left,
+.timeline-item.right {
+	flex-grow: 1;
+	/* Allows it to expand */
+	max-width: 100%;
+	/* Prevents cutting off on smaller screens */
+	width: auto !important;
+	/* Prevents restrictions */
+	text-align: center;
+	/* Ensures proper text positioning */
+}
+
 
 /* first occurence on the left*/
 .timeline-container>div:nth-child(2)>.timeline-item.left {
@@ -207,8 +221,6 @@ p a:hover {
 	left: 100px;
 	/* use this for horizontal alignment */
 	width: 60%;
-	/* Adjust the width as needed */
-	max-width: 400px;
 	/* Set a max width if necessary */
 	max-height: 800px;
 	padding: 20px;
@@ -379,18 +391,31 @@ p a:hover {
 .timeline-text.left {
 	transition: color 2s ease-out, opacity 2s ease-out;
 	/* Smooth transition */
-	opacity: 1;
+	opacity: 0.5;
 	align-self: center;
 	margin-right: auto;
 	margin-left: 0;
-	width: 40%;
-	text-align: right;
 	font-size: 36px;
 	font-weight: bold;
 	color: black;
 	z-index: 3;
-	position: relative;
+
 }
+
+.timeline-text.right,
+.timeline-text.left {
+	position: relative;
+	/* Ensure it moves based on parent */
+	width: auto;
+	/* Let it adjust dynamically */
+	max-width: 50%;
+	/* Prevent it from getting too large */
+	flex-grow: 1;
+	/* Allows resizing in flex containers */
+	text-align: left;
+	/* Ensures proper alignment */
+}
+
 
 /* When the text is entering the viewport */
 .timeline-text.left.in-view {
@@ -418,20 +443,16 @@ p a:hover {
 
 .timeline-text.right {
 
-
-	opacity: 1;
+	opacity: 0.5;
 	transition: color 2s ease-out, opacity 2s ease-out;
 	/* Smooth transition */
 	align-self: center;
 	margin-left: auto;
 	margin-right: 0;
-/*	width: 40%;*/
-	text-align: left;
 	font-size: 36px;
 	font-weight: bold;
 	color: black;
 	z-index: 3;
-	position: relative;
 }
 
 
@@ -1265,97 +1286,123 @@ footer>div:not(.socials) {
 
 	}
 
-	/*1st occurence of the timeline divider */
-	body > div.container > div.middle-section > div.timeline-container > div:nth-child(1) {
-			left: 20px; /* Moves it 50px from the top */
-		}
-		
+	/* below 3 fixes ensures that the right text and left box can co-exist */
 
-	/* this ensures that the text is resizable */
-	.timeline-text.right.in-view {
-		min-width: 400px !important; /* Forces it to take space */
-		max-width: 100%; /* Ensures it doesn’t get cut off */
-		flex: 1; /* Expands within flex container */
+	.timeline-wrapper {
+		flex-direction: column-reverse;
+		/* Ensures text appears above */
+		align-items: center;
+		/* Centers items */
 	}
-	
-	
 
-	/* first occurence of the text box on the left*/
-.timeline-container>div:nth-child(2)>.timeline-item.left {
-	left: 20%;
-	top: 20px !important;
-	width: 600px !important;
-}
+	.timeline-text.right,
+	.timeline-item.left {
+		max-width: 100% !important;
+		text-align: center;
+	}
+
+	.timeline-item.left {
+		width: 70% !important;
+		/* Ensures it resizes */
+		min-width: 250px !important;
+		/* Prevents it from shrinking too much */
+	}
+
+
+
+	/*1st occurence of the timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(1) {
+		left: 20px;
+		/* Moves it 50px from the top */
+	}
+
+
+	/* this ensures that the right text is resizable in the container */
+	.timeline-text.right.in-view {
+		min-width: 200px !important;
+		/* Forces it to take space */
+		max-width: 100%;
+		/* Ensures it doesn’t get cut off */
+		flex: 1;
+		/* Expands within flex container */
+	}
+
 
 	/* first occurence of the right text*/
-.timeline-container>div:nth-child(2)>.timeline-text.right {
-	transform: translateY(-490px);
-	font-size: 25px;
-	/* Moves it upwards */
-	left: -40%;
-}
+	.timeline-container>div:nth-child(2)>.timeline-text.right {
+		transform: translateY(-150px);
+		font-size: 25px;
+		left: -7%;
+	}
 
-
-/* 2nd occurence on the left */
-.timeline-container>div:nth-child(8)>.timeline-item.left {
-	top: 350px !important;
-}
-
-/* 3rd occurence on the left */
-.timeline-container>div:nth-child(14)>.timeline-item.left {
-	top: 200px !important;
-}
-
-
-/* 2nd occurence on the right*/
-.timeline-container>div:nth-child(8)>.timeline-text.right {
-	transform: translateY(-20px);
-	/* Moves it upwards */
-	left: 10%;
-	top: 0 !important;
-}
-
-/* 3rd occurence on the right*/
-.timeline-container>div:nth-child(14)>.timeline-text.right {
-	transform: translateY(-20px);
-	/* Moves it upwards */
-	left: 10%;
-	top: 0 !important;
-}
+	/* first occurence of the text box on the left*/
+	.timeline-container>div:nth-child(2)>.timeline-item.left {
+		left: 7%;
+		transform: translateY(-160px);
+	}
 
 
 
+	/* 2nd occurence on the left */
+	.timeline-container>div:nth-child(8)>.timeline-item.left {
+		top: 350px !important;
+	}
 
-/* below is an important code to align the text between the divider, use developer tool -> copy selector */
+	/* 3rd occurence on the left */
+	.timeline-container>div:nth-child(14)>.timeline-item.left {
+		top: 200px !important;
+	}
 
-/* 1st occurrence */
-.timeline-container>div:nth-child(3) {
-	margin-top: -50px !important;
-}
 
-/* 2nd occurrence */
-.timeline-container>div:nth-child(6) {
-	margin-top: 100px !important;
-	/* Moves it lower */
-}
+	/* 2nd occurence on the right*/
+	.timeline-container>div:nth-child(8)>.timeline-text.right {
+		transform: translateY(-20px);
+		/* Moves it upwards */
+		left: 10%;
+		top: 0 !important;
+	}
 
-/* 3rd occurrence */
-.timeline-container>div:nth-child(9) {
-	margin-top: 100px !important;
-	/* Moves it lower */
-}
+	/* 3rd occurence on the right*/
+	.timeline-container>div:nth-child(14)>.timeline-text.right {
+		transform: translateY(-20px);
+		/* Moves it upwards */
+		left: 10%;
+		top: 0 !important;
+	}
 
-/* 4th occurrence */
-.timeline-container>div:nth-child(12) {
-	margin-top: 50px !important;
-	/* Moves it lower */
-}
 
-/* 5th occurrence */
-.timeline-container>div:nth-child(15) {
-	margin-top: 100px !important;
-	/* Moves it lower */
-}
+
+
+	/* below is an important code to align the text between the divider, use developer tool -> copy selector */
+
+	/* 1st occurrence */
+	.timeline-container>div:nth-child(3) {
+		margin-top: -50px !important;
+	}
+
+	/* 2nd occurrence */
+	.timeline-container>div:nth-child(6) {
+		margin-top: 100px !important;
+		/* Moves it lower */
+	}
+
+	/* 3rd occurrence */
+	.timeline-container>div:nth-child(9) {
+		margin-top: 100px !important;
+		/* Moves it lower */
+	}
+
+	/* 4th occurrence */
+	.timeline-container>div:nth-child(12) {
+		margin-top: 50px !important;
+		/* Moves it lower */
+	}
+
+	/* 5th occurrence */
+	.timeline-container>div:nth-child(15) {
+		margin-top: 100px !important;
+		/* Moves it lower */
+	}
 
 
 
