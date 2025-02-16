@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.body.classList.remove("loading");
-    }, 3000); // 2500ms = 2.5 seconds
+    }, 1000); // 2500ms = 2.5 seconds
 });
 
 

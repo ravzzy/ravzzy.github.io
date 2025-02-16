@@ -433,7 +433,7 @@ p a:hover {
 	top: 60px !important;
 }
 
-/* first occurence on the left*/
+/* 2nd occurence on the left*/
 .timeline-container>div:nth-child(11)>.timeline-text.left {
 	transform: translateY(20px);
 	left: -10%;
@@ -1308,15 +1308,6 @@ footer>div:not(.socials) {
 		/* Prevents it from shrinking too much */
 	}
 
-
-
-	/*1st occurence of the timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(1) {
-		left: 20px;
-		/* Moves it 50px from the top */
-	}
-
-
 	/* this ensures that the right text is resizable in the container */
 	.timeline-text.right.in-view {
 		min-width: 200px !important;
@@ -1327,6 +1318,24 @@ footer>div:not(.socials) {
 		/* Expands within flex container */
 	}
 
+	/* this ensures that the left text is resizable in the container */
+	.timeline-text.left.in-view {
+		min-width: 200px !important;
+		/* Forces it to take space */
+		max-width: 100%;
+		/* Ensures it doesn’t get cut off */
+		flex: 1;
+		/* Expands within flex container */
+	}
+
+
+	/* 1st batch */
+
+	/*1st occurence of the timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(1) {
+		left: 20px;
+		/* Moves it 50px from the top */
+	}
 
 	/* first occurence of the right text*/
 	.timeline-container>div:nth-child(2)>.timeline-text.right {
@@ -1341,9 +1350,59 @@ footer>div:not(.socials) {
 		transform: translateY(-160px);
 	}
 
+	/* 1st occurrence text between timeline divider*/
+	.timeline-container>div:nth-child(3) {
+		margin-top: -50px !important;
+		font-size: 10px;
+		left: 7%;
+	}
+
+	/* 2nd batch */
+
+	/*2nd timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(4) {
+		left: 20px;
+		/* Moves it 50px from the top */
+	}
+
+	/* 2nd text box*/
+	.timeline-container>div:nth-child(5)>.timeline-item.right {
+		transform: translateY(350px);
+		left: 7%;
+	}
+
+	/* 2nd text title */
+	.timeline-container>div:nth-child(5)>.timeline-text.left {
+		transform: translateY(-450px);
+		font-size: 25px;
+		left: 20%;
+	}
+
+	/* 2nd text between timeline divider */
+	.timeline-container>div:nth-child(6) {
+		margin-top: 130px !important;
+		font-size: 10px;
+		left: 7%;
+		/* Moves it lower */
+	}
 
 
-	/* 2nd occurence on the left */
+	/* 3rd batch */
+
+	/*3rd timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(7) {
+		left: 20px;
+		/* Moves it 50px from the top */
+	}
+
+		/* 3rd text title*/
+		.timeline-container>div:nth-child(8)>.timeline-text.right {
+			transform: translateY(50px);
+			font-size: 25px;
+			left: -10%;
+		}
+
+	/* 2nd occurence on the left box */
 	.timeline-container>div:nth-child(8)>.timeline-item.left {
 		top: 350px !important;
 	}
@@ -1354,13 +1413,7 @@ footer>div:not(.socials) {
 	}
 
 
-	/* 2nd occurence on the right*/
-	.timeline-container>div:nth-child(8)>.timeline-text.right {
-		transform: translateY(-20px);
-		/* Moves it upwards */
-		left: 10%;
-		top: 0 !important;
-	}
+
 
 	/* 3rd occurence on the right*/
 	.timeline-container>div:nth-child(14)>.timeline-text.right {
@@ -1373,18 +1426,26 @@ footer>div:not(.socials) {
 
 
 
+
+	/* 2nd occurence on the right*/
+	.timeline-container>div:nth-child(11)>.timeline-item.right {
+		top: -200px !important;
+	}
+
+
+	/* 2nd occurence on the left*/
+	.timeline-container>div:nth-child(11)>.timeline-text.left {
+		transform: translateY(20px);
+		left: -10%;
+		top: 60px !important;
+	}
+
+
+
 	/* below is an important code to align the text between the divider, use developer tool -> copy selector */
 
-	/* 1st occurrence */
-	.timeline-container>div:nth-child(3) {
-		margin-top: -50px !important;
-	}
 
-	/* 2nd occurrence */
-	.timeline-container>div:nth-child(6) {
-		margin-top: 100px !important;
-		/* Moves it lower */
-	}
+
 
 	/* 3rd occurrence */
 	.timeline-container>div:nth-child(9) {
@@ -1487,14 +1548,15 @@ footer>div:not(.socials) {
 	}
 } */
 
-@media (orientation: landscape) {	/* Desktop */
+@media (orientation: landscape) {
+	/* Desktop */
 
 
-	.timeline-item.left{
+	.timeline-item.left {
 		max-width: 400px !important;
 	}
 
-	.timeline-item.right{
+	.timeline-item.right {
 		max-width: 400px !important;
 	}
 
