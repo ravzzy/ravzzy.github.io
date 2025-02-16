@@ -541,43 +541,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    function animateText(element) {
-        let textContent = element.textContent.trim();
-        let spans = "";
-
-        textContent.split("").forEach((letter, index) => {
-            spans += `<span style="
-                opacity: 0;
-                display: inline-block; /* Ensures letters align normally */
-                animation: letterFadeIn 0.8s ease-out ${index * 0.08}s forwards;">
-                ${letter === " " ? "&nbsp;" : letter}
-            </span>`;
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            let text = entry.target;
+            if (entry.isIntersecting) {
+                text.classList.add("in-view"); // Add effect when entering viewport
+            } else {
+                text.classList.remove("in-view"); // Remove effect when out of view
+            }
         });
+    }, { threshold: 0.3 }); // Trigger effect when 30% of the text is visible
 
-        element.innerHTML = spans; // Replace text with animated spans
-    }
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    animateText(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
-
-    document.querySelectorAll(".timeline-text.right").forEach((text) => {
-        observer.observe(text);
-    });
-	    document.querySelectorAll(".timeline-text.right").forEach((text) => {
+    document.querySelectorAll(".timeline-text.left, .timeline-text.right").forEach((text) => {
         observer.observe(text);
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -376,6 +376,8 @@ p a:hover {
 
 
 .timeline-text.left {
+	transition: color 2s ease-out, opacity 2s ease-out; /* Smooth transition */
+	opacity: 1;
 	align-self: center;
 	margin-right: auto;
 	margin-left: 0;
@@ -383,10 +385,17 @@ p a:hover {
 	text-align: right;
 	font-size: 36px;
 	font-weight: bold;
-	color: white;
+	color: black;
 	z-index: 3;
 	position: relative;
 }
+
+/* When the text is entering the viewport */
+.timeline-text.left.in-view {
+    color: white; /* Transition to yellow */
+    opacity: 1; /* Fully visible */
+}
+
 
 /* first occurence on the left*/
 .timeline-container>div:nth-child(5)>.timeline-text.left {
@@ -404,6 +413,10 @@ p a:hover {
 
 
 .timeline-text.right {
+
+
+    opacity: 1;
+    transition: color 2s ease-out, opacity 2s ease-out; /* Smooth transition */
 	align-self: center;
 	margin-left: auto;
 	margin-right: 0;
@@ -411,10 +424,18 @@ p a:hover {
 	text-align: left;
 	font-size: 36px;
 	font-weight: bold;
-	color: white;
+	color: black;
 	z-index: 3;
 	position: relative;
 }
+
+
+/* When the text is entering the viewport */
+.timeline-text.right.in-view {
+    color: white; /* Transition to yellow */
+    opacity: 1; /* Fully visible */
+}
+
 
 /* first occurence on the right*/
 .timeline-container>div:nth-child(2)>.timeline-text.right {
@@ -439,44 +460,6 @@ p a:hover {
 	left: 10%;
 	top: 0 !important;
 }
-
-
-.timeline-text.right.show {
-	opacity: 1;
-	/* Reveal the full text container */
-	transform: translateY(0);
-}
-
-.timeline-text.left.show {
-	opacity: 1;
-	/* Reveal the full text container */
-	transform: translateY(0);
-}
-
-@keyframes letterFadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(10px) scale(0.8);
-		/* Start slightly lower & smaller */
-		filter: blur(4px);
-		/* Blur effect for smooth fade */
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-		/* Normal size & position */
-		filter: blur(0);
-	}
-}
-
-.timeline-text.right span {
-	opacity: 0;
-	display: inline-block;
-	/* Fix stacking issue */
-	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
 
 /* 	Enable this for Debug log window
 #debug-log {
