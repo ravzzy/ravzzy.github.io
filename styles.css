@@ -517,7 +517,7 @@ p a:hover {
 	position: fixed;
 	/* Stays in place */
 	display: flex;
-	z-index: 21;
+	z-index: 4;
 	top: 8%;
 	left: -12%;
 	transform: scale(0.3);
@@ -741,13 +741,13 @@ nav a {
 }
 
 .sidebar {
-	width: 20em;
+	width: 22em;
 	height: 50vh;
 	position: fixed;
 	/*background-color: rgba(0, 0, 0, 0.592);*/
 	background-color: #e61618;
-	backdrop-filter: blur(30px);
-	opacity: 0.8;
+	backdrop-filter: blur(100px);
+	opacity: 1;
 	top: 0;
 	right: -40rem;
 	transition: right 0.5s;
@@ -1271,7 +1271,7 @@ footer>div:not(.socials) {
 
 	.logo-image {
 		transform: scale(0.2);
-		left: -45%;
+		left: -40%;
 		top: 3%;
 	}
 
