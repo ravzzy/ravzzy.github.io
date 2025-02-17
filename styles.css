@@ -772,12 +772,31 @@ nav a {
 }
 
 .menu-item {
-	text-align: center;
+    display: block;
+    width: 100%; /* Ensure it fills the sidebar */
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 0.3px solid white;
+	border-top: 0.3px solid white;
+
+}
+
+.menu-item a {
+    text-decoration: none; /* Removes underline */
+		color: white; /* Ensures text color is white (or your desired color) */
 }
 
 
+/* Active (tapped) effect */
+.menu-item:active,
+.menu-item.selected {  
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle highlight */
+}
+
+
+
 .menu-link {
-	font-size: 1.2rem;
+	font-size: 2rem;
 	font-weight: 800;
 	color: black;
 	position: relative;

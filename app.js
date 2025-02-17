@@ -631,9 +631,15 @@ window.addEventListener("scroll", function () {
 function adjustSidebarWidth() {
     let tickerWidth = document.querySelector(".Header-ticker").offsetWidth;
     let sidebar = document.querySelector(".sidebar");
-    
+
     if (sidebar) {
-        sidebar.style.width = `calc(100vw - ${tickerWidth}px)`;
+        let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
+        sidebar.style.width = sidebarWidth;
+
+        // Ensure menu items update width after sidebar adjustment
+        document.querySelectorAll(".menu-item").forEach(item => {
+            item.style.width = sidebarWidth;
+        });
     }
 }
 
