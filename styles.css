@@ -1494,11 +1494,11 @@ footer>div:not(.socials) {
 
 	.thin {
 		width: 300px;
-		margin-left: 40px;	
+		margin-left: 50px;	
 	}
 	.thin-jp {
 		width: 300px;
-		margin-left: 40px;	
+		margin-left: 50px;	
 	}
 
 
@@ -1508,9 +1508,14 @@ footer>div:not(.socials) {
 	}
 
 	footer>div:not(.socials) {
+		margin-left: 50px;
 		margin-inline: auto;
 		width: 100%;
 		font-size: 2rem;
+	}
+
+	.btn {
+		margin-left: 50px;
 	}
 
 	.hero-title {
