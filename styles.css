@@ -1308,6 +1308,14 @@ footer>div:not(.socials) {
 		/* Prevents it from shrinking too much */
 	}
 
+	.timeline-item.right {
+		width: 70% !important;
+		/* Ensures it resizes */
+		min-width: 250px !important;
+		/* Prevents it from shrinking too much */
+	}
+
+
 	/* this ensures that the right text is resizable in the container */
 	.timeline-text.right.in-view {
 		min-width: 200px !important;
@@ -1337,11 +1345,11 @@ footer>div:not(.socials) {
 		/* Moves it 50px from the top */
 	}
 
-	/* first occurence of the right text*/
+	/* first occurence of the title text*/
 	.timeline-container>div:nth-child(2)>.timeline-text.right {
 		transform: translateY(-150px);
 		font-size: 25px;
-		left: -7%;
+		left: -10%;
 	}
 
 	/* first occurence of the text box on the left*/
@@ -1367,15 +1375,15 @@ footer>div:not(.socials) {
 
 	/* 2nd text box*/
 	.timeline-container>div:nth-child(5)>.timeline-item.right {
-		transform: translateY(350px);
+		transform: translateY(300px);
 		left: 7%;
 	}
 
 	/* 2nd text title */
 	.timeline-container>div:nth-child(5)>.timeline-text.left {
-		transform: translateY(-450px);
+		transform: translateY(-550px);
 		font-size: 25px;
-		left: 20%;
+		left: 30%;
 	}
 
 	/* 2nd text between timeline divider */
