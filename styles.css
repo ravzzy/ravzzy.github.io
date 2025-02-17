@@ -1471,7 +1471,7 @@ footer>div:not(.socials) {
 	/* 5th text box */
 	.timeline-container>div:nth-child(14)>.timeline-item.left {
 		left: 7%;
-		transform: translateY(-150px);
+		transform: translateY(-120px);
 	}
 
 	/* 5th text between timeline divider */
@@ -1482,11 +1482,35 @@ footer>div:not(.socials) {
 		/* Moves it lower */
 	}
 
+	.fat {
+		margin-left: 30px;	
+		margin-bottom: 1em;
+		/* Adjust the space as needed */
+	}
+
+	.founder-name {
+		margin-left: 30px;	
+	}
+
+	.thin {
+		width: 300px;
+		margin-left: 30px;	
+	}
+	.thin-jp {
+		width: 300px;
+		margin-left: 30px;	
+	}
+
+
+	/* hide the 2nd vertical line */
+	body > div.container > section.final > div:nth-child(6) {
+		display: none !important;
+	}
 
 	footer>div:not(.socials) {
 		margin-inline: auto;
 		width: 100%;
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 
 	.hero-title {
@@ -1514,11 +1538,6 @@ footer>div:not(.socials) {
 	.page .right {
 		/* Correct way to target <div class="right"> inside .page */
 		margin-top: 5em;
-	}
-
-	.fat {
-		margin-bottom: 1em;
-		/* Adjust the space as needed */
 	}
 
 	.cards {
