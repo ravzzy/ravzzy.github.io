@@ -1488,8 +1488,9 @@ footer>div:not(.socials) {
 		/* Adjust the space as needed */
 	}
 
+	/* Adjust the space as needed for founder image */
 	body > div.container > section.final > div.dev > img {
-		margin-left: 20px;
+		margin-left: 30px;
 	}
 	.founder-name {
 		margin-left: 30px;	
@@ -1523,7 +1524,7 @@ footer>div:not(.socials) {
 
 	/* footer-message text */
 	body > div.container > section.final > footer > div.footer-message {
-		margin-left: 50px;	
+		margin-left: 30px;	
 	}
 
 	.hero-title {
@@ -1573,27 +1574,6 @@ footer>div:not(.socials) {
 	}
 }
 
-/*
-@media (width> 815px) {
-	.text-spin {
-		font-size: 7rem;
-	}
-}
-
-@media (width > 926px) {
-	footer>div:not(.socials) {
-		margin-inline: auto;
-		width: 100%;
-		max-width: 1600px;
-		font-size: 5rem;
-	}
-}
-
-@media (width > 1486px) {
-	footer>div:not(.socials) {
-		font-size: 5rem;
-	}
-} */
 
 @media (orientation: landscape) {
 	/* Desktop */
