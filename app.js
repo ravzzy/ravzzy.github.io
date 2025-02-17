@@ -573,13 +573,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateValues() {
 	  if (window.innerWidth <= 768) { // Mobile screen sizes
-		  initialFontSize = 12;
-		  minFontSize = 6;
+		  initialFontSize = 8;
+		  minFontSize = 4;
 		  initialPadding = 10;
 		  minPadding = 5;
 	  } else { // Desktop sizes
-		  initialFontSize = 24;
-		  minFontSize = 16;
+		  initialFontSize = 20;
+		  minFontSize = 12;
 		  initialPadding = 20;
 		  minPadding = 5;
 	  }

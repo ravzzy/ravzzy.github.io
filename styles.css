@@ -43,7 +43,7 @@ header {
 	background-color: white;
 	color: black;
 	padding: 20px;
-	font-size: 24px;
+	font-size: 20px;
 	width: 100%;
 	position: fixed;
 	top: 45px;
@@ -155,7 +155,7 @@ header {
 
 /* first occurence on the left*/
 .timeline-container>div:nth-child(2)>.timeline-item.left {
-	top: 20px !important;
+	top: 130px !important;
 	/* disables the transition of the first box, so it doesn't look weird on homepage */
 	opacity: 1;
 	/* Fully visible */
@@ -359,7 +359,7 @@ p a:hover {
 
 /* 1st occurrence */
 .timeline-container>div:nth-child(3) {
-	margin-top: -50px !important;
+	margin-top: 0px !important;
 }
 
 /* 2nd occurrence */
@@ -467,7 +467,7 @@ p a:hover {
 
 /* first occurence on the right*/
 .timeline-container>div:nth-child(2)>.timeline-text.right {
-	transform: translateY(-160px);
+	transform: translateY(-80px);
 	/* Moves it upwards */
 	left: 10%;
 	top: 0 !important;
@@ -518,7 +518,7 @@ p a:hover {
 	/* Stays in place */
 	display: flex;
 	z-index: 21;
-	top: 7%;
+	top: 8%;
 	left: -12%;
 	transform: scale(0.3);
 	opacity: 1;
@@ -1239,7 +1239,7 @@ footer>div:not(.socials) {
 
 	header {
 		padding: 20px;
-		font-size: 10px;
+		font-size: 8px;
 		width: 100%;
 		position: fixed;
 		top: 45px;
@@ -1356,7 +1356,7 @@ footer>div:not(.socials) {
 	/* first occurence of the text box on the left*/
 	.timeline-container>div:nth-child(2)>.timeline-item.left {
 		left: 7%;
-		transform: translateY(-80px);
+		transform: translateY(-200px);
 	}
 
 	/* 1st occurrence text between timeline divider*/
