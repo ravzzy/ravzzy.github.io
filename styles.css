@@ -1347,20 +1347,15 @@ footer>div:not(.socials) {
 
 	/* first occurence of the title text*/
 	.timeline-container>div:nth-child(2)>.timeline-text.right {
-		transform: translateX(-50%) translateY(-150px); /* Offset by half width */
+		transform: translateY(-150px);
 		font-size: 25px;
-		left: 50%; /* Move to center */
-		position: absolute; /* Ensure positioning works */
-		text-align: center; /* Align text inside */
-		width: max-content; /* Prevents it from stretching too much */
-
-
+		left: -11%;
 	}
 
 	/* first occurence of the text box on the left*/
 	.timeline-container>div:nth-child(2)>.timeline-item.left {
 		left: 7%;
-		transform: translateY(-130px);
+		transform: translateY(-160px);
 	}
 
 	/* 1st occurrence text between timeline divider*/
