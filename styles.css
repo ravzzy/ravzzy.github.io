@@ -1483,7 +1483,7 @@ footer>div:not(.socials) {
 	}
 
 	.fat {
-		margin-left: 30px;	
+		margin-left: 35px;	
 		margin-bottom: 1em;
 		/* Adjust the space as needed */
 	}
@@ -1494,11 +1494,11 @@ footer>div:not(.socials) {
 
 	.thin {
 		width: 300px;
-		margin-left: 30px;	
+		margin-left: 35px;	
 	}
 	.thin-jp {
 		width: 300px;
-		margin-left: 30px;	
+		margin-left: 35px;	
 	}
 
 
