@@ -10,6 +10,8 @@
 
 html {
 	scroll-behavior: smooth;
+	font-size: 8px;  /* Root font size */
+
 }
 
 
@@ -24,7 +26,7 @@ body {
 
 .Header-swimlane {
 	background-color: #e61618;
-	padding: 10px 0;
+	padding: 1vh 0;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -33,7 +35,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 45px;
+	height: 8vh;
 	z-index: 10;
 	/* Keep swimlane above the header */
 	transition: transform 0.3s ease-out;
@@ -42,11 +44,11 @@ body {
 header {
 	background-color: white;
 	color: black;
-	padding: 20px;
-	font-size: 20px;
+	padding: 2vh;
+	font-size: 2.5rem;
 	width: 100%;
 	position: fixed;
-	top: 45px;
+	top: 7vh;
 	left: 0;
 	z-index: 3;
 	/* Keep header below swimlane */
@@ -54,7 +56,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 80px;
+	height: 15vh;
 	transition: transform 0.3s ease-out;
 }
 
@@ -63,7 +65,7 @@ header {
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-	padding: 50px 0;
+	padding: 6vh 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -96,9 +98,9 @@ header {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
-	max-width: 800px;
+	max-width: 55vw;
 	position: relative;
-	margin-top: 150px;
+	margin-top: 30vh;
 }
 
 .timeline-wrapper {
@@ -106,7 +108,7 @@ header {
 	justify-content: space-between;
 	/* Proper spacing between left and right */
 	align-items: center;
-	gap: 20px;
+	gap: 1vw;
 	width: 100%;
 }
 
@@ -114,30 +116,28 @@ header {
 
 .timeline-item {
 	background: white;
-	padding: 20px;
-	margin: 20px 0;
-	border-radius: 5px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 1vw;
+	margin: 1vw 0;
+	border-radius: 0.5vw;
+	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	width: 100%;
 	text-align: center;
 	position: relative;
 	z-index: 3;
 	opacity: 0;
-	transform: translateY(20px);
+	transform: translateY(2vw);
 	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 
 .timeline-item.left {
-	left: -90px;
+	left: -11vw;
 	/* use this for horizontal alignment */
 	width: 60%;
-
-	/* Set a max width if necessary */
-	max-height: 800px;
-	padding: 20px;
+	max-height: 120vh;
+	padding: 1vw;
 	/* Adjust padding for spacing */
-	font-size: 18px;
+	font-size: 2.25rem;
 }
 
 .timeline-item.left,
@@ -153,9 +153,9 @@ header {
 }
 
 
-/* first occurence on the left*/
+/* first occurence of the box on the left*/
 .timeline-container>div:nth-child(2)>.timeline-item.left {
-	top: 130px !important;
+	top: 20vh !important;
 	/* disables the transition of the first box, so it doesn't look weird on homepage */
 	opacity: 1;
 	/* Fully visible */
@@ -165,21 +165,21 @@ header {
 	/* Disable transition */
 }
 
-/* 2nd occurence on the left */
+/* 2nd occurence of the box on the left */
 .timeline-container>div:nth-child(8)>.timeline-item.left {
-	top: 350px !important;
+	top: 60vh !important;
 }
 
-/* 3rd occurence on the left */
+/* 3rd occurence of the box on the left */
 .timeline-container>div:nth-child(14)>.timeline-item.left {
-	top: 200px !important;
+	top: 40vh !important;
 }
 
 
 
 .timeline-item.left h2 {
 	text-align: center;
-	font-size: 16px;
+	font-size: 2rem;
 	/* Adjust heading size */
 	font-weight: bold;
 	/* Optional: Adjust weight */
@@ -187,7 +187,7 @@ header {
 
 .timeline-item.left p {
 	text-align: center;
-	font-size: 11px;
+	font-size: 1.375rem;
 	/* Adjust paragraph size */
 	line-height: 1.5;
 	/* Improve readability */
@@ -195,7 +195,7 @@ header {
 
 .timeline-item.left img {
 	max-width: 100%;
-	max-height: 100px;
+	max-height: 30vh;
 	height: auto;
 	object-fit: contain;
 }
@@ -218,32 +218,31 @@ p a:hover {
 }
 
 .timeline-item.right {
-	left: 100px;
+	left: 13vw;
 	/* use this for horizontal alignment */
 	width: 60%;
 	/* Set a max width if necessary */
-	max-height: 800px;
-	padding: 20px;
+	max-height: 120vh;
+	padding: 1vw;
 	/* Adjust padding for spacing */
-	font-size: 18px;
+	font-size: 2rem;
 	/* Modify font size */
 }
 
 /* first occurence on the right*/
 .timeline-container>div:nth-child(5)>.timeline-item.right {
-	top: -150px !important;
+	top: -25vh !important;
 }
 
 /* 2nd occurence on the right*/
 .timeline-container>div:nth-child(11)>.timeline-item.right {
-	top: -200px !important;
+	top: -30vh !important;
 }
-
 
 
 .timeline-item.right h2 {
 	text-align: center;
-	font-size: 16px;
+	font-size: 2rem;
 	/* Adjust heading size */
 	font-weight: bold;
 	/* Optional: Adjust weight */
@@ -251,7 +250,7 @@ p a:hover {
 
 .timeline-item.right p {
 	text-align: center;
-	font-size: 11px;
+	font-size: 1.375rem;
 	/* Adjust paragraph size */
 	line-height: 1.5;
 	/* Improve readability */
@@ -259,7 +258,7 @@ p a:hover {
 
 .timeline-item.right img {
 	max-width: 100%;
-	max-height: 100px !important;
+	max-height: 30vh;
 	height: auto;
 	object-fit: contain;
 	display: block;
@@ -273,7 +272,7 @@ p a:hover {
 	position: absolute;
 	left: 50%;
 	top: -5%;
-	width: 0.5px;
+	width: 0.05vw;
 	height: 100%;
 	background-color: white;
 	transform: translateX(-50%);
@@ -282,10 +281,10 @@ p a:hover {
 
 .timeline-connector {
 	color: white;
-	font-size: 12px;
+	font-size: 1.5rem;
 	text-align: center;
 	width: 100%;
-	margin: 10px 0;
+	margin: 2vh 0;
 	opacity: 0;
 	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 	position: relative;
@@ -298,9 +297,9 @@ p a:hover {
 	position: fixed;
 	left: 0.3%;
 	top: 0;
-	width: 60px;
+	width: 3.5vw;
 	height: 100vh;
-	border-right: 1px solid #c2c2c2;
+	border-right: 0.01vw solid #c2c2c2;
 	background-color: white;
 	overflow: hidden;
 	display: flex;
@@ -316,7 +315,7 @@ p a:hover {
 	justify-content: flex-start;
 	/* Ensure smooth transition */
 	height: 200%;
-	gap: 670px;
+	gap: 47vw;
 	/* Adds spacing between text elements */
 	height: auto;
 	/* Ensures it scales dynamically */
@@ -324,7 +323,7 @@ p a:hover {
 }
 
 .ticker-text {
-	font-size: 18px;
+	font-size: 2rem;
 	color: black;
 	transform: rotate(-90deg);
 	white-space: nowrap;
@@ -359,30 +358,30 @@ p a:hover {
 
 /* 1st occurrence */
 .timeline-container>div:nth-child(3) {
-	margin-top: 0px !important;
+	margin-top: 0vh !important;
 }
 
 /* 2nd occurrence */
 .timeline-container>div:nth-child(6) {
-	margin-top: 100px !important;
+	margin-top: 20vh !important;
 	/* Moves it lower */
 }
 
 /* 3rd occurrence */
 .timeline-container>div:nth-child(9) {
-	margin-top: 100px !important;
+	margin-top: 20vh !important;
 	/* Moves it lower */
 }
 
 /* 4th occurrence */
 .timeline-container>div:nth-child(12) {
-	margin-top: 50px !important;
+	margin-top: 20vh !important;
 	/* Moves it lower */
 }
 
 /* 5th occurrence */
 .timeline-container>div:nth-child(15) {
-	margin-top: 100px !important;
+	margin-top: 20vh !important;
 	/* Moves it lower */
 }
 
@@ -395,11 +394,10 @@ p a:hover {
 	align-self: center;
 	margin-right: auto;
 	margin-left: 0;
-	font-size: 36px;
+	font-size: 4.5rem;
 	font-weight: bold;
 	color: black;
 	z-index: 3;
-
 }
 
 .timeline-text.right,
@@ -408,12 +406,15 @@ p a:hover {
 	/* Ensure it moves based on parent */
 	width: auto;
 	/* Let it adjust dynamically */
-	max-width: 50%;
+	max-width: 100%;
 	/* Prevent it from getting too large */
 	flex-grow: 1;
 	/* Allows resizing in flex containers */
 	text-align: left;
 	/* Ensures proper alignment */
+
+	white-space: nowrap;
+
 }
 
 
@@ -428,16 +429,16 @@ p a:hover {
 
 /* first occurence on the left*/
 .timeline-container>div:nth-child(5)>.timeline-text.left {
-	transform: translateY(-20px);
+	transform: translateY(0vh);
 	left: -10%;
-	top: 60px !important;
+	top: 10vh !important;
 }
 
 /* 2nd occurence on the left*/
 .timeline-container>div:nth-child(11)>.timeline-text.left {
-	transform: translateY(20px);
+	transform: translateY(0vh);
 	left: -10%;
-	top: 60px !important;
+	top: 10vh !important;
 }
 
 
@@ -449,7 +450,7 @@ p a:hover {
 	align-self: center;
 	margin-left: auto;
 	margin-right: 0;
-	font-size: 36px;
+	font-size: 4.5rem;
 	font-weight: bold;
 	color: black;
 	z-index: 3;
@@ -467,7 +468,7 @@ p a:hover {
 
 /* first occurence on the right*/
 .timeline-container>div:nth-child(2)>.timeline-text.right {
-	transform: translateY(-80px);
+	transform: translateY(-20vh);
 	/* Moves it upwards */
 	left: 10%;
 	top: 0 !important;
@@ -475,7 +476,7 @@ p a:hover {
 
 /* 2nd occurence on the right*/
 .timeline-container>div:nth-child(8)>.timeline-text.right {
-	transform: translateY(-20px);
+	transform: translateY(0vh);
 	/* Moves it upwards */
 	left: 10%;
 	top: 0 !important;
@@ -483,33 +484,16 @@ p a:hover {
 
 /* 3rd occurence on the right*/
 .timeline-container>div:nth-child(14)>.timeline-text.right {
-	transform: translateY(-20px);
+	transform: translateY(0vh);
 	/* Moves it upwards */
 	left: 10%;
 	top: 0 !important;
 }
 
-/* 	Enable this for Debug log window
-#debug-log {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	width: 300px;
-	height: 150px;
-	overflow-y: auto;
-	background: rgba(0, 0, 0, 0.8);
-	color: white;
-	padding: 10px;
-	border-radius: 5px;
-	font-size: 12px;
-	font-family: monospace;
-	z-index: 9999;
-}*/
-
 .logo-image {
-	width: 500px;
+	width: 40vw;
 	/* Adjust as needed */
-	height: 80px;
+	height: 20vh;
 	/* Adjust as needed */
 	background-image: url('images/rooting_research_transparent.png');
 	background-size: contain;
@@ -518,7 +502,7 @@ p a:hover {
 	/* Stays in place */
 	display: flex;
 	z-index: 4;
-	top: 8%;
+	top: 6%;
 	left: -12%;
 	transform: scale(0.3);
 	opacity: 1;
@@ -544,7 +528,7 @@ nav {
 }
 
 nav div {
-	font-size: 0.9em;
+	font-size: 1.5rem;
 	font-weight: 300;
 }
 
@@ -570,7 +554,7 @@ nav a {
 	/*background: rgba(255, 255, 255, 0.1); */
 	/* Transparent */
 	/* backdrop-filter: blur(10px); /* Glass effect */
-	padding: 10px 20px;
+	padding: 1.2vw 1.2vw;
 	display: flex;
 	justify-content: flex-end;
 	/* Moves everything to the right */
@@ -585,7 +569,7 @@ nav a {
 	padding: 0;
 	margin: 0;
 	display: flex;
-	gap: 20px;
+	gap: 0.1vw;
 }
 
 .nav-menu li {
@@ -599,8 +583,8 @@ nav a {
 	color: var(--nav-text-color) !important;
 	/* Ensure text color updates */
 	/*color: white;*/
-	font-size: 10px;
-	padding: 10px 15px;
+	font-size: 1.25rem;
+	padding: 0.7vw 1vw;
 	transition: background 0.3s, color 0.3s;
 }
 
@@ -625,9 +609,9 @@ nav a {
 	/*background: var(--nav-bg-color); /* Dynamic Background */
 	/*	backdrop-filter: blur(10px);*/
 	list-style: none;
-	padding: 10px 0;
-	min-width: 150px;
-	border-radius: 5px;
+	padding: 1.2vw 0;
+	min-width: 2vw;
+	border-radius: 0.5vw;
 }
 
 /* Show Dropdown on Hover */
@@ -642,7 +626,7 @@ nav a {
 
 .dropdown-menu a {
 	display: block;
-	padding: 10px 15px;
+	padding: 0.7vw 1.4vw;
 	color: var(--nav-text-color);
 	/*color: white;*/
 	transition: background 0.3s, color 0.3s;
@@ -746,7 +730,7 @@ nav a {
 	position: fixed;
 	/*background-color: rgba(0, 0, 0, 0.592);*/
 	background-color: #e61618;
-	backdrop-filter: blur(100px);
+	backdrop-filter: blur(20vh);
 	opacity: 1;
 	top: 0;
 	right: -40rem;
@@ -774,10 +758,10 @@ nav a {
 .menu-item {
     display: block;
     width: 100%; /* Ensure it fills the sidebar */
-    padding: 15px 0;
+    padding: 2vw 0;
     text-align: center;
-    border-bottom: 0.3px solid white;
-	border-top: 0.3px solid white;
+    border-bottom: 0.01vw solid white;
+	border-top: 0.01vw solid white;
 
 }
 
@@ -883,9 +867,9 @@ nav a {
 /*visibility: hidden;  /* Prevents interaction before animation starts */
 /*animation: fadeIn 1s ease-in-out 2s forwards; /* Delays visibility for 4s */
 /*transform: scale(0.7); /*reduces the size of the rotating circle logo */
-/* } */
+/* } 
 
-/* Fade-in animation */
+/* Fade-in animation *//*
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -898,12 +882,12 @@ nav a {
 
 	}
 }
-
+*/
 
 .designer-footer {
 
 	position: fixed;
-	bottom: 5px;
+	bottom: 1vh;
 	/* Adjust spacing from bottom */
 	right: 0%;
 	/* Adjust spacing from right */
@@ -921,17 +905,18 @@ section {
 
 .fat {
 	font-weight: 800;
-	font-size: 1.5rem;
+	font-size: 4rem;
 }
 
 .thin {
+
+	font-size : 2rem;
 	font-weight: 300;
-	font-size: 0.875 rem;
 }
 
 .thin-jp {
 	font-weight: 400;
-	font-size: 0.875 rem;
+	font-size: 2rem;
 }
 
 canvas {
@@ -1056,7 +1041,7 @@ body.loading .loader {
 }
 
 .loader img {
-	width: 7em;
+	width: 15rem;
 }
 
 .avatars {
@@ -1192,15 +1177,18 @@ footer>div:not(.socials) {
 	gap: 1em;
 }
 
+.socials a {
+	font-size: 1.5rem;
+}
 .btn {
 	margin-inline: auto;
 	color: white;
 	text-decoration: none;
 	border: 1px solid white;
-	/* padding: 0.35em 3em; */
-	padding-block: 0.35em;
+	padding: 0.5vw 1vw;
+	/*padding-block: 0.35em;*/
 	border-radius: 2em;
-	width: 200px;
+	width: 10vw;
 }
 
 .text-spin {
@@ -1290,7 +1278,7 @@ footer>div:not(.socials) {
 
 	.logo-image {
 		transform: scale(0.2);
-		left: -40%;
+		left: -32.5%;
 		top: 3%;
 	}
 
@@ -1605,16 +1593,15 @@ footer>div:not(.socials) {
 
 
 	.timeline-item.left {
-		max-width: 400px !important;
+		max-width: 32.5vw !important;
 	}
 
 	.timeline-item.right {
-		max-width: 400px !important;
+		max-width: 32.5vw !important;
 	}
 
-
 	.text-spin {
-		left: -100%;
+		left: -250%;
 		font-size: 8rem;
 	}
 
@@ -1663,35 +1650,6 @@ footer>div:not(.socials) {
 		text-align: right;
 	}
 
-	.page {
-		flex-direction: row;
-		width: 100%;
-		max-width: 1200px;
-		justify-content: space-between;
-		margin-inline: auto;
-		align-items: center;
-	}
-
-	.cards,
-	.roadmap>.title {
-		width: 100%;
-		max-width: 1200px;
-		margin-inline: auto;
-	}
-
-	/* .roadmap .title {} */
-
-	.avatars section,
-	.final .top {
-		width: 100%;
-		max-width: 1200px;
-		margin-inline: auto;
-	}
-
-	.fat {
-		font-weight: 400;
-		font-size: 1.75rem;
-	}
 
 	.left {
 		translate: 0 -50%;
@@ -1740,7 +1698,7 @@ footer>div:not(.socials) {
 	}
 
 	.avatars-marquee img {
-		width: 450px;
+		width: 20vw;
 	}
 
 	section>.title {

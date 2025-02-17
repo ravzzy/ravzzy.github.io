@@ -646,3 +646,4 @@ function adjustSidebarWidth() {
 // Run function on page load and window resize
 window.addEventListener("load", adjustSidebarWidth);
 window.addEventListener("resize", adjustSidebarWidth);
+
