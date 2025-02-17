@@ -1237,7 +1237,6 @@ footer>div:not(.socials) {
 		/* Ensures smooth vertical scrolling */
 	}
 
-
 	header {
 		padding: 20px;
 		font-size: 10px;
@@ -1299,6 +1298,8 @@ footer>div:not(.socials) {
 	.timeline-item.left {
 		max-width: 100% !important;
 		text-align: center;
+		max-height: 1000px;
+
 	}
 
 	.timeline-item.left {
@@ -1349,7 +1350,7 @@ footer>div:not(.socials) {
 	.timeline-container>div:nth-child(2)>.timeline-text.right {
 		transform: translateY(-150px);
 		font-size: 25px;
-		left: -11%;
+		left: -15%;
 	}
 
 	/* first occurence of the text box on the left*/
@@ -1373,17 +1374,17 @@ footer>div:not(.socials) {
 		/* Moves it 50px from the top */
 	}
 
+	/* 2nd text title */
+	.timeline-container>div:nth-child(5)>.timeline-text.left {
+			transform: translateY(-550px);
+			font-size: 25px;
+			left: 30%;
+	}
+	
 	/* 2nd text box*/
 	.timeline-container>div:nth-child(5)>.timeline-item.right {
 		transform: translateY(300px);
 		left: 7%;
-	}
-
-	/* 2nd text title */
-	.timeline-container>div:nth-child(5)>.timeline-text.left {
-		transform: translateY(-550px);
-		font-size: 25px;
-		left: 30%;
 	}
 
 	/* 2nd text between timeline divider */
@@ -1403,77 +1404,83 @@ footer>div:not(.socials) {
 		/* Moves it 50px from the top */
 	}
 
-		/* 3rd text title*/
-		.timeline-container>div:nth-child(8)>.timeline-text.right {
+	/* 3rd text title*/
+	.timeline-container>div:nth-child(8)>.timeline-text.right {
 			transform: translateY(50px);
 			font-size: 25px;
-			left: -10%;
-		}
+			left: -15%;
+	}
 
-	/* 2nd occurence on the left box */
+	/* 3rd text box */
 	.timeline-container>div:nth-child(8)>.timeline-item.left {
-		top: 350px !important;
+		left: 7%;
+		transform: translateY(-270px);
 	}
 
-	/* 3rd occurence on the left */
-	.timeline-container>div:nth-child(14)>.timeline-item.left {
-		top: 200px !important;
-	}
-
-
-
-
-	/* 3rd occurence on the right*/
-	.timeline-container>div:nth-child(14)>.timeline-text.right {
-		transform: translateY(-20px);
-		/* Moves it upwards */
-		left: 10%;
-		top: 0 !important;
-	}
-
-
-
-
-
-	/* 2nd occurence on the right*/
-	.timeline-container>div:nth-child(11)>.timeline-item.right {
-		top: -200px !important;
-	}
-
-
-	/* 2nd occurence on the left*/
-	.timeline-container>div:nth-child(11)>.timeline-text.left {
-		transform: translateY(20px);
-		left: -10%;
-		top: 60px !important;
-	}
-
-
-
-	/* below is an important code to align the text between the divider, use developer tool -> copy selector */
-
-
-
-
-	/* 3rd occurrence */
+	/* 3rd text between timeline divider */
 	.timeline-container>div:nth-child(9) {
-		margin-top: 100px !important;
-		/* Moves it lower */
+		margin-top: 130px !important;
+		font-size: 10px;
+		left: 7%;
+	}
+	
+	/* 4th batch */
+
+	/*4th timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(10) {
+		left: 20px;
+		/* Moves it 50px from the top */
 	}
 
-	/* 4th occurrence */
+	/* 4th text title*/
+	.timeline-container>div:nth-child(11)>.timeline-text.left {
+			transform: translateY(-700px);
+			font-size: 25px;
+			left: 30%;
+	}
+
+	/* 4th text box */
+	.timeline-container>div:nth-child(11)>.timeline-item.right {
+		transform: translateY(350px);
+		left: 7%;
+	}
+
+	/* 4th text between timeline divider */
 	.timeline-container>div:nth-child(12) {
-		margin-top: 50px !important;
+		margin-top: 130px !important;
+		font-size: 10px;
+		left: 7%;
 		/* Moves it lower */
 	}
 
-	/* 5th occurrence */
+	/* 5th batch */
+
+	/*5th timeline divider */
+	body>div.container>div.middle-section>div.timeline-container>div:nth-child(13) {
+		left: 20px;
+		/* Moves it 50px from the top */
+	}
+
+	/* 5th text title*/
+	.timeline-container>div:nth-child(14)>.timeline-text.right {
+			transform: translateY(50px);
+			font-size: 25px;
+			left: -8%;
+	}
+
+	/* 5th text box */
+	.timeline-container>div:nth-child(14)>.timeline-item.left {
+		left: 7%;
+		transform: translateY(-150px);
+	}
+
+	/* 5th text between timeline divider */
 	.timeline-container>div:nth-child(15) {
-		margin-top: 100px !important;
+		margin-top: 110px !important;
+		font-size: 10px;
+		left: 7%;
 		/* Moves it lower */
 	}
-
-
 
 
 	footer>div:not(.socials) {
