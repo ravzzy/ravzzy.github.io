@@ -370,12 +370,12 @@ function adjustTextColor() {
 	let currentSection = null;
 
 	// Detect the current section in view
-	sections.forEach(section => {
-		let rect = section.getBoundingClientRect();
-		if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-			currentSection = section;
-		}
-	});
+    sections.forEach(section => {
+        let rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {  // Checks if the section is in the viewport
+            currentSection = section;
+        }
+    });
 
 	if (!currentSection) {
 		console.error("❌ No section detected in view.");

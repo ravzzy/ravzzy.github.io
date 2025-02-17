@@ -530,8 +530,8 @@ p a:hover {
 /* Navbar container */
 
 :root {
-	--nav-bg-color: black;
-	--nav-text-color: white;
+	--nav-bg-color: white
+	--nav-text-color: black;
 	--nav-hover-color: rgba(255, 255, 255, 0.2);
 	--footer-text-color: black* Default color */
 		/* Default hover effect */
@@ -1246,7 +1246,7 @@ footer>div:not(.socials) {
 	}
 }
 
-@media (orientation :portrait) {
+@media (width < 1200px) {
 	/* Mobile */
 
 	body {
@@ -1622,6 +1622,16 @@ footer>div:not(.socials) {
 		display: none;
 	}
 
+	.menu-item {
+		display: none;
+	}
+	.menu-link {
+		display: none;
+	}
+
+	.sidebar {
+		display: none;
+	}
 	.socials {
 		flex-direction: row;
 	}
