@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.body.classList.remove("loading");
+		document.querySelector(".loader").style.display = "none"; // Hide loader
     }, 1000); // 2500ms = 2.5 seconds
 });
 
