@@ -626,3 +626,17 @@ window.addEventListener("scroll", function () {
 });
 
 
+//logic to calculate the width of the sidebar dynamically for all screen sizes
+
+function adjustSidebarWidth() {
+    let tickerWidth = document.querySelector(".Header-ticker").offsetWidth;
+    let sidebar = document.querySelector(".sidebar");
+    
+    if (sidebar) {
+        sidebar.style.width = `calc(100vw - ${tickerWidth}px)`;
+    }
+}
+
+// Run function on page load and window resize
+window.addEventListener("load", adjustSidebarWidth);
+window.addEventListener("resize", adjustSidebarWidth);

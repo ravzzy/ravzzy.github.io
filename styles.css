@@ -741,7 +741,7 @@ nav a {
 }
 
 .sidebar {
-	width: 22em;
+	/*width: 22em; logic moves to js script */
 	height: 50vh;
 	position: fixed;
 	/*background-color: rgba(0, 0, 0, 0.592);*/
@@ -1227,7 +1227,7 @@ footer>div:not(.socials) {
 	}
 }
 
-@media (width < 1200px) {
+@media (orientation :portrait) {
 	/* Mobile */
 
 	body {
