@@ -134,7 +134,6 @@ header {
 	left: -11vw;
 	/* use this for horizontal alignment */
 	width: 60%;
-	max-height: 120vh;
 	padding: 1vw;
 	/* Adjust padding for spacing */
 	font-size: 2.25rem;
@@ -145,6 +144,7 @@ header {
 	flex-grow: 1;
 	/* Allows it to expand */
 	max-width: 100%;
+	max-height: 150vh;
 	/* Prevents cutting off on smaller screens */
 	width: auto !important;
 	/* Prevents restrictions */
@@ -221,8 +221,6 @@ p a:hover {
 	left: 13vw;
 	/* use this for horizontal alignment */
 	width: 60%;
-	/* Set a max width if necessary */
-	max-height: 120vh;
 	padding: 1vw;
 	/* Adjust padding for spacing */
 	font-size: 2rem;
@@ -644,8 +642,8 @@ nav a {
 
 /* Hamburger Menu for Mobile*/
 .hamburger-menu {
-	width: 2rem;
-	height: 2rem;
+	width: 4rem;
+	height: 4rem;
 	position: fixed;
 	top: 5rem;
 	right: 5rem;
@@ -733,7 +731,7 @@ nav a {
 	backdrop-filter: blur(20vh);
 	opacity: 1;
 	top: 0;
-	right: -40rem;
+	right: -50rem;
 	transition: right 0.5s;
 	z-index: 5;
 }
@@ -780,7 +778,7 @@ nav a {
 
 
 .menu-link {
-	font-size: 2rem;
+	font-size: 4rem;
 	font-weight: 800;
 	color: black;
 	position: relative;
@@ -1245,23 +1243,12 @@ footer>div:not(.socials) {
 	}
 
 	header {
-		padding: 20px;
-		font-size: 8px;
-		width: 100%;
-		position: fixed;
-		top: 45px;
-		left: 0;
-		z-index: 3;
-		height: 80px;
-	}
-
-	header h1 {
-		margin-top: 35px;
+		font-size: 1rem;
+		height: 10vh;
 	}
 
 	.hamburger-menu {
 		top: 1%;
-		right: 10%;
 		z-index: 15;
 	}
 
@@ -1277,9 +1264,9 @@ footer>div:not(.socials) {
 
 
 	.logo-image {
-		transform: scale(0.2);
-		left: -32.5%;
-		top: 3%;
+		transform: scale(0.5);
+		left: 2%;
+		top: 4%;
 	}
 
 	.navbar {
@@ -1288,10 +1275,13 @@ footer>div:not(.socials) {
 	}
 
 	.Header-ticker {
-		width: 40px;
+		width: 8vw;
 
 	}
 
+	.ticker-wrapper {
+		gap: 95vh;
+	}
 	/* below 3 fixes ensures that the right text and left box can co-exist */
 
 	.timeline-wrapper {
@@ -1305,28 +1295,26 @@ footer>div:not(.socials) {
 	.timeline-item.left {
 		max-width: 100% !important;
 		text-align: center;
-		max-height: 1000px;
-
 	}
 
 	.timeline-item.left {
 		width: 70% !important;
 		/* Ensures it resizes */
-		min-width: 250px !important;
+		min-width: 70vw !important;
 		/* Prevents it from shrinking too much */
 	}
 
 	.timeline-item.right {
 		width: 70% !important;
 		/* Ensures it resizes */
-		min-width: 250px !important;
+		min-width: 70vw !important;
 		/* Prevents it from shrinking too much */
 	}
 
 
 	/* this ensures that the right text is resizable in the container */
 	.timeline-text.right.in-view {
-		min-width: 200px !important;
+		min-width: 40vw !important;
 		/* Forces it to take space */
 		max-width: 100%;
 		/* Ensures it doesn’t get cut off */
@@ -1336,7 +1324,7 @@ footer>div:not(.socials) {
 
 	/* this ensures that the left text is resizable in the container */
 	.timeline-text.left.in-view {
-		min-width: 200px !important;
+		min-width: 40vw !important;
 		/* Forces it to take space */
 		max-width: 100%;
 		/* Ensures it doesn’t get cut off */
@@ -1349,27 +1337,27 @@ footer>div:not(.socials) {
 
 	/*1st occurence of the timeline divider */
 	body>div.container>div.middle-section>div.timeline-container>div:nth-child(1) {
-		left: 20px;
+		left: -20%;
 		/* Moves it 50px from the top */
 	}
 
 	/* first occurence of the title text*/
 	.timeline-container>div:nth-child(2)>.timeline-text.right {
-		transform: translateY(-50px);
-		font-size: 25px;
+		transform: translateY(-350%);
+		font-size: 3rem;
 		left: -15%;
 	}
 
 	/* first occurence of the text box on the left*/
 	.timeline-container>div:nth-child(2)>.timeline-item.left {
 		left: 7%;
-		transform: translateY(-200px);
+		transform: translateY(-50%);
 	}
 
 	/* 1st occurrence text between timeline divider*/
 	.timeline-container>div:nth-child(3) {
-		margin-top: -30px !important;
-		font-size: 10px;
+		margin-top: -20% !important;
+		font-size: 1rem;
 		left: 7%;
 	}
 
@@ -1377,15 +1365,15 @@ footer>div:not(.socials) {
 
 	/*2nd timeline divider */
 	body>div.container>div.middle-section>div.timeline-container>div:nth-child(4) {
-		left: 20px;
+		left: -20%;
 		/* Moves it 50px from the top */
 	}
 
 	/* 2nd text title */
 	.timeline-container>div:nth-child(5)>.timeline-text.left {
-			transform: translateY(-550px);
-			font-size: 25px;
-			left: 30%;
+			transform: translateY(-1600%);
+			font-size: 3rem;
+			left: 20%;
 	}
 	
 	/* 2nd text box*/
@@ -1407,7 +1395,7 @@ footer>div:not(.socials) {
 
 	/*3rd timeline divider */
 	body>div.container>div.middle-section>div.timeline-container>div:nth-child(7) {
-		left: 20px;
+		left: -20%;
 		/* Moves it 50px from the top */
 	}
 
@@ -1435,15 +1423,15 @@ footer>div:not(.socials) {
 
 	/*4th timeline divider */
 	body>div.container>div.middle-section>div.timeline-container>div:nth-child(10) {
-		left: 20px;
+		left: -20%;
 		/* Moves it 50px from the top */
 	}
 
 	/* 4th text title*/
 	.timeline-container>div:nth-child(11)>.timeline-text.left {
-			transform: translateY(-700px);
+			transform: translateY(-600px);
 			font-size: 25px;
-			left: 30%;
+			left: 20%;
 	}
 
 	/* 4th text box */
@@ -1464,7 +1452,7 @@ footer>div:not(.socials) {
 
 	/*5th timeline divider */
 	body>div.container>div.middle-section>div.timeline-container>div:nth-child(13) {
-		left: 20px;
+		left: -20%;
 		/* Moves it 50px from the top */
 	}
 
@@ -1472,7 +1460,7 @@ footer>div:not(.socials) {
 	.timeline-container>div:nth-child(14)>.timeline-text.right {
 			transform: translateY(50px);
 			font-size: 25px;
-			left: -8%;
+			left: 5%;
 	}
 
 	/* 5th text box */
@@ -1483,7 +1471,7 @@ footer>div:not(.socials) {
 
 	/* 5th text between timeline divider */
 	.timeline-container>div:nth-child(15) {
-		margin-top: 110px !important;
+		margin-top: 150px !important;
 		font-size: 10px;
 		left: 7%;
 		/* Moves it lower */
@@ -1526,7 +1514,10 @@ footer>div:not(.socials) {
 
 
 	.btn {
-		margin-left: 70px;
+		margin-left: 50%;
+		padding: 1vw 3vw;
+		width: 25vw;
+		
 	}
 
 	/* footer-message text */
@@ -1585,6 +1576,7 @@ footer>div:not(.socials) {
 		display: none !important;
 		/* Hides the contact us form */
 	}
+
 }
 
 
