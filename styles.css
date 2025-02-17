@@ -1527,6 +1527,12 @@ footer>div:not(.socials) {
 		margin-left: 30px;	
 	}
 
+	body > div.container > section.final > footer > p {
+		margin-bottom: 20px;
+		margin-left: 30px;
+		font-size: 8px;
+	}
+
 	.hero-title {
 		font-size: 3rem;
 		/* Adjust large text */
