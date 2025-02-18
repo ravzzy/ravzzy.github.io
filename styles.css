@@ -1176,15 +1176,13 @@ footer>div:not(.socials) {
 	gap: 1em;
 }
 
-.socials a {
-	font-size: 1.5rem;
-}
+
 .btn {
 	margin-inline: auto;
 	color: white;
 	text-decoration: none;
 	border: 1px solid white;
-	padding: 0.5vw 1vw;
+    padding: 8px 12px; /* Button padding proportional to viewport width */
 	/*padding-block: 0.35em;*/
 	border-radius: 2em;
 	width: 10vw;
@@ -1262,7 +1260,6 @@ footer>div:not(.socials) {
 		visibility: visible !important;
 	}
 
-
 	.logo-image {
 		transform: scale(0.5);
 		left: 2%;
@@ -1283,40 +1280,51 @@ footer>div:not(.socials) {
 		gap: 95vh;
 	}
 
-	.timeline-item.left img {
+	.timeline-item.left img { /* Adjust the image size - check js script */
 		transform: scale(0.7);
 	}
 	
-	.timeline-item.right img {
+	.timeline-item.right img { /* Adjust the image size - check js script */
 		transform: scale(0.7);
 	}
 	
-
-	.fat {
-		margin-left: 40px;	
+	.fat { /* founder name */
+		font-size: 2rem;
+		position: relative; /* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
 		margin-bottom: 1em;
 		/* Adjust the space as needed */
 	}
 
 	/* Adjust the space as needed for founder image */
-	body > div.container > section.final > div.dev > img {
-		margin-left: 30px;
-	}
+	.dev img {
+		position: relative; /* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+		}
+
 	.founder-name {
-		margin-left: 30px;	
-	}
+		position: relative; /* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;	}
 
 	.thin {
+		position: relative; /* Set the parent to relative to enable positioning */
 		width: 300px;
-		margin-left: 50px;	
-	}
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+		}
+
 	.thin-jp {
+		position: relative; /* Set the parent to relative to enable positioning */
 		width: 300px;
-		margin-left: 50px;	
-	}
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+		}
 
 
-	/* hide the 2nd vertical line */
+	/* hide the 2nd vertical line in mobile view */
 	body > div.container > section.final > div:nth-child(6) {
 		display: none !important;
 	}
@@ -1327,22 +1335,22 @@ footer>div:not(.socials) {
 		font-size: 2rem;
 	}
 
-
 	.btn {
-		margin-left: 50%;
-		padding: 1vw 3vw;
-		width: 25vw;
-		
+		padding: 1vw 4vw;
+		width:40%;
 	}
-
 	/* footer-message text */
-	body > div.container > section.final > footer > div.footer-message {
-		margin-left: 30px;	
-	}
+	.footer-message {
+		position: relative; /* Set the parent to relative to enable positioning */
+		left: 52% !important;
+		transform: translateX(-50%) !important;
+		}
 
 	body > div.container > section.final > footer > p {
+		position: relative; /* Set the parent to relative to enable positioning */
 		margin-bottom: 20px;
-		margin-left: 30px;
+		left: 52% !important;
+		transform: translateX(-50%) !important;
 		font-size: 8px;
 	}
 
