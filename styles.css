@@ -56,7 +56,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 15vh;
+	height: 11vh;
 	transition: transform 0.3s ease-out;
 }
 
@@ -489,9 +489,9 @@ p a:hover {
 }
 
 .logo-image {
-	width: 40vw;
+	width: 30vw;
 	/* Adjust as needed */
-	height: 20vh;
+	height: 15vh;
 	/* Adjust as needed */
 	background-image: url('images/rooting_research_transparent.png');
 	background-size: contain;
@@ -500,8 +500,8 @@ p a:hover {
 	/* Stays in place */
 	display: flex;
 	z-index: 4;
-	top: 6%;
-	left: -12%;
+	top: 6.5%;
+	left: -5%;
 	transform: scale(0.3);
 	opacity: 1;
 }
