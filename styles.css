@@ -1254,9 +1254,14 @@ footer>div:not(.socials) {
 		/* Ensures smooth vertical scrolling */
 	}
 
+	.Header-swimlane {
+		height: 6vh;
+	}
+	
 	header {
+		top: 5vh;
 		font-size: 1rem;
-		height: 10vh;
+		height: 13vh;
 	}
 
 	/* hide the cross button */
@@ -1270,9 +1275,9 @@ footer>div:not(.socials) {
 	}
 
 	.logo-image {
-		transform: scale(0.3);
-		left: 0%;
-		top: 2%;
+		transform: scale(0.6);
+		top: 3%;
+		left: 2%;
 	}
 
 	.navbar {

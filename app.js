@@ -858,7 +858,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
         });
 
         // Automatically stop shuffling after 0.3 seconds
-        shuffleTimeout = setTimeout(stopShuffling, 300);
+        shuffleTimeout = setTimeout(stopShuffling, 400);
     }
 
     function stopShuffling() {
@@ -881,7 +881,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
                 clearTimeout(visibilityTimeout); // Prevent duplicate triggers
                 visibilityTimeout = setTimeout(() => {
                     startShuffling(); // Run animation after 1 second
-                }, 500);
+                }, 1000);
             }
         });
     }, { threshold: 0.5 }); // Start when at least 50% visible
