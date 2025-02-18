@@ -578,7 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		  initialPadding = 10;
 		  minPadding = 5;
 	  } else { // Desktop sizes
-		  initialFontSize = 20;
+		  initialFontSize = 16;
 		  minFontSize = 12;
 		  initialPadding = 20;
 		  minPadding = 5;
