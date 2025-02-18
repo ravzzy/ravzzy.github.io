@@ -881,7 +881,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
                 clearTimeout(visibilityTimeout); // Prevent duplicate triggers
                 visibilityTimeout = setTimeout(() => {
                     startShuffling(); // Run animation after 1 second
-                }, 1000);
+                }, 500);
             }
         });
     }, { threshold: 0.5 }); // Start when at least 50% visible

@@ -386,7 +386,7 @@ p a:hover {
 
 
 .timeline-text.left {
-	transition: color 2s ease-out, opacity 2s ease-out;
+	transition: color 1s ease-out, opacity 1s ease-out;
 	/* Smooth transition */
 	opacity: 0.5;
 	align-self: center;
@@ -443,7 +443,7 @@ p a:hover {
 .timeline-text.right {
 
 	opacity: 0.5;
-	transition: color 2s ease-out, opacity 2s ease-out;
+	transition: color 1s ease-out, opacity 1s ease-out;
 	/* Smooth transition */
 	align-self: center;
 	margin-left: auto;
@@ -1344,9 +1344,18 @@ footer>div:not(.socials) {
 		font-size: 2rem;
 	}
 
+	.socials {
+		display: flex;
+		flex-direction: column; /* Stack buttons vertically */
+		align-items: center; /* Center buttons */
+		gap: 10px; /* Add spacing between buttons */
+	}
+
 	.btn {
 		padding: 1vw 4vw;
 		width:40%;
+		text-align: center;
+
 	}
 	/* footer-message text */
 	.footer-message {
