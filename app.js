@@ -385,20 +385,20 @@ function adjustTextColor() {
 	// Get computed background color of the section
 	const bgColor = window.getComputedStyle(currentSection).backgroundColor;
 	//logMessage("🎨 Detected Section Background Color: " + bgColor);
-	console.log("🎨 Detected Section Background Color: " + bgColor);
+	//console.log("🎨 Detected Section Background Color: " + bgColor);
 
 	// Convert RGBA to brightness
 	function getBrightness(rgba) {
 		let match = rgba.match(/\d+(\.\d+)?/g);
 		if (!match || match.length < 3) {
 			//logMessage("❌ Failed to extract RGB values!");
-			console.log("❌ Failed to extract RGB values!");
+			//console.log("❌ Failed to extract RGB values!");
 			return 255;
 		}
 
 		let [r, g, b, a = 1] = match.map(Number);
 		//logMessage(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
-		console.log(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
+		//console.log(`🔍 Extracted RGBA: R=${r}, G=${g}, B=${b}, A=${a}`);
 
 
 		// Blend with white if transparent
@@ -408,7 +408,7 @@ function adjustTextColor() {
 
 		let brightness = (blendedR * 299 + blendedG * 587 + blendedB * 114) / 1000;
 		//logMessage(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
-		console.log(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
+		//console.log(`🔆 Corrected Brightness: ${brightness} (0 = black, 255 = white)`);
 		return brightness;
 	}
 
@@ -417,17 +417,17 @@ function adjustTextColor() {
 	// Change menu link text color
 	menuLinks.forEach(link => {
 		link.style.color = brightness < 150 ? "white" : "black";
-		console.log("✅ Updated menu link text color:", link.style.color);
+		//console.log("✅ Updated menu link text color:", link.style.color);
 	});
 
 	// Change hamburger menu lines (X icon inside menu)
 	menuLines.forEach(line => {
 		line.style.backgroundColor = brightness < 150 ? "white" : "black";
-		console.log("✅ Updated hamburger menu lines:", line.style.color);
+		//console.log("✅ Updated hamburger menu lines:", line.style.color);
 	});
 
 
-	console.log("Current Navbar Background Color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
+	//console.log("Current Navbar Background Color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
 	// ✅ Update CSS Variables Instead of Inline Styles
 	document.documentElement.style.setProperty("--nav-bg-color", brightness < 150 ? "white" : "black");
 	document.documentElement.style.setProperty("--nav-text-color", brightness < 150 ? "black" : "white");
@@ -436,21 +436,21 @@ function adjustTextColor() {
 	// ✅ Update CSS Variable for Footer Text Color
 	document.documentElement.style.setProperty("--footer-text-color", brightness < 150 ? "white" : "black");
 
-	console.log("Updated --nav-bg-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
-	console.log("Updated --nav-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-text-color"));
-	console.log("Updated --nav-hover-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-hover-color"));
-	console.log("Updated --footer-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--footer-text-color"));
+	//console.log("Updated --nav-bg-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-bg-color"));
+	//console.log("Updated --nav-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-text-color"));
+	//console.log("Updated --nav-hover-color:", getComputedStyle(document.documentElement).getPropertyValue("--nav-hover-color"));
+	//console.log("Updated --footer-text-color:", getComputedStyle(document.documentElement).getPropertyValue("--footer-text-color"));
 
 	// ✅ Apply to `.nav-menu a`
 	navLinks.forEach(link => {
 		link.style.color = "var(--nav-text-color)"; // Use CSS variable
-		console.log("✅ Updated Navbar Text Color:", link.style.color);
+		//console.log("✅ Updated Navbar Text Color:", link.style.color);
 	});
 
 	// Change close button (X) when sidebar is open
 	if (document.querySelector(".container").classList.contains("change")) {
 		hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
-		console.log("✅ Updated ✖ icon colour:", hamburgerMenu.style.color);
+		//("✅ Updated ✖ icon colour:", hamburgerMenu.style.color);
 
 	}
 }
@@ -647,3 +647,102 @@ function adjustSidebarWidth() {
 window.addEventListener("load", adjustSidebarWidth);
 window.addEventListener("resize", adjustSidebarWidth);
 
+// This is God's code - fixes the bloody alignment for mobile view
+document.addEventListener("DOMContentLoaded", function () {
+    const ELEMENT_GAP_LOOP = 10; // Constant gap within a single loop
+    const ELEMENT_GAP_BETWEEN_LOOPS = 20; // Larger gap before the next loop starts
+    const START_Y = -100; // Adjust for initial vertical position
+
+    //console.log("ELEMENT_GAP_LOOP: " + ELEMENT_GAP_LOOP);
+    //console.log("ELEMENT_GAP_BETWEEN_LOOPS: " + ELEMENT_GAP_BETWEEN_LOOPS);
+    //console.log("START_Y: " + START_Y);
+
+    function alignTimeline() {
+        if (window.innerWidth >= 1200) return; // Stop execution for desktops
+
+        const timelineContainer = document.querySelector(".timeline-container");
+        const timelineTexts = [...timelineContainer.querySelectorAll(".timeline-text")];
+        const timelineItems = [...timelineContainer.querySelectorAll(".timeline-item")];
+        const timelineConnectors = [...timelineContainer.querySelectorAll(".timeline-connector")];
+        let currentBottom = START_Y; // Use bottom position for calculations
+        //console.log("currentBottom: " + currentBottom);
+        let lastBottom = currentBottom;
+
+        timelineTexts.forEach((text, index) => {
+            //console.log("text.offsetHeight: " + text.offsetHeight);
+
+            let textHeight = text.getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+            //console.log("textHeight: " + textHeight);
+
+            // Place text using bottom position
+            text.style.cssText = `
+                position: absolute !important;
+                top: ${currentBottom}px !important;
+                left: 55% !important;
+                transform: translateX(-50%) !important;
+                width: 80vw !important;
+                max-width: 100vw !important;
+                text-align: center !important;
+            `;
+            currentBottom += textHeight; // Update bottom after the text
+            //console.log("currentBottom after text: " + currentBottom);
+
+            if (timelineItems[index]) {
+                //console.log(timelineItems[index] + ".offsetHeight: " + timelineItems[index].offsetHeight);
+
+                let itemHeight = timelineItems[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+                //console.log("itemHeight: " + itemHeight);
+
+                // Place item using bottom position
+                timelineItems[index].style.cssText = `
+                    position: absolute !important;
+                    font-size: 1.5rem !important;
+                    top: ${currentBottom}px !important;
+                    left: 55% !important;
+                    transform: translateX(-50%) !important;
+                    width: 70vw !important;
+                    min-width: 70vw !important;
+                    max-width: 70vw !important;
+                `;
+                currentBottom += itemHeight; // Update bottom after the item
+                //console.log("currentBottom after item: " + currentBottom);
+            }
+
+            if (timelineConnectors[index]) {
+                let connectorHeight = timelineConnectors[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+                //console.log(timelineConnectors[index] + ".offsetHeight: " + timelineConnectors[index].offsetHeight);
+
+                // Remove any inherited margin-top by explicitly setting it to 0 and apply custom styles
+                timelineConnectors[index].style.cssText = `
+                    position: absolute !important;
+                    top: ${currentBottom}px !important;
+                    //background-color: green !important;
+                    left: 50% !important;
+                    font-size: 1rem !important;
+                    transform: translateX(-50%) !important;
+                    text-align: center !important;
+                    opacity: 1 !important;
+                    margin-top: 0 !important; /* Ensure no margin-top is inherited */
+                `;
+                currentBottom += connectorHeight; // Update bottom after the connector
+                //console.log("currentBottom after connector: " + currentBottom);
+            }
+
+            lastBottom = currentBottom; // Store last bottom position
+            //console.log("lastBottom after this iteration: " + lastBottom);
+
+            // After completing the iteration, add a larger gap between loops
+            currentBottom += ELEMENT_GAP_BETWEEN_LOOPS;
+            //console.log("currentBottom after adding gap between loops: " + currentBottom);
+        });
+
+        // Adjust container height dynamically
+        timelineContainer.style.cssText = `
+            height: ${lastBottom + 50}px !important;
+            position: relative !important;
+        `;
+    }
+
+    alignTimeline();
+    window.addEventListener("resize", alignTimeline);
+});

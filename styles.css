@@ -227,7 +227,7 @@ p a:hover {
 	/* Modify font size */
 }
 
-/* first occurence on the right*/
+/* first occurence on the right */
 .timeline-container>div:nth-child(5)>.timeline-item.right {
 	top: -25vh !important;
 }
@@ -1236,6 +1236,10 @@ footer>div:not(.socials) {
 @media (width < 1200px) {
 	/* Mobile */
 
+	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
+	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
+
+
 	body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
@@ -1283,200 +1287,15 @@ footer>div:not(.socials) {
 	.ticker-wrapper {
 		gap: 95vh;
 	}
-	/* below 3 fixes ensures that the right text and left box can co-exist */
 
-	.timeline-wrapper {
-		flex-direction: column-reverse;
-		/* Ensures text appears above */
-		align-items: center;
-		/* Centers items */
-	}
-
-	.timeline-text.right,
-	.timeline-item.left {
-		max-width: 100% !important;
-		text-align: center;
-	}
-
-	.timeline-item.left {
-		width: 70% !important;
-		/* Ensures it resizes */
-		min-width: 70vw !important;
-		/* Prevents it from shrinking too much */
-	}
-
-	.timeline-item.right {
-		width: 70% !important;
-		/* Ensures it resizes */
-		min-width: 70vw !important;
-		/* Prevents it from shrinking too much */
-	}
-
-
-	/* this ensures that the right text is resizable in the container */
-	.timeline-text.right.in-view {
-		min-width: 40vw !important;
-		/* Forces it to take space */
-		max-width: 100%;
-		/* Ensures it doesn’t get cut off */
-		flex: 1;
-		/* Expands within flex container */
-	}
-
-	/* this ensures that the left text is resizable in the container */
-	.timeline-text.left.in-view {
-		min-width: 40vw !important;
-		/* Forces it to take space */
-		max-width: 100%;
-		/* Ensures it doesn’t get cut off */
-		flex: 1;
-		/* Expands within flex container */
-	}
-
-
-	/* 1st batch */
-
-	/*1st occurence of the timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(1) {
-		left: -20%;
-		/* Moves it 50px from the top */
-	}
-
-	/* first occurence of the title text*/
-	.timeline-container>div:nth-child(2)>.timeline-text.right {
-		transform: translateY(-350%);
-		font-size: 3rem;
-		left: -15%;
-	}
-
-	/* first occurence of the text box on the left*/
-	.timeline-container>div:nth-child(2)>.timeline-item.left {
-		left: 7%;
-		transform: translateY(-50%);
-	}
-
-	/* 1st occurrence text between timeline divider*/
-	.timeline-container>div:nth-child(3) {
-		margin-top: -20% !important;
-		font-size: 1rem;
-		left: 7%;
-	}
-
-	/* 2nd batch */
-
-	/*2nd timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(4) {
-		left: -20%;
-		/* Moves it 50px from the top */
-	}
-
-	/* 2nd text title */
-	.timeline-container>div:nth-child(5)>.timeline-text.left {
-			transform: translateY(-1600%);
-			font-size: 3rem;
-			left: 20%;
+	.timeline-item.left img {
+		transform: scale(0.7);
 	}
 	
-	/* 2nd text box*/
-	.timeline-container>div:nth-child(5)>.timeline-item.right {
-		transform: translateY(300px);
-		left: 7%;
-	}
-
-	/* 2nd text between timeline divider */
-	.timeline-container>div:nth-child(6) {
-		margin-top: 130px !important;
-		font-size: 10px;
-		left: 7%;
-		/* Moves it lower */
-	}
-
-
-	/* 3rd batch */
-
-	/*3rd timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(7) {
-		left: -20%;
-		/* Moves it 50px from the top */
-	}
-
-	/* 3rd text title*/
-	.timeline-container>div:nth-child(8)>.timeline-text.right {
-			transform: translateY(50px);
-			font-size: 25px;
-			left: -15%;
-	}
-
-	/* 3rd text box */
-	.timeline-container>div:nth-child(8)>.timeline-item.left {
-		left: 7%;
-		transform: translateY(-270px);
-	}
-
-	/* 3rd text between timeline divider */
-	.timeline-container>div:nth-child(9) {
-		margin-top: 130px !important;
-		font-size: 10px;
-		left: 7%;
+	.timeline-item.right img {
+		transform: scale(0.7);
 	}
 	
-	/* 4th batch */
-
-	/*4th timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(10) {
-		left: -20%;
-		/* Moves it 50px from the top */
-	}
-
-	/* 4th text title*/
-	.timeline-container>div:nth-child(11)>.timeline-text.left {
-			transform: translateY(-600px);
-			font-size: 25px;
-			left: 20%;
-	}
-
-	/* 4th text box */
-	.timeline-container>div:nth-child(11)>.timeline-item.right {
-		transform: translateY(350px);
-		left: 7%;
-	}
-
-	/* 4th text between timeline divider */
-	.timeline-container>div:nth-child(12) {
-		margin-top: 130px !important;
-		font-size: 10px;
-		left: 7%;
-		/* Moves it lower */
-	}
-
-	/* 5th batch */
-
-	/*5th timeline divider */
-	body>div.container>div.middle-section>div.timeline-container>div:nth-child(13) {
-		left: -20%;
-		/* Moves it 50px from the top */
-	}
-
-	/* 5th text title*/
-	.timeline-container>div:nth-child(14)>.timeline-text.right {
-			transform: translateY(50px);
-			font-size: 25px;
-			left: 5%;
-	}
-
-	/* 5th text box */
-	.timeline-container>div:nth-child(14)>.timeline-item.left {
-		left: 7%;
-		transform: translateY(-120px);
-	}
-
-	/* 5th text between timeline divider */
-	.timeline-container>div:nth-child(15) {
-		margin-top: 150px !important;
-		font-size: 10px;
-		left: 7%;
-		/* Moves it lower */
-	}
 
 	.fat {
 		margin-left: 40px;	
