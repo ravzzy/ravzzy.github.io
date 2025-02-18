@@ -641,6 +641,11 @@ nav a {
 	color: black;*/
 }
 
+.shuffle-text span {
+	display: inline-block;
+	position: relative;
+}
+
 /* Hamburger Menu for Mobile*/
 .hamburger-menu {
 	top: 1%;
