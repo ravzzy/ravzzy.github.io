@@ -153,7 +153,7 @@ header {
 }
 
 
-/* first occurence of the box on the left*/
+/* first occurrence of the box on the left */
 .timeline-container>div:nth-child(2)>.timeline-item.left {
 	top: 20vh !important;
 	/* disables the transition of the first box, so it doesn't look weird on homepage */
@@ -512,10 +512,11 @@ p a:hover {
 /* Navbar container */
 
 :root {
-	--nav-bg-color: white
+	--nav-bg-color: white;
 	--nav-text-color: black;
 	--nav-hover-color: rgba(255, 255, 255, 0.2);
-	--footer-text-color: black* Default color */
+	--footer-text-color: black; 
+	/* Default color */
 		/* Default hover effect */
 }
 
@@ -551,7 +552,7 @@ nav a {
 	width: 100%;
 	/*background: rgba(255, 255, 255, 0.1); */
 	/* Transparent */
-	/* backdrop-filter: blur(10px); /* Glass effect */
+	/* backdrop-filter: blur(10px); */ /* Glass effect */
 	padding: 1.2vw 1.2vw;
 	display: flex;
 	justify-content: flex-end;
