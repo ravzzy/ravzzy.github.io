@@ -643,12 +643,12 @@ nav a {
 
 /* Hamburger Menu for Mobile*/
 .hamburger-menu {
+	top: 1%;
 	width: 4rem;
 	height: 4rem;
 	position: fixed;
-	top: 5rem;
 	right: 5rem;
-	z-index: 4;
+	z-index: 15;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -732,7 +732,7 @@ nav a {
 	backdrop-filter: blur(20vh);
 	opacity: 1;
 	top: 0;
-	right: -50rem;
+	right: -100vh;
 	transition: right 0.5s;
 	z-index: 5;
 }
@@ -1250,11 +1250,6 @@ footer>div:not(.socials) {
 	header {
 		font-size: 1rem;
 		height: 10vh;
-	}
-
-	.hamburger-menu {
-		top: 1%;
-		z-index: 15;
 	}
 
 	/* hide the cross button */
