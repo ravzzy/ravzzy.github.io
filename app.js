@@ -432,7 +432,7 @@ function adjustTextColor() {
 	document.documentElement.style.setProperty("--nav-bg-color", brightness < 150 ? "white" : "black");
 	document.documentElement.style.setProperty("--nav-text-color", brightness < 150 ? "black" : "white");
 	// ✅ Update Hover Color for Better Contrast
-	document.documentElement.style.setProperty("--nav-hover-color", brightness < 150 ? "grey" : "grey");
+	document.documentElement.style.setProperty("--nav-hover-color", brightness < 150 ? "white" : "white");
 	// ✅ Update CSS Variable for Footer Text Color
 	document.documentElement.style.setProperty("--footer-text-color", brightness < 150 ? "white" : "black");
 

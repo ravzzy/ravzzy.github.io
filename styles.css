@@ -514,7 +514,7 @@ p a:hover {
 :root {
 	--nav-bg-color: white;
 	--nav-text-color: black;
-	--nav-hover-color: rgba(255, 255, 255, 0.2);
+	--nav-hover-color: white;
 	--footer-text-color: black; 
 	/* Default color */
 		/* Default hover effect */
@@ -573,6 +573,10 @@ nav a {
 
 .nav-menu li {
 	position: relative;
+}
+
+.nav-menu li:hover > a {
+    color: #e61618 !important; /* Change this to any color you like */
 }
 
 /* Menu Items */
