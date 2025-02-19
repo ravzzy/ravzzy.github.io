@@ -1101,29 +1101,36 @@ section>.title {
 	padding: 4em 2em;
 }
 
+.title-num {
+font-size: 1.5rem;
+}
+
 .final>.title {
 	padding-block-end: 0;
 }
 
 .cards {
-	padding-inline: 2em;
+	
+	padding-inline: 15rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 1em;
+	gap: 1rem;
 	margin-inline: auto;
 }
 
 .card {
+	left: 10%;
+	position:relative;
 	display: flex;
 	flex-direction: column;
-	gap: 0.5em;
-	border-radius: 0.75em;
-	padding: 2em;
+	gap: 2rem;
+	border-radius: 0.75rem;
+	padding: 2rem;
 	background-color: #f1f1f1;
-	width: min(23rem, 100%);
-	height: 13.5rem;
+	width: min(37rem, 100%);
+	height: 22rem;
 	transition: transform 0.2s ease-in-out;
 }
 
@@ -1276,7 +1283,7 @@ footer>div:not(.socials) {
 
 	.logo-image {
 		transform: scale(0.6);
-		top: 3%;
+		top: 4%;
 		left: 2%;
 	}
 
@@ -1332,7 +1339,7 @@ footer>div:not(.socials) {
 
 	.thin-jp {
 		position: relative; /* Set the parent to relative to enable positioning */
-		width: 300px;
+		font-size: 1.5rem;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 		}
@@ -1407,6 +1414,14 @@ footer>div:not(.socials) {
 	.cards {
 		flex-direction: column;
 		/* Stack cards for better fit */
+	}
+
+	.card {
+	
+		position: relative;
+		width:150%;
+		left: 55% !important;
+		transform: translateX(-50%) !important;
 	}
 
 	.designer-footer {

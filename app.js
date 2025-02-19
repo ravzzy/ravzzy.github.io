@@ -174,34 +174,34 @@ const rgb = {
 	bT: 16,
 }
 
-/*
+
 const rgbTitle = {}
 
 const roadmap = document.querySelector('.roadmap')
 const roadmapTitle = document.querySelector('.roadmap .title')
 
 gsap.to(rgb, {
-	r: 23,
-	g: 16,
-	b: 16,
-	rT: 255,
-	gT: 255,
-	bT: 255,
-	snap: 1,
-	scrollTrigger: {
-		trigger: '.roadmap',
-		start: 'top bottom',
-		end: '+=' + window.innerHeight * 0.3,
-		scrub: true,
-	},
-	onUpdate: () => {
-		roadmapTitle.style.color = `rgb(${rgb.rT},${rgb.gT},${rgb.bT})`
+    r: 23,
+    g: 16,
+    b: 16,
+    rT: 255,
+    gT: 255,
+    bT: 255,
+    snap: 1,
+    ease: "power1.inOut", // Ensures a gradual transition
+    scrollTrigger: {
+        trigger: '.roadmap',
+        start: 'top 70%', // Starts when 70% of the section is visible
+        end: 'top 20%', // Ends when 20% of the section remains
+        scrub: 1.5, // Makes the transition smoother and slower
+    },
+    onUpdate: () => {
+        roadmapTitle.style.color = `rgb(${rgb.rT},${rgb.gT},${rgb.bT})`;
+        roadmap.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+    },
+});
 
-		roadmap.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`
-	},
-})
 
-*/
 /* Disabling the rotating text logo for now
 // JavaScript to adjust rotation based on scroll and position letters along the top of the circle
 document.addEventListener('DOMContentLoaded', function () {
