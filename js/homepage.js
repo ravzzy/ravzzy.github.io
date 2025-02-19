@@ -153,15 +153,15 @@ gsap.to('.loader-img', {
 
 // Ensure loader is visible when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loading"); 
+	document.body.classList.add("loading");
 });
 
 // Keep the loader for 2.5 seconds before showing the page
 window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.body.classList.remove("loading");
+	setTimeout(() => {
+		document.body.classList.remove("loading");
 		document.querySelector(".loader").style.display = "none"; // Hide loader
-    }, 1000); // 2500ms = 2.5 seconds
+	}, 1000); // 2500ms = 2.5 seconds
 });
 
 
@@ -172,48 +172,48 @@ const roadmap = document.querySelector('.roadmap')
 const roadmapTitle = document.querySelector('.roadmap .title')
 
 const rgb = {
-    r: 230, // Initial Red: #e61618
-    g: 22,
-    b: 24,
-    rT: 255, // Initial Text Color: White
-    gT: 255,
-    bT: 255,
+	r: 230, // Initial Red: #e61618
+	g: 22,
+	b: 24,
+	rT: 255, // Initial Text Color: White
+	gT: 255,
+	bT: 255,
 };
 
 gsap.to(rgb, {
-    r: 255, // Final Background: White
-    g: 255,
-    b: 255,
-    rT: 0,   // Final Text Color: Black
-    gT: 0,
-    bT: 0,
-    snap: 1,
-    ease: "power1.inOut",
-    scrollTrigger: {
-        trigger: '.roadmap',
-        start: 'top 70%',
-        end: 'top 20%',
-        scrub: 1.5,
-    },
-    onUpdate: () => {
-        roadmapTitle.style.color = `rgb(${rgb.rT},${rgb.gT},${rgb.bT})`;
-        roadmap.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
-    },
+	r: 255, // Final Background: White
+	g: 255,
+	b: 255,
+	rT: 0,   // Final Text Color: Black
+	gT: 0,
+	bT: 0,
+	snap: 1,
+	ease: "power1.inOut",
+	scrollTrigger: {
+		trigger: '.roadmap',
+		start: 'top 70%',
+		end: 'top 20%',
+		scrub: 1.5,
+	},
+	onUpdate: () => {
+		roadmapTitle.style.color = `rgb(${rgb.rT},${rgb.gT},${rgb.bT})`;
+		roadmap.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+	},
 });
 
 // 🔥 Animate white-text elements separately
 gsap.to(".white-text", {
-    opacity: 1,  
-    visibility: "visible", // Ensure text becomes visible
-    duration: 1.5, // Smooth transition duration
-    ease: "power2.out", 
-    scrollTrigger: {
-        trigger: ".roadmap",
-        start: "top 70%", // Starts when 70% of roadmap is visible
-        end: "top 20%", // Ends transition at 20% visibility
-        scrub: 1.5, 
-        toggleActions: "play none none reverse", // Ensures it reverses when scrolling back up
-    }
+	opacity: 1,
+	visibility: "visible", // Ensure text becomes visible
+	duration: 1.5, // Smooth transition duration
+	ease: "power2.out",
+	scrollTrigger: {
+		trigger: ".roadmap",
+		start: "top 70%", // Starts when 70% of roadmap is visible
+		end: "top 20%", // Ends transition at 20% visibility
+		scrub: 1.5,
+		toggleActions: "play none none reverse", // Ensures it reverses when scrolling back up
+	}
 });
 
 
@@ -388,12 +388,12 @@ function adjustTextColor() {
 	let currentSection = null;
 
 	// Detect the current section in view
-    sections.forEach(section => {
-        let rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {  // Checks if the section is in the viewport
-            currentSection = section;
-        }
-    });
+	sections.forEach(section => {
+		let rect = section.getBoundingClientRect();
+		if (rect.top <= window.innerHeight && rect.bottom >= 0) {  // Checks if the section is in the viewport
+			currentSection = section;
+		}
+	});
 
 	if (!currentSection) {
 		console.error("❌ No section detected in view.");
@@ -561,20 +561,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            let text = entry.target;
-            if (entry.isIntersecting) {
-                text.classList.add("in-view"); // Add effect when entering viewport
-            } else {
-                text.classList.remove("in-view"); // Remove effect when out of view
-            }
-        });
-    }, { threshold: 0.3 }); // Trigger effect when 30% of the text is visible
+	let observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			let text = entry.target;
+			if (entry.isIntersecting) {
+				text.classList.add("in-view"); // Add effect when entering viewport
+			} else {
+				text.classList.remove("in-view"); // Remove effect when out of view
+			}
+		});
+	}, { threshold: 0.3 }); // Trigger effect when 30% of the text is visible
 
-    document.querySelectorAll(".timeline-text.left, .timeline-text.right").forEach((text) => {
-        observer.observe(text);
-    });
+	document.querySelectorAll(".timeline-text.left, .timeline-text.right").forEach((text) => {
+		observer.observe(text);
+	});
 });
 
 
@@ -586,24 +586,24 @@ document.addEventListener("DOMContentLoaded", function () {
 	let isHidden = false; // Tracks if header & swimlane are hidden
 
 	// Initial values for font size and padding
-  // Set different values for desktop and mobile
-  let initialFontSize, minFontSize, initialPadding, minPadding;
+	// Set different values for desktop and mobile
+	let initialFontSize, minFontSize, initialPadding, minPadding;
 
-  function updateValues() {
-	  if (window.innerWidth <= 768) { // Mobile screen sizes
-		  initialFontSize = 8;
-		  minFontSize = 4;
-		  initialPadding = 10;
-		  minPadding = 5;
-	  } else { // Desktop sizes
-		  initialFontSize = 16;
-		  minFontSize = 12;
-		  initialPadding = 20;
-		  minPadding = 5;
-	  }
-  }
+	function updateValues() {
+		if (window.innerWidth <= 768) { // Mobile screen sizes
+			initialFontSize = 8;
+			minFontSize = 4;
+			initialPadding = 10;
+			minPadding = 5;
+		} else { // Desktop sizes
+			initialFontSize = 16;
+			minFontSize = 12;
+			initialPadding = 20;
+			minPadding = 5;
+		}
+	}
 
-  updateValues(); // Set values based on initial screen size
+	updateValues(); // Set values based on initial screen size
 
 	window.addEventListener("scroll", function () {
 		let scrollY = window.scrollY;
@@ -647,18 +647,18 @@ window.addEventListener("scroll", function () {
 //logic to calculate the width of the sidebar dynamically for all screen sizes
 
 function adjustSidebarWidth() {
-    let tickerWidth = document.querySelector(".Header-ticker").offsetWidth;
-    let sidebar = document.querySelector(".sidebar");
+	let tickerWidth = document.querySelector(".Header-ticker").offsetWidth;
+	let sidebar = document.querySelector(".sidebar");
 
-    if (sidebar) {
-        let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
-        sidebar.style.width = sidebarWidth;
+	if (sidebar) {
+		let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
+		sidebar.style.width = sidebarWidth;
 
-        // Ensure menu items update width after sidebar adjustment
-        document.querySelectorAll(".menu-item").forEach(item => {
-            item.style.width = sidebarWidth;
-        });
-    }
+		// Ensure menu items update width after sidebar adjustment
+		document.querySelectorAll(".menu-item").forEach(item => {
+			item.style.width = sidebarWidth;
+		});
+	}
 }
 
 // Run function on page load and window resize
@@ -667,33 +667,33 @@ window.addEventListener("resize", adjustSidebarWidth);
 
 // This is God's code - fixes the bloody alignment for mobile view
 document.addEventListener("DOMContentLoaded", function () {
-    const ELEMENT_GAP_LOOP = 10; // Constant gap within a single loop
-    const ELEMENT_GAP_BETWEEN_LOOPS = 20; // Larger gap before the next loop starts
-    const START_Y = -100; // Adjust for initial vertical position
+	const ELEMENT_GAP_LOOP = 10; // Constant gap within a single loop
+	const ELEMENT_GAP_BETWEEN_LOOPS = 20; // Larger gap before the next loop starts
+	const START_Y = -100; // Adjust for initial vertical position
 
-    //console.log("ELEMENT_GAP_LOOP: " + ELEMENT_GAP_LOOP);
-    //console.log("ELEMENT_GAP_BETWEEN_LOOPS: " + ELEMENT_GAP_BETWEEN_LOOPS);
-    //console.log("START_Y: " + START_Y);
+	//console.log("ELEMENT_GAP_LOOP: " + ELEMENT_GAP_LOOP);
+	//console.log("ELEMENT_GAP_BETWEEN_LOOPS: " + ELEMENT_GAP_BETWEEN_LOOPS);
+	//console.log("START_Y: " + START_Y);
 
-    function alignTimeline() {
-        if (window.innerWidth >= 1200) return; // Stop execution for desktops
+	function alignTimeline() {
+		if (window.innerWidth >= 1200) return; // Stop execution for desktops
 
-        const timelineContainer = document.querySelector(".timeline-container");
-        const timelineTexts = [...timelineContainer.querySelectorAll(".timeline-text")];
-        const timelineItems = [...timelineContainer.querySelectorAll(".timeline-item")];
-        const timelineConnectors = [...timelineContainer.querySelectorAll(".timeline-connector")];
-        let currentBottom = START_Y; // Use bottom position for calculations
-        //console.log("currentBottom: " + currentBottom);
-        let lastBottom = currentBottom;
+		const timelineContainer = document.querySelector(".timeline-container");
+		const timelineTexts = [...timelineContainer.querySelectorAll(".timeline-text")];
+		const timelineItems = [...timelineContainer.querySelectorAll(".timeline-item")];
+		const timelineConnectors = [...timelineContainer.querySelectorAll(".timeline-connector")];
+		let currentBottom = START_Y; // Use bottom position for calculations
+		//console.log("currentBottom: " + currentBottom);
+		let lastBottom = currentBottom;
 
-        timelineTexts.forEach((text, index) => {
-            //console.log("text.offsetHeight: " + text.offsetHeight);
+		timelineTexts.forEach((text, index) => {
+			//console.log("text.offsetHeight: " + text.offsetHeight);
 
-            let textHeight = text.getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
-            //console.log("textHeight: " + textHeight);
+			let textHeight = text.getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+			//console.log("textHeight: " + textHeight);
 
-            // Place text using bottom position
-            text.style.cssText = `
+			// Place text using bottom position
+			text.style.cssText = `
                 position: absolute !important;
                 top: ${currentBottom}px !important;
                 left: 55% !important;
@@ -702,17 +702,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 max-width: 100vw !important;
                 text-align: center !important;
             `;
-            currentBottom += textHeight; // Update bottom after the text
-            //console.log("currentBottom after text: " + currentBottom);
+			currentBottom += textHeight; // Update bottom after the text
+			//console.log("currentBottom after text: " + currentBottom);
 
-            if (timelineItems[index]) {
-                //console.log(timelineItems[index] + ".offsetHeight: " + timelineItems[index].offsetHeight);
+			if (timelineItems[index]) {
+				//console.log(timelineItems[index] + ".offsetHeight: " + timelineItems[index].offsetHeight);
 
-                let itemHeight = timelineItems[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
-                //console.log("itemHeight: " + itemHeight);
+				let itemHeight = timelineItems[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+				//console.log("itemHeight: " + itemHeight);
 
-                // Place item using bottom position
-                timelineItems[index].style.cssText = `
+				// Place item using bottom position
+				timelineItems[index].style.cssText = `
                     position: absolute !important;
                     font-size: 1.5rem !important;
                     top: ${currentBottom}px !important;
@@ -722,16 +722,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     min-width: 70vw !important;
                     max-width: 70vw !important;
                 `;
-                currentBottom += itemHeight; // Update bottom after the item
-                //console.log("currentBottom after item: " + currentBottom);
-            }
+				currentBottom += itemHeight; // Update bottom after the item
+				//console.log("currentBottom after item: " + currentBottom);
+			}
 
-            if (timelineConnectors[index]) {
-                let connectorHeight = timelineConnectors[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
-                //console.log(timelineConnectors[index] + ".offsetHeight: " + timelineConnectors[index].offsetHeight);
+			if (timelineConnectors[index]) {
+				let connectorHeight = timelineConnectors[index].getBoundingClientRect().height + ELEMENT_GAP_LOOP; // Use loop gap here
+				//console.log(timelineConnectors[index] + ".offsetHeight: " + timelineConnectors[index].offsetHeight);
 
-                // Remove any inherited margin-top by explicitly setting it to 0 and apply custom styles
-                timelineConnectors[index].style.cssText = `
+				// Remove any inherited margin-top by explicitly setting it to 0 and apply custom styles
+				timelineConnectors[index].style.cssText = `
                     position: absolute !important;
                     top: ${currentBottom}px !important;
                     //background-color: green !important;
@@ -742,27 +742,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     opacity: 1 !important;
                     margin-top: 0 !important; /* Ensure no margin-top is inherited */
                 `;
-                currentBottom += connectorHeight; // Update bottom after the connector
-                //console.log("currentBottom after connector: " + currentBottom);
-            }
+				currentBottom += connectorHeight; // Update bottom after the connector
+				//console.log("currentBottom after connector: " + currentBottom);
+			}
 
-            lastBottom = currentBottom; // Store last bottom position
-            //console.log("lastBottom after this iteration: " + lastBottom);
+			lastBottom = currentBottom; // Store last bottom position
+			//console.log("lastBottom after this iteration: " + lastBottom);
 
-            // After completing the iteration, add a larger gap between loops
-            currentBottom += ELEMENT_GAP_BETWEEN_LOOPS;
-            //console.log("currentBottom after adding gap between loops: " + currentBottom);
-        });
+			// After completing the iteration, add a larger gap between loops
+			currentBottom += ELEMENT_GAP_BETWEEN_LOOPS;
+			//console.log("currentBottom after adding gap between loops: " + currentBottom);
+		});
 
-        // Adjust container height dynamically
-        timelineContainer.style.cssText = `
+		// Adjust container height dynamically
+		timelineContainer.style.cssText = `
             height: ${lastBottom + 50}px !important;
             position: relative !important;
         `;
-    }
+	}
 
-    alignTimeline();
-    window.addEventListener("resize", alignTimeline);
+	alignTimeline();
+	window.addEventListener("resize", alignTimeline);
 });
 
 
@@ -834,79 +834,79 @@ document.querySelectorAll(".shuffle-text > a").forEach(textElement => {
 //shuffle text effect that triggers when in view and when hovered both.
 
 document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
-    let originalText = textElement.textContent;
-    let words = originalText.split(" ");
-    let shuffleIntervals = []; // Store interval references to stop them
-    let shuffleTimeout; // Store timeout reference
-    let visibilityTimeout; // Store timeout for delayed animation
+	let originalText = textElement.textContent;
+	let words = originalText.split(" ");
+	let shuffleIntervals = []; // Store interval references to stop them
+	let shuffleTimeout; // Store timeout reference
+	let visibilityTimeout; // Store timeout for delayed animation
 
-    // Wrap each letter in a span
-    textElement.innerHTML = words.map(word =>
-        word.split("").map((char, index) =>
-            `<span data-char="${char}" data-index="${index}">${char}</span>`
-        ).join("")
-    ).join(" "); // Maintain spaces
+	// Wrap each letter in a span
+	textElement.innerHTML = words.map(word =>
+		word.split("").map((char, index) =>
+			`<span data-char="${char}" data-index="${index}">${char}</span>`
+		).join("")
+	).join(" "); // Maintain spaces
 
-    let letters = [...textElement.querySelectorAll("span")];
+	let letters = [...textElement.querySelectorAll("span")];
 
-    function startShuffling() {
-        stopShuffling(); // Ensure no previous shuffle runs
+	function startShuffling() {
+		stopShuffling(); // Ensure no previous shuffle runs
 
-        words.forEach(word => {
-            let wordStartIndex = letters.findIndex(span => span.dataset.char === word[0]);
-            let wordLetters = letters.slice(wordStartIndex, wordStartIndex + word.length);
-            let firstLetter = wordLetters.shift(); // Keep first letter stable
+		words.forEach(word => {
+			let wordStartIndex = letters.findIndex(span => span.dataset.char === word[0]);
+			let wordLetters = letters.slice(wordStartIndex, wordStartIndex + word.length);
+			let firstLetter = wordLetters.shift(); // Keep first letter stable
 
-            let originalOrder = wordLetters.map(span => span.textContent);
+			let originalOrder = wordLetters.map(span => span.textContent);
 
-            let interval = setInterval(() => {
-                let shuffledIndexes = [...Array(wordLetters.length).keys()];
-                for (let i = shuffledIndexes.length - 1; i > 0; i--) {
-                    let j = Math.floor(Math.random() * (i + 1));
-                    [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
-                }
+			let interval = setInterval(() => {
+				let shuffledIndexes = [...Array(wordLetters.length).keys()];
+				for (let i = shuffledIndexes.length - 1; i > 0; i--) {
+					let j = Math.floor(Math.random() * (i + 1));
+					[shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
+				}
 
-                let shuffledText = shuffledIndexes.map(i => originalOrder[i]);
-                wordLetters.forEach((span, i) => {
-                    span.textContent = shuffledText[i];
-                });
-            }, 50); // Fast shuffle every 50ms
+				let shuffledText = shuffledIndexes.map(i => originalOrder[i]);
+				wordLetters.forEach((span, i) => {
+					span.textContent = shuffledText[i];
+				});
+			}, 50); // Fast shuffle every 50ms
 
-            shuffleIntervals.push(interval);
-        });
+			shuffleIntervals.push(interval);
+		});
 
-        // Automatically stop shuffling after 0.3 seconds
-        shuffleTimeout = setTimeout(stopShuffling, 400);
-    }
+		// Automatically stop shuffling after 0.3 seconds
+		shuffleTimeout = setTimeout(stopShuffling, 400);
+	}
 
-    function stopShuffling() {
-        shuffleIntervals.forEach(clearInterval);
-        shuffleIntervals = [];
-        clearTimeout(shuffleTimeout);
-        restoreOriginal();
-    }
+	function stopShuffling() {
+		shuffleIntervals.forEach(clearInterval);
+		shuffleIntervals = [];
+		clearTimeout(shuffleTimeout);
+		restoreOriginal();
+	}
 
-    function restoreOriginal() {
-        letters.forEach(span => {
-            span.textContent = span.dataset.char; // Reset to original letter
-        });
-    }
+	function restoreOriginal() {
+		letters.forEach(span => {
+			span.textContent = span.dataset.char; // Reset to original letter
+		});
+	}
 
-    // 🔥 Trigger animation with a 1-second delay when element enters viewport
-    let observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                clearTimeout(visibilityTimeout); // Prevent duplicate triggers
-                visibilityTimeout = setTimeout(() => {
-                    startShuffling(); // Run animation after 1 second
-                }, 1000);
-            }
-        });
-    }, { threshold: 0.5 }); // Start when at least 50% visible
+	// 🔥 Trigger animation with a 1-second delay when element enters viewport
+	let observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				clearTimeout(visibilityTimeout); // Prevent duplicate triggers
+				visibilityTimeout = setTimeout(() => {
+					startShuffling(); // Run animation after 1 second
+				}, 1000);
+			}
+		});
+	}, { threshold: 0.5 }); // Start when at least 50% visible
 
-    observer.observe(textElement);
+	observer.observe(textElement);
 
-    // Keep hover functionality as is
-    textElement.addEventListener("mouseenter", startShuffling);
-    textElement.addEventListener("mouseleave", stopShuffling);
+	// Keep hover functionality as is
+	textElement.addEventListener("mouseenter", startShuffling);
+	textElement.addEventListener("mouseleave", stopShuffling);
 });

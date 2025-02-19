@@ -10,7 +10,8 @@
 
 html {
 	scroll-behavior: smooth;
-	font-size: 8px;  /* Root font size */
+	font-size: 8px;
+	/* Root font size */
 
 }
 
@@ -515,9 +516,9 @@ p a:hover {
 	--nav-bg-color: white;
 	--nav-text-color: black;
 	--nav-hover-color: white;
-	--footer-text-color: black; 
+	--footer-text-color: black;
 	/* Default color */
-		/* Default hover effect */
+	/* Default hover effect */
 }
 
 nav {
@@ -552,7 +553,8 @@ nav a {
 	width: 100%;
 	/*background: rgba(255, 255, 255, 0.1); */
 	/* Transparent */
-	/* backdrop-filter: blur(10px); */ /* Glass effect */
+	/* backdrop-filter: blur(10px); */
+	/* Glass effect */
 	padding: 1.2vw 1.2vw;
 	display: flex;
 	justify-content: flex-end;
@@ -575,8 +577,9 @@ nav a {
 	position: relative;
 }
 
-.nav-menu li:hover > a {
-    color: #e61618 !important; /* Change this to any color you like */
+.nav-menu li:hover>a {
+	color: #e61618 !important;
+	/* Change this to any color you like */
 }
 
 /* Menu Items */
@@ -764,25 +767,29 @@ nav a {
 }
 
 .menu-item {
-    display: block;
-    width: 100%; /* Ensure it fills the sidebar */
-    padding: 2vw 0;
-    text-align: center;
-    border-bottom: 0.01vw solid white;
+	display: block;
+	width: 100%;
+	/* Ensure it fills the sidebar */
+	padding: 2vw 0;
+	text-align: center;
+	border-bottom: 0.01vw solid white;
 	border-top: 0.01vw solid white;
 
 }
 
 .menu-item a {
-    text-decoration: none; /* Removes underline */
-		color: white; /* Ensures text color is white (or your desired color) */
+	text-decoration: none;
+	/* Removes underline */
+	color: white;
+	/* Ensures text color is white (or your desired color) */
 }
 
 
 /* Active (tapped) effect */
 .menu-item:active,
-.menu-item.selected {  
-    background-color: rgba(255, 255, 255, 0.2); /* Subtle highlight */
+.menu-item.selected {
+	background-color: rgba(255, 255, 255, 0.2);
+	/* Subtle highlight */
 }
 
 
@@ -877,7 +884,8 @@ nav a {
 /*transform: scale(0.7); /*reduces the size of the rotating circle logo */
 /* } 
 
-/* Fade-in animation *//*
+/* Fade-in animation */
+/*
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -918,7 +926,7 @@ section {
 
 .thin {
 
-	font-size : 2rem;
+	font-size: 2rem;
 	font-weight: 300;
 }
 
@@ -1102,7 +1110,7 @@ section>.title {
 }
 
 .title-num {
-font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 .final>.title {
@@ -1110,7 +1118,7 @@ font-size: 1.5rem;
 }
 
 .cards {
-	
+
 	padding-inline: 15rem;
 	display: flex;
 	align-items: center;
@@ -1121,14 +1129,15 @@ font-size: 1.5rem;
 }
 
 .white-text {
-		color: white;
-		opacity: 0;  
-		visibility: hidden;  /* Prevents clicks/interactions while hidden */
+	color: white;
+	opacity: 0;
+	visibility: hidden;
+	/* Prevents clicks/interactions while hidden */
 }
 
 .card {
 	left: 10%;
-	position:relative;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -1204,7 +1213,8 @@ footer>div:not(.socials) {
 	color: white;
 	text-decoration: none;
 	border: 1px solid white;
-    padding: 8px 12px; /* Button padding proportional to viewport width */
+	padding: 8px 12px;
+	/* Button padding proportional to viewport width */
 	/*padding-block: 0.35em;*/
 	border-radius: 2em;
 	width: 10vw;
@@ -1270,7 +1280,7 @@ footer>div:not(.socials) {
 	.Header-swimlane {
 		height: 6vh;
 	}
-	
+
 	header {
 		top: 5vh;
 		font-size: 1rem;
@@ -1307,17 +1317,21 @@ footer>div:not(.socials) {
 		gap: 95vh;
 	}
 
-	.timeline-item.left img { /* Adjust the image size - check js script */
+	.timeline-item.left img {
+		/* Adjust the image size - check js script */
 		transform: scale(0.7);
 	}
-	
-	.timeline-item.right img { /* Adjust the image size - check js script */
+
+	.timeline-item.right img {
+		/* Adjust the image size - check js script */
 		transform: scale(0.7);
 	}
-	
-	.fat { /* founder name */
+
+	.fat {
+		/* founder name */
 		font-size: 2rem;
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 		margin-bottom: 1em;
@@ -1326,33 +1340,38 @@ footer>div:not(.socials) {
 
 	/* Adjust the space as needed for founder image */
 	.dev img {
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
 		transform: translateX(-50%) !important;
-		}
+	}
 
 	.founder-name {
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
-		transform: translateX(-50%) !important;	}
+		transform: translateX(-50%) !important;
+	}
 
 	.thin {
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		width: 300px;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
-		}
+	}
 
 	.thin-jp {
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		font-size: 1.5rem;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
-		}
+	}
 
 
 	/* hide the 2nd vertical line in mobile view */
-	body > div.container > section.final > div:nth-child(6) {
+	body>div.container>section.final>div:nth-child(6) {
 		display: none !important;
 	}
 
@@ -1364,26 +1383,32 @@ footer>div:not(.socials) {
 
 	.socials {
 		display: flex;
-		flex-direction: column; /* Stack buttons vertically */
-		align-items: center; /* Center buttons */
-		gap: 10px; /* Add spacing between buttons */
+		flex-direction: column;
+		/* Stack buttons vertically */
+		align-items: center;
+		/* Center buttons */
+		gap: 10px;
+		/* Add spacing between buttons */
 	}
 
 	.btn {
 		padding: 1vw 4vw;
-		width:40%;
+		width: 40%;
 		text-align: center;
 
 	}
+
 	/* footer-message text */
 	.footer-message {
-		position: relative; /* Set the parent to relative to enable positioning */
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		left: 52% !important;
 		transform: translateX(-50%) !important;
-		}
+	}
 
-	body > div.container > section.final > footer > p {
-		position: relative; /* Set the parent to relative to enable positioning */
+	body>div.container>section.final>footer>p {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
 		margin-bottom: 20px;
 		left: 52% !important;
 		transform: translateX(-50%) !important;
@@ -1423,9 +1448,9 @@ footer>div:not(.socials) {
 	}
 
 	.card {
-	
+
 		position: relative;
-		width:150%;
+		width: 150%;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 	}
@@ -1471,6 +1496,7 @@ footer>div:not(.socials) {
 	.menu-item {
 		display: none;
 	}
+
 	.menu-link {
 		display: none;
 	}
@@ -1478,6 +1504,7 @@ footer>div:not(.socials) {
 	.sidebar {
 		display: none;
 	}
+
 	.socials {
 		flex-direction: row;
 	}
