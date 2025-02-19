@@ -494,7 +494,7 @@ p a:hover {
 	/* Adjust as needed */
 	height: 15vh;
 	/* Adjust as needed */
-	background-image: url('images/rooting_research_transparent.png');
+	background-image: url('../images/rooting_research_transparent.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	position: fixed;
@@ -1209,16 +1209,21 @@ footer>div:not(.socials) {
 
 
 .btn {
-	margin-inline: auto;
-	color: white;
-	text-decoration: none;
-	border: 1px solid white;
-	padding: 8px 12px;
-	/* Button padding proportional to viewport width */
-	/*padding-block: 0.35em;*/
-	border-radius: 2em;
-	width: 10vw;
+    display: flex; /* Enables centering */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    margin-inline: auto;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 8px 30px; /* Adjusted padding for better text balance */
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 2em;
+    width: fit-content; /* Adapts width to content */
+    min-width: 10vw; /* Ensures some width */
 }
+
 
 .text-spin {
 	overflow-x: hidden;
