@@ -165,41 +165,59 @@ window.addEventListener("load", () => {
 });
 
 
-const rgb = {
-	r: 255,
-	g: 255,
-	b: 255,
-	rT: 23,
-	gT: 16,
-	bT: 16,
-}
-
 
 const rgbTitle = {}
 
 const roadmap = document.querySelector('.roadmap')
 const roadmapTitle = document.querySelector('.roadmap .title')
 
-gsap.to(rgb, {
-    r: 23,
-    g: 16,
-    b: 16,
-    rT: 255,
+const rgb = {
+    r: 230, // Initial Red: #e61618
+    g: 22,
+    b: 24,
+    rT: 255, // Initial Text Color: White
     gT: 255,
     bT: 255,
+};
+
+gsap.to(rgb, {
+    r: 255, // Final Background: White
+    g: 255,
+    b: 255,
+    rT: 0,   // Final Text Color: Black
+    gT: 0,
+    bT: 0,
     snap: 1,
-    ease: "power1.inOut", // Ensures a gradual transition
+    ease: "power1.inOut",
     scrollTrigger: {
         trigger: '.roadmap',
-        start: 'top 70%', // Starts when 70% of the section is visible
-        end: 'top 20%', // Ends when 20% of the section remains
-        scrub: 1.5, // Makes the transition smoother and slower
+        start: 'top 70%',
+        end: 'top 20%',
+        scrub: 1.5,
     },
     onUpdate: () => {
         roadmapTitle.style.color = `rgb(${rgb.rT},${rgb.gT},${rgb.bT})`;
         roadmap.style.backgroundColor = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
     },
 });
+
+// 🔥 Animate white-text elements separately
+gsap.to(".white-text", {
+    opacity: 1,  
+    visibility: "visible", // Ensure text becomes visible
+    duration: 1.5, // Smooth transition duration
+    ease: "power2.out", 
+    scrollTrigger: {
+        trigger: ".roadmap",
+        start: "top 70%", // Starts when 70% of roadmap is visible
+        end: "top 20%", // Ends transition at 20% visibility
+        scrub: 1.5, 
+        toggleActions: "play none none reverse", // Ensures it reverses when scrolling back up
+    }
+});
+
+
+
 
 
 /* Disabling the rotating text logo for now
