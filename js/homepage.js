@@ -926,31 +926,33 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	function setupTicker() {
-	  let dynamicSpacing = calculateSpacing();
+	  setTimeout(() => { // Delay to ensure proper rendering
+		let dynamicSpacing = calculateSpacing();
 
-	  tickerItems.forEach((item) => {
-		item.style.marginBottom = `${dynamicSpacing}px`;
-	  });
+		tickerItems.forEach((item) => {
+		  item.style.marginBottom = `${dynamicSpacing}px`;
+		});
 
-	  let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
-	  let totalHeight = itemHeight * tickerItems.length;
+		let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
+		let totalHeight = itemHeight * tickerItems.length;
 
-	  // Prevent duplicate ticker content from stacking infinitely
-	  tickerWrapper.innerHTML = tickerWrapper.innerHTML.split("<!-- DUPLICATE -->")[0];
-	  tickerWrapper.innerHTML += `<!-- DUPLICATE -->` + tickerWrapper.innerHTML;
-	  tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+		// Prevent duplicate ticker content from stacking infinitely
+		tickerWrapper.innerHTML = tickerWrapper.innerHTML.split("<!-- DUPLICATE -->")[0];
+		tickerWrapper.innerHTML += `<!-- DUPLICATE -->` + tickerWrapper.innerHTML;
+		tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
 
-	  gsap.set(".ticker-wrapper", { y: 0 });
+		gsap.set(".ticker-wrapper", { y: 0 });
 
-	  gsap.to(".ticker-wrapper", {
-		y: -totalHeight,
-		duration: tickerItems.length * 8, // Adjust scrolling speed dynamically
-		ease: "none",
-		repeat: -1,
-		onRepeat: () => {
-		  gsap.set(".ticker-wrapper", { y: 0 });
-		}
-	  });
+		gsap.to(".ticker-wrapper", {
+		  y: -totalHeight,
+		  duration: tickerItems.length * 8, // Adjust scrolling speed dynamically
+		  ease: "none",
+		  repeat: -1,
+		  onRepeat: () => {
+			gsap.set(".ticker-wrapper", { y: 0 });
+		  }
+		});
+	  }, 100); // Delay to allow text rendering
 	}
 
 	setupTicker();
@@ -962,5 +964,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	  resizeTimeout = setTimeout(() => {
 		setupTicker();
 	  }, 300);
+	});
+
+	// Recalculate spacing on orientation change
+	window.addEventListener("orientationchange", () => {
+	  setTimeout(() => {
+		setupTicker();
+	  }, 200);
 	});
   });
