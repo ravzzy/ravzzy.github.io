@@ -935,8 +935,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	  let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
 	  let totalHeight = itemHeight * tickerItems.length;
 
-	  // Duplicate items dynamically for smooth looping
-	  tickerWrapper.innerHTML += tickerWrapper.innerHTML;
+	  // Prevent duplicate ticker content from stacking infinitely
+	  tickerWrapper.innerHTML = tickerWrapper.innerHTML.split("<!-- DUPLICATE -->")[0];
+	  tickerWrapper.innerHTML += `<!-- DUPLICATE -->` + tickerWrapper.innerHTML;
 	  tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
 
 	  gsap.set(".ticker-wrapper", { y: 0 });
@@ -954,8 +955,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	setupTicker();
 
-	// Recalculate spacing on window resize
+	// Recalculate spacing on window resize with debounce to prevent crashes
+	let resizeTimeout;
 	window.addEventListener("resize", () => {
-	  setupTicker();
+	  clearTimeout(resizeTimeout);
+	  resizeTimeout = setTimeout(() => {
+		setupTicker();
+	  }, 300);
 	});
   });
