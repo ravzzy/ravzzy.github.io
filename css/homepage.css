@@ -307,18 +307,20 @@ p a:hover {
 	z-index: 3;
 }
 
+    /* Ticker Container */
+    .ticker-container {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  }
+
 .ticker-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	/* Ensure smooth transition */
-	height: 200%;
-	gap: 47vw;
-	/* Adds spacing between text elements */
-	height: auto;
-	/* Ensures it scales dynamically */
-	animation: verticalMarquee 20s linear infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 }
 
 .ticker-text {
@@ -326,16 +328,8 @@ p a:hover {
 	color: black;
 	transform: rotate(-90deg);
 	white-space: nowrap;
-}
-
-@keyframes verticalMarquee {
-	from {
-		transform: translateY(-50%);
-	}
-
-	to {
-		transform: translateY(50%);
-	}
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -1316,10 +1310,6 @@ footer>div:not(.socials) {
 	.Header-ticker {
 		width: 8vw;
 
-	}
-
-	.ticker-wrapper {
-		gap: 95vh;
 	}
 
 	.timeline-item.left img {

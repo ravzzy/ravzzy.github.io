@@ -910,3 +910,52 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 	textElement.addEventListener("mouseenter", startShuffling);
 	textElement.addEventListener("mouseleave", stopShuffling);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+	const tickerWrapper = document.querySelector(".ticker-wrapper");
+	let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+
+	function calculateSpacing() {
+	  let maxHeight = 0;
+	  tickerItems.forEach((item) => {
+		const rect = item.getBoundingClientRect();
+		maxHeight = Math.max(maxHeight, rect.height); // Capture the real height
+	  });
+	  return maxHeight * 0.95; // Add extra space for better visibility
+	}
+
+	function setupTicker() {
+	  let dynamicSpacing = calculateSpacing();
+
+	  tickerItems.forEach((item) => {
+		item.style.marginBottom = `${dynamicSpacing}px`;
+	  });
+
+	  let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
+	  let totalHeight = itemHeight * tickerItems.length;
+
+	  // Duplicate items dynamically for smooth looping
+	  tickerWrapper.innerHTML += tickerWrapper.innerHTML;
+	  tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+
+	  gsap.set(".ticker-wrapper", { y: 0 });
+
+	  gsap.to(".ticker-wrapper", {
+		y: -totalHeight,
+		duration: tickerItems.length * 8, // Adjust scrolling speed dynamically
+		ease: "none",
+		repeat: -1,
+		onRepeat: () => {
+		  gsap.set(".ticker-wrapper", { y: 0 });
+		}
+	  });
+	}
+
+	setupTicker();
+
+	// Recalculate spacing on window resize
+	window.addEventListener("resize", () => {
+	  setupTicker();
+	});
+  });
