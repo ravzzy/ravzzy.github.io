@@ -307,24 +307,24 @@ p a:hover {
 	z-index: 3;
 }
 
-    /* Ticker Container */
-    .ticker-container {
-		position: relative;
-		height: 100%;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	  }
+/* Ticker Container */
+.ticker-container {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 .ticker-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .ticker-text {
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: black;
 	transform: rotate(-90deg);
 	white-space: nowrap;
@@ -1203,19 +1203,25 @@ footer>div:not(.socials) {
 
 
 .btn {
-    display: flex; /* Enables centering */
-    justify-content: center; /* Centers text horizontally */
-    align-items: center; /* Centers text vertically */
-    margin-inline: auto;
-    color: white;
-    text-decoration: none;
-    border: 2px solid white;
-    padding: 8px 30px; /* Adjusted padding for better text balance */
-    font-size: 2rem;
-    text-align: center;
-    border-radius: 2em;
-    width: fit-content; /* Adapts width to content */
-    min-width: 10vw; /* Ensures some width */
+	display: flex;
+	/* Enables centering */
+	justify-content: center;
+	/* Centers text horizontally */
+	align-items: center;
+	/* Centers text vertically */
+	margin-inline: auto;
+	color: white;
+	text-decoration: none;
+	border: 2px solid white;
+	padding: 8px 30px;
+	/* Adjusted padding for better text balance */
+	font-size: 2rem;
+	text-align: center;
+	border-radius: 2em;
+	width: fit-content;
+	/* Adapts width to content */
+	min-width: 10vw;
+	/* Ensures some width */
 }
 
 
