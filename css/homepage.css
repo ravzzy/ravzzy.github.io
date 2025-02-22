@@ -325,6 +325,7 @@ p a:hover {
 
 .ticker-text {
 	font-size: 1.8rem;
+	font-weight: 600;
 	color: black;
 	transform: rotate(-90deg);
 	white-space: nowrap;

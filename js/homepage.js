@@ -922,7 +922,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const rect = item.getBoundingClientRect();
 		maxHeight = Math.max(maxHeight, rect.height); // Capture the real height
 	  });
-	  return maxHeight * 1.5; // Adjusted spacing for proper visibility
+	  return maxHeight * 0.5; // Adjusted spacing for proper visibility
 	}
   
 	function setupTicker() {
