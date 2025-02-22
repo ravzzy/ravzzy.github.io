@@ -1318,11 +1318,6 @@ footer>div:not(.socials) {
 
 	}
 
-	.ticker-text {
-		font-size: 1.4rem;
-	}
-
-
 	.timeline-item.left img {
 		/* Adjust the image size - check js script */
 		transform: scale(0.7);

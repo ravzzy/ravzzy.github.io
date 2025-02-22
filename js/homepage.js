@@ -912,10 +912,10 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
 	const tickerWrapper = document.querySelector(".ticker-wrapper");
 	let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
-
+  
 	function calculateSpacing() {
 	  let maxHeight = 0;
 	  tickerItems.forEach((item) => {
@@ -924,25 +924,26 @@ document.addEventListener("DOMContentLoaded", () => {
 	  });
 	  return maxHeight * 0.95; // Add extra space for better visibility
 	}
-
+  
 	function setupTicker() {
-	  setTimeout(() => { // Delay to ensure proper rendering
+	  requestAnimationFrame(() => {
 		let dynamicSpacing = calculateSpacing();
-
+  
 		tickerItems.forEach((item) => {
 		  item.style.marginBottom = `${dynamicSpacing}px`;
+		  item.style.fontSize = "1.8rem"; // Ensure consistent font size
 		});
-
+  
 		let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
 		let totalHeight = itemHeight * tickerItems.length;
-
+  
 		// Prevent duplicate ticker content from stacking infinitely
 		tickerWrapper.innerHTML = tickerWrapper.innerHTML.split("<!-- DUPLICATE -->")[0];
 		tickerWrapper.innerHTML += `<!-- DUPLICATE -->` + tickerWrapper.innerHTML;
 		tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
-
+  
 		gsap.set(".ticker-wrapper", { y: 0 });
-
+  
 		gsap.to(".ticker-wrapper", {
 		  y: -totalHeight,
 		  duration: tickerItems.length * 8, // Adjust scrolling speed dynamically
@@ -952,11 +953,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			gsap.set(".ticker-wrapper", { y: 0 });
 		  }
 		});
-	  }, 100); // Delay to allow text rendering
+	  });
 	}
-
+  
 	setupTicker();
-
+  
 	// Recalculate spacing on window resize with debounce to prevent crashes
 	let resizeTimeout;
 	window.addEventListener("resize", () => {
@@ -965,11 +966,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		setupTicker();
 	  }, 300);
 	});
-
-	// Recalculate spacing on orientation change
+  
+	// Handle mobile orientation change to prevent font resizing issues
 	window.addEventListener("orientationchange", () => {
 	  setTimeout(() => {
 		setupTicker();
-	  }, 200);
+	  }, 500);
 	});
-  });
+  };
+  
