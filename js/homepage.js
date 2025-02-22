@@ -912,7 +912,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 });
 
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
 	const tickerWrapper = document.querySelector(".ticker-wrapper");
 	let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
   
@@ -922,7 +922,7 @@ window.onload = () => {
 		const rect = item.getBoundingClientRect();
 		maxHeight = Math.max(maxHeight, rect.height); // Capture the real height
 	  });
-	  return maxHeight * 0.95; // Add extra space for better visibility
+	  return maxHeight * 1.5; // Adjusted spacing for proper visibility
 	}
   
 	function setupTicker() {
@@ -931,27 +931,24 @@ window.onload = () => {
   
 		tickerItems.forEach((item) => {
 		  item.style.marginBottom = `${dynamicSpacing}px`;
-		  item.style.fontSize = "1.8rem"; // Ensure consistent font size
 		});
   
 		let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
 		let totalHeight = itemHeight * tickerItems.length;
   
-		// Prevent duplicate ticker content from stacking infinitely
-		tickerWrapper.innerHTML = tickerWrapper.innerHTML.split("<!-- DUPLICATE -->")[0];
-		tickerWrapper.innerHTML += `<!-- DUPLICATE -->` + tickerWrapper.innerHTML;
+		// Clear previous duplicate and ensure infinite loop works properly
+		tickerWrapper.innerHTML = "";
+		let originalItems = tickerItems.map(item => item.outerHTML).join('');
+		tickerWrapper.innerHTML = originalItems + originalItems; // Duplicate content once
 		tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
   
 		gsap.set(".ticker-wrapper", { y: 0 });
   
 		gsap.to(".ticker-wrapper", {
 		  y: -totalHeight,
-		  duration: tickerItems.length * 8, // Adjust scrolling speed dynamically
+		  duration: tickerItems.length * 1, // Smooth scrolling speed
 		  ease: "none",
 		  repeat: -1,
-		  onRepeat: () => {
-			gsap.set(".ticker-wrapper", { y: 0 });
-		  }
 		});
 	  });
 	}
@@ -967,11 +964,9 @@ window.onload = () => {
 	  }, 300);
 	});
   
-	// Handle mobile orientation change to prevent font resizing issues
-	window.addEventListener("orientationchange", () => {
-	  setTimeout(() => {
-		setupTicker();
-	  }, 500);
+	// Fix font rendering issue on iOS (prevents text overlap on first load)
+	document.fonts.ready.then(() => {
+	  setupTicker();
 	});
-  };
+  });
   
