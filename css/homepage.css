@@ -794,6 +794,9 @@ nav a {
 	font-weight: 800;
 	color: black;
 	position: relative;
+	display: inline-block;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transform-origin: bottom; /* Shrink downward */
 }
 
 .menu-link::before {
@@ -811,6 +814,32 @@ nav a {
 .menu-link:hover::before {
 	width: 100%;
 }
+
+
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    right: -100vw; /* Start completely off the right edge */
+    width: 0;
+    height: 100vh;
+    background-color: #e61618;
+    z-index: 9999;
+    transition: transform 1s ease-in-out, width 0.5s ease-out;
+}
+
+.page-transition-overlay.active {
+    right: 0; /* Slide into view from the right */
+    width: calc(100vw - var(--ticker-width, 100px)); /* Take up the remaining space after the ticker */
+}
+
+.menu-link.shrink {
+    transform: scaleY(0);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+
 
 /* Navbar code ends here */
 /* Disabling the rotating text logo for now */
@@ -1290,7 +1319,9 @@ footer>div:not(.socials) {
 	header {
 		top: 5vh;
 		font-size: 1rem;
-		height: 13vh;
+		height: 9.5vh;
+		padding: 0vh;
+
 	}
 
 	/* hide the cross button */
