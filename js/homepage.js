@@ -970,87 +970,124 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
   });
   
+  
+  
   document.addEventListener("DOMContentLoaded", () => {
     const menuLinks = document.querySelectorAll(".menu-link");
     const overlay = document.querySelector(".page-transition-overlay");
     const sidebar = document.querySelector(".sidebar");
-    const container = document.querySelector(".container"); // Sidebar wrapper
     const ticker = document.querySelector(".Header-ticker");
+    let iframeContainer = document.createElement("div"); // Wrapper for iframe
+    let iframe = null; // Global iframe reference
+    document.body.appendChild(iframeContainer);
 
-    // Function to get ticker width dynamically
     function getTickerWidth() {
-        return ticker ? ticker.offsetWidth : 0; // Getting ticker's width
+        return ticker ? ticker.offsetWidth : 100;
     }
 
-    // Function to adjust overlay width and position for the sliding effect
     function adjustOverlayPosition() {
-        let tickerWidth = getTickerWidth(); // Get ticker width
-        let overlayWidth = `calc(100vw - ${tickerWidth}px)`; // Adjust overlay width based on ticker width
-        overlay.style.width = overlayWidth; // Set overlay width
-
-        // Adjust the transform origin to ensure the animation starts just after the ticker
-        overlay.style.transformOrigin = `${tickerWidth}px center`;
+        let tickerWidth = getTickerWidth();
+        document.documentElement.style.setProperty("--ticker-width", `${tickerWidth}px`);
     }
 
-    // Function to handle the animation and iframe loading
-    function handleMenuLinkClick(event) {
-        event.preventDefault(); // Stop immediate navigation
-        let targetUrl = event.currentTarget.getAttribute("href"); // Get the link's URL
+    function closeSidebar() {
+        sidebar.classList.remove("change");
+    }
 
-        // Step 1: Create an iframe to preload the next page
-        let iframe = document.createElement("iframe");
-        iframe.src = targetUrl; // Start loading the next page
-        iframe.style.position = "fixed";
-        iframe.style.top = "0";
-        iframe.style.left = "0";
-        iframe.style.width = "100vw";
-        iframe.style.height = "100vh";
-        iframe.style.opacity = "0"; // Initially hide iframe
-        iframe.style.pointerEvents = "none"; // Prevent interaction
-        iframe.style.zIndex = "9980"; // Ensure it's behind the overlay
-        document.body.appendChild(iframe);
+    function loadPageInIframe(url, updateHistory = true) {
+        if (!iframe) {
+            iframe = document.createElement("iframe");
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100vw";
+            iframe.style.height = "100vh";
+            iframe.style.opacity = "0"; // Hide initially
+            iframe.style.pointerEvents = "none"; // Prevent interactions
+            iframe.style.zIndex = "9980"; // Place it behind overlay
+            iframeContainer.appendChild(iframe);
+        }
 
-        // Step 2: Shrink all menu items
-        menuLinks.forEach(item => {
-            item.classList.add("shrink");
-        });
-
-        // Step 3: Wait for the iframe to load and then trigger the transition
+        iframe.src = url;
         iframe.onload = () => {
-            // Step 4: Add a short pause after the shrink animation before starting the overlay animation
-            setTimeout(() => {
-                adjustOverlayPosition(); // Adjust overlay position and start animation
-                overlay.classList.add("active"); // Start the sliding animation
-                iframe.style.opacity = "1"; // Make iframe visible just before transition
-            }, 500); // Wait a little longer for the shrink effect before sliding overlay
+            iframe.style.opacity = "1"; // Reveal iframe
+            iframe.style.transition = "opacity 0.5s ease-in-out"; // Smooth fade-in effect
+            iframe.style.pointerEvents = "auto"; // Enable interactions
 
-            // Step 5: Wait for transition to complete, then officially navigate
-            setTimeout(() => {
-                iframe.style.opacity = "0"; // Fade out iframe for the transition
-                window.location.href = targetUrl; // Official navigation after transition
-            }, 3000); // Matches transition duration
+            // ** Always Update URL **
+            if (updateHistory) {
+                history.pushState({ path: url }, "", url);
+            }
+
+            // ** Reattach event listeners inside the iframe **
+            reattachIframeListeners();
         };
     }
 
-    // Re-initialize sidebar state and event listeners after page reload
-    function reinitializeSidebar() {
-        menuLinks.forEach(link => {
+    function handleMenuLinkClick(event) {
+        event.preventDefault();
+        let targetUrl = event.currentTarget.getAttribute("href");
+
+        adjustOverlayPosition();
+
+        // Step 1: Shrink menu items
+        menuLinks.forEach(item => item.classList.add("shrink"));
+
+        // Step 2: Cover the screen with the overlay
+        setTimeout(() => {
+            overlay.classList.add("active");
+        }, 400);
+
+        // Step 3: Close sidebar after overlay covers
+        setTimeout(() => {
+            closeSidebar();
+        }, 1400);
+
+        // Step 4: Load new page inside iframe & update URL
+        setTimeout(() => {
+            loadPageInIframe(targetUrl, true);
+        }, 2000);
+
+        // Step 5: Move overlay back after replacing content
+        setTimeout(() => {
+            overlay.classList.add("reverse");
+        }, 2500);
+
+        // Step 6: Remove overlay after transition completes
+        setTimeout(() => {
+            overlay.classList.remove("active", "reverse");
+            menuLinks.forEach(item => item.classList.remove("shrink")); // Restore menu
+        }, 3400);
+    }
+
+    function reattachIframeListeners() {
+        // Ensure menu links work inside the iframe
+        if (!iframe || !iframe.contentWindow.document) return;
+
+        let iframeLinks = iframe.contentWindow.document.querySelectorAll(".menu-link");
+        iframeLinks.forEach(link => {
+            link.removeEventListener("click", handleMenuLinkClick);
             link.addEventListener("click", handleMenuLinkClick);
         });
     }
 
-    // Ensure sidebar links work after page reload (re-attaching event listeners)
-    if (sidebar) {
-        reinitializeSidebar(); // Reattach the event listeners to the sidebar
+    function reattachEventListeners() {
+        // Ensure menu links work on the main page
+        document.querySelectorAll(".menu-link").forEach(link => {
+            link.removeEventListener("click", handleMenuLinkClick); // Prevent duplicate listeners
+            link.addEventListener("click", handleMenuLinkClick);
+        });
     }
 
-    // Ensure overlay width adjusts dynamically on resize
-    window.addEventListener("resize", () => {
-        if (overlay.classList.contains("active")) {
-            adjustOverlayPosition(); // Recalculate and adjust overlay position on resize
+    // ** Handle browser back/forward navigation **
+    window.addEventListener("popstate", (event) => {
+        if (event.state && event.state.path) {
+            loadPageInIframe(event.state.path, false);
         }
     });
+
+    // Attach event listeners initially
+    reattachEventListeners();
+
+    window.addEventListener("resize", adjustOverlayPosition);
 });
-
-
-

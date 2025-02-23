@@ -815,30 +815,37 @@ nav a {
 	width: 100%;
 }
 
-
 .page-transition-overlay {
     position: fixed;
     top: 0;
-    right: -100vw; /* Start completely off the right edge */
+    right: -100vw; /* Start completely off-screen */
     width: 0;
     height: 100vh;
     background-color: #e61618;
     z-index: 9999;
     transition: transform 1s ease-in-out, width 0.5s ease-out;
+    transform-origin: right center; /* Ensures animation starts from the right */
 }
 
+/* First transition: slide from ticker’s right edge to cover the screen */
 .page-transition-overlay.active {
-    right: 0; /* Slide into view from the right */
-    width: calc(100vw - var(--ticker-width, 100px)); /* Take up the remaining space after the ticker */
+    right: 0;
+    width: calc(100vw - var(--ticker-width, 100px)); /* Expands from ticker’s right edge */
 }
 
+/* Second transition: slide off to the right, revealing the new page */
+.page-transition-overlay.reverse {
+    right: -100vw;
+    width: calc(100vw - var(--ticker-width, 100px));
+    transition: transform 1s ease-in-out, width 0.5s ease-in-out;
+}
+
+/* Shrink effect for menu links */
 .menu-link.shrink {
     transform: scaleY(0);
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-
-
 
 
 /* Navbar code ends here */
