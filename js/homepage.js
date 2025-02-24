@@ -1092,15 +1092,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", adjustOverlayPosition);
 });
 
-
-iframe.onload = () => {
-    iframe.style.opacity = "1";
-    iframe.style.transition = "opacity 0.5s ease-in-out";
-    iframe.style.pointerEvents = "auto";
-
-    // Disable body scrolling while iframe is active
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.position = "fixed"; // Prevents page movement
-};
-

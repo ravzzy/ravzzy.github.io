@@ -847,20 +847,6 @@ nav a {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-iframe {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    border: none;
-    overflow: hidden;
-	touch-action: pan-y; /* Allow vertical pull-to-refresh but no horizontal swipe */
-
-}
-
-
-
 
 /* Navbar code ends here */
 /* Disabling the rotating text logo for now */
@@ -1324,19 +1310,48 @@ footer>div:not(.socials) {
 
 	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
 	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
-
-
-	body {
+	 /*body {
+		overflow-x: hidden;
+		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+	/*}*/
+
+		/* Prevent horizontal scrolling across the entire page */
+	html, body {
+		overflow-x: hidden; /* Stops side-scrolling */
+		margin: 0;
+		padding: 0;
+		width: 100vw;
 	}
 
-	html, body {
-		overflow-x: hidden; /* Disable horizontal movement */
-		overflow-y: auto; /* Keep vertical scrolling enabled */
-		position: fixed;
+	/* Make iframe full-screen but still scroll properly */
+	iframe {
+		position: absolute; /* Allows scrolling rather than fixing */
+		top: 0;
+		left: 0;
 		width: 100vw;
 		height: 100vh;
+		border: none;
+		touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal swipes */
+		overflow: visible; /* Ensure content inside iframe loads correctly */
+	}
+
+	/* Prevent page bouncing in Safari while keeping smooth scrolling */
+	html {
+		scroll-behavior: smooth;
+		font-size: 8px;
+		overscroll-behavior: contain; /* Stops rubber-band effect */
+	}
+
+	/* Allow smooth scrolling inside the iframe while keeping the page structured */
+	body {
+		font-family: 'Noto Sans KR', sans-serif;
+		text-transform: uppercase;
+		background-color: #f1f1f1;
+		overflow-x: hidden;
+		touch-action: pan-y; /* Prevent horizontal movement but allow scrolling */
+		-webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
 	}
 
 	.Header-swimlane {
