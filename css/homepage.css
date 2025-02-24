@@ -848,17 +848,17 @@ nav a {
 }
 
 iframe {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	border: none; /* Removes border */
-	overflow: hidden;
-	pointer-events: none; /* Prevents dragging on mobile */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    overflow: hidden;
+    pointer-events: auto;
+    touch-action: pan-y;
+    user-select: none;
 }
-
-
 
 
 /* Navbar code ends here */
@@ -1323,11 +1323,34 @@ footer>div:not(.socials) {
 
 	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
 	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
+	/*
 	body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
-		touch-action: pan-y;
+		/*touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+		/*
+	}*/
+
+
+	body {
+		margin: 0;
+		padding: 0;
+		-webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+	}
+
+	html {
+		overscroll-behavior-y: contain; /* Prevents bounce effect */
+	}
+
+	.container {
+		min-height: 600vh; /* Ensure content area is always tall enough */
+		overflow: visible; /* Allow proper rendering of lazy-loaded images */
+	}
+
+		/* Only restrict horizontal scrolling inside iframe */
+	iframe, .content-wrapper {
+		overflow-x: hidden;
 	}
 
 	.Header-swimlane {

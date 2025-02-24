@@ -1057,6 +1057,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             overlay.classList.remove("active", "reverse");
             menuLinks.forEach(item => item.classList.remove("shrink")); // Restore menu
+			//location.reload();
         }, 3400);
     }
 
@@ -1091,3 +1092,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", adjustOverlayPosition);
 });
+
+
+/* Prevent iframe dragging without blocking scrolling */
+
+document.addEventListener("touchmove", (event) => {
+    if (event.target.tagName === "IFRAME") {
+        // Allow vertical scrolling but prevent iframe from shifting sideways
+        if (event.touches.length === 1) {
+            let touch = event.touches[0];
+            if (Math.abs(touch.pageX - touch.clientX) > 10) {
+                event.preventDefault(); // Prevent side movement
+            }
+        }
+    }
+}, { passive: false });
