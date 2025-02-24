@@ -1108,3 +1108,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflowX = "clip";
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    let ticking = false;
+
+    function preventHorizontalScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                if (window.scrollX !== 0) {
+                    window.scrollTo(0, window.scrollY);
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+});
