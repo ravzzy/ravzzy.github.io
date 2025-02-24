@@ -1094,16 +1094,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* Prevent iframe dragging without blocking scrolling */
-
-document.addEventListener("touchmove", (event) => {
-    if (event.target.tagName === "IFRAME") {
-        // Allow vertical scrolling but prevent iframe from shifting sideways
-        if (event.touches.length === 1) {
-            let touch = event.touches[0];
-            if (Math.abs(touch.pageX - touch.clientX) > 10) {
-                event.preventDefault(); // Prevent side movement
-            }
+document.addEventListener("DOMContentLoaded", () => {
+    // Reset scroll position to prevent horizontal movement
+    window.addEventListener("scroll", () => {
+        if (window.scrollX !== 0) {
+            window.scrollTo(0, window.scrollY);
         }
-    }
-}, { passive: false });
+    });
+
+    // Ensure no unwanted horizontal scroll on resize
+    window.addEventListener("resize", () => {
+        document.documentElement.style.overflowX = "clip";
+        document.body.style.overflowX = "clip";
+    });
+});
