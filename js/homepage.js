@@ -1094,15 +1094,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 iframe.onload = () => {
-    iframe.style.opacity = "1"; // Reveal iframe
-    iframe.style.transition = "opacity 0.5s ease-in-out"; 
-    iframe.style.pointerEvents = "auto"; 
+    iframe.style.opacity = "1";
+    iframe.style.transition = "opacity 0.5s ease-in-out";
+    iframe.style.pointerEvents = "auto";
 
-    // **Force iframe to prevent scrolling inside**
-    let iframeDoc = iframe.contentWindow.document;
-    iframeDoc.body.style.overflow = "hidden";
-    iframeDoc.documentElement.style.overflow = "hidden";
-
-    // Reattach menu link event listeners inside iframe
-    reattachIframeListeners();
+    // Disable body scrolling while iframe is active
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.position = "fixed"; // Prevents page movement
 };
+

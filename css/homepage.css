@@ -853,9 +853,11 @@ iframe {
     left: 0;
     width: 100vw;
     height: 100vh;
-    border: none; /* Removes border */
+    border: none;
     overflow: hidden;
 }
+
+
 
 
 /* Navbar code ends here */
