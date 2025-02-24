@@ -977,9 +977,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector(".page-transition-overlay");
     const sidebar = document.querySelector(".sidebar");
     const ticker = document.querySelector(".Header-ticker");
-    let iframeContainer = document.createElement("div"); // Wrapper for iframe
-    let iframe = null; // Global iframe reference
-    document.body.appendChild(iframeContainer);
 
     function getTickerWidth() {
         return ticker ? ticker.offsetWidth : 100;
@@ -992,36 +989,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeSidebar() {
         sidebar.classList.remove("change");
-    }
-
-    function loadPageInIframe(url, updateHistory = true) {
-        if (!iframe) {
-            iframe = document.createElement("iframe");
-            iframe.style.position = "fixed";
-            iframe.style.top = "0";
-            iframe.style.left = "0";
-            iframe.style.width = "100vw";
-            iframe.style.height = "100vh";
-            iframe.style.opacity = "0"; // Hide initially
-            iframe.style.pointerEvents = "none"; // Prevent interactions
-            iframe.style.zIndex = "9980"; // Place it behind overlay
-            iframeContainer.appendChild(iframe);
-        }
-
-        iframe.src = url;
-        iframe.onload = () => {
-            iframe.style.opacity = "1"; // Reveal iframe
-            iframe.style.transition = "opacity 0.5s ease-in-out"; // Smooth fade-in effect
-            iframe.style.pointerEvents = "auto"; // Enable interactions
-
-            // ** Always Update URL **
-            if (updateHistory) {
-                history.pushState({ path: url }, "", url);
-            }
-
-            // ** Reattach event listeners inside the iframe **
-            reattachIframeListeners();
-        };
     }
 
     function handleMenuLinkClick(event) {
@@ -1043,33 +1010,10 @@ document.addEventListener("DOMContentLoaded", () => {
             closeSidebar();
         }, 1400);
 
-        // Step 4: Load new page inside iframe & update URL
+        // Step 4: Load new page
         setTimeout(() => {
-            loadPageInIframe(targetUrl, true);
+            window.location.href = targetUrl;
         }, 2000);
-
-        // Step 5: Move overlay back after replacing content
-        setTimeout(() => {
-            overlay.classList.add("reverse");
-        }, 2500);
-
-        // Step 6: Remove overlay after transition completes
-        setTimeout(() => {
-            overlay.classList.remove("active", "reverse");
-            menuLinks.forEach(item => item.classList.remove("shrink")); // Restore menu
-			//location.reload();
-        }, 3400);
-    }
-
-    function reattachIframeListeners() {
-        // Ensure menu links work inside the iframe
-        if (!iframe || !iframe.contentWindow.document) return;
-
-        let iframeLinks = iframe.contentWindow.document.querySelectorAll(".menu-link");
-        iframeLinks.forEach(link => {
-            link.removeEventListener("click", handleMenuLinkClick);
-            link.addEventListener("click", handleMenuLinkClick);
-        });
     }
 
     function reattachEventListeners() {
@@ -1080,13 +1024,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ** Handle browser back/forward navigation **
-    window.addEventListener("popstate", (event) => {
-        if (event.state && event.state.path) {
-            loadPageInIframe(event.state.path, false);
-        }
-    });
-
     // Attach event listeners initially
     reattachEventListeners();
 
@@ -1094,34 +1031,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Reset scroll position to prevent horizontal movement
-    window.addEventListener("scroll", () => {
-        if (window.scrollX !== 0) {
-            window.scrollTo(0, window.scrollY);
-        }
-    });
-
-    // Ensure no unwanted horizontal scroll on resize
-    window.addEventListener("resize", () => {
-        document.documentElement.style.overflowX = "clip";
-        document.body.style.overflowX = "clip";
-    });
-});
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    let ticking = false;
-
-    function preventHorizontalScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                if (window.scrollX !== 0) {
-                    window.scrollTo(0, window.scrollY);
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-});
