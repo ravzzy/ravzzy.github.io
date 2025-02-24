@@ -855,6 +855,8 @@ iframe {
     height: 100vh;
     border: none;
     overflow: hidden;
+	touch-action: pan-y; /* Allow vertical pull-to-refresh but no horizontal swipe */
+
 }
 
 
@@ -1325,10 +1327,16 @@ footer>div:not(.socials) {
 
 
 	body {
-		overflow-x: hidden;
-		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+	}
+
+	html, body {
+		overflow-x: hidden; /* Disable horizontal movement */
+		overflow-y: auto; /* Keep vertical scrolling enabled */
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
 	}
 
 	.Header-swimlane {
