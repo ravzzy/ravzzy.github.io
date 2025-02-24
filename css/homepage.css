@@ -1323,6 +1323,8 @@ footer>div:not(.socials) {
 		margin: 0;
 		padding: 0;
 		width: 100vw;
+		height: 100%;
+		touch-action: none; /* Prevents all gestures that could shift the page */
 	}
 
 	/* Make iframe full-screen but still scroll properly */
@@ -1334,14 +1336,19 @@ footer>div:not(.socials) {
 		height: 100vh;
 		border: none;
 		touch-action: pan-y; /* Allow vertical scrolling, prevent horizontal swipes */
-		overflow: visible; /* Ensure content inside iframe loads correctly */
+		overflow: hidden;
+		touch-action: pan-y; /* Allow vertical scrolling, block left-right movement */
+		-ms-touch-action: pan-y; /* Fix for older Edge browsers */
+		scrollbar-width: none; /* Hide scrollbar in Firefox */
+		-webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
 	}
 
 	/* Prevent page bouncing in Safari while keeping smooth scrolling */
 	html {
 		scroll-behavior: smooth;
 		font-size: 8px;
-		overscroll-behavior: contain; /* Stops rubber-band effect */
+		overscroll-behavior-y: contain; /* Stops vertical rubber-band effect */
+		overscroll-behavior-x: none; /* Fully blocks horizontal movement */
 	}
 
 	/* Allow smooth scrolling inside the iframe while keeping the page structured */
