@@ -1313,7 +1313,7 @@ footer>div:not(.socials) {
 	 /*body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
-		touch-action: pan-y;
+		/*touch-action: pan-y;*/
 		/* Ensures smooth vertical scrolling */
 	/*}*/
 
