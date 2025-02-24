@@ -847,6 +847,16 @@ nav a {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none; /* Removes border */
+    overflow: hidden;
+}
+
 
 /* Navbar code ends here */
 /* Disabling the rotating text logo for now */
