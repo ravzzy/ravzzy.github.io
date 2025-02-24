@@ -1091,3 +1091,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", adjustOverlayPosition);
 });
+
+
+iframe.onload = () => {
+    iframe.style.opacity = "1"; // Reveal iframe
+    iframe.style.transition = "opacity 0.5s ease-in-out"; 
+    iframe.style.pointerEvents = "auto"; 
+
+    // **Force iframe to prevent scrolling inside**
+    let iframeDoc = iframe.contentWindow.document;
+    iframeDoc.body.style.overflow = "hidden";
+    iframeDoc.documentElement.style.overflow = "hidden";
+
+    // Reattach menu link event listeners inside iframe
+    reattachIframeListeners();
+};
