@@ -513,7 +513,7 @@ window.addEventListener("resize", adjustSidebarWidth);
 document.addEventListener("DOMContentLoaded", function () {
 	const ELEMENT_GAP_LOOP = 10; // Constant gap within a single loop
 	const ELEMENT_GAP_BETWEEN_LOOPS = 20; // Larger gap before the next loop starts
-	const START_Y = -100; // Adjust for initial vertical position
+	const START_Y = -120; // Adjust for initial vertical position
 
 	//console.log("ELEMENT_GAP_LOOP: " + ELEMENT_GAP_LOOP);
 	//console.log("ELEMENT_GAP_BETWEEN_LOOPS: " + ELEMENT_GAP_BETWEEN_LOOPS);

@@ -108,6 +108,8 @@ header {
 	justify-content: space-between;
 	/* Proper spacing between left and right */
 	align-items: center;
+	margin-left: 2%;
+	margin-right: 2%;	  
 	gap: 1vw;
 	width: 100%;
 }
@@ -179,7 +181,7 @@ header {
 
 .timeline-item.left h2 {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	/* Adjust heading size */
 	font-weight: bold;
 	/* Optional: Adjust weight */
@@ -200,8 +202,9 @@ header {
 	object-fit: contain;
 }
 
-#bullet_service {
-	text-align: left;
+.bullet_service {
+	text-align: left !important;
+	padding-left: 2%;
 }
 
 p a {
@@ -240,7 +243,7 @@ p a:hover {
 
 .timeline-item.right h2 {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	/* Adjust heading size */
 	font-weight: bold;
 	/* Optional: Adjust weight */
@@ -1303,7 +1306,7 @@ footer>div:not(.socials) {
 	}
 }
 
-@media (width < 1200px) {
+@media (max-width: 1200px) {
 	/* Mobile */
 
 	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
