@@ -408,7 +408,7 @@ function adjustTextColor() {
 
 	// Change hamburger menu lines (X icon inside menu)
 	menuLines.forEach(line => {
-		line.style.backgroundColor = brightness < 150 ? "white" : "black";
+		line.style.backgroundColor = brightness < 150 ? "black" : "black";
 	});
 
 	// Update CSS Variables
@@ -543,10 +543,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function updateValues() {
 		if (window.innerWidth <= 768) { // Mobile screen sizes
-			initialFontSize = 8;
-			minFontSize = 4;
-			initialPadding = 10;
-			minPadding = 5;
+			initialFontSize = 12;
+			minFontSize = 6;
+			initialPadding = 0;
+			minPadding = 0;
 		} else { // Desktop sizes
 			initialFontSize = 24;
 			minFontSize = 8;

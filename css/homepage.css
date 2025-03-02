@@ -672,7 +672,7 @@ nav a {
 
 /* Hamburger Menu for Mobile*/
 .hamburger-menu {
-	top: 1%;
+	top: 0%;
 	width: 4rem;
 	height: 4rem;
 	position: fixed;
@@ -731,6 +731,8 @@ nav a {
 	visibility: hidden;
 	transition: all 0.2s;
 	display: none;
+	z-index: 15;
+
 	/* Hides the close button */
 
 }
@@ -763,7 +765,7 @@ nav a {
 	top: 0;
 	right: -100vh;
 	transition: right 0.5s;
-	z-index: 5;
+	z-index: 14;
 }
 
 /* way to make sure the side bar background matches the site background 
@@ -1364,9 +1366,10 @@ footer>div:not(.socials) {
 	}
 
 	.logo-image {
-		transform: scale(0.6);
-		top: 4%;
-		left: 2%;
+
+		top: -3.5%;
+		left: -6%;
+		transform: scale(0.4);
 	}
 
 	.navbar {
@@ -1685,16 +1688,27 @@ footer>div:not(.socials) {
 	}
 	
 	.Header-swimlane {
-		height: 6vh;
+		height: 5vh;
+	}
+
+	.Header-swimlane-Text{
+		font-size: 1.5rem;
+		font-weight: 600;
+		top: 1%;
+		left: 12.5%;
+
 	}
 
 	header {
 		top: 5vh;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		height: 9.5vh;
 		padding: 0vh;
 
+		left: 8.2vw;
+
 	}
+
 
 	/* hide the cross button */
 
@@ -1707,9 +1721,9 @@ footer>div:not(.socials) {
 	}
 
 	.logo-image {
-		transform: scale(0.6);
-		top: 4%;
-		left: 2%;
+		top: -5.5%;
+		left: -9.5%;
+		transform: scale(0.35);
 	}
 
 	.navbar {
@@ -1774,6 +1788,10 @@ footer>div:not(.socials) {
 		transform: translateX(-50%) !important;
 	}
 
+
+	.founder-description {
+		font-size: 1.2rem;
+	}
 
 	/* hide the 2nd vertical line in mobile view */
 	body>div.container>section.final>div:nth-child(6) {
