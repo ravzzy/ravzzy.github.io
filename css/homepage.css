@@ -30,26 +30,34 @@ body {
 	width: 100%;
 	position: fixed;
 	top: 0;
-	left: 3.55vw;
+	left:0;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 9vh;
-	z-index: 3;
+	z-index: 4;
 	/* Keep swimlane above the header */
 	transition: transform 0.3s ease-out;
-	border-top: 0.5px solid grey;
-	border-left: 0.5px solid grey;
-	border-right: 0.5px solid grey;
-	border-bottom: none;
+	border: 0.5px solid grey; 
+}
+
+.Header-swimlane-Text {
+	color: black;
+	font-size: 2rem;
+	width: 100%;
+	font-weight: 600;
+	position: fixed;
+	top: 2%;
+	left: 5%;
+	z-index: 5;
 }
 
 header {
 	background-color: #f1f1f1;
 	color: black;
-	padding: 2vh;
-	font-size: 2rem;
+	font-size: 3rem;
+	font-weight: 800;
 	width: 100%;
 	position: fixed;
 	top: 9vh;
@@ -62,7 +70,10 @@ header {
 	align-items: center;
 	height: 14vh;
 	transition: transform 0.3s ease-out;
-	border: 0.5px solid grey; 
+	border-top: none;
+	border-left: 0.5px solid grey;
+	border-right: 0.5px solid grey;
+	border-bottom: 0.5px solid grey;
 
 }
 
@@ -503,10 +514,10 @@ p a:hover {
 	position: fixed;
 	/* Stays in place */
 	display: flex;
-	z-index: 4;
-	top: 6.5%;
-	left: -5%;
-	transform: scale(0.3);
+	z-index: 5;
+	top: -3.5%;
+	left: -6%;
+	transform: scale(0.635);
 	opacity: 1;
 }
 
@@ -538,12 +549,11 @@ nav div {
 
 nav a {
 	/* Navbar links */
-	background-color: var(--nav-bg-color);
-	color: var(--nav-text-color);
-
-	/*background-color: black;*/
-	padding: 0.25em 0.75em;
-	border-radius: 5em;
+	/*background-color: var(--nav-bg-color);*/
+	color: var(--footer-text-color);
+	background-color: transparent;
+	/*padding: 0.25em 0.75em;*/
+	/*border-radius: 5em;*/
 	/*color: #f1f1f1;*/
 	text-decoration: none;
 	margin-inline-start: 0.5em;
@@ -571,7 +581,7 @@ nav a {
 .nav-menu {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	margin-right: 4rem;
 	display: flex;
 	gap: 0.1vw;
 }
@@ -588,18 +598,22 @@ nav a {
 /* Menu Items */
 .nav-menu a {
 	text-decoration: none;
-	background-color: var(--nav-bg-color);
+	/*background-color: var(--nav-bg-color);*/
+	background-color: transparent; /* Removes background */
 	color: var(--nav-text-color) !important;
 	/* Ensure text color updates */
 	/*color: white;*/
-	font-size: 1.25rem;
-	padding: 0.7vw 1vw;
-	transition: background 0.3s, color 0.3s;
+	font-size: 1.5rem;
+	font-weight: 500;
+	/*padding: 0.7vw 1vw;
+	transition: background 0.3s, color 0.3s;*/
+	padding: 0.5rem; /* Removes padding */
+	transition: color 0.3s; /* Just transition the color */
 }
 
 /* Hover Effect */
 .nav-menu a:hover {
-	background: var(--nav-hover-color);
+	/*background: var(--nav-hover-color);*/
 	/* Adjust hover background */
 	color: var(--nav-bg-color);
 	/* Use dynamic color */
@@ -1121,7 +1135,7 @@ body.loading .loader {
 .about div:last-child {
 	display: flex;
 	flex-direction: column;
-	text-align: left;
+	text-align: center;
 }
 
 .avatars-marquee {

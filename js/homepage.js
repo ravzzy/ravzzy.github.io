@@ -381,16 +381,21 @@ function adjustTextColor() {
 
 	if (rgbValues[0] === 230 && rgbValues[1] === 22 && rgbValues[2] === 24) {
 		// If the background is rgb(230, 22, 24)
-		document.documentElement.style.setProperty("--nav-bg-color", "black");
-		document.documentElement.style.setProperty("--nav-text-color", "white");
+		//document.documentElement.style.setProperty("--nav-bg-color", "black");
+		document.documentElement.style.setProperty("--nav-text-color", "black");
+		document.documentElement.style.setProperty("--footer-text-color","white");
+
 	} else if (rgbValues[0] === 23 && rgbValues[1] === 16 && rgbValues[2] === 16) {
 		// If the background is rgb(23, 16, 16)
-		document.documentElement.style.setProperty("--nav-bg-color", "white");
+		//document.documentElement.style.setProperty("--nav-bg-color", "white");
 		document.documentElement.style.setProperty("--nav-text-color", "black");
+		document.documentElement.style.setProperty("--footer-text-color","#f1f1f1");
 	} else {
 		// Default case for any other background color
-		document.documentElement.style.setProperty("--nav-bg-color", "white");
+		//document.documentElement.style.setProperty("--nav-bg-color", "white");
 		document.documentElement.style.setProperty("--nav-text-color", "black");
+		document.documentElement.style.setProperty("--footer-text-color","white");
+
 	}
 
 	// Update the rest of the page styles based on brightness
@@ -408,7 +413,6 @@ function adjustTextColor() {
 
 	// Update CSS Variables
 	document.documentElement.style.setProperty("--nav-hover-color", brightness < 150 ? "white" : "white");
-	document.documentElement.style.setProperty("--footer-text-color", brightness < 150 ? "white" : "black");
 
 	// Apply to `.nav-menu a`
 	navLinks.forEach(link => {
@@ -544,10 +548,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			initialPadding = 10;
 			minPadding = 5;
 		} else { // Desktop sizes
-			initialFontSize = 16;
-			minFontSize = 12;
-			initialPadding = 20;
-			minPadding = 5;
+			initialFontSize = 24;
+			minFontSize = 8;
+			initialPadding = 0;
+			minPadding = 0;
 		}
 	}
 
@@ -568,8 +572,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			// Hide both header & swimlane when scrolling down past 200px
 			header.style.transform = "translateY(-170%)";
 			//swimlane.style.transform = "translateY(-150%)";
-			swimlane.style.opacity = '0.5'; // 0.5 means 50% translucent
-			swimlane.style.backgroundColor = 'transparent';
+			swimlane.style.opacity = '1'; // 0.5 means 50% translucent
+			//swimlane.style.backgroundColor = 'transparent';
 
 			isHidden = true;
 		} else if (scrollY < lastScrollY && scrollY < 150 && isHidden) {
@@ -586,6 +590,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
+/* makes the logo disappear */
+/*
 window.addEventListener("scroll", function () {
 	let logo = document.querySelector(".logo-image");
 	if (window.scrollY > 160) {
@@ -595,7 +601,7 @@ window.addEventListener("scroll", function () {
 		logo.style.opacity = "1";  // Show the logo
 		logo.style.pointerEvents = "auto";
 	}
-});
+});*/
 
 
 //logic to calculate the width of the sidebar dynamically for all screen sizes
