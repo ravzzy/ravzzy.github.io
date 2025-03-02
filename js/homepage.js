@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
 	in the viewport, the text elements with the class .white-text will gradually fade in.
 
 */
-
+/*
 const roadmap = document.querySelector('.roadmap')
 const roadmapTitle = document.querySelector('.roadmap .title')
 
@@ -92,7 +92,7 @@ gsap.to(".white-text", { // Animate white-text elements separately
 		scrub: 1.5,
 		toggleActions: "play none none reverse", // Ensures it reverses when scrolling back up
 	}
-});
+}); */
 
 /*
 This code adds an interactive tilt effect to all elements with the class .card.
@@ -100,7 +100,7 @@ As the user moves their mouse over each .card, the element will tilt up to 30 de
 creating a 3D-like effect. 
 This code uses the Tilt.js library.
 */
-
+/*
 $(document).ready(function () {
 	$(".card").tilt({
 		maxTilt: 30,         // Maximum tilt angle
@@ -111,7 +111,7 @@ $(document).ready(function () {
 		scale: 1.05,         // Slight zoom effect
 		reset: true          // Reset tilt when the mouse leaves
 	});
-});
+});*/
 
 /* Contact Us Form
 
@@ -220,6 +220,7 @@ window.addEventListener("load", function () {
 
 
 // dynamic text colour change logic based on background colour for hamburger/sidebar/dropdown/navbar/designer footer
+/*
 function adjustTextColor() {
 	const menuLinks = document.querySelectorAll(".menu-link");
 	const menuLines = document.querySelectorAll(".hamburger-menu .line"); // Hamburger menu lines
@@ -247,7 +248,7 @@ function adjustTextColor() {
 	// Get computed background color of the section
 	const bgColor = window.getComputedStyle(currentSection).backgroundColor;
 	//logMessage("🎨 Detected Section Background Color: " + bgColor);
-	//console.log("🎨 Detected Section Background Color: " + bgColor);
+	console.log("🎨 Detected Section Background Color: " + bgColor);
 
 	// Convert RGBA to brightness
 	function getBrightness(rgba) {
@@ -314,6 +315,109 @@ function adjustTextColor() {
 		hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
 		//("✅ Updated ✖ icon colour:", hamburgerMenu.style.color);
 
+	}
+}
+*/
+
+/* 
+Note these colours - logic is based on it.
+rgb(230, 22, 24) ---#E61618
+rgb(23, 16, 16) ---- #171010 */
+
+function adjustTextColor() {
+	const menuLinks = document.querySelectorAll(".menu-link");
+	const menuLines = document.querySelectorAll(".hamburger-menu .line"); // Hamburger menu lines
+	const navLinks = document.querySelectorAll(".nav-menu a"); // Navbar links
+	const hamburgerMenu = document.querySelector(".hamburger-menu"); // Select the entire menu button
+	const footer = document.querySelector(".designer-footer"); // Select the designer footer
+
+	let sections = document.querySelectorAll("section");
+	let currentSection = null;
+	let belowSection = null; // Variable to store the layer below the current section
+
+	// Detect the current section in view
+	sections.forEach(section => {
+		let rect = section.getBoundingClientRect();
+		if (rect.top <= window.innerHeight && rect.bottom >= 0) {  // Checks if the section is in the viewport
+			currentSection = section;
+		}
+	});
+
+	if (!currentSection) {
+		console.error("❌ No section detected in view.");
+		return;
+	}
+
+	// Check the element below the current section (next sibling)
+	belowSection = currentSection.nextElementSibling;
+
+	// If there is no layer below, fall back to the current section's background
+	const bgColorBelow = belowSection ? 
+		window.getComputedStyle(belowSection).backgroundColor : 
+		window.getComputedStyle(currentSection).backgroundColor;
+
+	console.log("🎨 Detected Background Color (Layer Below or Current Section): " + bgColorBelow);
+
+	// Convert RGBA to brightness
+	function getBrightness(rgba) {
+		let match = rgba.match(/\d+(\.\d+)?/g);
+		if (!match || match.length < 3) {
+			return 255; // Default to white if the color extraction fails
+		}
+
+		let [r, g, b, a = 1] = match.map(Number);
+
+		// Blend with white if transparent
+		let blendedR = Math.round(r * a + 255 * (1 - a));
+		let blendedG = Math.round(g * a + 255 * (1 - a));
+		let blendedB = Math.round(b * a + 255 * (1 - a));
+
+		let brightness = (blendedR * 299 + blendedG * 587 + blendedB * 114) / 1000;
+		return brightness;
+	}
+
+	// Check the exact RGB values and set nav colors accordingly
+	const rgbValues = bgColorBelow.match(/\d+/g).map(Number); // Extract RGB values from the color
+
+	if (rgbValues[0] === 230 && rgbValues[1] === 22 && rgbValues[2] === 24) {
+		// If the background is rgb(230, 22, 24)
+		document.documentElement.style.setProperty("--nav-bg-color", "black");
+		document.documentElement.style.setProperty("--nav-text-color", "white");
+	} else if (rgbValues[0] === 23 && rgbValues[1] === 16 && rgbValues[2] === 16) {
+		// If the background is rgb(23, 16, 16)
+		document.documentElement.style.setProperty("--nav-bg-color", "white");
+		document.documentElement.style.setProperty("--nav-text-color", "black");
+	} else {
+		// Default case for any other background color
+		document.documentElement.style.setProperty("--nav-bg-color", "white");
+		document.documentElement.style.setProperty("--nav-text-color", "black");
+	}
+
+	// Update the rest of the page styles based on brightness
+	let brightness = getBrightness(bgColorBelow);
+
+	// Change menu link text color
+	menuLinks.forEach(link => {
+		link.style.color = brightness < 150 ? "white" : "black";
+	});
+
+	// Change hamburger menu lines (X icon inside menu)
+	menuLines.forEach(line => {
+		line.style.backgroundColor = brightness < 150 ? "white" : "black";
+	});
+
+	// Update CSS Variables
+	document.documentElement.style.setProperty("--nav-hover-color", brightness < 150 ? "white" : "white");
+	document.documentElement.style.setProperty("--footer-text-color", brightness < 150 ? "white" : "black");
+
+	// Apply to `.nav-menu a`
+	navLinks.forEach(link => {
+		link.style.color = "var(--nav-text-color)"; // Use CSS variable
+	});
+
+	// Change close button (X) when sidebar is open
+	if (document.querySelector(".container").classList.contains("change")) {
+		hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
 	}
 }
 
@@ -462,13 +566,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		if (scrollY > 200 && scrollY > lastScrollY && !isHidden) {
 			// Hide both header & swimlane when scrolling down past 200px
-			header.style.transform = "translateY(-160%)";
-			swimlane.style.transform = "translateY(-150%)";
+			header.style.transform = "translateY(-170%)";
+			//swimlane.style.transform = "translateY(-150%)";
+			swimlane.style.opacity = '0.5'; // 0.5 means 50% translucent
+			swimlane.style.backgroundColor = 'transparent';
+
 			isHidden = true;
 		} else if (scrollY < lastScrollY && scrollY < 150 && isHidden) {
 			// Show them again when scrolling up past 150px
 			header.style.transform = "translateY(0)";
-			swimlane.style.transform = "translateY(0)";
+			//swimlane.style.transform = "translateY(0)";
+			swimlane.style.opacity = '1'; 
+			swimlane.style.backgroundColor = '#f1f1f1';
+
 			isHidden = false;
 		}
 
@@ -521,17 +631,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function isMobile() {
         const userAgent = navigator.userAgent.toLowerCase();
-		console.log("userAgent: " + userAgent);
+		console.log("-------------------------------")
+		console.log("Browser userAgent: " + userAgent);
         return /mobile|android|iphone|ipad|ipod|windows phone|blackberry|opera mini|mobile safari/.test(userAgent);
 
 	}
 
-	console.log("isMobile: " + isMobile());
+	console.log("isMobile?: " + isMobile());
 
 
 	function alignTimeline() {
 		if (!isMobile()) return; // Stop execution for desktops
-	//	if (window.innerWidth >= 1200) return; // Stop execution for desktops
+	//	if (window.innerWidth >= 1200) return; // Stop execution for desktops, old code.
 
 
 		const timelineContainer = document.querySelector(".timeline-container");
@@ -886,14 +997,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.addEventListener("resize", adjustOverlayPosition);
 });
 
-//Testing Purpose only
+//Print Viewport Dimensions
 
 function printViewportDimensions() {
 	const width = window.innerWidth;   // Viewport width
 	const height = window.innerHeight; // Viewport height
-
+	console.log("------VIEWPORT SIZES------")
 	console.log(`Viewport Width: ${width}px`);
 	console.log(`Viewport Height: ${height}px`);
+	console.log("--------------------------")
 }
 
 // Print viewport dimensions when the page loads
