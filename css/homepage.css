@@ -1639,3 +1639,207 @@ footer>div:not(.socials) {
 	}
 
 }
+
+@media (max-width: 480px) {
+	/* Mobile */
+
+	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
+	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
+	body {
+		overflow-x: hidden;
+		/* Prevents horizontal scrolling */
+		touch-action: pan-y;
+		/* Ensures smooth vertical scrolling */
+	}
+	
+	.Header-swimlane {
+		height: 6vh;
+	}
+
+	header {
+		top: 5vh;
+		font-size: 1rem;
+		height: 9.5vh;
+		padding: 0vh;
+
+	}
+
+	/* hide the cross button */
+
+	.change .line-1,
+	.change .line-2,
+	.change .line-3 {
+		transform: none !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	.logo-image {
+		transform: scale(0.6);
+		top: 4%;
+		left: 2%;
+	}
+
+	.navbar {
+		display: none;
+		/* Completely hides the navbar on mobile */
+	}
+
+	.Header-ticker {
+		width: 8vw;
+
+	}
+
+	.timeline-item.left img {
+		/* Adjust the image size - check js script */
+		transform: scale(0.7);
+	}
+
+	.timeline-item.right img {
+		/* Adjust the image size - check js script */
+		transform: scale(0.7);
+	}
+
+	.fat {
+		/* founder name */
+		font-size: 2rem;
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+		margin-bottom: 1em;
+		/* Adjust the space as needed */
+	}
+
+	/* Adjust the space as needed for founder image */
+	.dev img {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	.founder-name {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	.thin {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		width: 300px;
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	.thin-jp {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		font-size: 1.5rem;
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+
+	/* hide the 2nd vertical line in mobile view */
+	body>div.container>section.final>div:nth-child(6) {
+		display: none !important;
+	}
+
+	footer>div:not(.socials) {
+		margin-inline: auto;
+		width: 100%;
+		font-size: 2rem;
+	}
+
+	.socials {
+		display: flex;
+		flex-direction: column;
+		/* Stack buttons vertically */
+		align-items: center;
+		/* Center buttons */
+		gap: 10px;
+		/* Add spacing between buttons */
+	}
+
+	.btn {
+		padding: 1vw 4vw;
+		width: 40%;
+		text-align: center;
+
+	}
+
+	/* footer-message text */
+	.footer-message {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		left: 52% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	body>div.container>section.final>footer>p {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		margin-bottom: 20px;
+		left: 52% !important;
+		transform: translateX(-50%) !important;
+		font-size: 8px;
+	}
+
+	.hero-title {
+		font-size: 3rem;
+		/* Adjust large text */
+	}
+
+	.hero-title {
+		margin-top: 3em;
+	}
+
+	.hero-content {
+		margin-top: 5em;
+	}
+
+	.right-content p:nth-of-type(2) {
+		color: #e61618;
+	}
+
+	.page.two {
+		/* Correct way to target <section class="page two"> */
+		margin-top: 2em;
+	}
+
+	.page .right {
+		/* Correct way to target <div class="right"> inside .page */
+		margin-top: 5em;
+	}
+
+	.cards {
+		flex-direction: column;
+		/* Stack cards for better fit */
+	}
+
+	.card {
+
+		position: relative;
+		width: 150%;
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	.designer-footer {
+		bottom: 5px;
+		/* Adjust spacing from bottom */
+		right: 0%;
+		/* Adjust spacing from right */
+		opacity: 0;
+		transform: scale(0.5);
+	}
+
+	#form {
+		display: none !important;
+		/* Hides the contact us form */
+	}
+
+}
