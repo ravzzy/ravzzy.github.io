@@ -1327,6 +1327,7 @@ footer>div:not(.socials) {
 		font-size: 1rem;
 		height: 9.5vh;
 		padding: 0vh;
+		background-color: lightblue;  /* Just for testing */
 
 	}
 
@@ -1640,7 +1641,7 @@ footer>div:not(.socials) {
 
 }
 
-@media (max-width: 480px) {
+@media (orientation: portrait) {
 	/* Mobile */
 
 	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
@@ -1650,6 +1651,9 @@ footer>div:not(.socials) {
 		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+		background-color: brown !important;  /* Just for testing */
+		z-index: 9999;
+
 	}
 	
 	.Header-swimlane {
@@ -1661,6 +1665,8 @@ footer>div:not(.socials) {
 		font-size: 1rem;
 		height: 9.5vh;
 		padding: 0vh;
+		background-color: lightpink;  /* Just for testing */
+
 
 	}
 

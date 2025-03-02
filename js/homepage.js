@@ -519,8 +519,20 @@ document.addEventListener("DOMContentLoaded", function () {
 	//console.log("ELEMENT_GAP_BETWEEN_LOOPS: " + ELEMENT_GAP_BETWEEN_LOOPS);
 	//console.log("START_Y: " + START_Y);
 
+	function isMobile() {
+        const userAgent = navigator.userAgent.toLowerCase();
+		console.log("userAgent: " + userAgent);
+        return /mobile|android|iphone|ipad|ipod|windows phone|blackberry|opera mini|mobile safari/.test(userAgent);
+
+	}
+
+	console.log("isMobile: " + isMobile());
+
+
 	function alignTimeline() {
-		if (window.innerWidth >= 1200) return; // Stop execution for desktops
+		if (!isMobile()) return; // Stop execution for desktops
+	//	if (window.innerWidth >= 1200) return; // Stop execution for desktops
+
 
 		const timelineContainer = document.querySelector(".timeline-container");
 		const timelineTexts = [...timelineContainer.querySelectorAll(".timeline-text")];
@@ -874,6 +886,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.addEventListener("resize", adjustOverlayPosition);
 });
 
+//Testing Purpose only
 
+function printViewportDimensions() {
+	const width = window.innerWidth;   // Viewport width
+	const height = window.innerHeight; // Viewport height
+
+	console.log(`Viewport Width: ${width}px`);
+	console.log(`Viewport Height: ${height}px`);
+}
+
+// Print viewport dimensions when the page loads
+printViewportDimensions();
+
+// Print viewport dimensions whenever the window is resized
+window.addEventListener('resize', printViewportDimensions);
 
 
