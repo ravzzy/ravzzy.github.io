@@ -1704,7 +1704,6 @@ footer>div:not(.socials) {
 		font-size: 1.5rem;
 		height: 9.5vh;
 		padding: 0vh;
-
 		left: 8.2vw;
 
 	}
@@ -1723,7 +1722,7 @@ footer>div:not(.socials) {
 	.logo-image {
 		top: -5.5%;
 		left: -9.5%;
-		transform: scale(0.35);
+		transform: scale(0.3);
 	}
 
 	.navbar {
