@@ -434,13 +434,13 @@ window.addEventListener("scroll", function () {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
         adjustTextColor();
-        handleScrollAnimations();
     }, 100);
 });
 
 document.querySelector(".hamburger-menu").addEventListener("click", adjustTextColor);
 
 // make each dropdown item appear sequentially effect
+/*
 document.addEventListener("DOMContentLoaded", () => {
 	const dropdown = document.querySelector(".dropdown");
 	const items = document.querySelectorAll(".dropdown-menu li");
@@ -464,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 });
-
+*/
 
 // Closes the sidebar when clicking outside of it.
 // Does not close when clicking inside the sidebar or on the hamburger menu.

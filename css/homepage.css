@@ -15,9 +15,20 @@ html {
 
 }
 
+:root {
+	--nav-bg-color: black;
+	--nav-text-color: black;
+	--nav-hover-color: white;
+	--footer-text-color: black;
+	--primary-background-color: #e61618;
+	--secondary-background-color: #f1f1f1;
+
+	/* Default color */
+	/* Default hover effect */
+}
 
 body {
-    height: 100%;
+	height: 100%;
 	overflow-x: hidden;
 	font-family: 'Noto Sans KR', sans-serif;
 	text-transform: uppercase;
@@ -31,7 +42,7 @@ body {
 	width: 100%;
 	position: fixed;
 	top: 0;
-	left:0;
+	left: 0;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -40,7 +51,7 @@ body {
 	z-index: 4;
 	/* Keep swimlane above the header */
 	transition: transform 0.3s ease-out;
-	border: 0.5px solid grey; 
+	border: 0.5px solid grey;
 }
 
 .Header-swimlane-Text {
@@ -75,8 +86,271 @@ header {
 	border-left: 0.5px solid grey;
 	border-right: 0.5px solid grey;
 	border-bottom: 0.5px solid grey;
+}
+
+/*test code start*/
+
+.topper {
+	min-height: 23dvh;
+	background-color: var(--primary-background-color);
+}
+
+
+.left-content-section{
+	min-height: 70dvh;
+	height: 0;
+	/* Reset any inherited height */
+	background-color: var(--primary-background-color);
+	position: relative;
+	left: 3.55vw;
+	display: flex;
+	align-items: stretch;
+	/* Ensure child elements stretch to match height of the section */
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	/* Allows wrapping on smaller screens */
+	width: 100%;
+	margin: 0 auto;
+}
+
+.left-section {
+	min-height: 70dvh;
+	height: 0;
+	/* Reset any inherited height */
+	display: flex;
+	align-items: center;
+	/* Center vertically within the section */
+	justify-content: left;	
+	/* Center horizontally within the section */
+	flex: 1;
+	margin-left: 15dvh;  /* Shift the section 20% of the viewport height from the left */
 
 }
+
+.left-text-box {
+	padding: 10px;
+	background-color: var(--secondary-background-color);
+    border-radius: 0.5vw;
+    box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 80dvh;	
+	max-height: 200dvh;
+	text-align: left;
+	font-size: 1.3rem;
+}	
+
+.left-section h2 {
+	font-size: 1.8em;
+	margin-bottom: 5px;
+}
+
+.left-section p {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+/* Styling for the image inside the text box */
+.left-text-box img {
+	width: 100%;
+	height: auto;
+	max-width: 200px;
+	transform: scale(0.7);
+}
+
+
+/* The dividing line */
+.middle-divider {
+	margin-top: 2dvh;
+	margin-bottom: 1dvh;
+	position: absolute;
+	/* To position it relative to the section */
+	top: 0;
+	/* Align to top of section */
+	bottom: 0;
+	/* Stretch to the bottom of the section */
+	left: 50%;
+	/* Position the divider at the center horizontally */
+	transform: translateX(-50%);
+	/* Offset by 50% of its own width to center it exactly */
+	border-left: 0.01dvh solid var(--secondary-background-color);
+}
+
+/* Right text styling */
+.right-section {
+	min-height: 70dvh;
+	height: 0;
+	/* Reset any inherited height */
+	display: flex;
+	align-items: center;
+	/* Center vertically within the section */
+	justify-content: center;	
+	/* Center horizontally within the section */
+	flex: 1;
+	margin-right: 15dvh;
+	/* Some padding from the right edge */
+}
+
+.right-section .right-section-text {
+	text-align: center;
+	font-size: 5rem;
+	color: var(--secondary-background-color);
+	font-weight: 500;
+}
+
+.quote-section {
+	min-height: 7dvh;
+	height: 0;
+	display: flex;
+	background-color: var(--primary-background-color);
+	position: relative;
+	left: 3.55vw;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0 auto;
+
+}
+
+.quote-text {
+	position: absolute;
+	text-align: center;
+	font-size: 1.2em;	
+	color: var(--secondary-background-color);
+	margin-top: 5px;
+	margin-bottom: 5px;
+	left: 50%;
+	/* Position the divider at the center horizontally */
+	transform: translateX(-50%);
+}
+
+.right-content-section{
+	min-height: 150dvh;
+	height: 0;
+	/* Reset any inherited height */
+	background-color: var(--primary-background-color);
+	position: relative;
+	left: 3.55vw;
+	display: flex;
+	align-items: stretch;
+	/* Ensure child elements stretch to match height of the section */
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	/* Allows wrapping on smaller screens */
+	width: 100%;
+	margin: 0 auto;
+}
+
+.right-section-2 {
+	min-height: 100%;
+	height: 0;
+	/* Reset any inherited height */
+	display: flex;
+	align-items: center;
+	/* Center vertically within the section */
+	justify-content: right;	
+	/* Center horizontally within the section */
+	flex: 1;
+	margin-right: 15dvh;  /* Shift the section 20% of the viewport height from the left */
+
+}
+
+.right-text-box {
+	padding: 10px;
+	background-color: var(--secondary-background-color);
+    border-radius: 0.5vw;
+    box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width: 80dvh;	
+	max-height: 200dvh;
+	text-align: left;
+	font-size: 1.3rem;
+}	
+
+.right-section-2 h2 {
+	font-size: 1.8em;
+	margin-bottom: 5px;
+}
+
+.right-section-2 p {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+/* Styling for the image inside the text box */
+.right-text-box img {
+	width: 100%;
+	height: auto;
+	max-width: 200px;
+	transform: scale(0.7);
+}
+
+.left-section-2 {
+	min-height: 100%;
+	height: 0;
+	/* Reset any inherited height */
+	display: flex;
+	align-items: center;
+	/* Center vertically within the section */
+	justify-content: center;	
+	/* Center horizontally within the section */
+	flex: 1;
+	margin-left: 15dvh;
+	/* Some padding from the right edge */
+}
+
+.left-section-2 .left-section-text {
+	text-align: center;
+	font-size: 5rem;
+	color: var(--secondary-background-color);
+	font-weight: 500;
+}
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+	.left-content-section {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.middle-divider {
+		border-left: none;
+		border-top: 2px solid #333;
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.left-section,
+	.right-section {
+		max-width: 80%;
+		padding: 0;
+		margin-left: 0%;
+
+	}
+
+	.lef-text-box img {
+		max-width: 80%;
+		/* Make the image smaller on smaller screens */
+	}
+}
+
+/*test code end*/
+
+
 
 
 .middle-section {
@@ -127,7 +401,7 @@ header {
 	/* Proper spacing between left and right */
 	align-items: center;
 	margin-left: 2%;
-	margin-right: 2%;	  
+	margin-right: 2%;
 	gap: 1vw;
 	width: 100%;
 }
@@ -505,20 +779,25 @@ p a:hover {
 }
 
 .logo-wrapper {
-    position: fixed;
-    width: 3.65vw;
-    height: 9vh;
-    z-index: 10;
+	position: fixed;
+	width: 3.65vw;
+	height: 9vh;
+	z-index: 10;
 }
 
 .logo-image {
 	background-image: url('../images/rooting_research_transparent.png');
-    background-size: cover;  /* Ensures the image covers the entire div */
-    background-repeat: no-repeat;  /* Ensures no repetition of the image */
-    background-position: center;  /* Centers the image within the div */
-    position: absolute;
-    width: 100%;  /* Ensures the image takes up the full width of the wrapper */
-    height: 100%;  /* Ensures the image takes up the full height of the wrapper */
+	background-size: cover;
+	/* Ensures the image covers the entire div */
+	background-repeat: no-repeat;
+	/* Ensures no repetition of the image */
+	background-position: center;
+	/* Centers the image within the div */
+	position: absolute;
+	width: 100%;
+	/* Ensures the image takes up the full width of the wrapper */
+	height: 100%;
+	/* Ensures the image takes up the full height of the wrapper */
 	transform: scale(1);
 	opacity: 1;
 }
@@ -527,15 +806,6 @@ p a:hover {
 /*Navbar code starts here */
 /* Transparent Navbar */
 /* Navbar container */
-
-:root {
-	--nav-bg-color: black;
-	--nav-text-color: black;
-	--nav-hover-color: white;
-	--footer-text-color: black;
-	/* Default color */
-	/* Default hover effect */
-}
 
 nav {
 	padding: 1em;
@@ -601,7 +871,8 @@ nav a {
 .nav-menu a {
 	text-decoration: none;
 	/*background-color: var(--nav-bg-color);*/
-	background-color: transparent; /* Removes background */
+	background-color: transparent;
+	/* Removes background */
 	color: var(--nav-text-color) !important;
 	/* Ensure text color updates */
 	/*color: white;*/
@@ -609,8 +880,10 @@ nav a {
 	font-weight: 500;
 	/*padding: 0.7vw 1vw;
 	transition: background 0.3s, color 0.3s;*/
-	padding: 0.5rem; /* Removes padding */
-	transition: color 0.3s; /* Just transition the color */
+	padding: 0.5rem;
+	/* Removes padding */
+	transition: color 0.3s;
+	/* Just transition the color */
 }
 
 /* Hover Effect */
@@ -821,8 +1094,9 @@ nav a {
 	color: black;
 	position: relative;
 	display: inline-block;
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    transform-origin: bottom; /* Shrink downward */
+	transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+	transform-origin: bottom;
+	/* Shrink downward */
 }
 
 .menu-link::before {
@@ -842,35 +1116,38 @@ nav a {
 }
 
 .page-transition-overlay {
-    position: fixed;
-    top: 0;
-    right: -100vw; /* Start completely off-screen */
-    width: 0;
-    height: 100vh;
-    background-color: #e61618;
-    z-index: 9999;
-    transition: transform 1s ease-in-out, width 0.5s ease-out;
-    transform-origin: right center; /* Ensures animation starts from the right */
+	position: fixed;
+	top: 0;
+	right: -100vw;
+	/* Start completely off-screen */
+	width: 0;
+	height: 100vh;
+	background-color: #e61618;
+	z-index: 9999;
+	transition: transform 1s ease-in-out, width 0.5s ease-out;
+	transform-origin: right center;
+	/* Ensures animation starts from the right */
 }
 
 /* First transition: slide from ticker’s right edge to cover the screen */
 .page-transition-overlay.active {
-    right: 0;
-    width: calc(100vw - var(--ticker-width, 100px)); /* Expands from ticker’s right edge */
+	right: 0;
+	width: calc(100vw - var(--ticker-width, 100px));
+	/* Expands from ticker’s right edge */
 }
 
 /* Second transition: slide off to the right, revealing the new page */
 .page-transition-overlay.reverse {
-    right: -100vw;
-    width: calc(100vw - var(--ticker-width, 100px));
-    transition: transform 1s ease-in-out, width 0.5s ease-in-out;
+	right: -100vw;
+	width: calc(100vw - var(--ticker-width, 100px));
+	transition: transform 1s ease-in-out, width 0.5s ease-in-out;
 }
 
 /* Shrink effect for menu links */
 .menu-link.shrink {
-    transform: scaleY(0);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	transform: scaleY(0);
+	opacity: 0;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 /* Navbar code ends here */
@@ -1008,8 +1285,8 @@ canvas {
 	left: 50%;
 	transform: translateX(-50%);
 	/* Ensures it's centered */
-
-	z-index: -1;
+	background-color: transparent;
+	z-index: -100;
 	touch-action: none;
 	/* Prevents unwanted scrolling on touch screens */
 
@@ -1345,7 +1622,7 @@ footer>div:not(.socials) {
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
 	}
-	
+
 	.Header-swimlane {
 		height: 6vh;
 	}
@@ -1644,10 +1921,6 @@ footer>div:not(.socials) {
 		padding-block: 5em;
 	}
 
-	.roadmap {
-		padding-bottom: 1em;
-	}
-
 	.roadmap .cards {
 		justify-content: start;
 	}
@@ -1655,7 +1928,7 @@ footer>div:not(.socials) {
 	.founder-description {
 		font-size: 1.6rem;
 		text-align: justify;
-		position:relative;
+		position: relative;
 		left: 50% !important;
 		transform: translateX(-50%) !important;
 		width: 70vw;
@@ -1674,12 +1947,12 @@ footer>div:not(.socials) {
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
 	}
-	
+
 	.Header-swimlane {
 		height: 5vh;
 	}
 
-	.Header-swimlane-Text{
+	.Header-swimlane-Text {
 		font-size: 1.5rem;
 		font-weight: 600;
 		top: 1%;
@@ -1699,7 +1972,7 @@ footer>div:not(.socials) {
 	header h1 {
 		position: relative;
 		left: 32.5% !important;
-		transform: translateX(-50%) !important;	
+		transform: translateX(-50%) !important;
 	}
 
 	/* hide the cross button */
@@ -1711,11 +1984,12 @@ footer>div:not(.socials) {
 		opacity: 1 !important;
 		visibility: visible !important;
 	}
+
 	.logo-wrapper {
 		width: 8.5vw;
 		height: 5vh;
 	}
-	
+
 	.navbar {
 		display: none;
 		/* Completely hides the navbar on mobile */
