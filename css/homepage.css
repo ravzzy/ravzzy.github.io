@@ -1350,13 +1350,6 @@ footer>div:not(.socials) {
 		height: 6vh;
 	}
 
-	header {
-		top: 5vh;
-		font-size: 1rem;
-		height: 9.5vh;
-		padding: 0vh;
-	}
-
 	/* hide the cross button */
 
 	.change .line-1,
@@ -1697,12 +1690,17 @@ footer>div:not(.socials) {
 	header {
 		top: 5vh;
 		font-size: 1.5rem;
-		height: 9.5vh;
+		height: 8.5vh;
 		padding: 0vh;
 		left: 8.2vw;
 
 	}
 
+	header h1 {
+		position: relative;
+		left: 32.5% !important;
+		transform: translateX(-50%) !important;	
+	}
 
 	/* hide the cross button */
 

@@ -10,18 +10,14 @@
 
 */
 
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
 
-if (!isMobile()) {
+
     gsap.to('.loader-img', {
         rotation: 360,
         duration: 1.5,
         repeat: -1,
         repeatDelay: 0.25
     });
-}
 
 
 // Ensure loader is visible when DOM is loaded
