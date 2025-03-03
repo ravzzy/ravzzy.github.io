@@ -17,7 +17,8 @@ html {
 
 
 body {
-	height: 600vh;
+    height: 100%;
+	overflow-x: hidden;
 	font-family: 'Noto Sans KR', sans-serif;
 	text-transform: uppercase;
 	background-color: #f1f1f1;
