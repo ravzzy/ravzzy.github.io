@@ -10,12 +10,19 @@
 
 */
 
-gsap.to('.loader-img', {
-	rotation: 360, //The image rotates 360 degrees.
-	duration: 1.5, //The rotation lasts for 1.5 seconds.
-	repeat: -1,	//The animation repeats infinitely.
-	repeatDelay: 0.25, //After each rotation, there is a 0.25-second pause before it repeats
-})
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+if (!isMobile()) {
+    gsap.to('.loader-img', {
+        rotation: 360,
+        duration: 1.5,
+        repeat: -1,
+        repeatDelay: 0.25
+    });
+}
+
 
 // Ensure loader is visible when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -127,40 +134,33 @@ const result = document.getElementById('result'); //This grabs the HTML element 
 
 //An event listener is attached to the form element, listening for the submit event. 
 // When the form is submitted, the function inside the event listener is triggered.
-form.addEventListener('submit', function (e) {
-	e.preventDefault(); //prevents the default behavior of the form submission (which would normally refresh the page or navigate away)
-	const formData = new FormData(form);
-	const object = Object.fromEntries(formData);
-	const json = JSON.stringify(object);
-	result.innerHTML = "Please wait..." //This changes the content of the result element to display a message
 
-	fetch('https://api.web3forms.com/submit', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			'Accept': 'application/json'
-		},
-		body: json
-	})
-		.then(async (response) => {
-			let json = await response.json();
-			if (response.status == 200) { //successful
-				result.innerHTML = "Form submitted successfully";
-			} else {
-				console.log(response);
-				result.innerHTML = json.message;
-			}
-		})
-		.catch(error => {
-			console.log(error);
-			result.innerHTML = "Something went wrong!";
-		})
-		.then(function () {
-			form.reset();
-			setTimeout(() => {
-				result.style.display = "none";
-			}, 3000); //After the submission process, the form is reset, and the result message is hidden after 3 seconds.
-		});
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); 
+
+    const formData = new FormData(form);
+    const json = JSON.stringify(Object.fromEntries(formData));
+    result.innerHTML = "Sending...";
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: json
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            result.innerHTML = "✅ Form submitted successfully!";
+            form.reset();
+        } else {
+            result.innerHTML = "❌ Error: " + data.message;
+        }
+    })
+    .catch(() => {
+        result.innerHTML = "❌ Failed to send. Check your internet connection.";
+    });
+
+    setTimeout(() => { result.style.display = "none"; }, 5000);
 });
 
 
@@ -173,15 +173,12 @@ document.addEventListener("keydown", (event) => {
 
 window.addEventListener("load", function () {
 	document.querySelector(".logo-image").style.opacity = "1";
-});
-
-window.addEventListener("load", function () {
 	document.querySelector(".navbar").style.opacity = "1";
+	document.querySelector(".designer-footer").style.opacity = "1";
+	document.querySelector(".hamburger-menu").style.opacity = "1";
 });
 
-window.addEventListener("load", function () {
-	document.querySelector(".designer-footer").style.opacity = "1";
-});
+
 
 
 // Optional: Add a small fade-in effect for dropdown
@@ -209,13 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.querySelector(".hamburger-menu").addEventListener("click", () => {
-	document.querySelector(".container").classList.toggle("change");
-});
-
-
-window.addEventListener("load", function () {
-	document.querySelector(".hamburger-menu").style.opacity = "1";
+document.querySelector(".hamburger-menu").addEventListener("click", function () {
+    let container = document.querySelector(".container");
+    container.classList.toggle("change");
 });
 
 
@@ -439,7 +432,16 @@ function adjustTextColor() {
 
 // Run on page load, scroll & when sidebar opens/closes
 window.addEventListener("load", adjustTextColor);
-window.addEventListener("scroll", adjustTextColor);
+
+let scrollTimeout;
+window.addEventListener("scroll", function () {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        adjustTextColor();
+        handleScrollAnimations();
+    }, 100);
+});
+
 document.querySelector(".hamburger-menu").addEventListener("click", adjustTextColor);
 
 // make each dropdown item appear sequentially effect
@@ -607,23 +609,21 @@ window.addEventListener("scroll", function () {
 //logic to calculate the width of the sidebar dynamically for all screen sizes
 
 function adjustSidebarWidth() {
-	let tickerWidth = document.querySelector(".Header-ticker").offsetWidth;
-	let sidebar = document.querySelector(".sidebar");
+    let tickerWidth = document.querySelector(".Header-ticker")?.offsetWidth || 100;
+    let sidebar = document.querySelector(".sidebar");
 
-	if (sidebar) {
-		let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
-		sidebar.style.width = sidebarWidth;
-
-		// Ensure menu items update width after sidebar adjustment
-		document.querySelectorAll(".menu-item").forEach(item => {
-			item.style.width = sidebarWidth;
-		});
-	}
+    if (sidebar) {
+        let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
+        sidebar.style.width = sidebarWidth;
+        document.querySelectorAll(".menu-item").forEach(item => {
+            item.style.width = sidebarWidth;
+        });
+    }
 }
-
 // Run function on page load and window resize
-window.addEventListener("load", adjustSidebarWidth);
+
 window.addEventListener("resize", adjustSidebarWidth);
+window.addEventListener("load", adjustSidebarWidth);
 
 // This is God's code - fixes the bloody alignment for mobile view
 document.addEventListener("DOMContentLoaded", function () {
