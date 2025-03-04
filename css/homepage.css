@@ -148,12 +148,14 @@ header {
 	font-size: 1.8em;
 	margin-bottom: 5px;
 	text-align: center;
+	z-index: 2;
 
 }
 
 .left-section p {
 	margin-top: 10px;
 	margin-bottom: 5px;
+	z-index: 2;
 }
 
 /* Styling for the image inside the text box */
@@ -162,6 +164,7 @@ header {
 	height: auto;
 	max-width: 200px;
 	transform: scale(0.7);
+	z-index: 2;
 }
 
 
@@ -180,6 +183,7 @@ header {
 	transform: translateX(-50%);
 	/* Offset by 50% of its own width to center it exactly */
 	border-left: 0.01dvh solid var(--secondary-background-color);
+	z-index: 1;
 }
 
 /* Right text styling */
@@ -285,12 +289,16 @@ header {
 	font-size: 1.8em;
 	margin-bottom: 5px;
 	text-align: center;
+	z-index: 2;
+
 }
 
 .right-section-2 p {
 	margin-top: 10px;
 	margin-bottom: 5px;
 	text-align: left; /* Ensure text is left-aligned */
+	z-index: 2;
+
 }
 
 /* Styling for the image inside the text box */
@@ -301,6 +309,8 @@ header {
 	transform: scale(0.7);
 	display: block; /* Ensure the image behaves like a block element */
 	margin: 0 auto; /* Centers the image horizontally */
+	z-index: 2;
+
 }
 
 .left-section-2 {
