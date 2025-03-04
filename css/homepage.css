@@ -339,8 +339,8 @@ header {
 		left: 8vw;
 		min-height: 75vh;
 		height: auto;
-		width: 100%;
-		overflow-x: hidden;
+		max-width: 100% !important;
+		overflow-x: hidden !important;
 		/* Prevent horizontal overflow */
 		flex-direction: column-reverse;
 		/* Reverse the order: right-section goes above left-section */
@@ -406,8 +406,8 @@ header {
 		left: 8vw;
 		min-height: 165vh;
 		height: auto;
-		width: 100%;
-		overflow-x: hidden;
+		max-width: 100% !important;
+		overflow-x: hidden !important;
 		/* Prevent horizontal overflow */
 	}
 
