@@ -333,14 +333,16 @@ header {
 	}
 
 	.left-content-section {
+		margin: 0%;
+		padding-left: 4vw;
+		max-width: calc(100vw - 4vw) !important;
+		overflow-x: hidden !important;
+
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		left: 8vw;
 		min-height: 75vh;
 		height: auto;
-		max-width: 100% !important;
-		overflow-x: hidden !important;
 		/* Prevent horizontal overflow */
 		flex-direction: column-reverse;
 		/* Reverse the order: right-section goes above left-section */
@@ -348,6 +350,7 @@ header {
 	}
 
 	.right-section {
+		margin: 0%;
 		display: flex;
 		justify-content: center;
 		/* Center horizontally */
@@ -384,6 +387,9 @@ header {
 	}
 
 	.quote-section {
+		margin: 0%;
+		padding-left: 4vw;
+		max-width: calc(100vw - 4vw) !important;
 		border: none;
 		min-height: 7dvh;
 		height: 0;
@@ -400,14 +406,17 @@ header {
 
 	/*Section 2 */
 	.right-content-section {
+		margin: 0;
+		gap:0;
+		padding-left:0;
+		max-width: calc(100vw - 8vw) !important;
+		overflow-x: hidden !important;
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
 		left: 8vw;
 		min-height: 165vh;
 		height: auto;
-		max-width: 100% !important;
-		overflow-x: hidden !important;
 		/* Prevent horizontal overflow */
 	}
 
