@@ -273,12 +273,12 @@ header {
 	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	justify-content: flex-start; /* Align items to the top */
 	max-width: 80dvh;
 	max-height: 200dvh;
-	text-align: left;
 	font-size: 1.3rem;
+	text-align: left; /* Ensures the paragraphs are aligned left */
+
 }
 
 .right-section-2 h2 {
@@ -290,6 +290,7 @@ header {
 .right-section-2 p {
 	margin-top: 10px;
 	margin-bottom: 5px;
+	text-align: left; /* Ensure text is left-aligned */
 }
 
 /* Styling for the image inside the text box */
@@ -298,6 +299,8 @@ header {
 	height: auto;
 	max-width: 200px;
 	transform: scale(0.7);
+	display: block; /* Ensure the image behaves like a block element */
+	margin: 0 auto; /* Centers the image horizontally */
 }
 
 .left-section-2 {
@@ -1701,7 +1704,7 @@ footer>div:not(.socials) {
 
 	.founder-description {
 		font-size: 1.6rem;
-		text-align: justify;
+		text-align: left;
 		position: relative;
 		left: 50% !important;
 		transform: translateX(-50%) !important;
@@ -1818,6 +1821,7 @@ footer>div:not(.socials) {
 
 	.founder-description {
 		font-size: 1.2rem;
+		text-align: left;
 	}
 
 	/* hide the 2nd vertical line in mobile view */
