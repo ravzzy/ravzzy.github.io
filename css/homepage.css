@@ -1432,22 +1432,16 @@ footer>div:not(.socials) {
 		translate: -100% 0;
 	}
 }
-
+/*
 @media (max-width: 1200px) {
-	/* Mobile */
-
 	body {
 		overflow-x: hidden;
-		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
-		/* Ensures smooth vertical scrolling */
 	}
 
 	.Header-swimlane {
 		height: 6vh;
 	}
-
-	/* hide the cross button */
 
 	.change .line-1,
 	.change .line-2,
@@ -1459,7 +1453,6 @@ footer>div:not(.socials) {
 
 	.navbar {
 		display: none;
-		/* Completely hides the navbar on mobile */
 	}
 
 	.Header-ticker {
@@ -1469,34 +1462,27 @@ footer>div:not(.socials) {
 
 
 	.fat {
-		/* founder name */
 		font-size: 2rem;
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 		margin-bottom: 1em;
-		/* Adjust the space as needed */
 	}
 
-	/* Adjust the space as needed for founder image */
 	.dev img {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 	}
 
 	.founder-name {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 	}
 
 	.thin {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		width: 300px;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
@@ -1504,14 +1490,12 @@ footer>div:not(.socials) {
 
 	.thin-jp {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		font-size: 1.5rem;
 		left: 55% !important;
 		transform: translateX(-50%) !important;
 	}
 
 
-	/* hide the 2nd vertical line in mobile view */
 	body>div.container>section.final>div:nth-child(6) {
 		display: none !important;
 	}
@@ -1525,11 +1509,8 @@ footer>div:not(.socials) {
 	.socials {
 		display: flex;
 		flex-direction: column;
-		/* Stack buttons vertically */
 		align-items: center;
-		/* Center buttons */
 		gap: 10px;
-		/* Add spacing between buttons */
 	}
 
 	.btn {
@@ -1539,17 +1520,14 @@ footer>div:not(.socials) {
 
 	}
 
-	/* footer-message text */
 	.footer-message {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		left: 52% !important;
 		transform: translateX(-50%) !important;
 	}
 
 	body>div.container>section.final>footer>p {
 		position: relative;
-		/* Set the parent to relative to enable positioning */
 		margin-bottom: 20px;
 		left: 52% !important;
 		transform: translateX(-50%) !important;
@@ -1558,7 +1536,6 @@ footer>div:not(.socials) {
 
 	.hero-title {
 		font-size: 3rem;
-		/* Adjust large text */
 	}
 
 	.hero-title {
@@ -1574,18 +1551,15 @@ footer>div:not(.socials) {
 	}
 
 	.page.two {
-		/* Correct way to target <section class="page two"> */
 		margin-top: 2em;
 	}
 
 	.page .right {
-		/* Correct way to target <div class="right"> inside .page */
 		margin-top: 5em;
 	}
 
 	.cards {
 		flex-direction: column;
-		/* Stack cards for better fit */
 	}
 
 	.card {
@@ -1598,19 +1572,16 @@ footer>div:not(.socials) {
 
 	.designer-footer {
 		bottom: 5px;
-		/* Adjust spacing from bottom */
 		right: 0%;
-		/* Adjust spacing from right */
 		opacity: 0;
 		transform: scale(0.5);
 	}
 
 	#form {
 		display: none !important;
-		/* Hides the contact us form */
 	}
 
-}
+} */
 
 
 @media (orientation: landscape) {
