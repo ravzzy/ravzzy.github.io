@@ -380,7 +380,7 @@ header {
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
-		min-height: 2vh;
+		min-height: 4vh;
 		height: 0;
 		/* You can adjust this to control the height of the right section */
 		width: 100%;
