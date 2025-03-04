@@ -536,113 +536,7 @@ header {
 	z-index: 1;
 }
 
-.timeline-container {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	max-width: 55vw;
-	position: relative;
-	margin-top: 30vh;
-}
 
-.timeline-wrapper {
-	display: flex;
-	justify-content: space-between;
-	/* Proper spacing between left and right */
-	align-items: center;
-	margin-left: 2%;
-	margin-right: 2%;
-	gap: 1vw;
-	width: 100%;
-}
-
-
-
-.timeline-item {
-	background: white;
-	padding: 1vw;
-	margin: 1vw 0;
-	border-radius: 0.5vw;
-	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
-	width: 100%;
-	text-align: center;
-	position: relative;
-	z-index: 3;
-	opacity: 0;
-	transform: translateY(2vw);
-	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-
-.timeline-item.left {
-	left: -11vw;
-	/* use this for horizontal alignment */
-	width: 60%;
-	padding: 1vw;
-	/* Adjust padding for spacing */
-	font-size: 2.25rem;
-}
-
-.timeline-item.left,
-.timeline-item.right {
-	flex-grow: 1;
-	/* Allows it to expand */
-	max-width: 100%;
-	max-height: 300vh;
-	/* Prevents cutting off on smaller screens */
-	width: auto !important;
-	/* Prevents restrictions */
-	text-align: center;
-	/* Ensures proper text positioning */
-}
-
-
-/* first occurrence of the box on the left */
-.timeline-container>div:nth-child(2)>.timeline-item.left {
-	top: 25vh !important;
-	/* disables the transition of the first box, so it doesn't look weird on homepage */
-	opacity: 1;
-	/* Fully visible */
-	transform: translateY(0);
-	/* No movement */
-	transition: none;
-	/* Disable transition */
-}
-
-/* 2nd occurence of the box on the left */
-.timeline-container>div:nth-child(8)>.timeline-item.left {
-	top: 40vh !important;
-}
-
-/* 3rd occurence of the box on the left */
-.timeline-container>div:nth-child(14)>.timeline-item.left {
-	top: 40vh !important;
-}
-
-
-
-.timeline-item.left h2 {
-	text-align: center;
-	font-size: 1.5rem;
-	/* Adjust heading size */
-	font-weight: bold;
-	/* Optional: Adjust weight */
-}
-
-.timeline-item.left p {
-	text-align: justify;
-	font-size: 1.375rem;
-	/* Adjust paragraph size */
-	line-height: 1.5;
-	/* Improve readability */
-}
-
-.timeline-item.left img {
-	max-width: 100%;
-	max-height: 30vh;
-	height: auto;
-	object-fit: contain;
-}
 
 .bullet_service {
 	text-align: left !important;
@@ -660,79 +554,6 @@ p a {
 p a:hover {
 	text-decoration: underline;
 	/* Add underline on hover */
-}
-
-.timeline-item.right {
-	left: 13vw;
-	/* use this for horizontal alignment */
-	width: 60%;
-	padding: 1vw;
-	/* Adjust padding for spacing */
-	font-size: 2rem;
-	/* Modify font size */
-}
-
-/* first occurence on the right */
-.timeline-container>div:nth-child(5)>.timeline-item.right {
-	top: -75vh !important;
-}
-
-/* 2nd occurence on the right*/
-.timeline-container>div:nth-child(11)>.timeline-item.right {
-	top: -30vh !important;
-}
-
-
-.timeline-item.right h2 {
-	text-align: center;
-	font-size: 1.5rem;
-	/* Adjust heading size */
-	font-weight: bold;
-	/* Optional: Adjust weight */
-}
-
-.timeline-item.right p {
-	text-align: justify;
-	font-size: 1.375rem;
-	/* Adjust paragraph size */
-	line-height: 1.5;
-	/* Improve readability */
-}
-
-.timeline-item.right img {
-	max-width: 100%;
-	max-height: 30vh;
-	height: auto;
-	object-fit: contain;
-	display: block;
-	/* Ensures proper margin auto centering */
-	margin: 0 auto;
-	/* Centers horizontally */
-}
-
-
-.timeline-divider {
-	position: absolute;
-	left: 50%;
-	top: -5%;
-	width: 0.05vw;
-	height: 100%;
-	background-color: white;
-	transform: translateX(-50%);
-	z-index: 2;
-}
-
-.timeline-connector {
-	color: white;
-	font-size: 1.5rem;
-	text-align: center;
-	width: 100%;
-	margin: 2vh 0;
-	opacity: 0;
-	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-	position: relative;
-	/* Ensure transform works */
-
 }
 
 
@@ -778,155 +599,6 @@ p a:hover {
 }
 
 
-.timeline-item.show,
-.timeline-connector.show {
-	opacity: 1 !important;
-}
-
-
-.timeline-connector {
-	z-index: 4;
-	position: relative;
-	will-change: transform;
-	/* Optimizes animations */
-
-}
-
-/* below is an important code to align the text between the divider, use developer tool -> copy selector */
-
-/* 1st occurrence */
-.timeline-container>div:nth-child(3) {
-	margin-top: 0vh !important;
-}
-
-/* 2nd occurrence */
-.timeline-container>div:nth-child(6) {
-	margin-top: 20vh !important;
-	/* Moves it lower */
-}
-
-/* 3rd occurrence */
-.timeline-container>div:nth-child(9) {
-	margin-top: 20vh !important;
-	/* Moves it lower */
-}
-
-/* 4th occurrence */
-.timeline-container>div:nth-child(12) {
-	margin-top: 20vh !important;
-	/* Moves it lower */
-}
-
-/* 5th occurrence */
-.timeline-container>div:nth-child(15) {
-	margin-top: 20vh !important;
-	/* Moves it lower */
-}
-
-
-
-.timeline-text.left {
-	transition: color 1s ease-out, opacity 1s ease-out;
-	/* Smooth transition */
-	opacity: 0.5;
-	align-self: center;
-	margin-right: auto;
-	margin-left: 0;
-	font-size: 4.5rem;
-	font-weight: bold;
-	color: black;
-	z-index: 3;
-}
-
-.timeline-text.right,
-.timeline-text.left {
-	position: relative;
-	/* Ensure it moves based on parent */
-	width: auto;
-	/* Let it adjust dynamically */
-	max-width: 100%;
-	/* Prevent it from getting too large */
-	flex-grow: 1;
-	/* Allows resizing in flex containers */
-	text-align: justify;
-	/* Ensures proper alignment */
-
-	white-space: nowrap;
-
-}
-
-
-/* When the text is entering the viewport */
-.timeline-text.left.in-view {
-	color: white;
-	/* Transition to yellow */
-	opacity: 1;
-	/* Fully visible */
-}
-
-
-/* first occurence on the left*/
-.timeline-container>div:nth-child(5)>.timeline-text.left {
-	transform: translateY(0vh);
-	left: -10%;
-	top: 10vh !important;
-}
-
-/* 2nd occurence on the left*/
-.timeline-container>div:nth-child(11)>.timeline-text.left {
-	transform: translateY(0vh);
-	left: -10%;
-	top: 10vh !important;
-}
-
-
-.timeline-text.right {
-
-	opacity: 0.5;
-	transition: color 1s ease-out, opacity 1s ease-out;
-	/* Smooth transition */
-	align-self: center;
-	margin-left: auto;
-	margin-right: 0;
-	font-size: 4.5rem;
-	font-weight: bold;
-	color: black;
-	z-index: 3;
-}
-
-
-/* When the text is entering the viewport */
-.timeline-text.right.in-view {
-	color: white;
-	/* Transition to yellow */
-	opacity: 1;
-	/* Fully visible */
-}
-
-
-/* first occurence on the right*/
-.timeline-container>div:nth-child(2)>.timeline-text.right {
-	transform: translateY(-20vh);
-	/* Moves it upwards */
-	left: 10%;
-	top: 0 !important;
-}
-
-/* 2nd occurence on the right*/
-.timeline-container>div:nth-child(8)>.timeline-text.right {
-	transform: translateY(0vh);
-	/* Moves it upwards */
-	left: 10%;
-	top: 0 !important;
-}
-
-/* 3rd occurence on the right*/
-.timeline-container>div:nth-child(14)>.timeline-text.right {
-	transform: translateY(0vh);
-	/* Moves it upwards */
-	left: 10%;
-	top: 0 !important;
-}
 
 .logo-wrapper {
 	position: fixed;
@@ -1764,8 +1436,6 @@ footer>div:not(.socials) {
 @media (max-width: 1200px) {
 	/* Mobile */
 
-	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
-	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
 	body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
@@ -1797,15 +1467,6 @@ footer>div:not(.socials) {
 
 	}
 
-	.timeline-item.left img {
-		/* Adjust the image size - check js script */
-		transform: scale(0.7);
-	}
-
-	.timeline-item.right img {
-		/* Adjust the image size - check js script */
-		transform: scale(0.7);
-	}
 
 	.fat {
 		/* founder name */
@@ -1956,14 +1617,6 @@ footer>div:not(.socials) {
 	/* Desktop */
 
 
-	.timeline-item.left {
-		max-width: 32.5vw !important;
-	}
-
-	.timeline-item.right {
-		max-width: 32.5vw !important;
-	}
-
 	.text-spin {
 		left: -250%;
 		font-size: 8rem;
@@ -2089,8 +1742,7 @@ footer>div:not(.socials) {
 @media (orientation: portrait) {
 	/* Mobile */
 
-	/* refer document.addEventListener("DOMContentLoaded", function () in app.js
-	aligns timeline-container, timeline-text, timeline-item, timeline-connector */
+
 	body {
 		overflow-x: hidden;
 		/* Prevents horizontal scrolling */
@@ -2148,16 +1800,6 @@ footer>div:not(.socials) {
 	.Header-ticker {
 		width: 8vw;
 
-	}
-
-	.timeline-item.left img {
-		/* Adjust the image size - check js script */
-		transform: scale(0.7);
-	}
-
-	.timeline-item.right img {
-		/* Adjust the image size - check js script */
-		transform: scale(0.7);
 	}
 
 	.fat {
