@@ -29,7 +29,7 @@ html {
 
 body {
 	height: 100%;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 	font-family: 'Noto Sans KR', sans-serif;
 	text-transform: uppercase;
 	background-color: #f1f1f1;
@@ -333,6 +333,7 @@ header {
 	}
 
 	.left-content-section {
+		padding-inline: 2em;
 		margin: 0%;
 		padding-left: 4vw;
 		max-width: calc(100vw - 4vw) !important;
@@ -369,7 +370,7 @@ header {
 	}
 
 
-		.left-section {
+	.left-section {
 			display: flex;
 			flex-direction: column;
 			/* Stack content vertically */
@@ -379,7 +380,7 @@ header {
 			position: relative;
 			margin-left: 7dvw;
 			max-width: 80dvw;
-		}
+	}
 
 	.left-text-box img {
 		max-width: 60%;
@@ -387,6 +388,7 @@ header {
 	}
 
 	.quote-section {
+		padding-inline: 2em;
 		margin: 0%;
 		padding-left: 4vw;
 		max-width: calc(100vw - 4vw) !important;
@@ -406,6 +408,7 @@ header {
 
 	/*Section 2 */
 	.right-content-section {
+		padding-inline: 2em;
 		margin: 0;
 		gap:0;
 		padding-left:0;
