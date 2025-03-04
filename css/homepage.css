@@ -329,7 +329,7 @@ header {
 @media (max-width: 768px) {
 
 	.topper {
-		min-height: 14dvh;
+		min-height: 14vh;
 	}
 
 	.left-content-section {
@@ -337,7 +337,7 @@ header {
 		flex-direction: column;
 		/* Stack children vertically */
 		left: 8vw;
-		min-height: 75dvh;
+		min-height: 75vh;
 		height: auto;
 		width: 100%;
 		overflow-x: hidden;
@@ -353,7 +353,7 @@ header {
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
-		min-height: 2dvh;
+		min-height: 2vh;
 		height: 0;
 		/* You can adjust this to control the height of the right section */
 		width: 100%;
@@ -371,7 +371,7 @@ header {
 			flex-direction: column;
 			/* Stack content vertically */
 			justify-content: flex-start;
-			min-height: 60dvh;
+			min-height: 60vh;
 			flex: 1;
 			position: relative;
 			margin-left: 7dvw;
@@ -404,7 +404,7 @@ header {
 		flex-direction: column;
 		/* Stack children vertically */
 		left: 8vw;
-		min-height: 165dvh;
+		min-height: 165vh;
 		height: auto;
 		width: 100%;
 		overflow-x: hidden;
@@ -418,7 +418,7 @@ header {
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
-		min-height: 20dvh;
+		min-height: 20vh;
 		margin-left:0;
 		height: auto;
 		/* You can adjust this to control the height of the right section */
@@ -437,7 +437,7 @@ header {
 		flex-direction: column;
 		/* Stack content vertically */
 		justify-content: flex-start;
-		min-height: 90dvh;
+		min-height: 90vh;
 		height: auto;
 		flex: 1;
 		position: relative;
