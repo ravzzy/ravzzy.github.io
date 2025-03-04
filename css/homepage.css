@@ -365,7 +365,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		min-height: 65vh;
+		min-height: 30vh;
 		height: auto;
 		/* Prevent horizontal overflow */
 		flex-direction: column-reverse;
@@ -434,14 +434,13 @@ header {
 		padding-inline: 2em;
 		margin: 0;
 		gap: 0;
-		padding-left: 0;
-		max-width: calc(100vw - 8vw) !important;
+		padding-left: 4vw;
+		max-width: calc(100vw - 4vw) !important;
 		overflow-x: hidden !important;
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		left: 8vw;
-		min-height: 165vh;
+		min-height: 155vh;
 		height: auto;
 		/* Prevent horizontal overflow */
 	}
