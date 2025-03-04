@@ -96,7 +96,7 @@ header {
 }
 
 
-.left-content-section{
+.left-content-section {
 	min-height: 70dvh;
 	height: 0;
 	/* Reset any inherited height */
@@ -121,30 +121,34 @@ header {
 	display: flex;
 	align-items: center;
 	/* Center vertically within the section */
-	justify-content: left;	
+	justify-content: left;
 	/* Center horizontally within the section */
 	flex: 1;
-	margin-left: 15dvh;  /* Shift the section 20% of the viewport height from the left */
+	margin-left: 15dvh;
+	/* Shift the section 20% of the viewport height from the left */
 
 }
 
 .left-text-box {
 	padding: 10px;
 	background-color: var(--secondary-background-color);
-    border-radius: 0.5vw;
-    box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);	display: flex;
+	border-radius: 0.5vw;
+	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	max-width: 80dvh;	
+	max-width: 80dvh;
 	max-height: 200dvh;
 	text-align: left;
 	font-size: 1.3rem;
-}	
+}
 
 .left-section h2 {
 	font-size: 1.8em;
 	margin-bottom: 5px;
+	text-align: center;
+
 }
 
 .left-section p {
@@ -186,7 +190,7 @@ header {
 	display: flex;
 	align-items: center;
 	/* Center vertically within the section */
-	justify-content: center;	
+	justify-content: center;
 	/* Center horizontally within the section */
 	flex: 1;
 	margin-right: 15dvh;
@@ -220,7 +224,7 @@ header {
 .quote-text {
 	position: absolute;
 	text-align: center;
-	font-size: 1.2em;	
+	font-size: 1.2em;
 	color: var(--secondary-background-color);
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -229,7 +233,7 @@ header {
 	transform: translateX(-50%);
 }
 
-.right-content-section{
+.right-content-section {
 	min-height: 150dvh;
 	height: 0;
 	/* Reset any inherited height */
@@ -254,30 +258,33 @@ header {
 	display: flex;
 	align-items: center;
 	/* Center vertically within the section */
-	justify-content: right;	
+	justify-content: right;
 	/* Center horizontally within the section */
 	flex: 1;
-	margin-right: 15dvh;  /* Shift the section 20% of the viewport height from the left */
+	margin-right: 15dvh;
+	/* Shift the section 20% of the viewport height from the left */
 
 }
 
 .right-text-box {
 	padding: 10px;
 	background-color: var(--secondary-background-color);
-    border-radius: 0.5vw;
-    box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);	display: flex;
+	border-radius: 0.5vw;
+	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	max-width: 80dvh;	
+	max-width: 80dvh;
 	max-height: 200dvh;
 	text-align: left;
 	font-size: 1.3rem;
-}	
+}
 
 .right-section-2 h2 {
 	font-size: 1.8em;
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 .right-section-2 p {
@@ -300,7 +307,7 @@ header {
 	display: flex;
 	align-items: center;
 	/* Center vertically within the section */
-	justify-content: center;	
+	justify-content: center;
 	/* Center horizontally within the section */
 	flex: 1;
 	margin-left: 15dvh;
@@ -320,32 +327,130 @@ header {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+	.topper {
+		min-height: 14dvh;
+	}
+
 	.left-content-section {
+		display: flex;
 		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		padding: 20px;
-	}
-
-	.middle-divider {
-		border-left: none;
-		border-top: 2px solid #333;
+		/* Stack children vertically */
+		left: 8vw;
+		min-height: 75dvh;
+		height: auto;
 		width: 100%;
-		margin: 20px 0;
+		overflow-x: hidden;
+		/* Prevent horizontal overflow */
+		flex-direction: column-reverse;
+		/* Reverse the order: right-section goes above left-section */
+
 	}
 
-	.left-section,
 	.right-section {
-		max-width: 80%;
-		padding: 0;
-		margin-left: 0%;
-
+		display: flex;
+		justify-content: center;
+		/* Center horizontally */
+		align-items: center;
+		/* Center vertically */
+		min-height: 2dvh;
+		height: 0;
+		/* You can adjust this to control the height of the right section */
+		width: 100%;
+		/* Ensure the right section fits within the container */
+		/* Remove flex: 1 to prevent overflow */
 	}
 
-	.lef-text-box img {
-		max-width: 80%;
+	.right-section .right-section-text {
+		font-size: 3rem;
+	}
+
+
+		.left-section {
+			display: flex;
+			flex-direction: column;
+			/* Stack content vertically */
+			justify-content: flex-start;
+			min-height: 60dvh;
+			flex: 1;
+			position: relative;
+			margin-left: 7dvw;
+			max-width: 80dvw;
+		}
+
+	.left-text-box img {
+		max-width: 60%;
 		/* Make the image smaller on smaller screens */
 	}
+
+	.quote-section {
+		border: none;
+		min-height: 7dvh;
+		height: 0;
+	}
+
+	.quote-text {
+		width: 70%;
+		font-size: 1em;
+		left: 50%;
+		/* Position the divider at the center horizontally */
+		transform: translateX(-50%);
+	}
+
+
+	/*Section 2 */
+	.right-content-section {
+		display: flex;
+		flex-direction: column;
+		/* Stack children vertically */
+		left: 8vw;
+		min-height: 165dvh;
+		height: auto;
+		width: 100%;
+		overflow-x: hidden;
+		/* Prevent horizontal overflow */
+	}
+
+	.left-section-2 {
+	
+		display: flex;
+		justify-content: center;
+		/* Center horizontally */
+		align-items: center;
+		/* Center vertically */
+		min-height: 20dvh;
+		margin-left:0;
+		height: auto;
+		/* You can adjust this to control the height of the right section */
+		width: 100%;
+		/* Ensure the right section fits within the container */
+		/* Remove flex: 1 to prevent overflow */
+	}
+
+
+	.left-section-2 .left-section-text {
+		font-size: 3rem;
+	}
+
+	.right-section-2 {
+		display: flex;
+		flex-direction: column;
+		/* Stack content vertically */
+		justify-content: flex-start;
+		min-height: 90dvh;
+		height: auto;
+		flex: 1;
+		position: relative;
+		margin-left: 7dvw;
+		max-width: 80dvw;
+		margin-right: 0;
+	}
+
+	.right-text-box img {
+		max-width: 60%;
+		/* Make the image smaller on smaller screens */
+	}
+
 }
 
 /*test code end*/
@@ -591,7 +696,7 @@ p a:hover {
 	left: 0.1%;
 	top: 0;
 	width: 3.5vw;
-	height: 100vh;
+	height: 100%;
 	border-right: 0.01vw solid #c2c2c2;
 	background-color: #f1f1f1;
 	overflow: hidden;
