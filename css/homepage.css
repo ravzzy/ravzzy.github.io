@@ -322,29 +322,30 @@ header {
 }
 
 
-
-
-
 /* Responsive Styles */
 @media (max-width: 768px) {
 
-	html, body {
+	html,
+	body {
 		overflow-x: hidden !important;
 		width: 100%;
-	  }
-	  
-	  /* Reset the width of any sections causing overflow */
-	  .left-content-section, .right-content-section, .quote-section, .right-section-2 {
+	}
+
+	/* Reset the width of any sections causing overflow */
+	.left-content-section,
+	.right-content-section,
+	.quote-section,
+	.right-section-2 {
 		overflow-x: hidden;
 		width: 100%;
-	  }
-	  
-	  /* Ensure the body doesn’t overflow */
-	  body {
+	}
+
+	/* Ensure the body doesn’t overflow */
+	body {
 		overflow-x: hidden !important;
-	  }
-	  
-	  /* Additional fix for any child elements that could be overflowing 
+	}
+
+	/* Additional fix for any child elements that could be overflowing 
 	  * {
 		overflow-x: hidden;
 	  } */
@@ -364,7 +365,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		min-height: 75vh;
+		min-height: 65vh;
 		height: auto;
 		/* Prevent horizontal overflow */
 		flex-direction: column-reverse;
@@ -393,15 +394,15 @@ header {
 
 
 	.left-section {
-			display: flex;
-			flex-direction: column;
-			/* Stack content vertically */
-			justify-content: flex-start;
-			min-height: 60vh;
-			flex: 1;
-			position: relative;
-			margin-left: 7dvw;
-			max-width: 80dvw;
+		display: flex;
+		flex-direction: column;
+		/* Stack content vertically */
+		justify-content: flex-start;
+		min-height: 60vh;
+		flex: 1;
+		position: relative;
+		margin-left: 7dvw;
+		max-width: 80dvw;
 	}
 
 	.left-text-box img {
@@ -432,8 +433,8 @@ header {
 	.right-content-section {
 		padding-inline: 2em;
 		margin: 0;
-		gap:0;
-		padding-left:0;
+		gap: 0;
+		padding-left: 0;
 		max-width: calc(100vw - 8vw) !important;
 		overflow-x: hidden !important;
 		display: flex;
@@ -446,14 +447,14 @@ header {
 	}
 
 	.left-section-2 {
-	
+
 		display: flex;
 		justify-content: center;
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
 		min-height: 20vh;
-		margin-left:0;
+		margin-left: 0;
 		height: auto;
 		/* You can adjust this to control the height of the right section */
 		width: 100%;
