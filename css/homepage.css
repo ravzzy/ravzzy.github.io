@@ -361,11 +361,12 @@ header {
 		padding-left: 4vw;
 		max-width: calc(100vw - 4vw) !important;
 		overflow-x: hidden !important;
+		padding-bottom: 1%;
 
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		min-height: 30vh;
+		min-height: 0;
 		height: auto;
 		/* Prevent horizontal overflow */
 		flex-direction: column-reverse;
@@ -374,14 +375,15 @@ header {
 	}
 
 	.right-section {
+		padding-bottom: 1%;
 		margin: 0%;
 		display: flex;
 		justify-content: center;
 		/* Center horizontally */
-		align-items: center;
+		align-items: center;	
 		/* Center vertically */
-		min-height: 4vh;
-		height: 0;
+		min-height: 0;
+		height: auto;
 		/* You can adjust this to control the height of the right section */
 		width: 100%;
 		/* Ensure the right section fits within the container */
@@ -394,11 +396,13 @@ header {
 
 
 	.left-section {
+		padding-bottom: 1%;
 		display: flex;
 		flex-direction: column;
 		/* Stack content vertically */
 		justify-content: flex-start;
-		min-height: 60vh;
+		min-height: 0;
+		height: auto;
 		flex: 1;
 		position: relative;
 		margin-left: 7dvw;
@@ -416,7 +420,7 @@ header {
 		padding-left: 4vw;
 		max-width: calc(100vw - 4vw) !important;
 		border: none;
-		min-height: 7dvh;
+		min-height: 10dvh;
 		height: 0;
 	}
 
@@ -431,6 +435,8 @@ header {
 
 	/*Section 2 */
 	.right-content-section {
+		padding-top: 2%;
+		padding-bottom: 1%;
 		padding-inline: 2em;
 		margin: 0;
 		gap: 0;
@@ -440,19 +446,20 @@ header {
 		display: flex;
 		flex-direction: column;
 		/* Stack children vertically */
-		min-height: 155vh;
+		min-height: 0vh;
 		height: auto;
 		/* Prevent horizontal overflow */
 	}
 
 	.left-section-2 {
 
+		padding-bottom: 1%;
 		display: flex;
 		justify-content: center;
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
-		min-height: 20vh;
+		min-height: 2vh;
 		margin-left: 0;
 		height: auto;
 		/* You can adjust this to control the height of the right section */
@@ -467,6 +474,7 @@ header {
 	}
 
 	.right-section-2 {
+		padding-bottom: 1%;
 		display: flex;
 		flex-direction: column;
 		/* Stack content vertically */
