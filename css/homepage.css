@@ -328,6 +328,28 @@ header {
 /* Responsive Styles */
 @media (max-width: 768px) {
 
+	html, body {
+		overflow-x: hidden !important;
+		width: 100%;
+	  }
+	  
+	  /* Reset the width of any sections causing overflow */
+	  .left-content-section, .right-content-section, .quote-section, .right-section-2 {
+		overflow-x: hidden;
+		width: 100%;
+	  }
+	  
+	  /* Ensure the body doesn’t overflow */
+	  body {
+		overflow-x: hidden !important;
+	  }
+	  
+	  /* Additional fix for any child elements that could be overflowing 
+	  * {
+		overflow-x: hidden;
+	  } */
+
+
 	.topper {
 		min-height: 14vh;
 	}
