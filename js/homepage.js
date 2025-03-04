@@ -176,7 +176,7 @@ window.addEventListener("load", function () {
 
 
 
-
+/*
 // Optional: Add a small fade-in effect for dropdown
 document.addEventListener("DOMContentLoaded", function () {
 	const dropdowns = document.querySelectorAll(".dropdown");
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 });
-
+*/
 
 document.querySelector(".hamburger-menu").addEventListener("click", function () {
     let container = document.querySelector(".container");
@@ -481,6 +481,7 @@ document.addEventListener("click", function (event) {
 });
 
 
+/*
 document.addEventListener("scroll", function () {
 	let items = document.querySelectorAll(".timeline-item, .timeline-connector");
 	items.forEach(item => {
@@ -527,7 +528,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
-
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
 	const header = document.querySelector("header");
@@ -621,6 +622,7 @@ function adjustSidebarWidth() {
 window.addEventListener("resize", adjustSidebarWidth);
 window.addEventListener("load", adjustSidebarWidth);
 
+/*
 // This is God's code - fixes the bloody alignment for mobile view
 document.addEventListener("DOMContentLoaded", function () {
 	const ELEMENT_GAP_LOOP = 10; // Constant gap within a single loop
@@ -709,7 +711,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     transform: translateX(-50%) !important;
                     text-align: center !important;
                     opacity: 1 !important;
-                    margin-top: 0 !important; /* Ensure no margin-top is inherited */
+                    margin-top: 0 !important; /* Ensure no margin-top is inherited *//*
                 `;
 				currentBottom += connectorHeight; // Update bottom after the connector
 				//console.log("currentBottom after connector: " + currentBottom);
@@ -732,7 +734,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	alignTimeline();
 	window.addEventListener("resize", alignTimeline);
-});
+}); */
 
 
 //Shuffle text effect for nav bar
