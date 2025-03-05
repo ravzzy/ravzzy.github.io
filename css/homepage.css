@@ -159,11 +159,13 @@ header {
 }
 
 .left-section p {
+	font-family: 'Poppins', sans-serif; 
+	font-weight: 300;
 	margin-top: 5px;
 	margin-bottom: 1px;
 	z-index: 2;
 	text-transform: none;
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 }
 
 /* Styling for the image inside the text box */
