@@ -8,6 +8,11 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Lucidity Expand'; /* Define a name for your font */
+    src: url('../fonts/lucidity-expand.ttf') format('truetype'); /* Path to your TTF font */
+}
+
 html {
 	scroll-behavior: smooth;
 	font-size: 8px;
@@ -55,12 +60,13 @@ body {
 }
 
 .Header-swimlane-Text {
+	font-family: 'Lucidity Expand', sans-serif; /* Apply the custom font */
 	color: black;
 	font-size: 2rem;
 	width: 100%;
 	font-weight: 600;
 	position: fixed;
-	top: 2%;
+	top: 3%;
 	left: 5%;
 	z-index: 5;
 }
@@ -1741,7 +1747,7 @@ footer>div:not(.socials) {
 	.Header-swimlane-Text {
 		font-size: 1.5rem;
 		font-weight: 600;
-		top: 1%;
+		top: 1.5%;
 		left: 12.5%;
 
 	}
