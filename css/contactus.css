@@ -31,7 +31,7 @@ input, textarea
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 0.01vw solid #757575;
+    border-bottom: 0.01vw solid white;
     padding: 1.5%;
     font-size: 2.5rem;
 }
@@ -50,7 +50,7 @@ input::placeholder, textarea::placeholder
 
 label
 {
-    color: #757575;
+    color:white;
     position: relative;
     left: 0.5em;
     top: -2em;
