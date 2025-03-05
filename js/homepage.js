@@ -1019,3 +1019,31 @@ printViewportDimensions();
 window.addEventListener('resize', printViewportDimensions);
 
 
+//bullet-point
+
+const options = {
+	root: null, // Observe relative to the viewport
+	rootMargin: '0px',
+	threshold: 0.7 // Trigger when 70% of the element is visible
+};
+
+// Callback function for when the element is in view
+const callback = (entries, observer) => {
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			// Add 'show' class to trigger the animation
+			entry.target.classList.add('show');
+		} else {
+			// Optionally, remove 'show' class when out of view (if you want to reset the animation when scrolling back)
+			entry.target.classList.remove('show');
+		}
+	});
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+// Observe the container (ul element with id "bulletPoints")
+const bulletPoints = document.querySelectorAll('.bullet-point');
+bulletPoints.forEach(bulletPoint => {
+	observer.observe(bulletPoint);
+});
