@@ -12,12 +12,12 @@
 
 
 
-    gsap.to('.loader-img', {
-        rotation: 360,
-        duration: 1.5,
-        repeat: -1,
-        repeatDelay: 0.25
-    });
+gsap.to('.loader-img', {
+    rotation: 360,  // Rotate 360 degrees
+    duration: 1,    // Rotation takes 1 second
+    repeat: 0,      // No repeat
+});
+
 
 
 // Ensure loader is visible when DOM is loaded
