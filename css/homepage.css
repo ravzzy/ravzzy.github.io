@@ -585,10 +585,9 @@ header {
 	padding: 10px; /* Adds space between the text and the border */
 	border-radius: 8px; /* Optional: gives rounded corners */
 	margin: 10px 0; /* Optional: adds space outside the border */
-	background-color: rgba(230, 22, 24, 1.0) /* 50% opacity */
-	; /* Optional: gives a light background color */
-	
-	color: white !important;
+	/*background-color: rgba(230, 22, 24, 1.0); /* 50% opacity */
+	background-color: #e5ba7e;
+	color: #800000 !important;
 	font-weight: 600 !important;
 	text-align: left !important;
 	padding-left: 2%;
