@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
 
 * {
 	margin: 0;
@@ -164,7 +165,7 @@ header {
 }
 
 .left-section p {
-	font-family: 'Poppins', sans-serif; 
+	font-family: 'Montserrat', sans-serif; 
 	font-weight: 300;
 	margin-top: 5px;
 	margin-bottom: 1px;
@@ -316,7 +317,7 @@ header {
 }
 
 .right-section-2 p {
-	font-family: 'Poppins', sans-serif; 
+	font-family: 'Montserrat', sans-serif; 
 	font-weight: 300;
 	text-transform: none;
 	font-size: 1.6rem;
@@ -670,6 +671,23 @@ header {
 	animation-delay: 1.2s;
 }
 
+.bullet-point:nth-child(6) {
+	animation-delay: 1.5s;
+}
+.bullet-point:nth-child(7) {
+	animation-delay: 1.8s;
+}
+.bullet-point:nth-child(8) {
+	animation-delay: 2.1s;
+}
+
+.bullet-point:nth-child(9) {
+	animation-delay: 2.4s;
+}
+
+.bullet-point:nth-child(10) {
+	animation-delay: 2.7s;
+}
 /* Bullet-service and bullet-point code end */
 
 
@@ -1215,7 +1233,7 @@ section {
 }
 
 .thin {
-	font-family: 'Poppins', sans-serif; 
+	font-family: 'Montserrat', sans-serif; 
 	text-transform: none;	
 	font-size: 2rem;
 	font-weight: 300;
@@ -1571,7 +1589,7 @@ footer>div:not(.socials) {
 }
 .founder-description {
 
-	font-family: 'Poppins', sans-serif; 
+	font-family: 'Montserrat', sans-serif; 
 	font-weight: 300;
 	margin-top: 5px;
 	margin-bottom: 1px;
@@ -1886,7 +1904,7 @@ footer>div:not(.socials) {
 		font-size: 1.5rem;
 		font-weight: 600;
 		top: 1.5%;
-		left: 12.5%;
+		left: 15%;
 
 	}
 
