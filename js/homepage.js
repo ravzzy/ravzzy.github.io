@@ -313,6 +313,7 @@ Note these colours - logic is based on it.
 rgb(230, 22, 24) ---#E61618
 rgb(23, 16, 16) ---- #171010 */
 
+/*
 function adjustTextColor() {
 	const menuLinks = document.querySelectorAll(".menu-link");
 	const menuLines = document.querySelectorAll(".hamburger-menu .line"); // Hamburger menu lines
@@ -412,7 +413,7 @@ function adjustTextColor() {
 	if (document.querySelector(".container").classList.contains("change")) {
 		hamburgerMenu.style.color = brightness < 150 ? "white" : "black"; // Changes the ✖ icon color
 	}
-}
+} */
 
 // Log messages to console and webpage
 //Enable this for Debug log window
@@ -426,6 +427,7 @@ function adjustTextColor() {
 	}
 }*/
 
+/*
 // Run on page load, scroll & when sidebar opens/closes
 window.addEventListener("load", adjustTextColor);
 
@@ -438,7 +440,7 @@ window.addEventListener("scroll", function () {
 });
 
 document.querySelector(".hamburger-menu").addEventListener("click", adjustTextColor);
-
+*/
 // make each dropdown item appear sequentially effect
 /*
 document.addEventListener("DOMContentLoaded", () => {
