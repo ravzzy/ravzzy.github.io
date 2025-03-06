@@ -741,6 +741,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.querySelectorAll(".shuffle-text > a").forEach(textElement => {
+	// Check if the device is mobile using user-agent string
+	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+	if (!isMobile) { 
 	let originalText = textElement.textContent;
 	let words = originalText.split(" ");
 	let shuffleIntervals = []; // Store interval references to stop them
@@ -800,11 +803,16 @@ document.querySelectorAll(".shuffle-text > a").forEach(textElement => {
 
 	textElement.addEventListener("mouseenter", startShuffling);
 	textElement.addEventListener("mouseleave", stopShuffling);
+	}
 });
 
 //shuffle text effect that triggers when in view and when hovered both.
 
 document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
+	// Check if the device is mobile using user-agent string
+	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+	if (!isMobile) { 
 	let originalText = textElement.textContent;
 	let words = originalText.split(" ");
 	let shuffleIntervals = []; // Store interval references to stop them
@@ -880,6 +888,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 	// Keep hover functionality as is
 	textElement.addEventListener("mouseenter", startShuffling);
 	textElement.addEventListener("mouseleave", stopShuffling);
+	}
 });
 
 
