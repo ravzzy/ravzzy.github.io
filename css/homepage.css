@@ -156,8 +156,9 @@ header {
 }
 
 .left-section h2 {
-	font-family: "Bebas Neue", sans-serif;
-	font-size: 2em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 1.5em;
 	margin-bottom: 2px;
 	text-align: center;
 	z-index: 2;
@@ -218,9 +219,9 @@ header {
 }
 
 .right-section .right-section-text {
-	font-family: "Bebas Neue", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	text-align: center;
-	font-size: 8rem;
+	font-size: 6rem;
 	color: var(--secondary-background-color);
 	font-weight: 500;
 }
@@ -255,7 +256,7 @@ header {
 }
 
 .right-content-section {
-	min-height: 150dvh;
+	min-height: 170dvh;
 	height: 0;
 	/* Reset any inherited height */
 	background-color: var(--primary-background-color);
@@ -307,9 +308,9 @@ header {
 }
 
 .right-section-2 h2 {
-	font-family: "Bebas Neue", sans-serif;
-	font-size: 2em;
-	font-weight: 300;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.5em;
+	font-weight: 600;
 	margin-bottom: 5px;
 	text-align: center;
 	z-index: 2;
@@ -355,9 +356,9 @@ header {
 }
 
 .left-section-2 .left-section-text {
-	font-family: "Bebas Neue", sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	text-align: center;
-	font-size: 8rem;
+	font-size: 6rem;
 	color: var(--secondary-background-color);
 	font-weight: 500;
 }
@@ -435,7 +436,7 @@ header {
 	}
 
 	.right-section .right-section-text {
-		font-size: 5rem;
+		font-size: 3rem;
 	}
 
 
@@ -514,7 +515,7 @@ header {
 
 
 	.left-section-2 .left-section-text {
-		font-size: 5rem;
+		font-size: 3rem;
 	}
 
 	.right-section-2 {
