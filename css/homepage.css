@@ -177,7 +177,7 @@ header {
 }
 
 .left-section p {
-	margin-inline: 5vw;
+	margin-inline: 6vh;
 	font-family: var(--body-text-font);
 	font-weight: 400;
 	margin-top: 5px;
@@ -336,7 +336,7 @@ header {
 }
 
 .right-section-2 p {
-	margin-inline: 5vw;
+	margin-inline: 6vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
 	font-weight: 400;
@@ -1509,7 +1509,7 @@ footer>div:not(.socials) {
 	font-size: 3rem;
 }
 .founder-description {
-
+	margin-inline: 4vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
 	font-weight: 400;
