@@ -1887,11 +1887,13 @@ footer>div:not(.socials) {
 
 	footer>div:not(.socials) {
 		margin-inline: auto;
-		width: 100%;
+		margin-left: 2vh;
+		width: 92vw;
 		font-size: 2rem;
 	}
 
 	.socials {
+		width: 92vw;
 		display: flex;
 		flex-direction: column;
 		/* Stack buttons vertically */
@@ -1912,16 +1914,17 @@ footer>div:not(.socials) {
 	.footer-message {
 		position: relative;
 		/* Set the parent to relative to enable positioning */
-		left: 52% !important;
+		left: 50% !important;
 		transform: translateX(-50%) !important;
 	}
 
 	body>div.container>section.final>footer>p {
+		width: 90vw;
 		position: relative;
 		/* Set the parent to relative to enable positioning */
 		margin-bottom: 20px;
-		left: 52% !important;
-		transform: translateX(-50%) !important;
+		left: 1vh;
+		text-align: center;
 		font-size: 8px;
 	}
 
