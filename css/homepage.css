@@ -454,7 +454,7 @@ header {
 	}
 
 	.right-section .right-section-text {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 	}
 
 
@@ -533,7 +533,7 @@ header {
 
 
 	.left-section-2 .left-section-text {
-		font-size: 2.5rem;
+		font-size: 2.8rem;
 	}
 
 	.right-section-2 {
@@ -552,8 +552,7 @@ header {
 	}
 
 	.right-text-box img {
-		max-width: 100%;
-		/* Make the image smaller on smaller screens */
+		transform: scale(0.9);		/* Make the image smaller on smaller screens */
 	}
 
 }
