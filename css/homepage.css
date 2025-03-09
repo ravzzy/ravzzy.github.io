@@ -473,11 +473,12 @@ body {
 	  /* Text container on mobile */
 	  .header-text-container {
 		position: relative;
-		top: 0;
-		height: 65vh;
+		height: 85vh;
+		padding-top: 5vh;
 		align-items: flex-start; /* Ensure the content aligns to the top */
 		width: 100%; /* Text takes full width on mobile */
 		padding-left: 7vh;
+		justify-content: start;
 		background-color: var(--secondary-background-color);
 	  }
 	
