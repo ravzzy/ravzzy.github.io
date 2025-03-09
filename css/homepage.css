@@ -195,8 +195,8 @@ body {
 	font-family: var(--body-text-font);
 	font-weight: 600;
 	font-size: 1.5em;
-	margin-top: 2vh;
-	margin-bottom: 2vh;
+	margin-top: 6vh;
+	margin-bottom: 6vh;
 	text-transform: none;
 	text-align: center;
 	z-index: 2;
@@ -204,7 +204,7 @@ body {
 }
 
 .left-section p {
-	margin-inline: 6vh;
+	margin-inline: 15vh;
 	font-family: var(--body-text-font);
 	font-weight: 400;
 	margin-top: 5px;
@@ -340,7 +340,7 @@ body {
 	flex-direction: column;
 	justify-content: flex-start; /* Align items to the top */
 	max-width: 80dvh;
-	max-height: auto;
+	height: auto;
 	font-size: 1.3rem;
 	text-align: justify; /* Ensures the paragraphs are aligned left */
 
@@ -354,8 +354,8 @@ body {
 	font-family: var(--body-text-font);
 	font-size: 1.5em;
 	font-weight: 600;
-	margin-top: 2vh;
-	margin-bottom: 2vh;
+	margin-top: 6vh;
+	margin-bottom: 6vh;
 	text-align: center;
 	text-transform: none;
 	z-index: 2;
@@ -363,7 +363,7 @@ body {
 }
 
 .right-section-2 p {
-	margin-inline: 6vh;
+	margin-inline: 15vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
 	font-weight: 400;
@@ -380,7 +380,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: auto;
-	transform: scale(0.7);
+	transform: scale(0.8);
 	display: block; /* Ensure the image behaves like a block element */
 	margin: 0 auto; /* Centers the image horizontally */
 	z-index: 2;
@@ -547,6 +547,18 @@ body {
 		max-width: 80dvw;
 	}
 
+	.left-section h2 {
+		margin-top: 4vh;
+		margin-bottom: 4vh;
+	}
+
+
+	.left-section p {
+		margin-inline: 10vh;
+	}
+
+
+	
 	.left-text-box img {
 		max-width: 60%;
 		/* Make the image smaller on smaller screens */
@@ -625,6 +637,17 @@ body {
 		max-width: 80dvw;
 		margin-right: 0;
 	}
+
+
+	.right-section-2 h2 {
+		margin-top: 4vh;
+		margin-bottom: 4vh;
+	}
+
+	.right-section-2 p {
+		margin-inline: 10vh;
+	}
+	
 
 	.right-text-box img {
 		transform: scale(0.9);		/* Make the image smaller on smaller screens */
