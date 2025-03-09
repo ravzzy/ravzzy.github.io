@@ -81,36 +81,63 @@ body {
 	z-index: 5;
 }
 
-header {
-	font-family: var(--header-text-font);
-	font-size: 2em;
-	background-color: var(--secondary-background-color);
-	color: black;
-	font-size: 3rem;
-	font-weight: 800;
-	width: 100%;
-	position: fixed;
-	top: 9vh;
-	left: 10.3vh;
-	z-index: 3;
-	/* Keep header below swimlane */
-	text-align: center;
+.header-section {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 14vh;
-	transition: transform 0.3s ease-out;
-	border-top: none;
-	border-left: 0.5px solid grey;
-	border-right: 0.5px solid grey;
-	border-bottom: 0.5px solid grey;
+	flex-direction: row; /* Side by side layout for desktop */
+	justify-content: space-between; /* Space out the text and image */
+	align-items: center; /* Vertically center both text and image */
+	width: 100%;
+	min-height: 91vh; /* Ensure section takes enough height */
+	max-height: 91vh;
+	margin: 0 auto;
+	padding: 0 10vh; /* Add padding to the sides for some space */
+	box-sizing: border-box; /* Ensure padding doesn't affect the layout */
 }
+
+.header-text-container {
+
+	width: 30%; /* The text container will take 30% of the width */
+	font-family: var(--body-text-font);
+	background-color: var(--secondary-background-color);
+	color: var(--primary-background-color);
+	display: flex;
+	flex-direction: column; /* Stack the text vertically */
+	justify-content: center; /* Vertically center the text */
+	align-items: flex-start; /* Align text to the left */
+	padding: 0 15vh; /* Add padding inside the text container */
+	text-transform: none !important;
+
+  }
+  
+  .header-text-container h1, .header-text-container h2, .header-text-container h3, .header-text-container h4, .header-text-container h5 {
+	font-size: 6rem;
+	font-weight: 500;	
+	margin: 0; /* Remove default margins */
+
+  }	
+  /* The image container takes up the other 50% */
+  .header-image-container {
+
+	width: 70%; /* The image container will take 70% of the width */
+	display: flex;
+	justify-content: flex-end; /* Align image to the right */
+	align-items: center; /* Vertically center the image */
+	padding-right: 5vh; /* Add some padding to the right */
+
+  }
+  
+  /* Ensure the image resizes properly */
+  .header-image {
+	transform: scale(.6);
+	max-width: 100%; /* Prevent image from overflowing */
+	height: auto;  /* Maintain aspect ratio */
+  }
 
 /*test code start*/
 
 .topper {
-	min-height: 23dvh;
-	background-color: var(--primary-background-color);
+	min-height: 9vh;
+	background-color: var(--secondary-background-color);
 }
 
 
@@ -413,8 +440,55 @@ header {
 
 
 	.topper {
-		min-height: 14vh;
+		min-height: 5vh;
+		background-color: var(--secondary-background-color);
 	}
+
+	.header-section {
+		flex-direction: column-reverse;
+		margin-left: 2vh;
+		max-height: 95vh;
+		min-height: 95vh; /* Allow the section to adjust its height */
+		padding: 0; /* Reduce padding for smaller screens */
+
+	}
+	
+	  /* Image container (on mobile, image will be at the top) */
+	  .header-image-container {
+		position: relative;
+		top: 0;
+		height: 30vh;
+		align-items: flex-end; /* Ensure the content aligns to the top */
+        width: 100%; /* Image container takes 100% width */
+	}
+
+	.header-image {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+        transform: scale(0.6); /* Reduce image size for mobile */
+        height: auto; /* Maintain aspect ratio */
+	  }
+	
+	  /* Text container on mobile */
+	  .header-text-container {
+		position: relative;
+		top: 0;
+		height: 65vh;
+		align-items: flex-start; /* Ensure the content aligns to the top */
+		width: 100%; /* Text takes full width on mobile */
+		padding-left: 7vh;
+		background-color: var(--secondary-background-color);
+	  }
+	
+	  .header-text-container h1, 
+	  .header-text-container h2, 
+	  .header-text-container h3, 
+	  .header-text-container h4, 
+	  .header-text-container h5 {
+		font-size: 5rem; /* Smaller font size for mobile */
+	  }
+
 
 	.left-content-section {
 		padding-top: 4vh;

@@ -532,6 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 */
 
+/*
 document.addEventListener("DOMContentLoaded", function () {
 	const header = document.querySelector("header");
 	const swimlane = document.querySelector(".Header-swimlane");
@@ -590,6 +591,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		lastScrollY = scrollY; // Update last scroll position
 	});
 });
+*/
 
 /* makes the logo disappear */
 /*
