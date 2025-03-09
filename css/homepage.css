@@ -120,15 +120,16 @@ body {
 
 	width: 70%; /* The image container will take 70% of the width */
 	display: flex;
+	padding-left: 10vh;
 	justify-content: flex-end; /* Align image to the right */
 	align-items: center; /* Vertically center the image */
-	padding-right: 5vh; /* Add some padding to the right */
+	padding-right: 0; /* Add some padding to the right */
 
   }
   
   /* Ensure the image resizes properly */
   .header-image {
-	transform: scale(.6);
+	transform: scale(.5);
 	max-width: 100%; /* Prevent image from overflowing */
 	height: auto;  /* Maintain aspect ratio */
   }
