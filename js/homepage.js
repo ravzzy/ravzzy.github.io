@@ -22,13 +22,13 @@ gsap.to('.loader-img', {
 
 // Ensure loader is visible when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-	document.body.classList.add("loader");
+	document.body.classList.add("loading");
 });
 
 // Keep the loader for 1.0 seconds before showing the page
 window.addEventListener("load", () => {
 	setTimeout(() => {
-		document.body.classList.remove("loader");
+		document.body.classList.remove("loading");
 		document.querySelector(".loader").style.display = "none"; // Hide loader
 	}, 1000); // 1000ms = 1.0 seconds
 });
