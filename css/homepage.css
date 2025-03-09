@@ -695,13 +695,11 @@ body {
 }
 
 /* Bullet-service and bullet-point code start */
-
+/*
 .bullet-service {
-	/*border: 2px solid black; /* Adds a solid green border */
-	padding: 10px; /* Adds space between the text and the border */
-	border-radius: 8px; /* Optional: gives rounded corners */
-	margin: 10px 0; /* Optional: adds space outside the border */
-	/*background-color: rgba(230, 22, 24, 1.0); /* 50% opacity */
+	padding: 10px; 
+	border-radius: 8px; 
+	margin: 10px 0; 
 	background-color: #e5ba7e;
 	color: #800000 !important;
 	font-weight: 600 !important;
@@ -805,6 +803,7 @@ body {
 .bullet-point:nth-child(10) {
 	animation-delay: 2.7s;
 }
+*/
 /* Bullet-service and bullet-point code end */
 
 
