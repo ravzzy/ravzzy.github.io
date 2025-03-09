@@ -1506,8 +1506,17 @@ footer>div:not(.socials) {
 }
 
 .founder-name {
+	font-family: var(--body-text-font);
+	text-transform: none;
 	font-size: 3rem;
 }
+
+.founder-title {
+	font-family: var(--body-text-font);
+	text-transform: none;
+	font-size: 2rem;
+}
+
 .founder-description {
 	margin-inline: 4vh;
 	font-family: var(--body-text-font);
@@ -1853,6 +1862,13 @@ footer>div:not(.socials) {
 	}
 
 	.founder-name {
+		position: relative;
+		/* Set the parent to relative to enable positioning */
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+	}
+
+	.founder-title {
 		position: relative;
 		/* Set the parent to relative to enable positioning */
 		left: 55% !important;
