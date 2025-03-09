@@ -206,7 +206,7 @@ body {
 .left-section p {
 	margin-inline: 15vh;
 	font-family: var(--body-text-font);
-	font-weight: 400;
+	font-weight: 500;
 	margin-top: 5px;
 	margin-bottom: 1px;
 	z-index: 2;
@@ -366,7 +366,7 @@ body {
 	margin-inline: 15vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
-	font-weight: 400;
+	font-weight: 500;
 	text-transform: none;
 	font-size: 1.5rem;
 	margin-top: 10px;
@@ -1620,7 +1620,7 @@ footer>div:not(.socials) {
 	margin-inline: 4vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
-	font-weight: 400;
+	font-weight: 500;
 	margin-top: 5px;
 	margin-bottom: 1px;
 	z-index: 2;
