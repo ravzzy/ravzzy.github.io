@@ -9,8 +9,7 @@
 	<link rel="stylesheet" href="./css/homepage.css">
 	<link rel="stylesheet" href="./css/contactus.css">
 	<link rel="preload" as="image" href="./images/loading.webp">
-	<link rel="preload" href="./images/globe_hand.webp" as="image">
-	<link rel="preload" href="../images/globe_video.gif" as="image">
+	<!--<link rel="preload" href="./images/globe_hand.webp" as="image">-->
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
@@ -356,11 +355,25 @@
 				<p>2025 &copy; Rooting Research<sup>&trade;</sup></p>
 			</footer>
 		</section>
-	</div>
-	<script></script>
-	
+	</div>	
 	<script src="./js/homepage.js" defer></script>
-		
+	<script>
+		if (window.matchMedia("(max-width: 768px)").matches) { // Adjust the screen size as needed
+		  var link = document.createElement("link");
+		  link.rel = "preload";
+		  link.href = "../images/globe_video.gif";
+		  link.as = "image";
+		  document.head.appendChild(link);
+		  console.log("Mobile globe video pre-loaded");
+		} else {
+		  var link = document.createElement("link");
+		  link.rel = "preload";
+		  link.href = "./images/globe_hand.webp";
+		  link.as = "image";
+		  document.head.appendChild(link);
+		  console.log("Desktop globe image pre-loaded");
+		}
+	  </script>
 <!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script> -->
