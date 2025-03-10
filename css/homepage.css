@@ -451,25 +451,26 @@ body {
 	  .header-image-container {
 		position: relative;
 		top: 0;
-		height: 30vh;
+		height: 35vh;
 		align-items: flex-end; /* Ensure the content aligns to the top */
         width: 100%; /* Image container takes 100% width */
 		background-image: url('../images/globe_video.gif');
+		background-size: contain;
 	}
 
 	.header-image {
-		max-width: 100%;
+		/*max-width: 100%;
 		max-height: 100%;
 		object-fit: contain;
-        transform: scale(0.6); /* Reduce image size for mobile */
-        height: auto; /* Maintain aspect ratio */
+        transform: scale(0.6);
+        height: auto; */ /* Maintain aspect ratio */
 		display: none;
 	  }
 	
 	  /* Text container on mobile */
 	  .header-text-container {
 		position: relative;
-		height: 50vh;
+		height: 55vh;
 		padding-top: 1vh;
 		align-items: flex-start; /* Ensure the content aligns to the top */
 		width: 100%; /* Text takes full width on mobile */
