@@ -59,16 +59,27 @@ label
 
 input:focus ~ label, input:not(:placeholder-shown) ~ label
 {
-    top: -4em;
+    top: -8em;
     color: rgb(255, 255, 255);
     font-size: 1rem;
+    transition: top 0.3s ease, font-size 0.3s ease;
+
 }
 
 textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
 {
-    top: -10.5em;
+    top: -15em;
     color: rgb(255, 255, 255);
     font-size: 1rem;
+    transition: top 0.3s ease, font-size 0.3s ease;
+
+}
+
+
+/* For the Message textarea (only) */
+.textarea-group textarea:focus ~ label, 
+.textarea-group textarea:not(:placeholder-shown) ~ label {
+    top: -20em;
 }
 
 .button-div
