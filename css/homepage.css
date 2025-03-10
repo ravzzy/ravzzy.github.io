@@ -1791,6 +1791,10 @@ footer>div:not(.socials) {
 @media (orientation: landscape) {
 	/* Desktop */
 
+	body {
+		overflow-x: hidden !important;
+		width: 100%;
+	}
 
 	.text-spin {
 		left: -250%;
