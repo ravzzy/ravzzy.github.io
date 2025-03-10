@@ -130,10 +130,14 @@ body {
 /*test code start*/
 
 .topper {
+	visibility: hidden;
 	min-height: 9vh;
 	background-color: var(--secondary-background-color);
 }
 
+.container {
+	visibility: hidden;
+}
 
 .left-content-section {
 	padding-top: 5vh;

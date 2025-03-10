@@ -11,7 +11,50 @@
 */
 
 
+const loaderImage = document.querySelector('.loader-img');
+    
+    gsap.to(loaderImage, {
+      rotation: 360,    // Rotate 360 degrees
+      duration: 5,      // Duration of rotation
+      repeat: 9999,       // Infinite repeat for continuous rotation
+      ease: "linear"    // Smooth, continuous rotation
+    });
 
+    // Wait for the window to load all resources
+    window.addEventListener('load', () => {
+      // Once everything is loaded, stop the animation or change it
+      gsap.to(loaderImage, {
+        rotation: 0,     // Reset rotation
+        duration: 1,     // Transition duration for resetting
+        repeat: 0,       // Stop repeating once fully loaded
+        onComplete: () => {
+          console.log('All resources loaded, rotation stopped.');
+        }
+      });
+    });
+
+	window.addEventListener('load', function() {
+		// This code runs when everything has loaded: HTML, CSS, images, etc.
+		const loadingScreen = document.getElementById('loader');
+		const topper = document.getElementById('topper');
+		const container = document.getElementById('container');
+
+	  
+		// Hide the loading screen
+		loadingScreen.style.visibility = 'hidden';
+		
+	  
+		// Show the content
+		topper.style.visibility = 'visible';
+		container.style.visibility = 'visible';
+
+	  
+		// Re-enable scrolling by setting body overflow back to 'auto'
+		document.body.style.overflow = 'auto';
+	  });
+	  
+
+/*
 gsap.to('.loader-img', {
     rotation: 360,  // Rotate 360 degrees
     duration: 5,    // Rotation takes 1 second
@@ -27,11 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Keep the loader for 1.0 seconds before showing the page
 window.addEventListener("load", () => {
+	
 	setTimeout(() => {
 		document.body.classList.remove("loading");
 		document.querySelector(".loader").style.display = "none"; // Hide loader
 	}, 3000); // 1000ms = 1.0 seconds
 });
+*/
 
 /*
 	Roadmap section animation.
