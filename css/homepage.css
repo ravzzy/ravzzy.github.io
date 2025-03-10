@@ -451,9 +451,10 @@ body {
 	  .header-image-container {
 		position: relative;
 		top: 0;
-		height: 30vh;
+		height: 25vh;
+		padding-left: 2vh;
 		align-items: flex-end; /* Ensure the content aligns to the top */
-        width: 100%; /* Image container takes 100% width */
+        width: 93%; /* Image container takes 100% width */
 		background-image: url('../images/globe_video.gif');
 		background-size: contain;
 	}
