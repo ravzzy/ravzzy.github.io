@@ -161,11 +161,11 @@ form.addEventListener('submit', function (e) {
 
 
 //document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
-document.addEventListener("keydown", (event) => {
+/*document.addEventListener("keydown", (event) => {
 	if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
 		event.preventDefault(); // Disable View Source (Ctrl+U)
 	}
-});
+});*/
 
 window.addEventListener("load", function () {
 	document.querySelector(".logo-image").style.opacity = "1";
@@ -1051,7 +1051,7 @@ window.addEventListener('resize', printViewportDimensions);
 
 
 //bullet-point
-
+/*
 const options = {
 	root: null, // Observe relative to the viewport
 	rootMargin: '0px',
@@ -1077,4 +1077,4 @@ const observer = new IntersectionObserver(callback, options);
 const bulletPoints = document.querySelectorAll('.bullet-point');
 bulletPoints.forEach(bulletPoint => {
 	observer.observe(bulletPoint);
-});
+});*/
