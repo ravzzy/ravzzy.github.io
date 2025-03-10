@@ -1793,8 +1793,13 @@ footer>div:not(.socials) {
 
 	body {
 		overflow-x: hidden !important;
-		width: 100%;
 	}
+
+	html, body {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	  }
 
 	.text-spin {
 		left: -250%;
