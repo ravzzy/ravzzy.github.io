@@ -360,6 +360,53 @@
 	<script></script>
 	
 	<script src="./js/homepage.js" defer></script>
+	<script>
+		let videoElement = null;
+	
+		// Function to load the video only on mobile devices
+		function loadMobileVideo() {
+			console.log('loadMobileVideo: '+window.innerWidth);
+			// Check if the screen width is 768px or smaller (mobile devices)
+			if (window.innerWidth <= 768) {
+				console.log('loadMobileVideo: for mobile');
+
+				// Only load the video if it's not already loaded
+				if (!videoElement) {
+					videoElement = document.createElement('video');
+					videoElement.autoplay = true;
+					videoElement.muted = true;
+					videoElement.loop = true;
+					videoElement.preload = 'auto'; // Preload the video
+	
+					// Create the source element for the video
+					const source = document.createElement('source');
+					source.src = './images/globe_video.mp4';
+					source.type = 'video/mp4';
+	
+					// Append the source to the video
+					videoElement.appendChild(source);
+	
+					// Append the video to the header section
+					document.querySelector('.header-section').prepend(videoElement);
+				}
+			} else {
+				console.log('loadMobileVideo: for desktop');
+
+				// Remove the video if the screen is larger than 768px (desktop)
+				if (videoElement) {
+					videoElement.remove();
+					videoElement = null; // Reset the video element
+				}
+			}
+		}
+	
+		// Ensure the function is executed when the DOM is fully loaded
+		window.addEventListener('load', loadMobileVideo); // Make sure video is loaded after page is fully loaded
+	
+		// Recheck and load video on window resize
+		window.addEventListener('resize', loadMobileVideo);
+	</script>
+		
 <!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script> -->

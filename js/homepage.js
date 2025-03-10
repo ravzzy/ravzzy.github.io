@@ -14,7 +14,7 @@
 
 gsap.to('.loader-img', {
     rotation: 360,  // Rotate 360 degrees
-    duration: 1,    // Rotation takes 1 second
+    duration: 3,    // Rotation takes 1 second
     repeat: 0,      // No repeat
 });
 
@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
 	setTimeout(() => {
 		document.body.classList.remove("loading");
 		document.querySelector(".loader").style.display = "none"; // Hide loader
-	}, 1000); // 1000ms = 1.0 seconds
+	}, 3000); // 1000ms = 1.0 seconds
 });
 
 /*
