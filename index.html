@@ -363,7 +363,7 @@
 	<script>
 		let videoElement = null;
 	
-		// Create a log container that will display log messages on the page
+		// Create a log container to display log messages on the page
 		const logContainer = document.createElement('div');
 		logContainer.style.position = 'fixed';
 		logContainer.style.top = '10px';
@@ -409,6 +409,22 @@
 	
 					// Log if the video is appended
 					logToScreen('Video added to the DOM');
+	
+					// Add a listener to check if the video plays
+					videoElement.onplay = function() {
+						logToScreen('Video is playing');
+					};
+	
+					videoElement.onerror = function(e) {
+						logToScreen('Error playing video: ' + e.message);
+					};
+	
+					// If video doesn't play automatically, attempt to play it manually (autoplay might be blocked)
+					videoElement.play().then(() => {
+						logToScreen('Video started playing manually');
+					}).catch((error) => {
+						logToScreen('Video failed to play: ' + error.message);
+					});
 				}
 			} else {
 				// Remove the video if the screen is larger than 768px (desktop)
@@ -426,6 +442,7 @@
 		// Recheck and load video on window resize
 		window.addEventListener('resize', loadMobileVideo);
 	</script>
+	
 	
 <!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
