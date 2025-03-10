@@ -87,17 +87,6 @@ body {
 	box-sizing: border-box; /* Ensure padding doesn't affect the layout */
 }
 
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the video covers the section without distorting */
-    z-index: -1; /* Keeps the video behind your content */
-	display: none;
-}
-
 .header-text-container {
 
 	width: 30%; /* The text container will take 30% of the width */
@@ -465,6 +454,7 @@ body {
 		height: 30vh;
 		align-items: flex-end; /* Ensure the content aligns to the top */
         width: 100%; /* Image container takes 100% width */
+		background-image: url('../images/globe_video.gif');
 	}
 
 	.header-image {
@@ -473,6 +463,7 @@ body {
 		object-fit: contain;
         transform: scale(0.6); /* Reduce image size for mobile */
         height: auto; /* Maintain aspect ratio */
+		display: none;
 	  }
 	
 	  /* Text container on mobile */
