@@ -899,6 +899,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tickerWrapper = document.querySelector(".ticker-wrapper");
     let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
     let counter = 0; // Initialize counter to track executions
+    let resizeTimeout;
+    let isAnimating = false;
 
     function calculateSpacing() {
         let maxHeight = 0;
@@ -910,16 +912,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setupTicker() {
-        // Only execute if counter is less than 100
-        if (counter >= 2) {
-            return; // Stop execution once the counter reaches 100
-        }
+        // If the counter has already exceeded the threshold, prevent further execution
+        if (counter >= 2) return; // Stop execution once the counter reaches 2
+        counter++;
 
-        counter++; // Increment counter on each execution
+        // Throttle animation updates to reduce frequency
+        if (isAnimating) return; // Prevent multiple triggers
+        isAnimating = true;
 
         requestAnimationFrame(() => {
             let dynamicSpacing = calculateSpacing();
 
+            // Set the margin for all ticker items
             tickerItems.forEach((item) => {
                 item.style.marginBottom = `${dynamicSpacing}px`;
             });
@@ -927,32 +931,39 @@ document.addEventListener("DOMContentLoaded", () => {
             let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
             let totalHeight = itemHeight * tickerItems.length;
 
-            // Clear previous duplicate and ensure infinite loop works properly
+            // Clear previous duplicate content and ensure infinite loop works properly
             tickerWrapper.innerHTML = "";
             let originalItems = tickerItems.map(item => item.outerHTML).join('');
             tickerWrapper.innerHTML = originalItems + originalItems; // Duplicate content once
             tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
 
+            // Reset the position of the ticker wrapper
             gsap.set(".ticker-wrapper", { y: 0 });
 
-            gsap.to(".ticker-wrapper", {
+            // GSAP animation to scroll the ticker and stop after 2 loops
+            const tickerAnimation = gsap.to(".ticker-wrapper", {
                 y: -totalHeight,
                 duration: tickerItems.length * 1, // Smooth scrolling speed
                 ease: "none",
-                repeat: -1,
+                repeat: 1, // Repeat once (2 loops total: 1 initial + 1 repeat)
+                onComplete: () => {
+                    console.log("Ticker animation completed 2 loops.");
+                    gsap.killTweensOf(".ticker-wrapper"); // Stop the animation completely
+                    isAnimating = false; // Reset the flag to allow re-triggering
+                }
             });
         });
     }
 
+    // Initial setup of the ticker
     setupTicker();
 
-    // Recalculate spacing on window resize with debounce to prevent crashes
-    let resizeTimeout;
+    // Recalculate spacing on window resize with debouncing to avoid performance issues
     window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             setupTicker();
-        }, 300);
+        }, 300); // Delay resizing handling by 300ms to prevent excessive calls
     });
 
     // Fix font rendering issue on iOS (prevents text overlap on first load)
@@ -960,6 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setupTicker();
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
