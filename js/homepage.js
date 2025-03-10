@@ -895,65 +895,71 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 	}
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
-	const tickerWrapper = document.querySelector(".ticker-wrapper");
-	let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+    const tickerWrapper = document.querySelector(".ticker-wrapper");
+    let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+    let counter = 0; // Initialize counter to track executions
 
-	function calculateSpacing() {
-		let maxHeight = 0;
-		tickerItems.forEach((item) => {
-			const rect = item.getBoundingClientRect();
-			maxHeight = Math.max(maxHeight, rect.height); // Capture the real height
-		});
-		return maxHeight * 0.5; // Adjusted spacing for proper visibility
-	}
+    function calculateSpacing() {
+        let maxHeight = 0;
+        tickerItems.forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            maxHeight = Math.max(maxHeight, rect.height); // Capture the real height
+        });
+        return maxHeight * 0.5; // Adjusted spacing for proper visibility
+    }
 
-	function setupTicker() {
-		requestAnimationFrame(() => {
-			let dynamicSpacing = calculateSpacing();
+    function setupTicker() {
+        // Only execute if counter is less than 100
+        if (counter >= 100) {
+            return; // Stop execution once the counter reaches 100
+        }
 
-			tickerItems.forEach((item) => {
-				item.style.marginBottom = `${dynamicSpacing}px`;
-			});
+        counter++; // Increment counter on each execution
 
-			let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
-			let totalHeight = itemHeight * tickerItems.length;
+        requestAnimationFrame(() => {
+            let dynamicSpacing = calculateSpacing();
 
-			// Clear previous duplicate and ensure infinite loop works properly
-			tickerWrapper.innerHTML = "";
-			let originalItems = tickerItems.map(item => item.outerHTML).join('');
-			tickerWrapper.innerHTML = originalItems + originalItems; // Duplicate content once
-			tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
+            tickerItems.forEach((item) => {
+                item.style.marginBottom = `${dynamicSpacing}px`;
+            });
 
-			gsap.set(".ticker-wrapper", { y: 0 });
+            let itemHeight = tickerItems[0].offsetHeight + dynamicSpacing;
+            let totalHeight = itemHeight * tickerItems.length;
 
-			gsap.to(".ticker-wrapper", {
-				y: -totalHeight,
-				duration: tickerItems.length * 1, // Smooth scrolling speed
-				ease: "none",
-				repeat: -1,
-			});
-		});
-	}
+            // Clear previous duplicate and ensure infinite loop works properly
+            tickerWrapper.innerHTML = "";
+            let originalItems = tickerItems.map(item => item.outerHTML).join('');
+            tickerWrapper.innerHTML = originalItems + originalItems; // Duplicate content once
+            tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
 
-	setupTicker();
+            gsap.set(".ticker-wrapper", { y: 0 });
 
-	// Recalculate spacing on window resize with debounce to prevent crashes
-	let resizeTimeout;
-	window.addEventListener("resize", () => {
-		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(() => {
-			setupTicker();
-		}, 300);
-	});
+            gsap.to(".ticker-wrapper", {
+                y: -totalHeight,
+                duration: tickerItems.length * 1, // Smooth scrolling speed
+                ease: "none",
+                repeat: -1,
+            });
+        });
+    }
 
-	// Fix font rendering issue on iOS (prevents text overlap on first load)
-	document.fonts.ready.then(() => {
-		setupTicker();
-	});
+    setupTicker();
+
+    // Recalculate spacing on window resize with debounce to prevent crashes
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            setupTicker();
+        }, 300);
+    });
+
+    // Fix font rendering issue on iOS (prevents text overlap on first load)
+    document.fonts.ready.then(() => {
+        setupTicker();
+    });
 });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
