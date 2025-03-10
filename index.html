@@ -363,13 +363,31 @@
 	<script>
 		let videoElement = null;
 	
+		// Create a log container that will display log messages on the page
+		const logContainer = document.createElement('div');
+		logContainer.style.position = 'fixed';
+		logContainer.style.top = '10px';
+		logContainer.style.left = '10px';
+		logContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+		logContainer.style.color = 'white';
+		logContainer.style.padding = '10px';
+		logContainer.style.maxWidth = '300px';
+		logContainer.style.zIndex = '9999';
+		document.body.appendChild(logContainer);
+	
+		// Function to display logs on the screen
+		function logToScreen(message) {
+			const logMessage = document.createElement('p');
+			logMessage.textContent = message;
+			logContainer.appendChild(logMessage);
+		}
+	
 		// Function to load the video only on mobile devices
 		function loadMobileVideo() {
-			console.log('loadMobileVideo: '+window.innerWidth);
+			logToScreen("Window Width: " + window.innerWidth); // Log window width to ensure correct detection
+	
 			// Check if the screen width is 768px or smaller (mobile devices)
 			if (window.innerWidth <= 768) {
-				console.log('loadMobileVideo: for mobile');
-
 				// Only load the video if it's not already loaded
 				if (!videoElement) {
 					videoElement = document.createElement('video');
@@ -388,14 +406,16 @@
 	
 					// Append the video to the header section
 					document.querySelector('.header-section').prepend(videoElement);
+	
+					// Log if the video is appended
+					logToScreen('Video added to the DOM');
 				}
 			} else {
-				console.log('loadMobileVideo: for desktop');
-
 				// Remove the video if the screen is larger than 768px (desktop)
 				if (videoElement) {
 					videoElement.remove();
 					videoElement = null; // Reset the video element
+					logToScreen('Video removed from the DOM');
 				}
 			}
 		}
@@ -406,7 +426,7 @@
 		// Recheck and load video on window resize
 		window.addEventListener('resize', loadMobileVideo);
 	</script>
-		
+	
 <!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script> -->
