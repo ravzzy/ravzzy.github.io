@@ -122,7 +122,7 @@ body {
   
   /* Ensure the image resizes properly */
   .header-image {
-	transform: scale(.5);
+	transform: scale(0.5);
 	max-width: 100%; /* Prevent image from overflowing */
 	height: auto;  /* Maintain aspect ratio */
   }
