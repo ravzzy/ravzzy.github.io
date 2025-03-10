@@ -911,7 +911,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setupTicker() {
         // Only execute if counter is less than 100
-        if (counter >= 100) {
+        if (counter >= 2) {
             return; // Stop execution once the counter reaches 100
         }
 
