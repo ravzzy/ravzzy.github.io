@@ -120,6 +120,10 @@
 		<div class="Header-swimlane"></div>
 		<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
 		<section class="header-section">
+		 <video autoplay muted loop class="background-video">
+				<source src="./images/globe_video.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+		 </video>
 		 <div class="header-text-container">
 			<h1>Fuelling</h1>
 			<h2>Data</h2>
@@ -360,90 +364,7 @@
 	<script></script>
 	
 	<script src="./js/homepage.js" defer></script>
-	<script>
-		let videoElement = null;
-	
-		// Create a log container to display log messages on the page
-		const logContainer = document.createElement('div');
-		logContainer.style.position = 'fixed';
-		logContainer.style.top = '10px';
-		logContainer.style.left = '10px';
-		logContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-		logContainer.style.color = 'white';
-		logContainer.style.padding = '10px';
-		logContainer.style.maxWidth = '300px';
-		logContainer.style.zIndex = '9999';
-		document.body.appendChild(logContainer);
-	
-		// Function to display logs on the screen
-		function logToScreen(message) {
-			const logMessage = document.createElement('p');
-			logMessage.textContent = message;
-			logContainer.appendChild(logMessage);
-		}
-	
-		// Function to load the video only on mobile devices
-		function loadMobileVideo() {
-			logToScreen("Window Width: " + window.innerWidth); // Log window width to ensure correct detection
-	
-			// Check if the screen width is 768px or smaller (mobile devices)
-			if (window.innerWidth <= 768) {
-				// Only load the video if it's not already loaded
-				if (!videoElement) {
-					videoElement = document.createElement('video');
-					videoElement.autoplay = true;
-					videoElement.muted = true;
-					videoElement.loop = true;
-					videoElement.preload = 'auto'; // Preload the video
-	
-					// Create the source element for the video
-					const source = document.createElement('source');
-					source.src = './images/globe_video.mp4';
-					source.type = 'video/mp4';
-	
-					// Append the source to the video
-					videoElement.appendChild(source);
-	
-					// Append the video to the header section
-					document.querySelector('.header-section').prepend(videoElement);
-	
-					// Log if the video is appended
-					logToScreen('Video added to the DOM');
-	
-					// Add a listener to check if the video plays
-					videoElement.onplay = function() {
-						logToScreen('Video is playing');
-					};
-	
-					videoElement.onerror = function(e) {
-						logToScreen('Error playing video: ' + e.message);
-					};
-	
-					// If video doesn't play automatically, attempt to play it manually (autoplay might be blocked)
-					videoElement.play().then(() => {
-						logToScreen('Video started playing manually');
-					}).catch((error) => {
-						logToScreen('Video failed to play: ' + error.message);
-					});
-				}
-			} else {
-				// Remove the video if the screen is larger than 768px (desktop)
-				if (videoElement) {
-					videoElement.remove();
-					videoElement = null; // Reset the video element
-					logToScreen('Video removed from the DOM');
-				}
-			}
-		}
-	
-		// Ensure the function is executed when the DOM is fully loaded
-		window.addEventListener('load', loadMobileVideo); // Make sure video is loaded after page is fully loaded
-	
-		// Recheck and load video on window resize
-		window.addEventListener('resize', loadMobileVideo);
-	</script>
-	
-	
+		
 <!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script> -->
