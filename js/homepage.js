@@ -956,6 +956,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return maxHeight * 0.5; // Adjusted spacing for proper visibility
     }
 
+    function forceReflow() {
+        // Accessing offsetHeight forces a reflow in browsers
+        tickerWrapper.offsetHeight; // This will force the browser to reflow
+    }
+
     function setupTicker() {
         // If the counter has already exceeded the threshold, prevent further execution
         if (counter >= 2) return; // Stop execution once the counter reaches 2
@@ -982,6 +987,9 @@ document.addEventListener("DOMContentLoaded", () => {
             tickerWrapper.innerHTML = originalItems + originalItems; // Duplicate content once
             tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
 
+            // Force reflow to ensure layout is updated
+            forceReflow();
+
             // Reset the position of the ticker wrapper
             gsap.set(".ticker-wrapper", { y: 0 });
 
@@ -1003,12 +1011,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial setup of the ticker
     setupTicker();
 
-    // Recalculate spacing on window resize with debouncing to avoid performance issues
+    // Recalculate spacing on window resize with optimized debouncing and requestAnimationFrame
     window.addEventListener("resize", () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
+        cancelAnimationFrame(resizeTimeout);
+        resizeTimeout = requestAnimationFrame(() => {
             setupTicker();
-        }, 300); // Delay resizing handling by 300ms to prevent excessive calls
+        });
     });
 
     // Fix font rendering issue on iOS (prevents text overlap on first load)
@@ -1016,7 +1024,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setupTicker();
     });
 });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
