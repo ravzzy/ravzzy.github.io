@@ -217,8 +217,9 @@ body {
 .left-text-box img {
 	width: 100%;
 	height: auto;
-	max-width: 200px;
-	transform: scale(0.7);
+	max-width: 100%;
+	transform: scale(0.8);
+    display: block;
 	z-index: 2;
 }
 
@@ -562,7 +563,7 @@ body {
 
 	
 	.left-text-box img {
-		max-width: 60%;
+		transform: scale(0.8);		/* Make the image smaller on smaller screens */
 		/* Make the image smaller on smaller screens */
 	}
 
