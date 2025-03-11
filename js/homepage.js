@@ -963,7 +963,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setupTicker() {
         // If the counter has already exceeded the threshold, prevent further execution
-        if (counter >= 2) return; // Stop execution once the counter reaches 2
+        if (counter >= 50) return; // Stop execution once the counter reaches 50
         counter++;
 
         // Throttle animation updates to reduce frequency
@@ -998,9 +998,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 y: -totalHeight,
                 duration: tickerItems.length * 1, // Smooth scrolling speed
                 ease: "none",
-                repeat: 1, // Repeat once (2 loops total: 1 initial + 1 repeat)
+                repeat: 50, // Repeat once (50 loops total: 1 initial + 1 repeat)
                 onComplete: () => {
-                    console.log("Ticker animation completed 2 loops.");
+                    console.log("Ticker animation completed 50 loops.");
                     gsap.killTweensOf(".ticker-wrapper"); // Stop the animation completely
                     isAnimating = false; // Reset the flag to allow re-triggering
                 }
