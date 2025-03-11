@@ -460,7 +460,7 @@ body {
 		padding-left: 2vh;
 		align-items: flex-end; /* Ensure the content aligns to the top */
         width: 90%; /* Image container takes 100% width */
-		background-image: url('../images/globe_video.gif');
+		/*background-image: url('../images/globe_video.gif');*/
 		background-size: contain;
 	}
 
