@@ -557,7 +557,7 @@ body {
 
 
 	.left-section p {
-		margin-inline: 7vh;
+		margin-inline: 3vh;
 	}
 
 
@@ -648,7 +648,7 @@ body {
 	}
 
 	.right-section-2 p {
-		margin-inline: 7vh;
+		margin-inline: 3vh;
 	}
 	
 
@@ -1620,7 +1620,7 @@ footer>div:not(.socials) {
 }
 
 .founder-description {
-	margin-inline: 4vh;
+	margin-inline: 1vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
 	font-weight: 500;
