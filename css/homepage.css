@@ -869,7 +869,7 @@ p a:hover {
 }
 
 .logo-image {
-	background-image: url('../images/rooting_research_transparent.png');
+	background-image: url('../images/rooting_research_transparent.webp');
 	background-size: cover;
 	/* Ensures the image covers the entire div */
 	background-repeat: no-repeat;
