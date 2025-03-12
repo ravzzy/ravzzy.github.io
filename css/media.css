@@ -80,7 +80,7 @@ body {
 .topper {
 	visibility: hidden;
 	min-height: 9vh;
-	background-color: var(--secondary-background-color);
+	background-color: var(--primary-background-color);
 }
 
 .container {
@@ -154,7 +154,7 @@ h1 {
 }
 
 .tile a:hover {
-	text-decoration: underline;
+	text-decoration: none;  /* Ensure no underline on hover */
 }
 
 /* Hover effect for tiles */
@@ -162,7 +162,6 @@ h1 {
 	transform: scale(1.05) rotateY(10deg);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -179,7 +178,6 @@ h1 {
 
 	.topper {
 		min-height: 5vh;
-		background-color: var(--secondary-background-color);
 	}
 
 	h1 {
