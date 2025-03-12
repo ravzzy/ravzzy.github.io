@@ -1,0 +1,782 @@
+/* Author - ravzzy */
+@font-face {
+	font-family: 'Lucidity Expand';
+	/* Define a name for your font */
+	src: url('../fonts/lucidity-expand.ttf') format('truetype');
+	/* Path to your TTF font */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 8px;
+	/* Root font size */
+
+}
+
+:root {
+	--nav-bg-color: black;
+	--nav-text-color: black;
+	--nav-hover-color: white;
+	--footer-text-color: black;
+	--primary-background-color: #e61618;
+	--secondary-background-color: #f1f1f1;
+	--final-background-color: rgb(23, 16, 16);
+	--body-text-font: 'Noto Sans JP', sans-serif;
+	--header-text-font: "Bebas Neue", sans-serif;
+	--header2-text-font: 'Notable', sans-serif;
+	--brand-text-font: 'Lucidity Expand', sans-serif;
+	--default-text-font: 'Noto Sans KR', sans-serif;
+
+	/* Default color */
+	/* Default hover effect */
+}
+
+body {
+	height: 100%;
+	overflow-x: hidden !important;
+	font-family: var(--default-text-font);
+	text-transform: uppercase;
+	background-color: #f1f1f1;
+}
+
+
+.Header-swimlane {
+	background-color: var(--secondary-background-color);
+	padding: 1vh 0;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 9vh;
+	z-index: 4;
+	/* Keep swimlane above the header */
+	transition: transform 0.3s ease-out;
+	border: 0.5px solid grey;
+}
+
+.Header-swimlane-Text {
+	font-family: var(--brand-text-font);
+	color: black;
+	font-size: 2rem;
+	width: 100%;
+	font-weight: 600;
+	position: fixed;
+	top: 3%;
+	left: 8%;
+	z-index: 5;
+}
+
+
+.topper {
+	visibility: hidden;
+	min-height: 9vh;
+	background-color: var(--secondary-background-color);
+}
+
+.container {
+	visibility: hidden;
+}
+
+#form {
+	display: none !important;
+	/* Hides the contact us form */
+}
+
+h1 {
+	text-align: center;
+	font-family: var(--header2-text-font);
+	margin-top: 40px;
+	font-size: 4rem;
+	color: var(--secondary-background-color);
+}
+
+.tile-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 20px;
+}
+
+.tile {
+	background-color: #f1c47c;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	transform-style: preserve-3d;
+}
+
+.tile img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+.tile h3 {
+	font-family: var(--body-text-font);
+	text-transform: none;
+	font-size: 18px;
+	color: #333;
+	margin-top: 15px;
+}
+
+.tile p {
+	font-size: 14px;
+	color: #666;
+	margin-top: 10px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	/* Limit to two lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.tile a {
+	color: var(--primary-background-color);
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.tile a:hover {
+	text-decoration: underline;
+}
+
+/* Hover effect for tiles */
+.tile:hover {
+	transform: scale(1.05) rotateY(10deg);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+	html,
+	body {
+		overflow-x: hidden !important;
+		width: 100%;
+	}
+
+	body {
+		overflow-x: hidden !important;
+	}
+
+	.topper {
+		min-height: 5vh;
+		background-color: var(--secondary-background-color);
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+}
+
+
+p a {
+	color: #e61618;
+	/* Change text color */
+	text-decoration: none;
+	/* Remove underline */
+	font-weight: bold;
+}
+
+p a:hover {
+	text-decoration: underline;
+	/* Add underline on hover */
+}
+
+
+.Header-ticker {
+	position: fixed;
+	left: 0.1%;
+	top: 0;
+	/*width: 3.5vw;*/
+	width: 10vh;
+	height: 100%;
+	border-right: 0.01vw solid #c2c2c2;
+	background-color: #f1f1f1;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 3;
+}
+
+/* Ticker Container */
+.ticker-container {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-transform: none;
+}
+
+.ticker-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ticker-text {
+	will-change: transform;
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: black;
+	transform: rotate(-90deg);
+	white-space: nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.logo-wrapper {
+	position: fixed;
+	/*width: 3.65vw;*/
+	width: 10.4vh;
+	height: 9vh;
+	z-index: 10;
+}
+
+.logo-image {
+	background-image: url('../images/rooting_research_transparent.webp');
+	background-size: cover;
+	/* Ensures the image covers the entire div */
+	background-repeat: no-repeat;
+	/* Ensures no repetition of the image */
+	background-position: center;
+	/* Centers the image within the div */
+	position: absolute;
+	width: 100%;
+	/* Ensures the image takes up the full width of the wrapper */
+	height: 100%;
+	/* Ensures the image takes up the full height of the wrapper */
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+/*Navbar code starts here */
+/* Transparent Navbar */
+/* Navbar container */
+
+nav {
+	padding: 1em;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav div {
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+
+nav a {
+	/* Navbar links */
+	/*background-color: var(--nav-bg-color);*/
+	color: var(--footer-text-color);
+	background-color: transparent;
+	/*padding: 0.25em 0.75em;*/
+	/*border-radius: 5em;*/
+	/*color: #f1f1f1;*/
+	text-decoration: none;
+	margin-inline-start: 0.5em;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/*background: rgba(255, 255, 255, 0.1); */
+	/* Transparent */
+	/* backdrop-filter: blur(10px); */
+	/* Glass effect */
+	padding: 1.2vw 1.2vw;
+	display: flex;
+	justify-content: flex-end;
+	/* Moves everything to the right */
+	align-items: center;
+	opacity: 0;
+	z-index: 10;
+}
+
+/* Navigation Menu */
+.nav-menu {
+	list-style: none;
+	padding: 0;
+	margin-right: 4rem;
+	display: flex;
+	gap: 0.1vw;
+}
+
+.nav-menu li {
+	position: relative;
+}
+
+.nav-menu li:hover>a {
+	color: #e61618 !important;
+	/* Change this to any color you like */
+}
+
+/* Menu Items */
+.nav-menu a {
+	text-decoration: none;
+	/*background-color: var(--nav-bg-color);*/
+	background-color: transparent;
+	/* Removes background */
+	color: var(--nav-text-color) !important;
+	/* Ensure text color updates */
+	/*color: white;*/
+	font-size: 1.5rem;
+	font-weight: 500;
+	/*padding: 0.7vw 1vw;
+	transition: background 0.3s, color 0.3s;*/
+	padding: 0.5rem;
+	/* Removes padding */
+	transition: color 0.3s;
+	/* Just transition the color */
+}
+
+/* Hover Effect */
+.nav-menu a:hover {
+	/*background: var(--nav-hover-color);*/
+	/* Adjust hover background */
+	color: var(--nav-bg-color);
+	/* Use dynamic color */
+	/*background: rgba(0, 0, 0, 0.06);
+	color: black;*/
+	border-radius: 5em;
+}
+
+/* Dropdown Menu */
+
+/* Show Dropdown on Hover */
+
+/* Dropdown Items */
+
+/* Change color on hover */
+
+.shuffle-text span {
+	display: inline-block;
+	position: relative;
+}
+
+/* Hamburger Menu for Mobile*/
+.hamburger-menu {
+	top: 0%;
+	width: 4rem;
+	height: 4rem;
+	position: fixed;
+	right: 5rem;
+	z-index: 15;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	cursor: pointer;
+	transition: right 0.7s;
+	opacity: 0;
+}
+
+.change .hamburger-menu {
+	right: 17rem;
+}
+
+.line {
+	width: 100%;
+	height: 0.2rem;
+	background-color: black;
+	box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.change .line {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.change .line-1 {
+	transform: rotate(45deg) translate(0.3rem, 0.8rem);
+}
+
+.change .line-2 {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.change .line-3 {
+	transform: rotate(-45deg) translate(0.3rem, -0.8rem);
+}
+
+.hamburger-menu span {
+	/*close button */
+	position: absolute;
+	left: 5rem;
+	width: 4rem;
+	height: 4rem;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	font-size: 0.5rem;
+	letter-spacing: 0.1rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.2s;
+	display: none;
+	z-index: 15;
+
+	/* Hides the close button */
+
+}
+
+.change .hamburger-menu:hover span {
+	opacity: 1;
+	visibility: visible;
+}
+
+.hamburger-menu span::before {
+	content: "";
+	position: absolute;
+	border-left: 1rem solid transparent;
+	border-right: 1rem solid white;
+	border-bottom: 1rem solid transparent;
+	border-top: 1rem solid transparent;
+	top: 50%;
+	left: -2rem;
+	transform: translateY(-50%);
+}
+
+.sidebar {
+	/*width: 22em; logic moves to js script */
+	height: 50vh;
+	position: fixed;
+	/*background-color: rgba(0, 0, 0, 0.592);*/
+	background-color: #e61618;
+	backdrop-filter: blur(20vh);
+	opacity: 1;
+	top: 0;
+	right: -100vh;
+	transition: right 0.5s;
+	z-index: 14;
+}
+
+
+.change .sidebar {
+	right: 0;
+}
+
+.menu {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.menu-item {
+	display: block;
+	width: 100%;
+	/* Ensure it fills the sidebar */
+	padding: 2vw 0;
+	text-align: center;
+	border-bottom: 0.01vw solid white;
+	border-top: 0.01vw solid white;
+
+}
+
+.menu-item a {
+	text-decoration: none;
+	/* Removes underline */
+	color: white;
+	/* Ensures text color is white (or your desired color) */
+}
+
+
+/* Active (tapped) effect */
+.menu-item:active {
+	background-color: rgba(255, 255, 255, 0.2);
+	/* Subtle highlight */
+}
+
+
+
+.menu-link {
+	font-size: 4rem;
+	font-weight: 800;
+	color: black;
+	position: relative;
+	display: inline-block;
+	transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+	transform-origin: bottom;
+	/* Shrink downward */
+}
+
+.menu-link::before {
+	content: attr(data-content);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+	width: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: width 0.3s ease-in-out;
+}
+
+.menu-link:hover::before {
+	width: 100%;
+}
+
+.page-transition-overlay {
+	position: fixed;
+	top: 0;
+	right: -100vw;
+	/* Start completely off-screen */
+	width: 0;
+	height: 100vh;
+	background-color: #e61618;
+	z-index: 9999;
+	transition: transform 1s ease-in-out, width 0.5s ease-out;
+	transform-origin: right center;
+	/* Ensures animation starts from the right */
+}
+
+
+.designer-footer {
+
+	position: fixed;
+	bottom: 1vh;
+	/* Adjust spacing from bottom */
+	right: 0%;
+	/* Adjust spacing from right */
+	transform: scale(0.7);
+	opacity: 0;
+	z-index: 3;
+	color: var(--footer-text-color);
+	/* Apply the dynamic text color */
+
+}
+
+section {
+	min-height: 100dvh;
+}
+
+canvas {
+
+	display: block;
+	/* Removes inline spacing issues */
+	width: 100vw;
+	/* Covers full screen width */
+	height: 100vh;
+	/* Covers full screen height */
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Ensures it's centered */
+	background-color: transparent;
+	z-index: -100;
+	touch-action: none;
+	/* Prevents unwanted scrolling on touch screens */
+
+}
+
+.page {
+	padding-inline: 2em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.loader {
+	z-index: 9999;
+	/* Ensure it's on top */
+}
+
+body.loading .loader {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	background-color: #f1f1f1;
+}
+
+.loader img {
+	width: 15rem;
+}
+
+
+section>.title {
+	color: rgb(255, 255, 255);
+	text-align: center;
+	padding: 4em 2em;
+}
+
+.final>.title {
+	padding-block-end: 0;
+}
+
+.final {
+	margin-left: 4.5vw;
+	width: calc(100% - 4.5vw);
+	display: flex;
+	flex-direction: column;
+	gap: 5em;
+	color: white;
+	border-top: 1px white dashed;
+	/*background-color: rgb(23, 16, 16); */
+	background-color: var(--primary-background-color);
+	padding-inline: 2em;
+}
+
+@keyframes marquee {
+	from {
+		translate: 0% 0;
+	}
+
+	to {
+		translate: -100% 0;
+	}
+}
+
+
+@media (orientation: landscape) {
+	/* Desktop */
+
+	body {
+		overflow-x: hidden !important;
+	}
+
+	html,
+	body {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
+	.hamburger-menu {
+		display: none;
+	}
+
+	.menu-item {
+		display: none;
+	}
+
+	.menu-link {
+		display: none;
+	}
+
+	.sidebar {
+		display: none;
+	}
+
+	.right {
+		translate: 0 50%;
+	}
+
+	.right {
+		text-align: right;
+	}
+
+	.page>.right {
+		width: 40%;
+	}
+
+	section>.title {
+		padding-block: 5em;
+	}
+
+
+
+}
+
+@media (orientation: portrait) {
+	/* Mobile */
+
+
+	body {
+		overflow-x: hidden;
+		/* Prevents horizontal scrolling */
+		touch-action: pan-y;
+		/* Ensures smooth vertical scrolling */
+	}
+
+	.Header-swimlane {
+		height: 5vh;
+	}
+
+	.Header-swimlane-Text {
+		font-size: 1.5rem;
+		font-weight: 600;
+		top: 1.5%;
+		left: 15%;
+
+	}
+
+	/* hide the cross button */
+
+	.change .line-1,
+	.change .line-2,
+	.change .line-3 {
+		transform: none !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	.logo-wrapper {
+		width: 5.05vh;
+		height: 5vh;
+	}
+
+	.navbar {
+		display: none;
+		/* Completely hides the navbar on mobile */
+	}
+
+	.Header-ticker {
+		width: 5vh;
+
+	}
+
+
+	/* footer-message text */
+
+	.page .right {
+		/* Correct way to target <div class="right"> inside .page */
+		margin-top: 5em;
+	}
+
+	.designer-footer {
+		bottom: 5px;
+		/* Adjust spacing from bottom */
+		right: 0%;
+		/* Adjust spacing from right */
+		opacity: 0;
+		transform: scale(0.5);
+	}
+
+	#form {
+		display: none !important;
+		/* Hides the contact us form */
+	}
+
+}

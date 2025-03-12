@@ -1,0 +1,210 @@
+<!-- Author - ravzzy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media & Blogs</title>
+	<link rel="stylesheet" href="./css/media.css">
+	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
+	<link rel="preload" as="image" href="./images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap" rel="stylesheet">
+	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
+		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer
+		integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+</head>
+<body class="loading">
+	<div class="loader" id="loader">
+		<img src="./images/loading.webp" class="loader-img" alt="Loading">
+	</div>
+	<section class="topper" id="topper">
+		<div class="logo-wrapper">
+			<div class="logo-image"></div>
+		</div>
+		<!-- Transparent Navigation Menu -->
+		<nav class="navbar">
+			<ul class="nav-menu">
+				<li class="shuffle-text"><a href="index.html">Homepage</a></li>
+				<li class="shuffle-text"><a href="#">Company</a></li>
+				<li class="shuffle-text"><a href="index.html">Services</a></li>
+				<li class="shuffle-text"><a href="media.html">Media & Blogs</a></li>
+				<li class="shuffle-text"><a href="#">Collaborate</a></li>
+			</ul>
+		</nav>
+	</section>
+	<!-- Menu on the right side of the home page for Mobile Only-->
+	<div class="container" id="container">
+		<div class="hamburger-menu">
+			<div class="line line-1"></div>
+			<div class="line line-2"></div>
+			<div class="line line-3"></div>
+			<span>Close</span>
+		</div>
+		<!--Homepage side bar options-->
+		<section class="sidebar">
+			<ul class="menu">
+				<li class="menu-item">
+					<a href="index.html" class="menu-link header-shuffle-text" data-content="Home">Home</a>
+				</li>
+				<li class="menu-item">
+					<a href="#about-us" class="menu-link header-shuffle-text" data-content="About Us">Company</a>
+				</li>
+				<li class="menu-item">
+					<a href="#team" class="menu-link header-shuffle-text" data-content="Team">Services</a>
+				</li>
+				<li class="menu-item">
+					<a href="media.html" class="menu-link header-shuffle-text"
+						data-content="Services">Media & Blogs</a>
+				</li>
+				<li class="menu-item">
+					<a href="#contact" class="menu-link header-shuffle-text" data-content="Contact">Collaborate</a>
+				</li>
+			</ul>
+		</section>
+		<!-- Black Transition Overlay -->
+		<div class="page-transition-overlay"></div>
+		<nav class="designer-footer">
+			<h1></h1>
+			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
+		</nav>
+		<canvas id="canvas"> </canvas>
+		<div class="Header-ticker">
+			<div class="ticker-container">
+				<div class="ticker-wrapper">
+					<p class="ticker-text">Evidence Synethsis</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Market Access & HEOR</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Medical Communications</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Evidence Synethsis</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Market Access & HEOR</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Medical Communications</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Evidence Synethsis</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Market Access & HEOR</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Medical Communications</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Evidence Synethsis</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Market Access & HEOR</p>
+					<p class="ticker-text">-</p>
+					<p class="ticker-text">Medical Communications</p>
+					<p class="ticker-text">-</p>
+				</div>
+			</div>
+		</div>
+		<div class="Header-swimlane"></div>
+		<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
+		<section class="final">
+
+			<h1>Breaking Ideas, Shaping Conversations</h1>
+			<div id="tile-container" class="tile-container"></div>
+
+
+			<main>
+				<form action="" method="POST" class="form" id="form">
+					<!-- change the key, upto 250 per month free -->
+					<input type="hidden" name="access_key" value="2d3b2745-1b24-4a2f-877b-3e324322475f">
+					<!-- For testing purpose email will be sent to testmail2025@sharklasers.com -->
+					<div class="input-group">
+						<input type="text" name="first_name" id="first-name" placeholder="First name" required>
+						<label for="first-name">First name</label>
+					</div>
+					<div class="input-group">
+						<input type="text" name="last_name" id="last-name" placeholder="Last Name" required>
+						<label for="last-name">Last name</label>
+					</div>
+					<div class="input-group">
+						<input type="email" name="e-mail" id="e-mail" placeholder="e-mail" required>
+						<label for="e-mail">e-mail</label>
+					</div>
+					<div class="textarea-group">
+						<textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
+						<label for="message">Message</label>
+					</div>
+					<div class="button-div">
+						<button type="submit">SEND</button>
+					</div>
+					<div id="result"></div>
+				</form>
+			</main>
+		</section>
+	</div>	
+	<script src="./js/homepage.js" defer></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  const feedUrl = 'https://medium.com/feed/@Happicamp';  // Replace with your Medium username feed URL
+		  const tileContainer = document.getElementById('tile-container');
+		  
+		  // Fetch the RSS feed
+		  fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
+			.then(response => response.json())
+			.then(data => {
+			  const posts = data.items;  // Array of posts from the RSS feed
+			  posts.forEach(post => {
+				const tile = document.createElement('div');
+				tile.classList.add('tile');
+				tile.setAttribute('data-tilt', ''); // Enable tilt effect
+	
+				// Attempt to extract an image from the post content
+				let imageUrl = extractImageFromContent(post.content); // Extract image from content if no thumbnail
+				if (!imageUrl) {
+				  imageUrl = post.thumbnail || 'https://via.placeholder.com/400x150';  // Fallback image if no image exists
+				}
+	
+				// Truncate the description to a limited number of characters (you can adjust the number of characters)
+				const truncatedDescription ="";
+			  /* const truncatedDescription = truncateText(post.description, 50); // Limiting to 200 characters */
+	
+				tile.innerHTML = `
+				  <img src="${imageUrl}" alt="Post Image">
+				  <h3>${post.title}</h3>
+				  <p>${truncatedDescription}</p>
+				  <a href="${post.link}" target="_blank">Read More</a>
+				`;
+				tileContainer.appendChild(tile);
+			  });
+	
+			  // Initialize the tilt.js effect for each tile
+			  VanillaTilt.init(document.querySelectorAll(".tile"));
+			})
+			.catch(error => {
+			  console.error('Error fetching Medium RSS feed:', error);
+			  tileContainer.innerHTML = '<p>Sorry, there was an error fetching the posts.</p>';
+			});
+		});
+	
+		// Function to truncate text to a specific number of characters and add ellipsis
+		function truncateText(text, maxLength) {
+		  if (text.length <= maxLength) {
+			return text; // Return the text as is if it's already short enough
+		  }
+		  return text.substring(0, maxLength) + '...'; // Truncate and add ellipsis
+		}
+	
+		// Function to extract the first image from the content if no thumbnail exists
+		function extractImageFromContent(content) {
+		  const imageRegex = /<img[^>]*src="([^"]*)"/;  // Regex to match the first image src
+		  const match = content.match(imageRegex);
+		  return match ? match[1] : null;  // Return the image URL or null if no image found
+		}
+	  </script>
+	  <!-- Vanilla Tilt JS -->
+	  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+	<script>
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		};
+	</script>
+</body>
+</html>
