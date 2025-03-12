@@ -722,7 +722,7 @@ body {
 	  .header-text-container {
 		position: relative;
 		height: 65vh;
-		padding-top: 1vh;
+		padding-top: 12vh;
 		align-items: flex-start; /* Ensure the content aligns to the top */
 		width: 100%; /* Text takes full width on mobile */
 		padding-left: 7vh;
