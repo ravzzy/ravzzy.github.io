@@ -409,6 +409,7 @@ body {
 }
 
 
+/* right section floating keywords */
 .floating-keyword-7 {
     right: 10%;
     animation: moveKeyword-7 60s infinite linear;
@@ -491,7 +492,6 @@ body {
 .floating-keyword-2 {
     right: 25%;
     animation: moveKeyword-2 60s infinite linear;
-    transform: rotate(-10deg);
 	animation-delay: 0s;
 
 }
@@ -598,7 +598,6 @@ body {
 .floating-keyword-9 {
     left: 10%;
     animation: moveKeyword-9 60s infinite linear;
-    transform: rotate(-10deg);
     animation-delay: 0s;
 }
 
@@ -638,9 +637,8 @@ body {
 
 .floating-keyword-4 {
 
-    left: 10%;
+    left: 30%;
     animation: moveKeyword-4 60s infinite linear;
-    transform: rotate(-10deg);
     animation-delay: 0s;
 
 }
@@ -682,7 +680,7 @@ body {
 
     left: 20%;
     animation: moveKeyword-10 60s infinite linear;
-    transform: rotate(-10deg);
+    transform: rotate(20deg);
     animation-delay: 0s;
 
 }
@@ -726,7 +724,6 @@ body {
 
     left: 20%;
     animation: moveKeyword-5 80s infinite linear;
-    transform: rotate(10deg);
     animation-delay: 0s;
 }
 
@@ -765,9 +762,8 @@ body {
 
 .floating-keyword-6 {
 
-    left: 5%;
+    left: 30%;
     animation: moveKeyword-6 120s infinite linear;
-	transform: rotate(-10deg);
     animation-delay: 0s;
 }
 
