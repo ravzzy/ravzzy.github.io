@@ -102,9 +102,9 @@ h1 {
 
 .tile-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	gap: 20px;
-	padding: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 40px;
+	padding: 50px;
 }
 
 .tile {
@@ -182,6 +182,12 @@ h1 {
 
 	h1 {
 		font-size: 2rem;
+	}
+
+	.tile-container {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 20px;
+		padding: 20px;
 	}
 
 }
