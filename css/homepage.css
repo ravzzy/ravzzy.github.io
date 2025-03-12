@@ -408,8 +408,49 @@ body {
 	font-weight: 500;
 }
 
-.floating-keyword-1 {
+
+.floating-keyword-7 {
     right: 10%;
+    animation: moveKeyword-7 60s infinite linear;
+    transform: rotate(-10deg);
+    animation-delay: 0s;
+}
+
+/* Animation to move the keyword vertically with tilt and blur */
+@keyframes moveKeyword-7 {
+	0% {
+		top: 10%;
+		opacity: 1;
+	}
+
+	12.24% {
+		top: -2%;
+		opacity: 1;
+
+	}
+
+	12.25%{
+		top:100%;
+		opacity: 0;
+	}
+
+	12.26% {
+		top: 100%;
+		opacity: 1;
+
+	}
+
+	100% {
+		top: 10%;
+		opacity: 1;
+
+	}
+
+}
+
+
+.floating-keyword-1 {
+    right: 20%;
     animation: moveKeyword-1 60s infinite linear;
     transform: rotate(10deg);
     animation-delay: 0s;
@@ -446,7 +487,6 @@ body {
 	}
 
 }
-
 
 .floating-keyword-2 {
     right: 25%;
@@ -489,6 +529,47 @@ body {
 }
 
 
+.floating-keyword-8 {
+    right: 10%;
+    animation: moveKeyword-8 60s infinite linear;
+    transform: rotate(20deg);
+	animation-delay: 0s;
+
+}
+
+/* Animation to move the keyword vertically with tilt and blur */
+@keyframes moveKeyword-8 {
+	0% {
+		top: 75%;
+		opacity: 1;
+	}
+
+	78.54% {
+		top: -2%;
+		opacity: 1;
+
+	}
+
+	78.55%{
+		top:100%;
+		opacity: 0;
+	}
+
+	78.56% {
+		top: 100%;
+		opacity: 1;
+
+	}
+
+	100% {
+		top: 75%;
+		opacity: 1;
+
+	}
+
+}
+
+
 .floating-keyword-3 {
 
     right: 25%;
@@ -510,6 +591,49 @@ body {
 	}
 
 }
+
+
+
+
+.floating-keyword-9 {
+    left: 10%;
+    animation: moveKeyword-9 60s infinite linear;
+    transform: rotate(-10deg);
+    animation-delay: 0s;
+}
+
+/* Animation to move the keyword vertically with tilt and blur */
+@keyframes moveKeyword-9 {
+	0% {
+		top: 5%;
+		opacity: 1;
+	}
+
+	7.14% {
+		top: -2%;
+		opacity: 1;
+
+	}
+
+	7.15%{
+		top:100%;
+		opacity: 0;
+	}
+
+	7.16% {
+		top: 100%;
+		opacity: 1;
+
+	}
+
+	100% {
+		top: 5%;
+		opacity: 1;
+
+	}
+
+}
+
 
 
 .floating-keyword-4 {
@@ -552,6 +676,49 @@ body {
 	}
 
 }
+
+
+.floating-keyword-10 {
+
+    left: 20%;
+    animation: moveKeyword-10 60s infinite linear;
+    transform: rotate(-10deg);
+    animation-delay: 0s;
+
+}
+
+/* Animation to move the keyword vertically with tilt and blur */
+@keyframes moveKeyword-10 {
+	0% {
+		top: 45%;
+		opacity: 1;
+	}
+
+	47.94% {
+		top: -2%;
+		opacity: 1;
+
+	}
+
+	47.95%{
+		top:100%;
+		opacity: 0;
+	}
+
+	47.96% {
+		top: 100%;
+		opacity: 1;
+
+	}
+
+	100% {
+		top: 45%;
+		opacity: 1;
+
+	}
+
+}
+
 
 
 
@@ -639,7 +806,11 @@ body {
 	z-index: 3;
 }
 
-.floating-keyword-1, .floating-keyword-2, .floating-keyword-3, .floating-keyword-4, .floating-keyword-5, .floating-keyword-6 {
+.floating-keyword-1, .floating-keyword-2,
+.floating-keyword-3, .floating-keyword-4,
+.floating-keyword-5, .floating-keyword-6,
+.floating-keyword-7, .floating-keyword-8,
+.floating-keyword-9, .floating-keyword-10 {
 
 	position: absolute;
     font-family: var(--body-text-font);
@@ -744,7 +915,11 @@ body {
 		min-height: 10vh;
 	  }
 
-	  .floating-keyword-1, .floating-keyword-2, .floating-keyword-3, .floating-keyword-4, .floating-keyword-5, .floating-keyword-6 {
+	  .floating-keyword-1, .floating-keyword-2,
+	  .floating-keyword-3, .floating-keyword-4, 
+	  .floating-keyword-5, .floating-keyword-6,
+	  .floating-keyword-7, .floating-keyword-8,
+	  .floating-keyword-9, .floating-keyword-10 {
 		font-size: 3rem;
 		filter: blur(3px);
 
