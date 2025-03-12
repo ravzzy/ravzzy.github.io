@@ -692,7 +692,7 @@ body {
 		flex-direction: column-reverse;
 		margin-left: 2vh;
 		max-height: 95vh;
-		min-height: 95vh; /* Allow the section to adjust its height */
+		min-height: 75vh; /* Allow the section to adjust its height */
 		padding: 0; /* Reduce padding for smaller screens */
 
 	}
