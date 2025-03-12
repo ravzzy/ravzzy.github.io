@@ -745,7 +745,9 @@ body {
 	  }
 
 	  .floating-keyword-1, .floating-keyword-2, .floating-keyword-3, .floating-keyword-4, .floating-keyword-5, .floating-keyword-6 {
-		font-size: 2rem;
+		font-size: 3rem;
+		filter: blur(3px);
+
 	}
 
 	.left-content-section {
