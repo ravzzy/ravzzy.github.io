@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./css/homepage.css">
 	<link rel="stylesheet" href="./css/contactus.css">
 	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/navbar.css">
 
 	<link rel="preload" as="image" href="./images/loading.webp">
 	<link rel="preload" as="image" href="./images/what_we_do.webp">
@@ -19,8 +20,6 @@
     <link rel="preload" href="./images/globe_video.gif" as="image">
     <link rel="preload" href="./images/globe_hand.webp" as="image">
 
-
-	<!--<link rel="preload" href="./images/globe_hand.webp" as="image">-->
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap" rel="stylesheet">
 	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
@@ -41,23 +40,7 @@
 			<div class="logo-image"></div>
 		</div>
 		<!-- Transparent Navigation Menu -->
-		<nav class="navbar">
-			<ul class="nav-menu">
-				<li class="shuffle-text"><a href="index.html">Homepage</a></li>
-				<li class="shuffle-text"><a href="#">Company</a></li>
-				<li class="shuffle-text"><a href="index.html">Services</a></li>
-				<!--<li class="dropdown shuffle-text">
-				<a href="#">Services &#9660;</a>
-				<ul class="dropdown-menu">
-					<li><a href="index.html">Service 1</a></li>
-					<li><a href="#">Service 2</a></li>
-					<li><a href="#">Service 3</a></li>
-				</ul>
-			</li> -->
-				<li class="shuffle-text"><a href="media.html">Media & Blogs</a></li>
-				<li class="shuffle-text"><a href="#">Collaborate</a></li>
-			</ul>
-		</nav>
+		<div id="navbar-container"></div> <!-- Navbar will be inserted here -->
 	</section>
 	<!-- Menu on the right side of the home page for Mobile Only-->
 	<button class="menu-btn">☰</button>
@@ -121,16 +104,12 @@
 		<div class="floating-keyword-8">Preclinical</div>
 		<div class="floating-keyword-3">Publications</div>
 
-
-
-
 		<!--left section floating keywords-->
 		<div class="floating-keyword-9">HEOR</div>
 		<div class="floating-keyword-4">Biostatistics</div>
 		<div class="floating-keyword-10">Big Data</div>
 		<div class="floating-keyword-5">Info-graphics</div>
 		<div class="floating-keyword-6">Reimbursement</div>
-
 
 		<!--section 1-->
 		<section class="left-content-section">
@@ -171,16 +150,6 @@
 						clear, compelling, and impactful research solutions. We support your molecule’s journey from
 						early development to market access and real-world impact, ensuring seamless navigation
 						through preclinical, clinical, regulatory, and reimbursement landscapes</p>
-					<!-- <p class="bullet-service bullet-point">&#9745; Strategic Asset Prioritization</p>
-					<p class="bullet-service bullet-point">&#9745; Biostatistics & Trial Designs</p>
-					<p class="bullet-service bullet-point">&#9745;HTA & Market Access Strategy</p>
-					<p class="bullet-service bullet-point">&#9745; Evidence Synthesis and meta-analyses</p>
-					<p class="bullet-service bullet-point">&#9745;Economic Modeling & Value Assessment</p>
-					<p class="bullet-service bullet-point">&#9745; Medical & Scientific Communications</p>
-					<p class="bullet-service bullet-point">&#9745; Data Visualization & Dashboarding</p>
-					<p class="bullet-service bullet-point">&#9745; Stakeholder, KoL & Patient Engagement</p>
-					<p class="bullet-service bullet-point">&#9745;Cross-sectional surveys</p>
-					<p class="bullet-service bullet-point">&#9745; Pharmacovigilance</p> -->
 					<p class ="p-center-align"><a href="about.html">READ MORE</a></p>
 					<img src="./images/what_we_do.webp" class="left-image-box-img" alt="Evidence Review & Synthesis" loading="lazy">
 				</div>
@@ -215,52 +184,16 @@
 	</div>
 		<!----test end-->
 		<div class="middle-section">
-			<!-- <video class="background-video" autoplay loop muted>
-            <source src="background-video.mp4" type="video/mp4">
-         </video> -->
 			<div class="middle-overlay"></div>
 		</div>
 		<div class="avatars">
 		</div>
 		<div class="filler">
 		</div>
-		<section class="roadmap">
-			<!--	<div class="title">
-				<div class="fat">Services we offer</div> -->
-			<!--<div class="thin-jp">当社が提供するサービス</div> -->
-			<!--</div>
-			<div class="cards">
-				<div class="card" data-tilt>
-					<div class="title-num white-text">01/</div>
-					<div class="title white-text">MODELLING, ACCCESS & STRATEGY </div> -->
-			<!--<div class="thin">ravzzyFICTION OFFICIAL WEBSITE OPENED</div> -->
-			<!--	<div class="thin-jp white-text">モデリング、アクセス、戦略</div>
-				</div>
-				<div class="card" data-tilt>
-					<div class="title-num white-text">02/</div>
-					<div class="title white-text">REAL WORLD EVIDENCE & ANALYTICS</div> -->
-			<!--<div class="thin"> RAVZZY FULL 3D AVATAR PRODUCTION</div>-->
-			<!--	<div class="thin-jp white-text">現実世界の証拠と分析</div>
-				</div>
-				<div class="card" data-tilt>
-					<div class="title-num white-text">03/</div>
-					<div class="title white-text">EVIDENCE REVIEW & SYNTHESIS</div> -->
-			<!--<div class="thin">RAVZZY AVATARS NFT MINTING</div>-->
-			<!--	<div class="thin-jp white-text">証拠の検討と統合</div>
-				</div>
-				<div class="card" data-tilt>
-					<div class="title-num white-text">04/</div>
-					<div class="title white-text">MEDICAL WRITING & EDITORIAL SUPPORT</div>
-					<div class="thin-jp white-text">
-						医学的執筆と編集サポート
-					</div>
-				</div>
-			</div> -->
-		</section>
+		<section class="roadmap"></section>
 		<section class="final">
 			<div class="title">
 				<div class="fat">MEET OUR FOUNDER</div>
-				<!--- <div class="thin-jp">当社が提供するサービス</div> -->
 			</div>
 			<div class="dev">
 				<div class="text-spin">
@@ -302,10 +235,6 @@
 					practice, and healthcare policy, ensuring impactful outcomes across the sector.
 				</p>
 			</div>
-				<!-- <p class="thin-jp">
-					Anshul は、ヘルスケア研究に取り組む企業 Rooting Research の先見の明のある人物です。ヘルスケアに対する情熱を抱く Anshul
-					は、イノベーションとリーダーシップを通じて会社を導き、会社の目標と将来のビジョンを推進し続けています。
-				</p> -->
 			<div class="vertical-line"></div>
 			<div class="top">
 				<div class="thin">ROOTING RESEARCH TEAM</div>
@@ -358,27 +287,7 @@
 	</div>	
 	<script src="./js/homepage.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
-	<!-- <script>
-		if (window.matchMedia("(max-width: 768px)").matches) { // Adjust the screen size as needed
-		  var link = document.createElement("link");
-		  link.rel = "preload";
-		  link.href = "./images/globe_video.gif";
-		  link.as = "image";
-		  document.head.appendChild(link);
-		  console.log("Mobile globe video pre-loaded");
-		} else {
-		  var link = document.createElement("link");
-		  link.rel = "preload";
-		  link.href = "./images/globe_hand.webp";
-		  link.as = "image";
-		  document.head.appendChild(link);
-		  console.log("Desktop globe image pre-loaded");
-		}
-	  </script> -->
-<!--	<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" defer></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script> -->
-	<!-- Preventing the page from scrolling to the last position -->
+	<script src="./js/navbar.js" defer></script>
 	<script>
 		window.onbeforeunload = function () {
 			window.scrollTo(0, 0);

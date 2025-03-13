@@ -8,6 +8,7 @@
 	<title>Media & Blogs</title>
 	<link rel="stylesheet" href="./css/media.css">
 	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/navbar.css">
 
 	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
 	<link rel="preload" as="image" href="./images/favicon.ico">
@@ -34,15 +35,7 @@
 			<div class="logo-image"></div>
 		</div>
 		<!-- Transparent Navigation Menu -->
-		<nav class="navbar">
-			<ul class="nav-menu">
-				<li class="shuffle-text"><a href="index.html">Homepage</a></li>
-				<li class="shuffle-text"><a href="#">Company</a></li>
-				<li class="shuffle-text"><a href="index.html">Services</a></li>
-				<li class="shuffle-text"><a href="media.html">Media & Blogs</a></li>
-				<li class="shuffle-text"><a href="#">Collaborate</a></li>
-			</ul>
-		</nav>
+		<div id="navbar-container"></div> <!-- Navbar will be inserted here -->
 	</section>
 	<!-- Menu on the right side of the home page for Mobile Only-->
 	<button class="menu-btn">☰</button>
@@ -98,6 +91,7 @@
 	</div>
 	<script src="./js/homepage.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
+	<script src="./js/navbar.js" defer></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const feedUrl = 'https://medium.com/feed/@Happicamp';  // Replace with your Medium username feed URL
