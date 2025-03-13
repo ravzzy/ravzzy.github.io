@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Media & Blogs</title>
 	<link rel="stylesheet" href="./css/media.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+
 	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
 	<link rel="preload" as="image" href="./images/favicon.ico">
 	<link
@@ -43,35 +45,8 @@
 		</nav>
 	</section>
 	<!-- Menu on the right side of the home page for Mobile Only-->
-	<div class="container" id="container">
-		<div class="hamburger-menu">
-			<div class="line line-1"></div>
-			<div class="line line-2"></div>
-			<div class="line line-3"></div>
-			<span>Close</span>
-		</div>
-		<!--Homepage side bar options-->
-		<section class="sidebar">
-			<ul class="menu">
-				<li class="menu-item">
-					<a href="index.html" class="menu-link" data-content="Home">Home</a>
-				</li>
-				<li class="menu-item">
-					<a href="#about-us" class="menu-link" data-content="About Us">Company</a>
-				</li>
-				<li class="menu-item">
-					<a href="#team" class="menu-link" data-content="Team">Services</a>
-				</li>
-				<li class="menu-item">
-					<a href="media.html" class="menu-link" data-content="Services">Media & Blogs</a>
-				</li>
-				<li class="menu-item">
-					<a href="#contact" class="menu-link" data-content="Contact">Collaborate</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Black Transition Overlay -->
-		<div class="page-transition-overlay"></div>
+	<button class="menu-btn">☰</button>
+	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
 		<nav class="designer-footer">
 			<h1></h1>
 			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
@@ -122,6 +97,7 @@
 		</section>
 	</div>
 	<script src="./js/homepage.js" defer></script>
+	<script src="./js/sidebar.js" defer></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const feedUrl = 'https://medium.com/feed/@Happicamp';  // Replace with your Medium username feed URL

@@ -37,7 +37,6 @@ const loaderImage = document.querySelector('.loader-img');
 		// This code runs when everything has loaded: HTML, CSS, images, etc.
 		const loadingScreen = document.getElementById('loader');
 		const topper = document.getElementById('topper');
-		const container = document.getElementById('container');
 
 	  
 		// Hide the loading screen
@@ -46,7 +45,6 @@ const loaderImage = document.querySelector('.loader-img');
 	  
 		// Show the content
 		topper.style.visibility = 'visible';
-		container.style.visibility = 'visible';
 
 	  
 		// Re-enable scrolling by setting body overflow back to 'auto'
@@ -216,7 +214,6 @@ window.addEventListener("load", function () {
 	document.querySelector(".logo-image").style.opacity = "1";
 	document.querySelector(".navbar").style.opacity = "1";
 	document.querySelector(".designer-footer").style.opacity = "1";
-	document.querySelector(".hamburger-menu").style.opacity = "1";
 });
 
 
@@ -246,11 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 */
-
-document.querySelector(".hamburger-menu").addEventListener("click", function () {
-    let container = document.querySelector(".container");
-    container.classList.toggle("change");
-});
 
 
 // dynamic text colour change logic based on background colour for hamburger/sidebar/dropdown/navbar/designer footer
@@ -513,19 +505,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 */
 
-// Closes the sidebar when clicking outside of it.
-// Does not close when clicking inside the sidebar or on the hamburger menu.
-
-document.addEventListener("click", function (event) {
-	const container = document.querySelector(".container");
-	const sidebar = document.querySelector(".sidebar");
-	const hamburgerMenu = document.querySelector(".hamburger-menu");
-
-	// Check if the sidebar is open and the clicked area is outside the sidebar & hamburger menu
-	if (container.classList.contains("change") && !sidebar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
-		container.classList.remove("change"); // Close sidebar
-	}
-});
 
 
 /*
@@ -652,24 +631,7 @@ window.addEventListener("scroll", function () {
 });*/
 
 
-//logic to calculate the width of the sidebar dynamically for all screen sizes
 
-function adjustSidebarWidth() {
-    let tickerWidth = document.querySelector(".Header-ticker")?.offsetWidth || 100;
-    let sidebar = document.querySelector(".sidebar");
-
-    if (sidebar) {
-        let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
-        sidebar.style.width = sidebarWidth;
-        document.querySelectorAll(".menu-item").forEach(item => {
-            item.style.width = sidebarWidth;
-        });
-    }
-}
-// Run function on page load and window resize
-
-window.addEventListener("resize", adjustSidebarWidth);
-window.addEventListener("load", adjustSidebarWidth);
 
 /*
 // This is God's code - fixes the bloody alignment for mobile view
@@ -1025,64 +987,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-document.addEventListener("DOMContentLoaded", () => {
-	const menuLinks = document.querySelectorAll(".menu-link");
-	const overlay = document.querySelector(".page-transition-overlay");
-	const sidebar = document.querySelector(".sidebar");
-	const ticker = document.querySelector(".Header-ticker");
-
-	function getTickerWidth() {
-		return ticker ? ticker.offsetWidth : 100;
-	}
-
-	function adjustOverlayPosition() {
-		let tickerWidth = getTickerWidth();
-		document.documentElement.style.setProperty("--ticker-width", `${tickerWidth}px`);
-	}
-
-	function closeSidebar() {
-		sidebar.classList.remove("change");
-	}
-
-	function handleMenuLinkClick(event) {
-		event.preventDefault();
-		let targetUrl = event.currentTarget.getAttribute("href");
-
-		adjustOverlayPosition();
-
-		// Step 1: Shrink menu items
-		menuLinks.forEach(item => item.classList.add("shrink"));
-
-		// Step 2: Cover the screen with the overlay
-		setTimeout(() => {
-			overlay.classList.add("active");
-		}, 400);
-
-		// Step 3: Close sidebar after overlay covers
-		setTimeout(() => {
-			closeSidebar();
-		}, 1400);
-
-		// Step 4: Load new page
-		setTimeout(() => {
-			window.location.href = targetUrl;
-		}, 2000);
-	}
-
-	function reattachEventListeners() {
-		// Ensure menu links work on the main page
-		document.querySelectorAll(".menu-link").forEach(link => {
-			link.removeEventListener("click", handleMenuLinkClick); // Prevent duplicate listeners
-			link.addEventListener("click", handleMenuLinkClick);
-		});
-	}
-
-	// Attach event listeners initially
-	reattachEventListeners();
-
-	window.addEventListener("resize", adjustOverlayPosition);
-});
 
 //Print Viewport Dimensions
 

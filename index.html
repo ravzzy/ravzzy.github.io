@@ -8,6 +8,8 @@
 	<title>Home | Rooting Research</title>
 	<link rel="stylesheet" href="./css/homepage.css">
 	<link rel="stylesheet" href="./css/contactus.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+
 	<link rel="preload" as="image" href="./images/loading.webp">
 	<link rel="preload" as="image" href="./images/what_we_do.webp">
 	<link rel="preload" as="image" href="./images/why_choose_us.webp">
@@ -58,36 +60,8 @@
 		</nav>
 	</section>
 	<!-- Menu on the right side of the home page for Mobile Only-->
-	<div class="container" id="container">
-		<div class="hamburger-menu">
-			<div class="line line-1"></div>
-			<div class="line line-2"></div>
-			<div class="line line-3"></div>
-			<span>Close</span>
-		</div>
-		<!--Homepage side bar options-->
-		<section class="sidebar">
-			<ul class="menu">
-				<li class="menu-item">
-					<a href="index.html" class="menu-link" data-content="Home">Home</a>
-				</li>
-				<li class="menu-item">
-					<a href="#about-us" class="menu-link" data-content="About Us">Company</a>
-				</li>
-				<li class="menu-item">
-					<a href="#team" class="menu-link" data-content="Team">Services</a>
-				</li>
-				<li class="menu-item">
-					<a href="media.html" class="menu-link"
-						data-content="Services">Media & Blogs</a>
-				</li>
-				<li class="menu-item">
-					<a href="#contact" class="menu-link" data-content="Contact">Collaborate</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Black Transition Overlay -->
-		<div class="page-transition-overlay"></div>
+	<button class="menu-btn">☰</button>
+	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
 		<nav class="designer-footer">
 			<h1></h1>
 			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
@@ -364,7 +338,7 @@
 						<label for="message">Message</label>
 					</div>
 					<div class="button-div">
-						<button type="submit">SEND</button>
+						<button class ="form-btn" type="submit">SEND</button>
 					</div>
 					<div id="result"></div>
 				</form>
@@ -383,6 +357,7 @@
 		</section>
 	</div>	
 	<script src="./js/homepage.js" defer></script>
+	<script src="./js/sidebar.js" defer></script>
 	<!-- <script>
 		if (window.matchMedia("(max-width: 768px)").matches) { // Adjust the screen size as needed
 		  var link = document.createElement("link");
