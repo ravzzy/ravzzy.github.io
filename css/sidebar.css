@@ -22,14 +22,14 @@
 
 .menu-btn {
     position: fixed;
-	top: 0%;
-    width: 4rem;
-	height: 2rem;
-	right: 5rem;
-    font-size: 3.5rem;
+	top: -1.2rem;
+    width: 6rem;
+	height: 4rem;
+	right: 3rem;
+    font-size: 6rem;
     border: none;
     cursor: pointer;
-    color: black;
+    color: #e61618;
     z-index: 100; /* Ensure button is on top */
 }
 
@@ -63,9 +63,9 @@
 /* Close button INSIDE the sidebar */
 .sidebar-close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 24px;
+    top: 2rem;
+    right: 5rem;
+    font-size: 6rem;
     background: none;
     border: none;
     color: white;
