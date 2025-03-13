@@ -3,13 +3,13 @@ fetch('sidebar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('sidebar-container').innerHTML = data;
-        console.log ('sidebar.html loaded?:\n\n', data);
+        console.log('sidebar.html loaded?:\n\n', data);
 
         // After sidebar is loaded, add event listeners to the buttons
         const menuBtn = document.querySelector(".menu-btn");
-        const closeBtn = document.querySelector(".sidebar-close-btn");
         const sidebar = document.querySelector(".sidebar");
 
+        // Function to open the sidebar
         function openSidebar() {
             sidebar.classList.add("open");
 
@@ -18,6 +18,7 @@ fetch('sidebar.html')
             }, 400);
         }
 
+        // Function to close the sidebar
         function closeSidebar() {
             sidebar.classList.remove("show-menu");
 
@@ -26,39 +27,46 @@ fetch('sidebar.html')
             }, 500);
         }
 
-        menuBtn.addEventListener("click", openSidebar);
-        closeBtn.addEventListener("click", closeSidebar);
-		
-		// Handle menu click transitions
-		document.querySelectorAll(".menu-link").forEach(link => {
-		    link.addEventListener("click", function(event) {
-		        event.preventDefault();
-		        const targetPage = this.getAttribute("href");
+        // Function to toggle the sidebar open/close
+        function toggleSidebar() {
+            if (sidebar.classList.contains("open")) {
+                closeSidebar();  // If sidebar is open, close it
+            } else {
+                openSidebar();   // If sidebar is closed, open it
+            }
+        }
 
-		        document.querySelectorAll(".menu-link").forEach((item, index) => {
-		            item.style.transform = "scaleY(0)";
-		            item.style.opacity = "0";
-		            item.style.transitionDelay = `${index * 0.2}s`;
-		        });
+        // Add event listener to the same menu button to toggle sidebar
+        menuBtn.addEventListener("click", toggleSidebar);
 
-		        setTimeout(() => {
-		            sidebar.classList.remove("open");
+        // Handle menu click transitions
+        document.querySelectorAll(".menu-link").forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const targetPage = this.getAttribute("href");
 
-		            setTimeout(() => {
-		                window.location.href = targetPage;
-		            }, 500);
-		        }, 800);
-		    });
-		});
+                document.querySelectorAll(".menu-link").forEach((item, index) => {
+                    item.style.transform = "scaleY(0)";
+                    item.style.opacity = "0";
+                    item.style.transitionDelay = `${index * 0.2}s`;
+                });
 
-        //logic to calculate the width of the sidebar dynamically for all screen sizes
+                setTimeout(() => {
+                    sidebar.classList.remove("open");
 
+                    setTimeout(() => {
+                        window.location.href = targetPage;
+                    }, 500);
+                }, 800);
+            });
+        });
+
+        // Logic to calculate the width of the sidebar dynamically for all screen sizes
         function adjustSidebarWidth() {
             let tickerWidth = document.querySelector(".Header-ticker")?.offsetWidth || 100;
             let sidebar = document.querySelector(".sidebar");
             console.log(sidebar); // Check if the sidebar element is correctly targeted
-        
-        
+
             if (sidebar) {
                 let sidebarWidth = `calc(100vw - ${tickerWidth}px)`;
                 sidebar.style.width = sidebarWidth;
@@ -71,12 +79,10 @@ fetch('sidebar.html')
         // Run function on page load and window resize
         menuBtn.addEventListener("click", adjustSidebarWidth);
 
-        //window.addEventListener("resize", adjustSidebarWidth);
-        //window.addEventListener("load", adjustSidebarWidth);
-	
+        // Optional: window.addEventListener("resize", adjustSidebarWidth);
+        // Optional: window.addEventListener("load", adjustSidebarWidth);
+
     })
     .catch(error => {
         console.error('Error loading sidebar:', error);
     });
-
-

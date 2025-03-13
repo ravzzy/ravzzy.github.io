@@ -41,10 +41,10 @@
 /* Sidebar */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 5vh;
     right: -100%;
     width: 250px;
-    height: 100vh;
+    height: 95vh;
     background-color: #e61618;
     color: white;
     display: flex;
