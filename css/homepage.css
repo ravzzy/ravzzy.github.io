@@ -65,7 +65,7 @@ body {
 .Header-swimlane-Text {
 	font-family: var(--brand-text-font);
 	color: black;
-	font-size: 2rem;
+	font-size: 1.7rem;
 	width: 100%;
 	font-weight: 600;
 	position: fixed;
@@ -106,8 +106,29 @@ body {
 	font-size: 6rem;
 	font-weight: 500;	
 	margin: 0; /* Remove default margins */
-
-  }	
+	  opacity: 0; /* Initially hidden */
+	  transform: translateY(30px); /* Start slightly lower */
+	  animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  /* Delays for each element */
+  .header-text-container h1 { animation-delay: 0.2s; }
+  .header-text-container h2 { animation-delay: 0.4s; }
+  .header-text-container h3 { animation-delay: 0.6s; }
+  .header-text-container h4 { animation-delay: 0.8s; }
+  .header-text-container h5 { animation-delay: 1s; }
+  
+  /* Keyframes for animation */
+  @keyframes fadeInUp {
+	  0% {
+		  opacity: 0;
+		  transform: translateY(30px);
+	  }
+	  100% {
+		  opacity: 1;
+		  transform: translateY(0);
+	  }
+  }
   /* The image container takes up the other 50% */
   .header-image-container {
 
@@ -901,6 +922,8 @@ body {
 	  .header-text-container h5 {
 		font-size: 5rem; /* Smaller font size for mobile */
 	  }
+
+	  
 
 	  .buffer-section {
 		left: 8.4vw;
@@ -1732,6 +1755,7 @@ footer {
 	margin-bottom: 2em;
 }
 
+
 footer>div:not(.socials) {
 	font-size: 5rem;
 	font-weight: 800;
@@ -2109,7 +2133,7 @@ footer>div:not(.socials) {
 	}
 
 	.Header-swimlane-Text {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		font-weight: 600;
 		top: 1.5%;
 		left: 15%;
@@ -2292,6 +2316,12 @@ footer>div:not(.socials) {
 		opacity: 0;
 		transform: scale(0.5);
 	}
+
+	.footer-branding {
+		padding-bottom: 3vh;
+		margin-left: 9vw;
+		text-align: center;
+	}	
 
 	.vertical-line {
 		display: none !important;
