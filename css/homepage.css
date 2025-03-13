@@ -130,6 +130,7 @@ body {
 /*test code start*/
 
 .topper {
+	max-height: 100vh;
 	visibility: hidden;
 	min-height: 9vh;
 	background-color: var(--secondary-background-color);
@@ -846,6 +847,7 @@ body {
 
 
 	.topper {
+		max-height: 100vh;
 		min-height: 5vh;
 		background-color: var(--secondary-background-color);
 	}

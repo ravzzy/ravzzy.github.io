@@ -22,7 +22,7 @@
 
 .menu-btn {
     position: fixed;
-	top: -1.2rem;
+	top: -1.5rem;
     width: 6rem;
 	height: 4rem;
 	right: 3rem;
@@ -30,6 +30,7 @@
     border: none;
     cursor: pointer;
     color: #e61618;
+    background-color: transparent;
     z-index: 100; /* Ensure button is on top */
 }
 
