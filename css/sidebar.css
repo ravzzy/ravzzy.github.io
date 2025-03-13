@@ -76,12 +76,18 @@
 
 /* Menu Items */
 .menu-items {
+    position: absolute;
+    top: 10%; /* Position the menu 20% from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    justify-content: start; /* Center the menu items vertically */
+
+
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the menu items horizontally */
-    justify-content: center; /* Center the menu items vertically */
     width: 100%;
-    height: 100%; /* Fill the height of the sidebar */
+    /*height: 100%; *//* Fill the height of the sidebar */
 }
 
 .menu-link {
