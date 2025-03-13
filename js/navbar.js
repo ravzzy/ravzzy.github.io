@@ -9,7 +9,7 @@ fetch('navbar.html')
         initializeShuffleEffect();
     })
     .catch(error => {
-        console.error('Error loading sidebar:', error);
+        console.error('Error loading navbar:', error);
     });
 
 

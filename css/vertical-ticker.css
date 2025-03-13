@@ -1,0 +1,51 @@
+.Header-ticker {
+    position: fixed;
+    left: 0.1%;
+    top: 0;
+    /*width: 3.5vw;*/
+    width: 10vh;
+    height: 100%;
+    border-right: 0.01vw solid #c2c2c2;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+}
+
+/* Ticker Container */
+.ticker-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: none;
+}
+
+.ticker-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ticker-text {
+    will-change: transform;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f1f1f1;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (orientation:portrait) {
+
+    .Header-ticker {
+        width: 5vh;
+
+    }
+}

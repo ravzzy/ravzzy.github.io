@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Media & Blogs</title>
 	<link rel="stylesheet" href="./css/media.css">
+	<link rel="stylesheet" href="./css/vertical-ticker.css">
 	<link rel="stylesheet" href="./css/sidebar.css">
 	<link rel="stylesheet" href="./css/navbar.css">
 
@@ -45,36 +46,7 @@
 			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
 		</nav>
 		<canvas id="canvas"> </canvas>
-		<div class="Header-ticker">
-			<div class="ticker-container">
-				<div class="ticker-wrapper">
-					<p class="ticker-text">Evidence Synethsis</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Market Access & HEOR</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Medical Communications</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Evidence Synethsis</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Market Access & HEOR</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Medical Communications</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Evidence Synethsis</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Market Access & HEOR</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Medical Communications</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Evidence Synethsis</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Market Access & HEOR</p>
-					<p class="ticker-text">-</p>
-					<p class="ticker-text">Medical Communications</p>
-					<p class="ticker-text">-</p>
-				</div>
-			</div>
-		</div>
+		<div id ="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
 		<div class="Header-swimlane"></div>
 		<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
 		<section class="final">
@@ -91,6 +63,7 @@
 	</div>
 	<script src="./js/navbar.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
+	<script src="./js/vertical-ticker.js" defer></script>
 	<script src="./js/common.js" defer></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {

@@ -175,7 +175,7 @@ document.querySelectorAll(".header-shuffle-text").forEach(textElement => {
 	textElement.addEventListener("mouseleave", stopShuffling);
 	}
 });
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const tickerWrapper = document.querySelector(".ticker-wrapper");
     let tickerItems = Array.from(document.querySelectorAll(".ticker-text"));
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setupTicker();
     });
 });
-
+*/
 
 //Print Viewport Dimensions
 
