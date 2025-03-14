@@ -80,7 +80,7 @@ body {
 .topper {
 	visibility: hidden;
 	min-height: 9vh;
-	background-color: var(--primary-background-color);
+	background-color: var(--secondary-background-color);
 }
 
 
@@ -89,81 +89,105 @@ body {
 	/* Hides the contact us form */
 }
 
-h1 {
+
+.career-container {
+	padding-top: 1vh;
+	max-width: 80vw;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+.career-section, .collab-section {
+	flex: 1;
+	min-width: 30vw;
+	width: auto;
+	min-height: 30vh;
+	height: auto;
+	background-color: #e61618;
+	padding: 50px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+	animation: fadeIn 1.5s ease-in-out;
 	text-align: center;
-	font-family: var(--header2-text-font);
-	margin-top: 40px;
-	font-size: 4rem;
+}
+h1 {
+	font-family: var(--body-text-font);
+	text-align: center;
+	text-transform: none;
+	font-size: 5rem;
+	color: #f1c47c;
+	animation: slideDown 1s ease-in-out;
+}
+
+.text-highlight {
+	color: #e61618 !important;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-family: var(--default-text-font);
+	text-align: center;
 	color: var(--secondary-background-color);
 }
 
-.tile-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	max-width: 80vw; /* Ensures it doesn’t stretch too much */
-	gap: 40px;
-	padding: 50px;
+h3 {
+	font-family: var(--body-text-font);
+	text-align: center;
+	font-size: 2em;
+	text-transform: none;
+	font-weight: 400;
+	color: #f1c47c;
+	animation: slideDown 1s ease-in-out;
 }
-
-.tile {
-	background-color: #f1c47c;
-	padding: 20px;
-	border-radius: 15px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	transform-style: preserve-3d;
-}
-
-.tile img {
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	border-radius: 12px;
-}
-
-.tile h3 {
+p {
+	padding-top: 2rem;
 	font-family: var(--body-text-font);
 	text-transform: none;
-	font-size: 18px;
-	color: #333;
-	margin-top: 15px;
+	text-align: justify;
+	font-size: 1.5em;
+	color: var(--secondary-background-color);
 }
-
-.tile p {
-	font-size: 14px;
-	color: #666;
-	margin-top: 10px;
-	display: -webkit-box;
-	--webkit-line-clamp: 2;
-	/* Limit to two lines */
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-
-.tile a {
-	color: var(--primary-background-color);
-	font-weight: bold;
-	text-decoration: none;
+.btn {
+	background: var(--secondary-background-color);
+	color: black;
+	padding: 12px 20px;
+	font-weight: 600;
+	;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.5em;
+	transition: transform 0.3s ease, background 0.3s ease;
 	display: inline-block;
-	margin-top: 10px;
+	margin-top: 15px;
+	text-decoration: none; /* Ensures no underline if it's an anchor tag */
+
 }
 
-.tile a:hover {
-	text-decoration: none;  /* Ensure no underline on hover */
+.btn:hover {
+	transform: scale(1.1);
+	background: #f1c47c;
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes slideDown {
+	from { transform: translateY(-20px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
 }
 
-/* Hover effect for tiles */
-.tile:hover {
-	transform: scale(1.05) rotateY(10deg);
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
 
 .footer-branding {
 	padding-bottom: 3vh;
 	text-align: center;
+}
+
+.footer-branding-text {
+	color: var(--footer-text-color);
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -182,16 +206,26 @@ h1 {
 		min-height: 5vh;
 	}
 
+	.career-container {
+		width: 70vw;
+		flex-direction: column;
+		align-items: center;
+	}
+
+
 	h1 {
-		font-size: 2rem;
+		font-size: 3rem;
+	}
+	h3{
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 2em;
 	}
 
-	.tile-container {
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-		gap: 20px;
-		padding: 20px;
+	.career-section, .collab-section {
+		padding: 10px;
 	}
-
 }
 
 
@@ -404,7 +438,8 @@ nav a {
 }
 
 section {
-	min-height: 100dvh;
+	min-height: 90vh;
+	max-height: 90vh;
 }
 
 canvas {
@@ -464,13 +499,14 @@ section>.title {
 
 .final {
 	place-items: center; /* Centers both horizontally & vertically */
-	margin-left: 4.5vw;
-	width: 100%;
+	margin-left: 5.5vw;
+	width: calc(100% - 5.5vw);
 	display: grid;
 	color: white;
 	border-top: 1px white dashed;
+	background-image: url('../images/collab_background_animation.gif');
 	/*background-color: rgb(23, 16, 16); */
-	background-color: var(--primary-background-color);
+	/*background-color: var(--secondary-background-color);*/
 }
 
 @keyframes marquee {
