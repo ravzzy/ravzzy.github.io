@@ -891,7 +891,9 @@ body {
 		align-items: flex-end; /* Ensure the content aligns to the top */
         width: 90%; /* Image container takes 100% width */
 		background-image: url('../images/globe_video.gif');
-		background-size: contain;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 
 	.header-image {
