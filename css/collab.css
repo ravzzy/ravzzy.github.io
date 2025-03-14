@@ -92,13 +92,11 @@ body {
 
 .career-container {
 	padding-top: 1vh;
-	max-width: 35vw;
-	width: auto;
-	height: auto;
+	max-width: 80vw;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
+	gap: 20px;
 	justify-content: center;
 }
 
@@ -380,7 +378,7 @@ h3 {
 
 	.career-section,
 	.collab-section {
-		padding: 5px;
+		padding: 10px;
 	}
 }
 
@@ -592,6 +590,11 @@ nav a {
 	/* Apply the dynamic text color */
 
 }
+
+section {
+	min-height: 100vh;
+}
+
 
 canvas {
 
