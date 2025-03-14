@@ -278,3 +278,38 @@ printViewportDimensions();
 
 // Print viewport dimensions whenever the window is resized
 window.addEventListener('resize', printViewportDimensions);
+
+
+// Select all the sections with the parallax background
+const parallaxSections = document.querySelectorAll('.career-section, .collab-section');
+
+// Listen to the scroll event to trigger the parallax effect
+window.addEventListener('scroll', function () {
+  parallaxSections.forEach(section => {
+    const offset = window.pageYOffset; // Get the current scroll position
+    const speed = 0.5; // Adjust the speed of the parallax effect
+    const bg = section.querySelector('::before');
+    
+    if (bg) {
+      bg.style.transform = `translateY(${offset * speed}px)`;
+    }
+  });
+});
+
+// Intersection Observer for triggering animations on scroll
+const sections = document.querySelectorAll('.career-section, .collab-section');
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});

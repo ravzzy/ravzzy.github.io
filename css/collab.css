@@ -99,38 +99,162 @@ body {
 	gap: 20px;
 	justify-content: center;
 }
-.career-section, .collab-section {
+
+@keyframes raiseBlinder {
+	0% {
+	  transform: translateY(150%) scale(0.9);
+	  opacity: 0;
+	  filter: blur(10px);
+	}
+	60% {
+	  transform: translateY(10%) scale(1.05);
+	  opacity: 0.7;
+	  filter: blur(5px);
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	  filter: blur(0);
+	}
+  }
+  
+  .career-section, .collab-section {
 	flex: 1;
 	min-width: 30vw;
 	width: auto;
 	min-height: 30vh;
 	height: auto;
-	background-color: #e61618;
+	background: linear-gradient(135deg, rgba(255, 50, 50, 0.9), rgba(244, 28, 28, 0.9));
 	padding: 50px;
 	border-radius: 10px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(10px);
-	animation: fadeIn 1.5s ease-in-out;
 	text-align: center;
-}
+	opacity: 0;
+	transform: translateY(150%);
+	animation: raiseBlinder 1.5s ease-out forwards;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  /* Parallax effect on the background */
+  .career-section::before, .collab-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	transform: translateY(0); /* Default position */
+	z-index: -1; /* Ensure it stays behind content */
+	transition: transform 0.3s ease-out;
+  }
+  
+  .career-section.show, .collab-section.show {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  /* Text animation */
+  .career-section h2, .collab-section h2 {
+	font-size: 2.5em;
+	font-family: var(--body-text-font);
+	font-weight: bold;
+	margin-bottom: 20px;
+	letter-spacing: 2px;
+	color: var(--secondary-background-color);
+	text-transform: uppercase;
+	position: relative;
+	animation: fadeInText 1s ease-out forwards;
+  }
+  
+  .career-section p, .collab-section p {
+	color: var(--secondary-background-color);
+	text-transform: none;
+	font-size: 1.6em;
+	line-height: 1.6;
+	margin-bottom: 20px;
+  }
+  
+  /* Button styles */
+  .career-section .btn, .collab-section .btn {
+	background: linear-gradient(135deg, #f1c47c, #f9b445);
+	color: var(--secondary-background-color);
+	padding: 12px 30px;
+	font-weight: 700;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	font-size: 1.2em;
+	text-decoration: none;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  
+  .career-section .btn:hover, .collab-section .btn:hover {
+	transform: scale(1.1);
+	background: linear-gradient(135deg, #f5b100, #f7a800);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Text fade-in animation */
+  @keyframes fadeInText {
+	0% {
+	  opacity: 0;
+	  transform: translateY(10px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  /* Parallax effect */
+  body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  .career-section, .collab-section {
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .career-section::before, .collab-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: inherit;
+	z-index: -1;
+	transform: translateY(0); /* Default position */
+  }
+  
+  /* Parallax effect on scroll */
+  .parallax {
+	position: relative;
+	background: linear-gradient(135deg, rgba(255, 50, 50, 0.9), rgba(244, 28, 28, 0.9));
+	z-index: 0;
+  }
+  
+  
+
 h1 {
 	font-family: var(--body-text-font);
 	text-align: center;
 	text-transform: none;
 	font-size: 5rem;
-	color: #f1c47c;
+	color: black;
 	animation: slideDown 1s ease-in-out;
 }
 
 .text-highlight {
 	color: #e61618 !important;
-}
-
-h2 {
-	font-size: 2.5em;
-	font-family: var(--default-text-font);
-	text-align: center;
-	color: var(--secondary-background-color);
 }
 
 h3 {
@@ -139,17 +263,10 @@ h3 {
 	font-size: 2em;
 	text-transform: none;
 	font-weight: 400;
-	color: #f1c47c;
+	color: black;
 	animation: slideDown 1s ease-in-out;
 }
-p {
-	padding-top: 2rem;
-	font-family: var(--body-text-font);
-	text-transform: none;
-	text-align: justify;
-	font-size: 1.5em;
-	color: var(--secondary-background-color);
-}
+
 .btn {
 	background: var(--secondary-background-color);
 	color: black;
@@ -217,11 +334,17 @@ p {
 		font-size: 3rem;
 	}
 	h3{
-		font-size: 1.5em;
-	}
-	h2 {
 		font-size: 2em;
 	}
+	career-section h2, .collab-section h2 {
+		font-size: 1.6em;
+	}
+
+	p{
+		font-size: 1.3em;
+		line-height: 1;
+	}
+
 
 	.career-section, .collab-section {
 		padding: 10px;
@@ -504,9 +627,8 @@ section>.title {
 	display: grid;
 	color: white;
 	border-top: 1px white dashed;
-	background-image: url('../images/collab_background_animation.gif');
 	/*background-color: rgb(23, 16, 16); */
-	/*background-color: var(--secondary-background-color);*/
+	background-color: var(--secondary-background-color);
 }
 
 @keyframes marquee {
