@@ -91,9 +91,10 @@ body {
 
 h1 {
 	text-align: center;
-	font-family: var(--header2-text-font);
-	margin-top: 40px;
-	font-size: 4rem;
+	text-transform: none;
+	font-family: var(--body-text-font);
+	margin-top: 20px;
+	font-size: 3.5rem;
 	color: var(--secondary-background-color);
 }
 
