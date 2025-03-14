@@ -92,11 +92,13 @@ body {
 
 .career-container {
 	padding-top: 1vh;
-	max-width: 80vw;
+	max-width: 35vw;
+	width: auto;
+	height: auto;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 10px;
 	justify-content: center;
 }
 
@@ -378,7 +380,7 @@ h3 {
 
 	.career-section,
 	.collab-section {
-		padding: 10px;
+		padding: 5px;
 	}
 }
 
@@ -591,17 +593,13 @@ nav a {
 
 }
 
-section {
-	min-height: 100vh;
-}
-
 canvas {
 
 	display: block;
 	/* Removes inline spacing issues */
 	width: 100vw;
 	/* Covers full screen width */
-	height: 100vh;
+	height: auto;
 	/* Covers full screen height */
 	position: fixed;
 	top: 0;
