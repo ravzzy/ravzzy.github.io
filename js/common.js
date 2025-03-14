@@ -279,7 +279,7 @@ printViewportDimensions();
 // Print viewport dimensions whenever the window is resized
 window.addEventListener('resize', printViewportDimensions);
 
-
+// The below code is used in collab section to make the background image parallax effect
 // Select all the sections with the parallax background
 const parallaxSections = document.querySelectorAll('.career-section, .collab-section');
 
