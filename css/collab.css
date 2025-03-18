@@ -39,12 +39,31 @@ html {
 
 body {
 	height: 100%;
-	overflow-x: hidden !important;
+	/*overflow-x: hidden !important;*/
+	background-color: var(--secondary-background-color);
 	font-family: var(--default-text-font);
 	text-transform: uppercase;
-	background-color: #f1f1f1;
+	z-index: -1;
+	/*background-color: #f1f1f1;*/
 }
 
+#canvas-collab {
+	display: block;
+	/* Removes inline spacing issues */
+	width: 100vw;
+	/* Covers full screen width */
+	height: 100vh;
+	/* Covers full screen height */
+	position: fixed;
+	top: 0;
+	margin-top: 4vh;
+	left: 50%;
+	transform: translateX(-50%);
+	/* Ensures it's centered */
+	z-index: 2;
+	touch-action: none;
+	/* Prevents unwanted scrolling on touch screens */
+}
 
 .Header-swimlane {
 	background-color: var(--secondary-background-color);
@@ -593,27 +612,6 @@ nav a {
 
 section {
 	min-height: 100vh;
-}
-
-
-canvas {
-
-	display: block;
-	/* Removes inline spacing issues */
-	width: 100vw;
-	/* Covers full screen width */
-	height: auto;
-	/* Covers full screen height */
-	position: fixed;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	/* Ensures it's centered */
-	background-color: transparent;
-	z-index: -100;
-	touch-action: none;
-	/* Prevents unwanted scrolling on touch screens */
-
 }
 
 .page {

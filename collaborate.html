@@ -1,0 +1,93 @@
+<!-- Author - ravzzy -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media & Blogs</title>
+	<link rel="stylesheet" href="./css/collab.css">
+	<link rel="stylesheet" href="./css/vertical-ticker.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/navbar.css">
+
+	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
+	<link rel="preload" as="image" href="./images/favicon.ico">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap"
+		rel="stylesheet">
+	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
+		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer
+		integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="loading">
+	<div class="loader" id="loader">
+		<img src="./images/loading.webp" class="loader-img" alt="Loading">
+	</div>
+	<section class="topper" id="topper">
+		<div class="logo-wrapper">
+			<div class="logo-image"></div>
+		</div>
+		<!-- Transparent Navigation Menu -->
+		<div id="navbar-container"></div> <!-- Navbar will be inserted here -->
+	</section>
+	<!-- Menu on the right side of the home page for Mobile Only-->
+	<button class="menu-btn">☰</button>
+	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
+		<nav class="designer-footer">
+			<h1></h1>
+			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
+		</nav>
+		<div id ="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
+		<div class="Header-swimlane"></div>
+		<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
+		<canvas id="canvas-collab"> </canvas>
+		<section class="page two"></section>
+		<section class="page three"></section>
+		<section class="page four"></section>
+		<section class="final">
+			<!--<div class="career-container">
+				<h1>Deep roots, wide reach.<span class="text-highlight"> Rooting for your research every step of the way.</span></h1>
+				<h3>Our goal is to offer both rewarding career opportunities and collaborative partnerships in an environment where you'll feel valued and motivated every day.</h3>
+				<div class="career-section">
+					<h2>Career Opportunities</h2>
+					<p>Join our team of passionate and creative professionals! We’re searching for individuals who bring fresh ideas, energy, and talent. Check out our open positions below and start your journey with us today!</p>
+					<a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" class="btn" target="_blank">Apply Now</a>
+				</div>
+				<div class="collab-section">
+					<h2>Collaborate With Us</h2>
+					<p>Are you passionate about working on innovative and impactful projects that push boundaries? 
+						We’re eager to collaborate with creative and driven individuals like you! Let’s connect and bring fresh ideas to life!</p>
+					<a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" class="btn" target="_blank">Collaborate</a>
+				</div>
+				
+			</div>
+			
+			<footer class="footer-branding">
+				<p class="footer-branding-text">2025 &copy; Rooting Research<sup>&trade;</sup></p>
+			</footer>-->
+			<main>
+				<form action="" method="POST" class="form" id="form">
+				</form>
+			</main> 
+		</section>
+	</div>
+	<script src="./js/navbar.js" defer></script>
+	<script src="./js/sidebar.js" defer></script>
+	<script src="./js/vertical-ticker.js" defer></script>
+	<script src="./js/common.js" defer></script>
+	<script src="./js/collaborate.js" defer></script>
+	<script>
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		};
+	</script>
+</body>
+
+</html>
