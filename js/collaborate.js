@@ -26,6 +26,32 @@ function getImagePaths() {
 getImagePaths();
 
 let imgs = [];
+function preloadImages() {
+	const promises = imgPaths.map((path) => {
+		return new Promise((resolve, reject) => {
+			const img = new Image();
+			img.src = path;
+			img.onload = () => resolve(img);
+			img.onerror = () => reject(`Failed to load image: ${path}`);
+		});
+	});
+
+	// Load all images in parallel
+	Promise.all(promises)
+		.then((loadedImages) => {
+			imgs = loadedImages; // Store loaded images
+			console.log('All images preloaded successfully!');
+			render(); // Render the first frame after preloading
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+}
+
+preloadImages();
+
+/*
+let imgs = [];
 function getImages() {
 	imgPaths.forEach(path => {
 		const img = new Image();
@@ -34,7 +60,7 @@ function getImages() {
 		imgs.push(img);
 	});
 }
-getImages();
+getImages();*/
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,8 +162,8 @@ gsap.to('.four', {
 gsap.to('.final', {
 	scrollTrigger: {
 		trigger: '.final',
-		start: 'top top',
-		end: '+=' + window.innerHeight * 1.1,
+		start: 'top center',
+		end: '+=100%',
 		scrub: 1,
 		pin: true,
 	},

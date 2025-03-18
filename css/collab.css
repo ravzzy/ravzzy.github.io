@@ -112,6 +112,10 @@ section {
 	/* Hides the contact us form */
 }
 
+.page {
+	height: 200vh;
+}
+
 
 .career-container {
 	margin-top: 10vh !important;
