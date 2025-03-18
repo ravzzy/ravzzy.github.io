@@ -47,6 +47,10 @@ body {
 	/*background-color: #f1f1f1;*/
 }
 
+section {
+	min-height: 100vh;
+}
+
 #canvas-collab {
 	display: block;
 	/* Removes inline spacing issues */
@@ -60,8 +64,8 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	/* Ensures it's centered */
-	z-index: 2;
-	touch-action: none;
+	z-index: -5;
+	/*touch-action: none;*/
 	/* Prevents unwanted scrolling on touch screens */
 }
 
@@ -110,7 +114,7 @@ body {
 
 
 .career-container {
-	padding-top: 1vh;
+	margin-top: 10vh !important;
 	max-width: 80vw;
 	margin: auto;
 	display: flex;
@@ -650,6 +654,7 @@ section>.title {
 }
 
 .final {
+	z-index: 2;
 	place-items: center;
 	/* Centers both horizontally & vertically */
 	margin-left: 5.5vw;

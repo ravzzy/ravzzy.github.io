@@ -43,7 +43,7 @@ gsap.to(frame, {
 	snap: 'frame',
 	scrollTrigger: {
 		start: 'top top',
-		end: '+=700%',
+		end: '+=300%',
 		scrub: true,
 		invalidateOnRefresh: true, // Ensures it recalculates on resize
 	},
@@ -122,10 +122,20 @@ gsap.to('.three', {
 		pin: true,
 	},
 });
-
+/*
 gsap.to('.four', {
 	scrollTrigger: {
 		trigger: '.four',
+		start: 'top top',
+		end: '+=' + window.innerHeight * 1.1,
+		scrub: 1,
+		pin: true,
+	},
+}); */
+
+gsap.to('.final', {
+	scrollTrigger: {
+		trigger: '.final',
 		start: 'top top',
 		end: '+=' + window.innerHeight * 1.1,
 		scrub: 1,
