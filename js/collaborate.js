@@ -24,27 +24,31 @@ function getImagePaths() {
 	}
 }
 getImagePaths();
-
 let imgs = [];
 function preloadImages() {
 	const promises = imgPaths.map((path) => {
 		return new Promise((resolve, reject) => {
 			const img = new Image();
 			img.src = path;
-			img.onload = () => resolve(img);
-			img.onerror = () => reject(`Failed to load image: ${path}`);
+			img.onload = () => resolve(img); // Resolve on successful load
+			img.onerror = () => {
+				console.error(`Failed to load image: ${path}`);
+				resolve(null); // Resolve with null instead of rejecting
+			};
 		});
 	});
 
 	// Load all images in parallel
 	Promise.all(promises)
 		.then((loadedImages) => {
-			imgs = loadedImages; // Store loaded images
+			// Filter out null values (failed images)
+			imgs = loadedImages.filter((img) => img !== null);
 			console.log('All images preloaded successfully!');
+			console.log(`Loaded ${imgs.length} out of ${imgPaths.length} images.`);
 			render(); // Render the first frame after preloading
 		})
 		.catch((error) => {
-			console.error(error);
+			console.error('Unexpected error during preloading:', error);
 		});
 }
 
@@ -109,9 +113,6 @@ function render() {
 		ctx.drawImage(img, x, y, renderWidth, renderHeight);
 	}
 }
-
-// Initial render
-imgs[1].onload = render;
 
 // Handle window resize
 window.addEventListener('resize', () => {
