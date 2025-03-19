@@ -5,6 +5,9 @@ const ctx = canvas.getContext('2d');
 canvas.height = canvas.clientHeight;
 canvas.width = canvas.clientWidth;
 
+const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+
+
 let imgPaths = [];
 const FRAMES = 697; // Total number of frames
 const initialFrame = 1; // Initial frame
@@ -13,8 +16,6 @@ let frame = { frame: 1 };
 // Function to get image paths
 function getImagePaths() {
 	imgPaths = []; // Reset the image paths array
-	const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
-
 	for (let i = initialFrame; i <= FRAMES; i++) {
 		if (isMobile) {
 			imgPaths.push(`images/mobile/mob-${i}.png`); // Mobile version
@@ -91,7 +92,7 @@ gsap.to(frame, {
 		start: 'top top', // Start when the trigger hits the top of the viewport
 		endTrigger: '.final', // End when .final comes into view
 		end: 'top center', // End when the top of .final reaches the center of the viewport
-		scrub: true,
+		scrub: 10, //default is true, but changed to 10 so that it slows down scrolling.
 		invalidateOnRefresh: true, // Ensures it recalculates on resize
 	},
 	onUpdate: () => {
@@ -107,7 +108,13 @@ function render() {
 
 	if (img) {
 		// Calculate the scaled dimensions (reduce by 20%)
-		const scaleFactor = 0.9; // 20% reduction
+		let scaleFactor
+		if (isMobile) {
+			scaleFactor = 1.2
+		}else {
+			scaleFactor = 0.9
+		}
+
 		const scaledWidth = canvas.width * scaleFactor;
 		const scaledHeight = canvas.height * scaleFactor;
 
