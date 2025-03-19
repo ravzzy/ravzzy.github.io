@@ -669,15 +669,14 @@ nav a {
 }
 
 .designer-footer {
-
 	position: fixed;
-	bottom: 1vh;
+	bottom: 3vh;
 	/* Adjust spacing from bottom */
 	right: 0%;
 	/* Adjust spacing from right */
 	transform: scale(0.7);
-	opacity: 0;
-	z-index: 3;
+	opacity: 1;
+	z-index: 10;
 	color: var(--footer-text-color);
 	/* Apply the dynamic text color */
 
@@ -845,7 +844,7 @@ section>.title {
 		/* Adjust spacing from bottom */
 		right: 0%;
 		/* Adjust spacing from right */
-		opacity: 0;
+		opacity: 1;
 		transform: scale(0.5);
 	}
 
