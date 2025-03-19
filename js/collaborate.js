@@ -5,8 +5,14 @@ const ctx = canvas.getContext('2d');
 canvas.height = canvas.clientHeight;
 canvas.width = canvas.clientWidth;
 
-const isMobile = window.innerWidth <= 768; // Adjust breakpoint if needed
+function isLandscape() {
+    return window.innerWidth > window.innerHeight;
+}
 
+const isMobilePortrait = (window.innerWidth <= 768 || window.innerHeight <= 768) && !isLandscape();
+
+//If the device is in portrait mode and the width or height is less than or equal to 768px, it’s treated as a mobile device.
+//If the device is in landscape mode, it’s treated as a desktop device, regardless of the screen size.
 
 let imgPaths = [];
 const FRAMES = 697; // Total number of frames
@@ -17,7 +23,7 @@ let frame = { frame: 1 };
 function getImagePaths() {
 	imgPaths = []; // Reset the image paths array
 	for (let i = initialFrame; i <= FRAMES; i++) {
-		if (isMobile) {
+		if (isMobilePortrait) {
 			imgPaths.push(`images/mobile/mob-${i}.png`); // Mobile version
 		} else {
 			imgPaths.push(`images/desktop/out-${i}.png`); // Desktop version
@@ -31,87 +37,87 @@ const loadingScreen = document.getElementById('loading-screen');
 
 // Function to hide elements during loading
 function hideElements() {
-    const elementsToHide = [
-        document.getElementById('topper'),
-        document.querySelector('.two'),
-        document.querySelector('.final'),
-        document.querySelector('.footer-branding')
-    ];
+	const elementsToHide = [
+		document.getElementById('topper'),
+		document.querySelector('.two'),
+		document.querySelector('.final'),
+		document.querySelector('.footer-branding')
+	];
 
-    elementsToHide.forEach(element => {
-        if (element) {
-            element.classList.add('hidden');
-        }
-    });
+	elementsToHide.forEach(element => {
+		if (element) {
+			element.classList.add('hidden');
+		}
+	});
 }
 
 // Function to unhide elements after loading
 function unhideElements() {
-    const elementsToUnhide = [
-        document.getElementById('topper'),
-        document.querySelector('.two'),
-        document.querySelector('.final'),
-        document.querySelector('.footer-branding')
-    ];
+	const elementsToUnhide = [
+		document.getElementById('topper'),
+		document.querySelector('.two'),
+		document.querySelector('.final'),
+		document.querySelector('.footer-branding')
+	];
 
-    elementsToUnhide.forEach(element => {
-        if (element) {
-            element.classList.remove('hidden'); // Remove the .hidden class
-            element.style.visibility = 'visible'; // Explicitly set visibility
-            element.style.display = 'block'; // Or the appropriate display value
-        }
-    });
+	elementsToUnhide.forEach(element => {
+		if (element) {
+			element.classList.remove('hidden'); // Remove the .hidden class
+			element.style.visibility = 'visible'; // Explicitly set visibility
+			element.style.display = 'block'; // Or the appropriate display value
+		}
+	});
 }
 // Hide elements when the page starts loading
 hideElements();
 
 // Function to preload images and update progress
 function preloadImages() {
-    let loadedCount = 0;
+	let loadedCount = 0;
 
-    const promises = imgPaths.map((path) => {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = path;
-            img.onload = () => {
-                loadedCount++;
-                updateProgress(loadedCount); // Update progress bar
-                resolve(img);
-            };
-            img.onerror = () => {
-                console.error(`Failed to load image: ${path}`);
-                resolve(null); // Resolve with null instead of rejecting
-            };
-        });
-    });
+	const promises = imgPaths.map((path) => {
+		return new Promise((resolve, reject) => {
+			const img = new Image();
+			img.src = path;
+			img.onload = () => {
+				loadedCount++;
+				updateProgress(loadedCount); // Update progress bar
+				resolve(img);
+			};
+			img.onerror = () => {
+				console.error(`Failed to load image: ${path}`);
+				resolve(null); // Resolve with null instead of rejecting
+			};
+		});
+	});
 
-    // Load all images in parallel
-    Promise.all(promises)
-        .then((loadedImages) => {
-            // Filter out null values (failed images)
-            imgs = loadedImages.filter((img) => img !== null);
-            console.log('All images preloaded successfully!');
-            console.log(`Loaded ${imgs.length} out of ${imgPaths.length} images.`);
+	// Load all images in parallel
+	Promise.all(promises)
+		.then((loadedImages) => {
+			// Filter out null values (failed images)
+			imgs = loadedImages.filter((img) => img !== null);
+			console.log('All images preloaded successfully!');
+			console.log(`Loaded ${imgs.length} out of ${imgPaths.length} images.`);
 
-            // Hide loading screen and unhide elements
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.remove();
-                unhideElements(); // Unhide all elements
-                document.body.style.overflow = 'auto'; // Enable scrolling
-				                // Render the first frame after loading is complete
+			// Hide loading screen and unhide elements
+			loadingScreen.style.opacity = '0';
+			setTimeout(() => {
+				loadingScreen.remove();
+				unhideElements(); // Unhide all elements
+				document.body.style.overflow = 'auto'; // Enable scrolling
+				// Render the first frame after loading is complete
 				render();
-            }, 500); // Fade out duration
-        })
-        .catch((error) => {
-            console.error('Unexpected error during preloading:', error);
-        });
+			}, 500); // Fade out duration
+		})
+		.catch((error) => {
+			console.error('Unexpected error during preloading:', error);
+		});
 }
 
 // Function to update the progress bar
 function updateProgress(loadedCount) {
-    const progressPercentage = (loadedCount / imgPaths.length) * 100;
-    progressBar.style.width = `${progressPercentage}%`;
+	const progressPercentage = (loadedCount / imgPaths.length) * 100;
+	progressBar.style.width = `${progressPercentage}%`;
 }
 
 // Start preloading images
@@ -171,9 +177,9 @@ function render() {
 	if (img) {
 		// Calculate the scaled dimensions (reduce by 20%)
 		let scaleFactor
-		if (isMobile) {
+		if (isMobilePortrait) {
 			scaleFactor = 1.2
-		}else {
+		} else {
 			scaleFactor = 0.9
 		}
 
@@ -195,11 +201,14 @@ function render() {
 		// Center the image on the canvas
 		const x = (canvas.width - renderWidth) / 2;
 		const y = (canvas.height - renderHeight) / 2;
+		// Log the image dimensions and position
+		//console.log(`Image dimensions: ${renderWidth}x${renderHeight}, Position: (${x}, ${y})`);
 
 		ctx.drawImage(img, x, y, renderWidth, renderHeight);
 	}
 }
 
+/*
 // Handle window resize
 window.addEventListener('resize', () => {
 	resizeCanvas();
@@ -207,13 +216,38 @@ window.addEventListener('resize', () => {
 
 // Function to resize the canvas
 function resizeCanvas() {
-	// Match canvas size to the viewport (with 30% reduction)
-	const scaleFactor = 0.7; // 30% reduction
-	canvas.width = window.innerWidth * scaleFactor * window.devicePixelRatio;
-	canvas.height = window.innerHeight * scaleFactor * window.devicePixelRatio;
+	console.log("Orientation flipped by user, render the images again");
 
-	render(); // Re-draw image after resizing
+	// Log the new canvas dimensions
+	console.log(`New canvas width: ${window.innerWidth}, height: ${window.innerHeight}`);
+
+	// Update canvas dimensions to match the viewport
+	canvas.width = window.innerWidth * window.devicePixelRatio;
+	canvas.height = window.innerHeight * window.devicePixelRatio;
+
+	// Log the actual canvas dimensions
+	console.log(`Canvas width: ${canvas.width}, height: ${canvas.height}`);
+
+	// Re-render the current frame
+	render();
 }
+*/
+
+let currentOrientation = window.orientation;
+
+// Function to handle orientation change
+function handleOrientationChange() {
+    if (window.orientation !== currentOrientation) {
+        console.log("Orientation changed, refreshing the page...");
+        currentOrientation = window.orientation;
+        window.location.reload(); // Refresh the page
+		window.scrollTo(0, 0);
+    }
+}
+
+// Listen for resize events (which also fire on orientation change)
+window.addEventListener('resize', handleOrientationChange);
+
 
 // ScrollTrigger animations for other sections
 gsap.to('.two', {
@@ -225,7 +259,7 @@ gsap.to('.two', {
 		scrub: 1,
 	},
 });
-
+/*
 gsap.to('.three', {
 	scrollTrigger: {
 		trigger: '.three',
@@ -234,7 +268,7 @@ gsap.to('.three', {
 		scrub: 1,
 		pin: true,
 	},
-});
+});*/
 /*
 gsap.to('.four', {
 	scrollTrigger: {
@@ -264,31 +298,31 @@ const parallaxSections = document.querySelectorAll('.career-section, .collab-sec
 
 // Listen to the scroll event to trigger the parallax effect
 window.addEventListener('scroll', function () {
-  parallaxSections.forEach(section => {
-    const offset = window.pageYOffset; // Get the current scroll position
-    const speed = 0.5; // Adjust the speed of the parallax effect
-    const bg = section.querySelector('::before');
-    
-    if (bg) {
-      bg.style.transform = `translateY(${offset * speed}px)`;
-    }
-  });
+	parallaxSections.forEach(section => {
+		const offset = window.pageYOffset; // Get the current scroll position
+		const speed = 0.5; // Adjust the speed of the parallax effect
+		const bg = section.querySelector('::before');
+
+		if (bg) {
+			bg.style.transform = `translateY(${offset * speed}px)`;
+		}
+	});
 });
 
 // Intersection Observer for triggering animations on scroll
 const sections = document.querySelectorAll('.career-section, .collab-section');
 
 const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
+	entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('show');
+			observer.unobserve(entry.target);
+		}
+	});
 }, {
-  threshold: 0.5
+	threshold: 0.5
 });
 
 sections.forEach(section => {
-  observer.observe(section);
+	observer.observe(section);
 });
