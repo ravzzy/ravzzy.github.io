@@ -47,6 +47,71 @@ body {
 	/*background-color: #f1f1f1;*/
 }
 
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Ensure it takes full viewport height */
+    /*background: #000; *//* Dark background */
+	background: var(--secondary-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+    transition: opacity 0.5s ease;
+	text-align: center; /* Ensures text inside stays centered */
+
+}
+
+.loading-content {
+	display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    /*color: #fff; */
+	color: black;
+	width: 80vw; /* Adjust width to fit smaller screens */
+    max-width: 600px; /* Prevent too wide on larger screens */
+}
+
+.loading-text {
+    font-size: 2rem;
+	font-weight: 500;
+	text-transform: none;
+    /*font-family: 'Urbanist', sans-serif;*/
+	font-family: var(--body-text-font);
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 20vw;
+    height: 10px;
+    background: #444; /* Progress bar background */
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Ensures the progress bar is centered */	
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    /*background: #00ff88; */ /* Progress bar color */
+	background: var(--primary-background-color);
+   /* transition: width 0.3s ease;*/
+}
+
+/* Hide elements with the .hidden class */
+.hidden {
+    visibility: hidden !important; /* Hide element but preserve its space */
+}
+
+/* End Loading Screen Styles */
+
+
 section {
 	min-height: 100vh;
 }
@@ -724,6 +789,10 @@ section>.title {
 		/* Prevents horizontal scrolling */
 		touch-action: pan-y;
 		/* Ensures smooth vertical scrolling */
+	}
+
+	.progress-bar {
+		width: 40vw;
 	}
 
 	.Header-swimlane {

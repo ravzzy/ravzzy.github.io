@@ -26,33 +26,95 @@ function getImagePaths() {
 }
 getImagePaths();
 let imgs = [];
-function preloadImages() {
-	const promises = imgPaths.map((path) => {
-		return new Promise((resolve, reject) => {
-			const img = new Image();
-			img.src = path;
-			img.onload = () => resolve(img); // Resolve on successful load
-			img.onerror = () => {
-				console.error(`Failed to load image: ${path}`);
-				resolve(null); // Resolve with null instead of rejecting
-			};
-		});
-	});
+const progressBar = document.getElementById('progress');
+const loadingScreen = document.getElementById('loading-screen');
 
-	// Load all images in parallel
-	Promise.all(promises)
-		.then((loadedImages) => {
-			// Filter out null values (failed images)
-			imgs = loadedImages.filter((img) => img !== null);
-			console.log('All images preloaded successfully!');
-			console.log(`Loaded ${imgs.length} out of ${imgPaths.length} images.`);
-			render(); // Render the first frame after preloading
-		})
-		.catch((error) => {
-			console.error('Unexpected error during preloading:', error);
-		});
+// Function to hide elements during loading
+function hideElements() {
+    const elementsToHide = [
+        document.getElementById('topper'),
+        document.querySelector('.two'),
+        document.querySelector('.final'),
+        document.querySelector('.footer-branding')
+    ];
+
+    elementsToHide.forEach(element => {
+        if (element) {
+            element.classList.add('hidden');
+        }
+    });
 }
 
+// Function to unhide elements after loading
+function unhideElements() {
+    const elementsToUnhide = [
+        document.getElementById('topper'),
+        document.querySelector('.two'),
+        document.querySelector('.final'),
+        document.querySelector('.footer-branding')
+    ];
+
+    elementsToUnhide.forEach(element => {
+        if (element) {
+            element.classList.remove('hidden'); // Remove the .hidden class
+            element.style.visibility = 'visible'; // Explicitly set visibility
+            element.style.display = 'block'; // Or the appropriate display value
+        }
+    });
+}
+// Hide elements when the page starts loading
+hideElements();
+
+// Function to preload images and update progress
+function preloadImages() {
+    let loadedCount = 0;
+
+    const promises = imgPaths.map((path) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = path;
+            img.onload = () => {
+                loadedCount++;
+                updateProgress(loadedCount); // Update progress bar
+                resolve(img);
+            };
+            img.onerror = () => {
+                console.error(`Failed to load image: ${path}`);
+                resolve(null); // Resolve with null instead of rejecting
+            };
+        });
+    });
+
+    // Load all images in parallel
+    Promise.all(promises)
+        .then((loadedImages) => {
+            // Filter out null values (failed images)
+            imgs = loadedImages.filter((img) => img !== null);
+            console.log('All images preloaded successfully!');
+            console.log(`Loaded ${imgs.length} out of ${imgPaths.length} images.`);
+
+            // Hide loading screen and unhide elements
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.remove();
+                unhideElements(); // Unhide all elements
+                document.body.style.overflow = 'auto'; // Enable scrolling
+				                // Render the first frame after loading is complete
+				render();
+            }, 500); // Fade out duration
+        })
+        .catch((error) => {
+            console.error('Unexpected error during preloading:', error);
+        });
+}
+
+// Function to update the progress bar
+function updateProgress(loadedCount) {
+    const progressPercentage = (loadedCount / imgPaths.length) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+}
+
+// Start preloading images
 preloadImages();
 
 /*
