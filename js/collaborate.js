@@ -68,12 +68,29 @@ getImages();*/
 
 gsap.registerPlugin(ScrollTrigger);
 
+/*
 gsap.to(frame, {
 	frame: (FRAMES - initialFrame) - 1,
 	snap: 'frame',
 	scrollTrigger: {
 		start: 'top top',
 		end: '+=300%',
+		scrub: true,
+		invalidateOnRefresh: true, // Ensures it recalculates on resize
+	},
+	onUpdate: () => {
+		render();
+	},
+});*/
+
+gsap.to(frame, {
+	frame: (FRAMES - initialFrame) - 1,
+	snap: 'frame',
+	scrollTrigger: {
+		trigger: '.two', // Use a section before .final as the trigger
+		start: 'top top', // Start when the trigger hits the top of the viewport
+		endTrigger: '.final', // End when .final comes into view
+		end: 'top center', // End when the top of .final reaches the center of the viewport
 		scrub: true,
 		invalidateOnRefresh: true, // Ensures it recalculates on resize
 	},
@@ -163,7 +180,7 @@ gsap.to('.four', {
 gsap.to('.final', {
 	scrollTrigger: {
 		trigger: '.final',
-		start: 'top center',
+		start: 'top top',
 		end: '+=100%',
 		scrub: 1,
 		pin: true,
