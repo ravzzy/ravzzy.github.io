@@ -182,7 +182,7 @@ gsap.to(frame, {
     end: 'top center', // End when the top of .final reaches the center of the viewport
     scrub: 2, // Smooth animation scrubbing
     invalidateOnRefresh: true, // Ensures it recalculates on resize
-    markers: true, // Debug markers
+    //markers: true, // Debug markers
 	onLeave: () => {
 		lenis.destroy(); // Disable Lenis when the user scrolls past the end
 	  },
