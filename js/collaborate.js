@@ -171,6 +171,8 @@ gsap.ticker.add((time) => {
 // Disable GSAP's default scroll behavior
 gsap.ticker.lagSmoothing(0);
 
+if (!isMobilePortrait) {
+	console.log("gsap for landscape");
 // GSAP ScrollTrigger animation
 gsap.to(frame, {
   frame: (FRAMES - initialFrame) - 1,
@@ -191,6 +193,31 @@ gsap.to(frame, {
     render();
   },
 });
+} else {
+	console.log("gsap for portrait");
+	gsap.to(frame, {
+		frame: (FRAMES - initialFrame) - 1,
+		snap: 'frame',
+		scrollTrigger: {
+		  trigger: '.two', // Use a section before .final as the trigger
+		  start: 'top top', // Start when the trigger hits the top of the viewport
+		  endTrigger: '.final', // End when .final comes into view
+		  end: 'top center', // End when the top of .final reaches the center of the viewport
+		  scrub: 40, // Smooth animation scrubbing
+		  invalidateOnRefresh: true, // Ensures it recalculates on resize
+		  //markers: true, // Debug markers
+		  onLeave: () => {
+			  lenis.destroy(); // Disable Lenis when the user scrolls past the end
+			},
+		},
+		onUpdate: () => {
+		  render();
+		},
+	  });
+
+
+}
+
 
 // Function to render the image
 function render() {
