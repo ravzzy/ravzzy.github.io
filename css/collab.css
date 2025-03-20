@@ -112,9 +112,8 @@ body {
 /* End Loading Screen Styles */
 
 
-
-.two {
-	height: 500vh;
+section {
+	min-height: 100vh;
 }
 
 #canvas-collab {

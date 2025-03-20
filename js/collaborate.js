@@ -180,9 +180,9 @@ gsap.to(frame, {
     start: 'top top', // Start when the trigger hits the top of the viewport
     endTrigger: '.final', // End when .final comes into view
     end: 'top center', // End when the top of .final reaches the center of the viewport
-    scrub: 20, // Smooth animation scrubbing
+    scrub: 30, // Smooth animation scrubbing
     invalidateOnRefresh: true, // Ensures it recalculates on resize
-   // markers: true, // Debug markers
+    markers: true, // Debug markers
 	onLeave: () => {
 		lenis.destroy(); // Disable Lenis when the user scrolls past the end
 	  },
