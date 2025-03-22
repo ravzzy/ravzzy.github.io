@@ -3,7 +3,7 @@ fetch('vertical-ticker.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('Header-ticker-container').innerHTML = data;
-        console.log('vertical-ticker loaded?:\n\n', data);
+        //console.log('vertical-ticker loaded?:\n\n', data);
         // Now, reinitialize the ticker animation
         // Wait a bit for the DOM to fully update before initializing the animation
         setTimeout(() => {

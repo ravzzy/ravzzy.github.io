@@ -3,7 +3,7 @@ fetch('sidebar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('sidebar-container').innerHTML = data;
-        console.log('sidebar.html loaded?:\n\n', data);
+        //console.log('sidebar.html loaded?:\n\n', data);
 
         // After sidebar is loaded, add event listeners to the buttons
         const menuBtn = document.querySelector(".menu-btn");

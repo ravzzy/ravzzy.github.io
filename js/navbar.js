@@ -3,7 +3,7 @@ fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('navbar-container').innerHTML = data;
-        console.log('navbar.html loaded?:\n\n', data);
+        //console.log('navbar.html loaded?:\n\n', data);
         document.querySelector(".navbar").style.opacity = "1";
         // Now, reinitialize the shuffle animation
         initializeShuffleEffect();

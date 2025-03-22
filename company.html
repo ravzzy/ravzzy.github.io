@@ -1,0 +1,155 @@
+<!-- Author - ravzzy -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media & Blogs</title>
+	<link rel="stylesheet" href="./css/company.css">
+	<link rel="stylesheet" href="./css/vertical-ticker.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/navbar.css">
+
+	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
+	<link rel="preload" as="image" href="./images/favicon.ico">
+	<link rel="preload"
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap"
+		as="style" crossorigin="anonymous">
+	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" as="script">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
+		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer
+		integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="loading">
+	<div class="loader" id="loader">
+		<img src="./images/loading.webp" class="loader-img" alt="Loading">
+	</div>
+	<section class="topper" id="topper">
+		<div class="logo-wrapper">
+			<div class="logo-image"></div>
+		</div>
+		<!-- Transparent Navigation Menu -->
+		<div id="navbar-container"></div> <!-- Navbar will be inserted here -->
+	</section>
+	<!-- Menu on the right side of the home page for Mobile Only-->
+	<button class="menu-btn">☰</button>
+	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
+	<nav class="designer-footer">
+		<h1></h1>
+		<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
+	</nav>
+	<div id="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
+	<div class="Header-swimlane"></div>
+	<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
+	<div class="folder-tabs">
+		<div class="tab active" data-target="#section1" style="--file-color: #f1c47c;">Advisory Members</div>
+		<div class="tab" data-target="#section2" style="--file-color: #f1c47c;">About Us</div>
+		<div class="tab" data-target="#section3" style="--file-color: #f1c47c;">Founder Story</div>
+		<div class="tab" data-target="#section4" style="--file-color: #f1c47c;">Mission Vision</div>
+	</div>
+
+	<div id="section1" class="section active">
+		<div class="image-box"><img src="/images/doc8.png" alt="Image 8">
+			<h1>Dr Kewal Kishan Talwar</h1>
+			<p>Padma Bhushan Awardee, MBBS, MD (Medicine), DM (Cardiology), F.A.M.S, F.I.N.A, F.A.C.C, former chairman of the Medical Council of India, former head dept of cardiology
+				AIIMS, New Delhi & Director of the Post Graduate Institute of Medical Education and Research (PGIMER),
+				Chandigarh</p>
+		</div>
+		<div class="image-box"><img src="/images/doc1-1.png" alt="Image 1">
+			<h1 class="image-header">Dr. Pallab Ray</h1>
+			<p class="image-description">MBBS, MD Microbiology, DNB Professor (Retd.)
+				<br>Former Head of the Department,
+				Department of Medical Microbiology
+				PGIMER, Chandigarh
+			</p>
+		</div>
+		<div class="image-box"><img src="/images/doc2.png" alt="Image 2">
+			<h1>Dr. Mohinder Kaushal</h1>
+			<p>MBBS, DNB (Orthopaedics), MNAMS, FMISS (France)
+				<br>Chairman and Managing Director
+				<br>Trinity Hospital and Medical Research Institute, Zirakpur, Arthroscopy & Spinal Endoscopy Centre,
+				Chandigarh
+			</p>
+		</div>
+		<div class="image-box"><img src="/images/doc3.png" alt="Image 3">
+			<h1>Dr. Satinder Kaur</h1>
+			<p>PhD (Medical Microbiology), PGIMER Chandigarh
+				<br>Postdoctoral Fellow
+				<br>Ophthalmology Researcher
+				<br>Retina ganglion cell and optic nerve regeneration lab
+				Byers Eye Institute, Stanford University
+			</p>
+		</div>
+		<div class="image-box"><img src="/images/doc4.png" alt="Image 4">
+			<p>Description 4</p>
+		</div>
+		<div class="image-box"><img src="/images/doc5.png" alt="Image 5">
+			<p>Description 5</p>
+		</div>
+		<div class="image-box"><img src="/images/doc6.png" alt="Image 6">
+			<p>Description 6</p>
+		</div>
+		<div class="image-box"><img src="/images/doc7.png" alt="Image 7">
+			<p>Description 7</p>
+		</div>
+		<div class="image-box"><img src="images/doc9.png" alt="Image 9">
+			<p>Description 9</p>
+		</div>
+		<div class="image-box"><img src="/images/doc10.png" alt="Image 10">
+			<p>Description 10</p>
+		</div>
+		<div class="image-box"><img src="/images/doc11.png" alt="Image 11">
+			<p>Description 11</p>
+		</div>
+	</div>
+
+	<div id="section2" class="section" style="--file-color: #6B5B95;">
+		<div class="content">
+			<h1>Section 2</h1>
+			<p>This is the content of Section 2.</p>
+		</div>
+	</div>
+
+	<div id="section3" class="section" style="--file-color: #88B04B;">
+		<div class="content">
+			<h1>Section 3</h1>
+			<p>This is the content of Section 3.</p>
+		</div>
+	</div>
+
+	<div id="section4" class="section" style="--file-color: #F7CAC9;">
+		<div class="content">
+			<h1>Section 4</h1>
+			<p>This is the content of Section 4.</p>
+		</div>
+	</div>
+	<section class="final">
+		<div id="tile-container" class="tile-container"></div>
+		<footer class="footer-branding">
+			<p>2025 &copy; Rooting Research<sup>&trade;</sup></p>
+		</footer>
+	</section>
+	</div>
+	<script src="./js/loader.js" defer></script>
+	<script src="./js/navbar.js" defer></script>
+	<script src="./js/sidebar.js" defer></script>
+	<script src="./js/vertical-ticker.js" defer></script>
+	<script src="./js/company.js" defer></script>
+
+	<!-- Vanilla Tilt JS -->
+	<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+	<script>
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		};
+	</script>
+</body>
+
+</html>
