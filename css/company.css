@@ -616,7 +616,7 @@ section>.title {
 	text-align: center;
 	width: 100%;
 	/* Ensure images take full width of their container */
-	filter: grayscale(100%);
+	/*filter: grayscale(100%);*/
 	/* Make the image black and white by default */
 	max-width: 256px;
 	/* Limit image size */
@@ -632,7 +632,7 @@ section>.title {
 .image-box img:hover {
 	transform: scale(1.05);
 	/* Slightly enlarge on hover */
-	filter: grayscale(0%);
+	/*filter: grayscale(0%);*/
 	/* Restore original colors on hover */
 }
 
