@@ -796,7 +796,7 @@ body {
 .buffer-section {
 	position: relative;
 	min-height: 15vh;
-	background-color: var(--primary-background-color);
+	background-color: var(--secondary-background-color);
 	margin-left: 4.55dvw;
 	width: calc(100% - 4.55dvw);
 
