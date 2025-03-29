@@ -1129,13 +1129,13 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #e61618;
+	background: var(--primary-background-color);
 	z-index: 2;
 }
 
 
 p a {
-	color: #e61618;
+	color: var(--primary-background-color);
 	/* Change text color */
 	text-decoration: none;
 	/* Remove underline */
@@ -1251,7 +1251,7 @@ body.loading .loader {
 	inset: 0;
 	display: grid;
 	place-items: center;
-	background-color: #f1f1f1;
+	background-color: var(--secondary-background-color);
 }
 
 .loader img {
@@ -1261,7 +1261,7 @@ body.loading .loader {
 .avatars {
 	overflow-x: hidden;
 	position: relative;
-	background-color: white;
+	background-color: var(--nav-hover-color);
 }
 
 .avatars section .top {
@@ -1307,7 +1307,7 @@ section>.title {
 }
 
 .white-text {
-	color: white;
+	color: var(--nav-hover-color);
 	opacity: 0;
 	visibility: hidden;
 	/* Prevents clicks/interactions while hidden */
@@ -1321,7 +1321,7 @@ section>.title {
 	gap: 2rem;
 	border-radius: 0.75rem;
 	padding: 2rem;
-	background-color: #e61618;
+	background-color: var(--primary-background-color);
 	width: min(37rem, 100%);
 	height: 22rem;
 	transition: transform 0.2s ease-in-out;
