@@ -26,6 +26,7 @@ html {
 	--footer-text-color: black;
 	--primary-background-color: #6b2712;
 	--secondary-background-color: #f1f1f1;
+	--tile-background-color: #f1c47c;
 	--final-background-color: rgb(23, 16, 16);
 	--body-text-font: 'Noto Sans JP', sans-serif;
 	--header-text-font: "Bebas Neue", sans-serif;
@@ -85,28 +86,33 @@ body {
 	background-position: center;
 	width: 100%;
 }
+
 .page1-text-container {
-	text-align: center;
-	position: relative;
-	width: 70%;
+    text-align: center;               /* Horizontally centers the text */
+    position: relative;               /* So we can use 'position: absolute' or 'top' on the child */
+    width: 70%;
+    height: 100%; 
 }
+
 .shining-text {
 	font-size: 8rem;
 	opacity: 0.8;
 	text-transform: none;
 	font-weight: bold;
 	color: white;
-	background-image: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, white 50%, rgba(255,255,255,0.2) 100%);
+	background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, white 50%, rgba(255, 255, 255, 0.2) 100%);
 	background-size: 200% 100%;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: shine 10s linear 1 forwards;
 }
+
 @keyframes shine {
 	from {
 		background-position: 200% 50%;
 	}
+
 	to {
 		background-position: -200% 50%;
 	}
@@ -120,28 +126,25 @@ body {
 }
 
 .left-content-section {
-	padding-top: 5vh;
-	padding-bottom: 5vh;
-	min-height: 70vh;
-	height: auto;
+
 	/* Reset any inherited height */
 	background-color: var(--primary-background-color);
 	position: relative;
 	left: 3.55vw;
 	display: flex;
-	align-items: stretch;
+	align-items: center;
 	/* Ensure child elements stretch to match height of the section */
 	justify-content: space-between;
-	gap: 20px;
 	flex-wrap: wrap;
 	/* Allows wrapping on smaller screens */
 	width: 100%;
+	padding: 0;
+	/* Remove padding from section */
+
 	margin: 0 auto;
 }
 
 .left-section {
-	min-height: 70dvh;
-	height: auto;
 	/* Reset any inherited height */
 	display: flex;
 	align-items: center;
@@ -156,15 +159,15 @@ body {
 
 .left-text-box {
 	padding: 10px;
-	background-color: var(--secondary-background-color);
+	background-color: var(--tile-background-color);
 	border-radius: 0.5vw;
 	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	min-width: 60dvh;
 	max-width: 80dvh;
-	height: auto;
 	text-align: justify;
 	font-size: 1.3rem;
 }
@@ -173,8 +176,8 @@ body {
 	font-family: var(--body-text-font);
 	font-weight: 600;
 	font-size: 1.5em;
-	margin-top: 6vh;
-	margin-bottom: 6vh;
+	margin-top: 3vh;
+	margin-bottom: 3vh;
 	text-transform: none;
 	text-align: center;
 	z-index: 2;
@@ -185,8 +188,8 @@ body {
 	margin-inline: 10vh;
 	font-family: var(--body-text-font);
 	font-weight: 500;
-	margin-top: 5px;
-	margin-bottom: 1px;
+	margin-top: 1px;
+	padding-bottom: 5px;
 	z-index: 2;
 	text-transform: none;
 	line-height: 2;
@@ -206,8 +209,6 @@ body {
 
 /* The dividing line */
 .middle-divider {
-	margin-top: 2dvh;
-	margin-bottom: 1dvh;
 	position: absolute;
 	/* To position it relative to the section */
 	top: 0;
@@ -224,8 +225,7 @@ body {
 
 /* Right text styling */
 .right-section {
-	min-height: 70dvh;
-	height: auto;
+	height: 100%;
 	/* Reset any inherited height */
 	display: flex;
 	align-items: center;
@@ -243,6 +243,15 @@ body {
 	font-size: 5rem;
 	color: var(--secondary-background-color);
 	font-weight: 500;
+}
+
+.right-section-image {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	transform: scale(.8);
+	display: block;
+	z-index: 2;
 }
 
 .quote-section {
@@ -277,27 +286,22 @@ body {
 }
 
 .right-content-section {
-	padding-top: 5vh !important;
-	padding-bottom: 5vh !important;
-	min-height: 170vh;
-	height: auto;
 	/* Reset any inherited height */
 	background-color: var(--primary-background-color);
 	position: relative;
 	left: 3.55vw;
 	display: flex;
-	align-items: stretch;
+	align-items: center;
 	/* Ensure child elements stretch to match height of the section */
 	justify-content: space-between;
-	gap: 20px;
 	flex-wrap: wrap;
 	/* Allows wrapping on smaller screens */
 	width: 100%;
 	margin: 0 auto;
+	padding: 0;
 }
 
 .right-section-2 {
-	min-height: 100%;
 	height: auto;
 	/* Reset any inherited height */
 	display: flex;
@@ -312,14 +316,15 @@ body {
 }
 
 .right-text-box {
-	padding: 10px;
-	background-color: var(--secondary-background-color);
+	padding: 1px;
+	background-color: var(--tile-background-color);
 	border-radius: 0.5vw;
 	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	/* Align items to the top */
+	min-width: 60dvh;
 	max-width: 80dvh;
 	height: auto;
 	font-size: 1.3rem;
@@ -336,8 +341,8 @@ body {
 	font-family: var(--body-text-font);
 	font-size: 1.5em;
 	font-weight: 600;
-	margin-top: 6vh;
-	margin-bottom: 6vh;
+	margin-top: 3vh;
+	margin-bottom: 3vh;
 	text-align: center;
 	text-transform: none;
 	z-index: 2;
@@ -392,6 +397,19 @@ body {
 	font-size: 5rem;
 	color: var(--secondary-background-color);
 	font-weight: 500;
+}
+
+.left-section-image {
+	padding: 0;
+	width: 100%;
+	height: auto;
+	transform: scale(0.8);
+	display: block;
+	/* Ensure the image behaves like a block element */
+	margin: 0 auto;
+	/* Centers the image horizontally */
+	z-index: 2;
+
 }
 
 
@@ -778,9 +796,9 @@ body {
 .buffer-section {
 	position: relative;
 	min-height: 15vh;
-	background-color: var(--secondary-background-color);
-	left: 4.6vw;
-	width: calc(100% - 4.6vw);
+	background-color: var(--primary-background-color);
+	margin-left: 4.55dvw;
+	width: calc(100% - 4.55dvw);
 
 }
 
@@ -915,8 +933,8 @@ body {
 
 
 	.buffer-section {
-		left: 8.4vw;
-		width: calc(100% - 8.4vw);
+		left: 6.4vw;
+		width: calc(100% - 6.4vw);
 		min-height: 10vh;
 	}
 
@@ -961,6 +979,7 @@ body {
 		margin: 0%;
 		display: flex;
 		justify-content: center;
+		padding-left: 5.5vw;
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
@@ -976,7 +995,6 @@ body {
 		font-size: 2.8rem;
 	}
 
-
 	.left-section {
 		padding-bottom: 10%;
 		display: flex;
@@ -989,6 +1007,10 @@ body {
 		position: relative;
 		margin-left: 7dvw;
 		max-width: 80dvw;
+	}
+
+	.left-text-box, .right-text-box {
+		min-width: 0;
 	}
 
 	.left-section h2 {
@@ -1051,6 +1073,7 @@ body {
 		padding-bottom: 5%;
 		display: flex;
 		justify-content: center;
+		padding-left: 5.5vw;
 		/* Center horizontally */
 		align-items: center;
 		/* Center vertically */
@@ -1074,7 +1097,7 @@ body {
 		flex-direction: column;
 		/* Stack content vertically */
 		justify-content: flex-start;
-		min-height: 90vh;
+		min-height: 0;
 		height: auto;
 		flex: 1;
 		position: relative;
@@ -1187,23 +1210,30 @@ section {
 }
 
 .blogs {
-    place-items: center;
+	place-items: center;
 }
-.blog-header{
-    text-align: center;
+
+.blog-header {
+	text-align: center;
+	font-family: var(--header2-text-font);
+    font-weight: 300;
+    font-size: 5rem;
 }
 
 .tile-container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	max-width: 80vw; /* Ensures it doesn’t stretch too much */
+	max-width: 80vw;
+	/* Ensures it doesn’t stretch too much */
 	gap: 40px;
 	padding: 50px;
 	align-items: center;
 	align-content: center;
-    margin: 0 auto; /* This centers the grid horizontally */
+	margin: 0 auto;
+	/* This centers the grid horizontally */
 
 }
+
 .tile {
 	background-color: #f1c47c;
 	padding: 20px;
@@ -1215,12 +1245,14 @@ section {
 	cursor: pointer;
 	transform-style: preserve-3d;
 }
+
 .tile img {
 	width: 100%;
 	height: 180px;
 	object-fit: cover;
 	border-radius: 12px;
 }
+
 .tile h3 {
 	font-family: var(--body-text-font);
 	text-transform: none;
@@ -1228,6 +1260,7 @@ section {
 	color: #333;
 	margin-top: 15px;
 }
+
 .tile p {
 	font-size: 14px;
 	color: #666;
@@ -1238,6 +1271,7 @@ section {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
 .tile a {
 	color: var(--primary-background-color);
 	font-weight: bold;
@@ -1245,8 +1279,10 @@ section {
 	display: inline-block;
 	margin-top: 10px;
 }
+
 .tile a:hover {
-	text-decoration: none;  /* Ensure no underline on hover */
+	text-decoration: none;
+	/* Ensure no underline on hover */
 }
 
 /* Hover effect for tiles */
@@ -1259,6 +1295,7 @@ section {
 	padding-bottom: 3vh;
 	text-align: center;
 }
+
 .roadmap {
 	min-height: 0;
 }
@@ -1556,7 +1593,7 @@ footer>div:not(.socials) {
 
 .founder-description-box {
 	padding: 30px;
-	background-color: var(--secondary-background-color);
+	background-color: var(--tile-background-color);
 	border-radius: 0.5vw;
 	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	display: flex;
@@ -1682,6 +1719,22 @@ footer>div:not(.socials) {
 
 	}
 
+	.page1-section{
+		min-height: 100vh;
+		max-height: 100vh;
+	}
+
+	.page1-text-container{
+		top: -30vh !important;
+		left: 50%;
+		transform: translateX(-50%);  /* This will center it horizontally */
+	}
+
+	.shining-text {
+
+        font-size: 4rem; /* Adjust font size if necessary */
+    }
+
 	.background-video {
 		display: block;
 		/* Show the video on mobile devices */
@@ -1712,6 +1765,12 @@ footer>div:not(.socials) {
 		height: 5vh;
 	}
 
+	.blog-header {
+		width: 100%;
+		font-size: 2.8rem;
+		margin-left: 10vw;
+
+	}
 
 	.fat {
 		/* founder name */
