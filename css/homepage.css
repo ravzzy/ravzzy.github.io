@@ -1,7 +1,9 @@
 /* Author - ravzzy */
 @font-face {
-    font-family: 'Lucidity Expand'; /* Define a name for your font */
-    src: url('../fonts/lucidity-expand.ttf') format('truetype'); /* Path to your TTF font */
+	font-family: 'Lucidity Expand';
+	/* Define a name for your font */
+	src: url('../fonts/lucidity-expand.ttf') format('truetype');
+	/* Path to your TTF font */
 }
 
 * {
@@ -22,7 +24,7 @@ html {
 	--nav-text-color: black;
 	--nav-hover-color: white;
 	--footer-text-color: black;
-	--primary-background-color: #e61618;
+	--primary-background-color: #6b2712;
 	--secondary-background-color: #f1f1f1;
 	--final-background-color: rgb(23, 16, 16);
 	--body-text-font: 'Noto Sans JP', sans-serif;
@@ -74,81 +76,41 @@ body {
 	z-index: 5;
 }
 
-.header-section {
+.page1-section {
 	display: flex;
-	flex-direction: row; /* Side by side layout for desktop */
-	justify-content: space-between; /* Space out the text and image */
-	align-items: center; /* Vertically center both text and image */
+	background-image: url(/images/homepage-background.png);
+	background-size: cover;
+	margin-left: 7vh;
+	justify-content: center;
+	background-position: center;
 	width: 100%;
-	min-height: 91vh; /* Ensure section takes enough height */
-	max-height: 91vh;
-	margin: 0 auto;
-	padding: 0 10vh; /* Add padding to the sides for some space */
-	box-sizing: border-box; /* Ensure padding doesn't affect the layout */
 }
-
-.header-text-container {
-
-	width: 30%; /* The text container will take 30% of the width */
-	font-family: var(--body-text-font);
-	background-color: var(--secondary-background-color);
-	color: var(--primary-background-color);
-	display: flex;
-	flex-direction: column; /* Stack the text vertically */
-	justify-content: center; /* Vertically center the text */
-	align-items: flex-start; /* Align text to the left */
-	padding: 0 15vh; /* Add padding inside the text container */
-	text-transform: none !important;
-
-  }
-  
-  .header-text-container h1, .header-text-container h2, .header-text-container h3, .header-text-container h4, .header-text-container h5 {
-	font-size: 6rem;
-	font-weight: 500;	
-	margin: 0; /* Remove default margins */
-	  opacity: 0; /* Initially hidden */
-	  transform: translateY(30px); /* Start slightly lower */
-	  animation: fadeInUp 1s ease-out forwards;
-  }
-  
-  /* Delays for each element */
-  .header-text-container h1 { animation-delay: 0.2s; }
-  .header-text-container h2 { animation-delay: 0.4s; }
-  .header-text-container h3 { animation-delay: 0.6s; }
-  .header-text-container h4 { animation-delay: 0.8s; }
-  .header-text-container h5 { animation-delay: 1s; }
-  
-  /* Keyframes for animation */
-  @keyframes fadeInUp {
-	  0% {
-		  opacity: 0;
-		  transform: translateY(30px);
-	  }
-	  100% {
-		  opacity: 1;
-		  transform: translateY(0);
-	  }
-  }
-  /* The image container takes up the other 50% */
-  .header-image-container {
-
-	width: 70%; /* The image container will take 70% of the width */
-	display: flex;
-	padding-left: 10vh;
-	justify-content: flex-end; /* Align image to the right */
-	align-items: center; /* Vertically center the image */
-	padding-right: 0; /* Add some padding to the right */
-
-  }
-  
-  /* Ensure the image resizes properly */
-  .header-image {
-	transform: scale(0.5);
-	max-width: 100%; /* Prevent image from overflowing */
-	height: auto;  /* Maintain aspect ratio */
-  }
-
-/*test code start*/
+.page1-text-container {
+	text-align: center;
+	position: relative;
+	width: 70%;
+}
+.shining-text {
+	font-size: 8rem;
+	opacity: 0.8;
+	text-transform: none;
+	font-weight: bold;
+	color: white;
+	background-image: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, white 50%, rgba(255,255,255,0.2) 100%);
+	background-size: 200% 100%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 10s linear 1 forwards;
+}
+@keyframes shine {
+	from {
+		background-position: 200% 50%;
+	}
+	to {
+		background-position: -200% 50%;
+	}
+}
 
 .topper {
 	max-height: 100vh;
@@ -156,6 +118,7 @@ body {
 	min-height: 9vh;
 	background-color: var(--secondary-background-color);
 }
+
 .left-content-section {
 	padding-top: 5vh;
 	padding-bottom: 5vh;
@@ -219,7 +182,7 @@ body {
 }
 
 .left-section p {
-	margin-inline: 15vh;
+	margin-inline: 10vh;
 	font-family: var(--body-text-font);
 	font-weight: 500;
 	margin-top: 5px;
@@ -236,7 +199,7 @@ body {
 	height: auto;
 	max-width: 100%;
 	transform: scale(0.8);
-    display: block;
+	display: block;
 	z-index: 2;
 }
 
@@ -306,9 +269,10 @@ body {
 	text-align: center;
 	font-size: 2rem;
 	color: var(--secondary-background-color);
-	top:50%;
+	top: 50%;
 	text-transform: none;
-	transform: translateY(-50%) translateX(-50%); /* Adjust the position back to center it */
+	transform: translateY(-50%) translateX(-50%);
+	/* Adjust the position back to center it */
 	left: 50%;
 }
 
@@ -354,11 +318,13 @@ body {
 	box-shadow: 0 1vw 1vw rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start; /* Align items to the top */
+	justify-content: flex-start;
+	/* Align items to the top */
 	max-width: 80dvh;
 	height: auto;
 	font-size: 1.3rem;
-	text-align: justify; /* Ensures the paragraphs are aligned left */
+	text-align: justify;
+	/* Ensures the paragraphs are aligned left */
 
 }
 
@@ -379,14 +345,15 @@ body {
 }
 
 .right-section-2 p {
-	margin-inline: 15vh;
+	margin-inline: 10vh;
 	font-family: var(--body-text-font);
 	line-height: 2;
 	font-weight: 500;
 	text-transform: none;
 	font-size: 1.5rem;
 	margin-top: 10px;
-	text-align: justify; /* Ensure text is left-aligned */
+	text-align: justify;
+	/* Ensure text is left-aligned */
 	z-index: 2;
 
 }
@@ -397,8 +364,10 @@ body {
 	width: 100%;
 	height: auto;
 	transform: scale(0.8);
-	display: block; /* Ensure the image behaves like a block element */
-	margin: 0 auto; /* Centers the image horizontally */
+	display: block;
+	/* Ensure the image behaves like a block element */
+	margin: 0 auto;
+	/* Centers the image horizontally */
 	z-index: 2;
 
 }
@@ -428,10 +397,10 @@ body {
 
 /* right section floating keywords */
 .floating-keyword-7 {
-    right: 10%;
-    animation: moveKeyword-7 60s infinite linear;
-    transform: rotate(-10deg);
-    animation-delay: 0s;
+	right: 10%;
+	animation: moveKeyword-7 60s infinite linear;
+	transform: rotate(-10deg);
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -447,8 +416,8 @@ body {
 
 	}
 
-	12.25%{
-		top:100%;
+	12.25% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -468,10 +437,10 @@ body {
 
 
 .floating-keyword-1 {
-    right: 20%;
-    animation: moveKeyword-1 60s infinite linear;
-    transform: rotate(10deg);
-    animation-delay: 0s;
+	right: 20%;
+	animation: moveKeyword-1 60s infinite linear;
+	transform: rotate(10deg);
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -487,8 +456,8 @@ body {
 
 	}
 
-	27.55%{
-		top:100%;
+	27.55% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -507,8 +476,8 @@ body {
 }
 
 .floating-keyword-2 {
-    right: 25%;
-    animation: moveKeyword-2 60s infinite linear;
+	right: 25%;
+	animation: moveKeyword-2 60s infinite linear;
 	animation-delay: 0s;
 
 }
@@ -526,8 +495,8 @@ body {
 
 	}
 
-	53.05%{
-		top:100%;
+	53.05% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -547,9 +516,9 @@ body {
 
 
 .floating-keyword-8 {
-    right: 10%;
-    animation: moveKeyword-8 60s infinite linear;
-    transform: rotate(20deg);
+	right: 10%;
+	animation: moveKeyword-8 60s infinite linear;
+	transform: rotate(20deg);
 	animation-delay: 0s;
 
 }
@@ -567,8 +536,8 @@ body {
 
 	}
 
-	78.55%{
-		top:100%;
+	78.55% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -589,9 +558,9 @@ body {
 
 .floating-keyword-3 {
 
-    right: 25%;
-    animation: moveKeyword-3 60s infinite linear;
-    animation-delay: 0s;
+	right: 25%;
+	animation: moveKeyword-3 60s infinite linear;
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -613,9 +582,9 @@ body {
 
 
 .floating-keyword-9 {
-    left: 10%;
-    animation: moveKeyword-9 60s infinite linear;
-    animation-delay: 0s;
+	left: 10%;
+	animation: moveKeyword-9 60s infinite linear;
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -631,8 +600,8 @@ body {
 
 	}
 
-	7.15%{
-		top:100%;
+	7.15% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -654,9 +623,9 @@ body {
 
 .floating-keyword-4 {
 
-    left: 30%;
-    animation: moveKeyword-4 60s infinite linear;
-    animation-delay: 0s;
+	left: 30%;
+	animation: moveKeyword-4 60s infinite linear;
+	animation-delay: 0s;
 
 }
 
@@ -673,8 +642,8 @@ body {
 
 	}
 
-	17.35%{
-		top:100%;
+	17.35% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -695,10 +664,10 @@ body {
 
 .floating-keyword-10 {
 
-    left: 20%;
-    animation: moveKeyword-10 60s infinite linear;
-    transform: rotate(20deg);
-    animation-delay: 0s;
+	left: 20%;
+	animation: moveKeyword-10 60s infinite linear;
+	transform: rotate(20deg);
+	animation-delay: 0s;
 
 }
 
@@ -715,8 +684,8 @@ body {
 
 	}
 
-	47.95%{
-		top:100%;
+	47.95% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -739,9 +708,9 @@ body {
 
 .floating-keyword-5 {
 
-    left: 20%;
-    animation: moveKeyword-5 80s infinite linear;
-    animation-delay: 0s;
+	left: 20%;
+	animation: moveKeyword-5 80s infinite linear;
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -757,8 +726,8 @@ body {
 
 	}
 
-	78.55%{
-		top:100%;
+	78.55% {
+		top: 100%;
 		opacity: 0;
 	}
 
@@ -779,9 +748,9 @@ body {
 
 .floating-keyword-6 {
 
-    left: 30%;
-    animation: moveKeyword-6 120s infinite linear;
-    animation-delay: 0s;
+	left: 30%;
+	animation: moveKeyword-6 120s infinite linear;
+	animation-delay: 0s;
 }
 
 /* Animation to move the keyword vertically with tilt and blur */
@@ -815,24 +784,34 @@ body {
 
 }
 
-.right-text-box, .right-section-text,.buffer-section, .left-text-box,.left-section-text {
+.right-text-box,
+.right-section-text,
+.buffer-section,
+.left-text-box,
+.left-section-text {
 	z-index: 3;
 }
 
-.floating-keyword-1, .floating-keyword-2,
-.floating-keyword-3, .floating-keyword-4,
-.floating-keyword-5, .floating-keyword-6,
-.floating-keyword-7, .floating-keyword-8,
-.floating-keyword-9, .floating-keyword-10 {
+.floating-keyword-1,
+.floating-keyword-2,
+.floating-keyword-3,
+.floating-keyword-4,
+.floating-keyword-5,
+.floating-keyword-6,
+.floating-keyword-7,
+.floating-keyword-8,
+.floating-keyword-9,
+.floating-keyword-10 {
 
 	position: absolute;
-    font-family: var(--body-text-font);
-    font-size: 4rem;
+	font-family: var(--body-text-font);
+	font-size: 4rem;
 	text-transform: none;
-    font-weight: 600;
-    color: black;
-    filter: blur(4px);
-	pointer-events: none; /* Ensure it doesn't interfere */
+	font-weight: 600;
+	color: black;
+	filter: blur(4px);
+	pointer-events: none;
+	/* Ensure it doesn't interfere */
 	z-index: 1;
 
 
@@ -873,23 +852,27 @@ body {
 		background-color: var(--secondary-background-color);
 	}
 
-	.header-section {
+	.page1-section {
 		flex-direction: column-reverse;
 		margin-left: 2vh;
 		max-height: 95vh;
-		min-height: 75vh; /* Allow the section to adjust its height */
-		padding: 0; /* Reduce padding for smaller screens */
+		min-height: 75vh;
+		/* Allow the section to adjust its height */
+		padding: 0;
+		/* Reduce padding for smaller screens */
 
 	}
-	
-	  /* Image container (on mobile, image will be at the top) */
-	  .header-image-container {
+
+	/* Image container (on mobile, image will be at the top) */
+	.header-image-container {
 		position: relative;
 		top: 0;
 		height: 25vh;
 		padding-left: 2vh;
-		align-items: flex-end; /* Ensure the content aligns to the top */
-        width: 90%; /* Image container takes 100% width */
+		align-items: flex-end;
+		/* Ensure the content aligns to the top */
+		width: 90%;
+		/* Image container takes 100% width */
 		background-image: url('../images/globe_video.gif');
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -901,43 +884,52 @@ body {
 		max-height: 100%;
 		object-fit: contain;
         transform: scale(0.6);
-        height: auto; */ /* Maintain aspect ratio */
+        height: auto; */
+		/* Maintain aspect ratio */
 		display: none;
-	  }
-	
-	  /* Text container on mobile */
-	  .header-text-container {
+	}
+
+	/* Text container on mobile */
+	.header-text-container {
 		position: relative;
 		height: 65vh;
 		padding-top: 12vh;
-		align-items: flex-start; /* Ensure the content aligns to the top */
-		width: 100%; /* Text takes full width on mobile */
+		align-items: flex-start;
+		/* Ensure the content aligns to the top */
+		width: 100%;
+		/* Text takes full width on mobile */
 		padding-left: 7vh;
 		justify-content: start;
 		background-color: var(--secondary-background-color);
-	  }
-	
-	  .header-text-container h1, 
-	  .header-text-container h2, 
-	  .header-text-container h3, 
-	  .header-text-container h4, 
-	  .header-text-container h5 {
-		font-size: 5rem; /* Smaller font size for mobile */
-	  }
+	}
 
-	  
+	.header-text-container h1,
+	.header-text-container h2,
+	.header-text-container h3,
+	.header-text-container h4,
+	.header-text-container h5 {
+		font-size: 5rem;
+		/* Smaller font size for mobile */
+	}
 
-	  .buffer-section {
+
+
+	.buffer-section {
 		left: 8.4vw;
 		width: calc(100% - 8.4vw);
 		min-height: 10vh;
-	  }
+	}
 
-	  .floating-keyword-1, .floating-keyword-2,
-	  .floating-keyword-3, .floating-keyword-4, 
-	  .floating-keyword-5, .floating-keyword-6,
-	  .floating-keyword-7, .floating-keyword-8,
-	  .floating-keyword-9, .floating-keyword-10 {
+	.floating-keyword-1,
+	.floating-keyword-2,
+	.floating-keyword-3,
+	.floating-keyword-4,
+	.floating-keyword-5,
+	.floating-keyword-6,
+	.floating-keyword-7,
+	.floating-keyword-8,
+	.floating-keyword-9,
+	.floating-keyword-10 {
 		font-size: 3rem;
 		filter: blur(3px);
 
@@ -970,7 +962,7 @@ body {
 		display: flex;
 		justify-content: center;
 		/* Center horizontally */
-		align-items: center;	
+		align-items: center;
 		/* Center vertically */
 		min-height: 0;
 		height: auto;
@@ -1010,9 +1002,10 @@ body {
 	}
 
 
-	
+
 	.left-text-box img {
-		transform: scale(0.8);		/* Make the image smaller on smaller screens */
+		transform: scale(0.8);
+		/* Make the image smaller on smaller screens */
 		/* Make the image smaller on smaller screens */
 	}
 
@@ -1099,10 +1092,11 @@ body {
 	.right-section-2 p {
 		margin-inline: 3vh;
 	}
-	
+
 
 	.right-text-box img {
-		transform: scale(0.9);		/* Make the image smaller on smaller screens */
+		transform: scale(0.9);
+		/* Make the image smaller on smaller screens */
 	}
 
 }
@@ -1192,6 +1186,79 @@ section {
 	min-height: 100dvh;
 }
 
+.blogs {
+    place-items: center;
+}
+.blog-header{
+    text-align: center;
+}
+
+.tile-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	max-width: 80vw; /* Ensures it doesn’t stretch too much */
+	gap: 40px;
+	padding: 50px;
+	align-items: center;
+	align-content: center;
+    margin: 0 auto; /* This centers the grid horizontally */
+
+}
+.tile {
+	background-color: #f1c47c;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	transform-style: preserve-3d;
+}
+.tile img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 12px;
+}
+.tile h3 {
+	font-family: var(--body-text-font);
+	text-transform: none;
+	font-size: 18px;
+	color: #333;
+	margin-top: 15px;
+}
+.tile p {
+	font-size: 14px;
+	color: #666;
+	margin-top: 10px;
+	display: -webkit-box;
+	--webkit-line-clamp: 2;
+	/* Limit to two lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.tile a {
+	color: var(--primary-background-color);
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+}
+.tile a:hover {
+	text-decoration: none;  /* Ensure no underline on hover */
+}
+
+/* Hover effect for tiles */
+.tile:hover {
+	transform: scale(1.05) rotateY(10deg);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.footer-branding {
+	padding-bottom: 3vh;
+	text-align: center;
+}
 .roadmap {
 	min-height: 0;
 }
@@ -1204,7 +1271,7 @@ section {
 
 .thin {
 	font-family: var(--header-text-font);
-	text-transform: none;	
+	text-transform: none;
 	font-size: 2rem;
 	font-weight: 300;
 }
@@ -1396,9 +1463,9 @@ footer>div:not(.socials) {
 	align-items: center;
 	/* Centers text vertically */
 	margin-inline: auto;
-    color: black;
+	color: black;
 	text-decoration: none;
-    border: 2px solid white;
+	border: 2px solid white;
 	background-color: white;
 	padding: 8px 30px;
 	/* Adjusted padding for better text balance */
@@ -1412,11 +1479,10 @@ footer>div:not(.socials) {
 	/* Ensures some width */
 }
 
-.btn:hover
-{
-    background-color: rgb(23, 16, 16);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
+.btn:hover {
+	background-color: rgb(23, 16, 16);
+	color: rgb(255, 255, 255);
+	cursor: pointer;
 }
 
 
@@ -1500,7 +1566,8 @@ footer>div:not(.socials) {
 	justify-content: center;
 	text-align: justify;
 	font-size: 1.3rem;
-	margin: 0 auto; /* This will center the box horizontally */
+	margin: 0 auto;
+	/* This will center the box horizontally */
 
 }
 
@@ -1512,18 +1579,19 @@ footer>div:not(.socials) {
 		overflow-x: hidden !important;
 	}
 
-	html, body {
+	html,
+	body {
 		width: 100%;
 		max-width: 100%;
 		overflow-x: hidden;
-	  }
+	}
 
 	.text-spin {
 		left: -250%;
 		font-size: 8rem;
 	}
 
-	
+
 
 	.socials {
 		flex-direction: row;
@@ -1578,7 +1646,7 @@ footer>div:not(.socials) {
 		justify-content: start;
 	}
 
-	
+
 
 }
 
@@ -1615,8 +1683,9 @@ footer>div:not(.socials) {
 	}
 
 	.background-video {
-        display: block; /* Show the video on mobile devices */
-    }
+		display: block;
+		/* Show the video on mobile devices */
+	}
 
 	.header-image {
 		display: none;
@@ -1777,7 +1846,7 @@ footer>div:not(.socials) {
 		padding-bottom: 3vh;
 		margin-left: 9vw;
 		text-align: center;
-	}	
+	}
 
 	.vertical-line {
 		display: none !important;
