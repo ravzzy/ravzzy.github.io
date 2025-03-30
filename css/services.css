@@ -144,8 +144,8 @@ h1 {
 }
 
 .icon {
-	font-weight: bold;
-	font-size: 20px;
+	font-weight:400;
+	font-size: 25px;
 	transition: transform 0.3s;
 }
 
