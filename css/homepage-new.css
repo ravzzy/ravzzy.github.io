@@ -126,7 +126,7 @@ p {
 
 }
 
-li {
+.services-list {
 	font-family: var(--section-p-text-font);
 	text-transform: none !important;
 	font-size: 2rem;
@@ -221,7 +221,7 @@ li {
 
 /* Sections */
 .section {
-	padding: 100px 0;
+	padding: 40px 0;
 	position: relative;
 }
 
@@ -336,6 +336,7 @@ li {
 
 .feature {
 	background: white;
+	color: black;
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
