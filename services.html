@@ -13,11 +13,12 @@
 
 	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
 	<link rel="preload" as="image" href="./images/favicon.ico">
-	<link rel="stylesheet" 
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap"
-	crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap"
+		crossorigin="anonymous">
 	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 	<link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" as="script">
+	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
 		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -41,147 +42,171 @@
 	<!-- Menu on the right side of the home page for Mobile Only-->
 	<button class="menu-btn">☰</button>
 	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
-		<nav class="designer-footer">
-			<h1></h1>
-			<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
-		</nav>
-		<canvas id="canvas"> </canvas>
-		<div id ="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
-		<div class="Header-swimlane"></div>
-		<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
-		<section class="final">
-			<h1>Transform Your Business with Our Expert Services</h1>
-			<div class="accordion">
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Strategic Asset Prioritization</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
+	<nav class="designer-footer">
+		<h1></h1>
+		<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
+	</nav>
+	<canvas id="canvas"> </canvas>
+	<div id="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
+	<div class="Header-swimlane"></div>
+	<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
+	<!-- Floating particles background -->
+	<div id="particles-js"></div>
+	<section class="final">
+		<h1>Transform Your Business with Our Expert Services</h1>
+		<div class="accordion">
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Strategic Asset Prioritization</span>
+					<span class="icon">&#8853;</span>
 				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Biostatics & Trial Design</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">HTA & Market Access Strategy</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Evidence Synthesis & Meta-Analysis</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Economic Modeling & Value Assessment</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Medical & Scientific Communications</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Data Visualization & Dashboarding</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Stakeholders, KoL & Patient Engagement</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>	
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Cross-Sectional Surveys</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
-				</div>	
-				<div class="item" onclick="toggleItem(this)">
-					<div class="title">
-						<span class="heading">Pharmacovigilance</span>
-						<span class="icon">&#8853;</span>
-					</div>
-					<div class="content">
-						<p>Content to be added</p>
-					</div>
+				<div class="content">
+					<p>Content to be added</p>
 				</div>
 			</div>
-			<footer class="footer-branding">
-				<p>2025 &copy; Rooting Research<sup>&trade;</sup></p>
-			</footer>
-		</section>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Biostatics & Trial Design</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">HTA & Market Access Strategy</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Evidence Synthesis & Meta-Analysis</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<!--<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Economic Modeling & Value Assessment</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Medical & Scientific Communications</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Data Visualization & Dashboarding</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Stakeholders, KoL & Patient Engagement</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Cross-Sectional Surveys</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div>
+			<div class="item" onclick="toggleItem(this)">
+				<div class="title">
+					<span class="heading">Pharmacovigilance</span>
+					<span class="icon">&#8853;</span>
+				</div>
+				<div class="content">
+					<p>Content to be added</p>
+				</div>
+			</div> -->
+		</div>
+		<footer class="footer-branding">
+			<p>2025 &copy; Rooting Research<sup>&trade;</sup></p>
+		</footer>
+	</section>
 	</div>
 	<script src="./js/loader.js" defer></script>
 	<script src="./js/navbar.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
 	<script src="./js/vertical-ticker.js" defer></script>
 	<script>
-        function toggleItem(item) {
-            let content = item.querySelector(".content");
-            let icon = item.querySelector(".icon");
-            let allItems = document.querySelectorAll(".item");
+		// Initialize particles.js background
+		document.addEventListener('DOMContentLoaded', () => {
+			particlesJS('particles-js', {
+				particles: {
+					number: { value: 80, density: { enable: true, value_area: 800 } },
+					color: { value: "#6b2712" },
+					shape: { type: "circle" },
+					opacity: { value: 0.5, random: true },
+					size: { value: 3, random: true },
+					line_linked: { enable: true, distance: 150, color: "#6b2712", opacity: 0.3, width: 1 },
+					move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+				},
+				interactivity: {
+					detect_on: "canvas",
+					events: {
+						onhover: { enable: true, mode: "grab" },
+						onclick: { enable: true, mode: "push" }
+					}
+				}
+			});
+		});
+	</script>
+	<script>
+		function toggleItem(item) {
+			let content = item.querySelector(".content");
+			let icon = item.querySelector(".icon");
+			let allItems = document.querySelectorAll(".item");
 
-            // Close all items except the clicked one
-            allItems.forEach((i) => {
-                if (i !== item) {
-                    i.classList.remove("active");
-                }
-            });
+			// Close all items except the clicked one
+			allItems.forEach((i) => {
+				if (i !== item) {
+					i.classList.remove("active");
+				}
+			});
 
-            // Toggle the clicked item
-            item.classList.toggle("active");
-        }
+			// Toggle the clicked item
+			item.classList.toggle("active");
+		}
 
-        // Auto-close when clicking outside
-        document.addEventListener("click", function(event) {
-            let accordion = document.querySelector(".accordion");
-            if (!accordion.contains(event.target)) {
-                document.querySelectorAll(".item").forEach(item => item.classList.remove("active"));
-            }
-        });
-    </script>
+		// Auto-close when clicking outside
+		document.addEventListener("click", function (event) {
+			let accordion = document.querySelector(".accordion");
+			if (!accordion.contains(event.target)) {
+				document.querySelectorAll(".item").forEach(item => item.classList.remove("active"));
+			}
+		});
+	</script>
 	<script>
 		window.onbeforeunload = function () {
 			window.scrollTo(0, 0);
 		};
 	</script>
 </body>
-
 </html>
