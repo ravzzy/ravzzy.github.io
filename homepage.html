@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Media & Blogs</title>
+	<title>Rooting Research | Home</title>
 	<link rel="stylesheet" href="./css/homepage-new.css">
 	<link rel="stylesheet" href="./css/vertical-ticker.css">
 	<link rel="stylesheet" href="./css/sidebar.css">
@@ -145,26 +145,49 @@
 		</div>
 	</section>
 	<!-- Blog Section -->
-<section class="section section-dark" id="blog">
-    <div class="container">
-        <div class="section-title">
-            <h2>Latest From Our Blog</h2>
-        </div>
-        <div class="blog-posts">
-            <!-- Loading state (will be replaced by JavaScript) -->
-            <div class="loading-message">
-                <p>Loading latest articles...</p>
-            </div>
-        </div>
-    </div>
-</section>
-	<section class="final">
-		<h1>Breaking Ideas, Shaping Conversations</h1>
-		<div id="tile-container" class="tile-container"></div>
-		<footer class="footer-branding">
-			<p>2025 &copy; Rooting Research<sup>&trade;</sup></p>
-		</footer>
+	<section class="section section-dark" id="blog">
+		<div class="container">
+			<div class="section-title">
+				<h2>Latest From Our Blog</h2>
+			</div>
+			<div class="blog-posts">
+				<!-- Loading state (will be replaced by JavaScript) -->
+				<div class="loading-message">
+					<p>Loading latest articles...</p>
+				</div>
+			</div>
+		</div>
 	</section>
+	<!-- Founder Section -->
+	<section class="section" id="founder">
+		<div class="container">
+			<div class="section-title">
+				<h2>Meet Our Founder</h2>
+			</div>
+			<div class="founder-content">
+				<div class="founder-image">
+					<img src="./images/Anshul.webp"
+						alt="Founder">
+				</div>
+				<div class="founder-text">
+					<h3>Dr. Anshul Sood</h3>
+					<p class="founder-quote">"Our mission has always been to bridge the gap between technology and human
+						needs, creating solutions that make a real difference in people's lives."</p>
+					<p>Dr. Anshul Sood, founder of the company, holds a PhD in Medical Microbiology from PGIMER,
+						Chandigarh, one of India's premier medical institutes. With over a decade of experience in
+						healthcare, she has made significant contributions to anaerobic bacteriology, antimicrobial
+						resistance, and evidence-based medicine. Dr. Sood's expertise spans systematic and targeted
+						literature reviews across diverse therapeutic areas such as Gastroenterology, Hepatology,
+						Orthopedics, Health Economics, and more.</p>
+					<p>She has authored 14+ first-author publications in leading journals, including
+						Springer Nature and Elsevier, and served as a peer reviewer for esteemed scientific journals</p>
+				</div>
+			</div>
+		</div>
+	</section>
+		<footer class="footer-branding">
+			<p class="footer-branding-text">2025 &copy; Rooting Research<sup>&trade;</sup></p>
+		</footer>
 	</div>
 	<script src="./js/loader.js" defer></script>
 	<script src="./js/navbar.js" defer></script>
@@ -172,41 +195,41 @@
 	<script src="./js/vertical-ticker.js" defer></script>
 	<script>
 		// Parallax Effect for Hero Section
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 			const parallaxBg = document.getElementById('parallax-bg');
-			
-			window.addEventListener('scroll', function() {
+
+			window.addEventListener('scroll', function () {
 				const scrollPosition = window.pageYOffset;
 				parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
 			});
-	
+
 			// Medium RSS Feed Integration
 			const blogPostsContainer = document.querySelector('.blog-posts');
 			const feedUrl = 'https://medium.com/feed/@Happicamp';
-	
+
 			fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
 				.then(response => response.json())
 				.then(data => {
 					const posts = data.items.slice(0, 3); // Get only 3 posts
-					
+
 					// Clear any placeholder content
 					blogPostsContainer.innerHTML = '';
-					
+
 					posts.forEach(post => {
 						const blogCard = document.createElement('div');
 						blogCard.classList.add('blog-card');
-						
+
 						let imageUrl = extractImageFromContent(post.content) || post.thumbnail || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
 						const truncatedDescription = truncateText(post.description, 50);
-						
+
 						// Format the date
 						const postDate = new Date(post.pubDate);
-						const formattedDate = postDate.toLocaleDateString('en-US', { 
-							year: 'numeric', 
-							month: 'long', 
-							day: 'numeric' 
+						const formattedDate = postDate.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
 						});
-	
+
 						blogCard.innerHTML = `
 						    <a href="${post.link}" class="blog-card-link" target="_blank">
 								<div class="blog-image">
@@ -218,10 +241,10 @@
 								</div>
 							</a>
 						`;
-						
+
 						blogPostsContainer.appendChild(blogCard);
 					});
-					
+
 					// Initialize animations for the new blog cards
 					animateBlogCards();
 				})
@@ -229,27 +252,27 @@
 					console.error('Error fetching Medium RSS feed:', error);
 					blogPostsContainer.innerHTML = '<p class="error-message">Sorry, there was an error fetching the latest blog posts. Please try again later.</p>';
 				});
-	
+
 			// Helper functions
 			function truncateText(text, maxLength) {
 				if (!text) return '';
 				const strippedText = text.replace(/<[^>]*>/g, ''); // Remove HTML tags
-				return strippedText.length > maxLength ? 
-					strippedText.substring(0, maxLength) + '...' : 
+				return strippedText.length > maxLength ?
+					strippedText.substring(0, maxLength) + '...' :
 					strippedText;
 			}
-	
+
 			function extractImageFromContent(content) {
 				if (!content) return null;
 				const imageRegex = /<img[^>]*src="([^"]*)"/;
 				const match = content.match(imageRegex);
 				return match ? match[1] : null;
 			}
-	
+
 			// Animation for blog cards
 			function animateBlogCards() {
 				const blogCards = document.querySelectorAll('.blog-card');
-				
+
 				const observer = new IntersectionObserver((entries) => {
 					entries.forEach((entry, index) => {
 						if (entry.isIntersecting) {
@@ -266,16 +289,16 @@
 				}, {
 					threshold: 0.1
 				});
-	
+
 				blogCards.forEach(card => {
 					observer.observe(card);
 				});
 			}
-	
+
 			// Original animation code for other sections
-			const animateOnScroll = function() {
+			const animateOnScroll = function () {
 				const features = document.querySelectorAll('.feature');
-				
+
 				const observer = new IntersectionObserver((entries) => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
@@ -285,17 +308,17 @@
 				}, {
 					threshold: 0.1
 				});
-	
+
 				features.forEach(feature => {
 					observer.observe(feature);
 				});
 			};
-	
+
 			animateOnScroll();
-	
+
 			// Smooth scrolling for anchor links
 			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
+				anchor.addEventListener('click', function (e) {
 					e.preventDefault();
 					document.querySelector(this.getAttribute('href')).scrollIntoView({
 						behavior: 'smooth'
