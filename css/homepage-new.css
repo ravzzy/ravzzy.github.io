@@ -257,6 +257,7 @@ h4 {
 .about-content {
 	display: flex;
 	margin-left: 10vh;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 40px;
@@ -294,6 +295,7 @@ h4 {
 	margin-left: 2vw;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	flex-wrap: wrap-reverse;
 	gap: 40px;
 }
@@ -563,6 +565,69 @@ h4 {
 		min-height: 5vh;
 	}
 
+	.hero-bg {
+		margin-left: 5vh;
+	}
+	.about-content {
+		margin-left: 4.5vh;
+		width: 80%;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+	.services-content {
+		margin-left: 7vh;
+		width: 80%;
+        text-align: center;
+	}
+
+	.features, .blog-posts, .section-title, .founder-text, .founder-text h3 {
+		width: 80%;
+		margin-left: 4.55vh;
+	}
+	
+	.founder-text {
+		width: 80%;
+		text-align: justify;
+	}
+
+	h2, h3 {
+		font-size: 3rem;
+	}
+	.hero h1 {
+		position: relative;
+		left: 55% !important;
+		transform: translateX(-50%) !important;
+		font-size: 5rem;
+		margin-bottom: 5vh;
+	}
+
+	.hero p {
+		font-size: 1rem;
+	}
+	.about-text {
+		position: flex;
+		justify-content: center;
+		align-content: center;
+
+	}
+
+	.section {
+		padding: 70px 0;
+	}
+
+	.section-title h2 {
+		font-size: 3rem;
+	}
+
+	.services-content, .founder-content {
+		flex-direction: column;
+	}
+
+	.about-image, .services-image, .founder-image {
+		width: 100%;
+		height: 300px;
+	}	
 
 }
 
