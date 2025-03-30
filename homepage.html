@@ -144,6 +144,20 @@
 			</div>
 		</div>
 	</section>
+	<!-- Blog Section -->
+<section class="section section-dark" id="blog">
+    <div class="container">
+        <div class="section-title">
+            <h2>Latest From Our Blog</h2>
+        </div>
+        <div class="blog-posts">
+            <!-- Loading state (will be replaced by JavaScript) -->
+            <div class="loading-message">
+                <p>Loading latest articles...</p>
+            </div>
+        </div>
+    </div>
+</section>
 	<section class="final">
 		<h1>Breaking Ideas, Shaping Conversations</h1>
 		<div id="tile-container" class="tile-container"></div>
@@ -156,6 +170,140 @@
 	<script src="./js/navbar.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
 	<script src="./js/vertical-ticker.js" defer></script>
+	<script>
+		// Parallax Effect for Hero Section
+		document.addEventListener('DOMContentLoaded', function() {
+			const parallaxBg = document.getElementById('parallax-bg');
+			
+			window.addEventListener('scroll', function() {
+				const scrollPosition = window.pageYOffset;
+				parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+			});
+	
+			// Medium RSS Feed Integration
+			const blogPostsContainer = document.querySelector('.blog-posts');
+			const feedUrl = 'https://medium.com/feed/@Happicamp';
+	
+			fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
+				.then(response => response.json())
+				.then(data => {
+					const posts = data.items.slice(0, 3); // Get only 3 posts
+					
+					// Clear any placeholder content
+					blogPostsContainer.innerHTML = '';
+					
+					posts.forEach(post => {
+						const blogCard = document.createElement('div');
+						blogCard.classList.add('blog-card');
+						
+						let imageUrl = extractImageFromContent(post.content) || post.thumbnail || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+						const truncatedDescription = truncateText(post.description, 50);
+						
+						// Format the date
+						const postDate = new Date(post.pubDate);
+						const formattedDate = postDate.toLocaleDateString('en-US', { 
+							year: 'numeric', 
+							month: 'long', 
+							day: 'numeric' 
+						});
+	
+						blogCard.innerHTML = `
+						    <a href="${post.link}" class="blog-card-link" target="_blank">
+								<div class="blog-image">
+									<img src="${imageUrl}" alt="Blog Post Image">
+								</div>
+								<div class="blog-content">
+									<div class="blog-date">${formattedDate}</div>
+									<h4 class="blog-title">${post.title}</h3>
+								</div>
+							</a>
+						`;
+						
+						blogPostsContainer.appendChild(blogCard);
+					});
+					
+					// Initialize animations for the new blog cards
+					animateBlogCards();
+				})
+				.catch(error => {
+					console.error('Error fetching Medium RSS feed:', error);
+					blogPostsContainer.innerHTML = '<p class="error-message">Sorry, there was an error fetching the latest blog posts. Please try again later.</p>';
+				});
+	
+			// Helper functions
+			function truncateText(text, maxLength) {
+				if (!text) return '';
+				const strippedText = text.replace(/<[^>]*>/g, ''); // Remove HTML tags
+				return strippedText.length > maxLength ? 
+					strippedText.substring(0, maxLength) + '...' : 
+					strippedText;
+			}
+	
+			function extractImageFromContent(content) {
+				if (!content) return null;
+				const imageRegex = /<img[^>]*src="([^"]*)"/;
+				const match = content.match(imageRegex);
+				return match ? match[1] : null;
+			}
+	
+			// Animation for blog cards
+			function animateBlogCards() {
+				const blogCards = document.querySelectorAll('.blog-card');
+				
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry, index) => {
+						if (entry.isIntersecting) {
+							gsap.to(entry.target, {
+								y: 0,
+								opacity: 1,
+								duration: 0.8,
+								delay: index * 0.2,
+								ease: 'power3.out'
+							});
+							observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					threshold: 0.1
+				});
+	
+				blogCards.forEach(card => {
+					observer.observe(card);
+				});
+			}
+	
+			// Original animation code for other sections
+			const animateOnScroll = function() {
+				const features = document.querySelectorAll('.feature');
+				
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+						}
+					});
+				}, {
+					threshold: 0.1
+				});
+	
+				features.forEach(feature => {
+					observer.observe(feature);
+				});
+			};
+	
+			animateOnScroll();
+	
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function(e) {
+					e.preventDefault();
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
+		});
+	</script>
 	<script>
 		// Parallax Effect for Hero Section
 		document.addEventListener('DOMContentLoaded', function () {
