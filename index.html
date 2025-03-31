@@ -109,24 +109,25 @@
 
 	<!-- Why Choose Us Section - Updated to match other sections -->
 	<section class="section" id="why-us">
-	    <div class="container">
-	        <div class="section-title">
-	            <h2>Why Choose Us</h2>
-	        </div>
-	        <div class="about-content">  <!-- Reusing the about-content class for consistent styling -->
-	            <div class="about-text">
-	                <h3>Because we make your data speak louder and clearer.</h3>
-	                <p>We don’t just execute projects—we elevate them. Backed by renowned physicians,
+		<div class="container">
+			<div class="section-title">
+				<h2>Why Choose Us</h2>
+			</div>
+			<div class="about-content"> <!-- Reusing the about-content class for consistent styling -->
+				<div class="about-text">
+					<h3>Because we make your data speak louder and clearer.</h3>
+					<p>We don’t just execute projects—we elevate them. Backed by renowned physicians,
 						researchers, and interdisciplinary Key Opinion Leaders (KoLs), we bring scientific depth,
 						innovation, and real-world expertise to everything we do.</p>
-	                <a href="/collaborate.html" class="btn">Get in Touch</a>
-	            </div>
-	            <div class="about-image">
-					<img src="https://images.unsplash.com/photo-1741724821902-9251d2ba9252?q=80&w=2636&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our Team Working">
-	               <!-- <img src="https://images.unsplash.com/photo-1627634777217-c864268db30c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&auto=format&fit=crop&w=2070&q=80" alt="Our Team Working"> -->
-	            </div>
-	        </div>
-	    </div>
+					<a href="/collaborate.html" class="btn">Get in Touch</a>
+				</div>
+				<div class="about-image">
+					<img src="https://images.unsplash.com/photo-1741724821902-9251d2ba9252?q=80&w=2636&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+						alt="Our Team Working">
+					<!-- <img src="https://images.unsplash.com/photo-1627634777217-c864268db30c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&auto=format&fit=crop&w=2070&q=80" alt="Our Team Working"> -->
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- Blog Section -->
@@ -151,8 +152,7 @@
 			</div>
 			<div class="founder-content">
 				<div class="founder-image">
-					<img src="./images/Anshul.webp"
-						alt="Founder">
+					<img src="./images/Anshul.webp" alt="Founder">
 				</div>
 				<div class="founder-text">
 					<h3>Dr. Anshul Sood</h3>
@@ -170,9 +170,126 @@
 			</div>
 		</div>
 	</section>
-		<footer class="footer-branding">
-			<p class="footer-branding-text">2025 &copy; Rooting Research<sup>&trade;</sup></p>
-		</footer>
+	<!-- Connect With Us Section -->
+	<section class="section section-dark" id="contact">
+		<div class="container">
+			<div class="section-title">
+				<h2>Connect With Us</h2>
+				<p>We'd love to hear from you! Reach out through any of these channels.</p>
+			</div>
+
+			<div class="connect-container"	
+				style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+				<!-- Contact Form -->
+				<div class="connect-card"
+					style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+					<h4 style="margin-bottom: 20px; font-size: 3rem; color: black;">Send Us a Message</h4>
+					<form id="form">
+						<input type="hidden" name="access_key" value="f91b173c-cf9b-42d8-81bf-33c15db1c370">
+						<!-- Replace with your Web3Forms key -->
+						<!--<input type="hidden" name="redirect" value="https://rootingresearch.com/thank-you.html">-->
+						<!-- Optional thank you page -->
+
+						<div class="form-group" style="margin-bottom: 15px;">
+							<input type="text" name="name" placeholder="Your Name" required
+								style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 2rem;">
+						</div>
+
+						<div class="form-group" style="margin-bottom: 15px;">
+							<input type="email" name="email" placeholder="Your Email" required
+								style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 2rem;">
+						</div>
+
+						<div class="form-group" style="margin-bottom: 15px;">
+							<select name="subject"
+								style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 2rem; color: #666;">
+								<option value="">What can we help you with?</option>
+								<option value="General Inquiry">General Inquiry</option>
+								<option value="Project Collaboration">Project Collaboration</option>
+								<option value="Career Opportunities">Career Opportunities</option>
+								<option value="Feedback">Feedback</option>
+							</select>
+						</div>
+
+						<div class="form-group" style="margin-bottom: 15px;">
+							<textarea name="message" placeholder="Your Message" rows="4" required
+								style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 2rem;"></textarea>
+						</div>
+
+						<div id="result" style="margin: 15px 0; font-weight: 500;"></div>
+
+						<button type="submit" class="btn" style="margin-top: 10px;">Send Message</button>
+					</form>
+				</div>
+
+				<!-- Contact Info -->
+				<div class="connect-card"
+					style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+					<!--<h4 style="margin-bottom: 20px;font-size: 3rem; color: black;">Other Ways to Connect</h4> -->
+
+					<div class="contact-method"
+						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+						<div
+							style="background: #f0e6ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+							<i class="fas fa-envelope" style="font-size: 2rem; color: #6e45e2;"></i>
+						</div>
+						<div>
+							<h4 style="margin-bottom: 5px;">Email Us</h4>
+							<p style="color: #666; font-size:2rem; text-transform: none;">info@rootingresearch.com</p>
+						</div>
+					</div>
+
+					<div class="contact-method"
+						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+						<div
+							style="background: #f0e6ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+							<i class="fas fa-phone-alt" style="font-size: 2rem; color: #6e45e2;"></i>
+						</div>
+						<div>
+							<h4 style="margin-bottom: 5px;">Call Us</h4>
+							<p style="color: #666; font-size:2rem">+91 (987) 654-3210</p>
+							<p style="color: #666; font-size:2rem; text-transform: none;">Mon-Fri, 9am-5pm IST</p>
+						</div>
+					</div>
+
+					<!--<div class="contact-method"
+						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+						<div
+							style="background: #f0e6ff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+							<i class="fas fa-map-marker-alt" style="font-size: 1.2rem; color: #6e45e2;"></i>
+						</div>
+						<div>
+							<h4 style="margin-bottom: 5px;">Visit Us</h4>
+							<p style="color: #666;">123 Business Avenue</p>
+							<p style="color: #666;">New York, NY 10001</p>
+						</div>
+					</div> -->
+
+					<div class="social-links" style="display: flex; gap: 15px; margin-top: 30px;">
+						<a href="#"
+							style="font-size:2rem; background: #e61618; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+						<a href="#"
+							style="font-size:2rem; background: #e61618; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="#"
+							style="font-size:2rem; background: #e61618; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a href="#"
+							style="font-size:2rem; background: #e61618; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer-branding">
+		<p class="footer-branding-text">2025 &copy; Rooting Research<sup>&trade;</sup></p>
+	</footer>
 	</div>
 	<script src="./js/loader.js" defer></script>
 	<script src="./js/navbar.js" defer></script>
@@ -356,6 +473,62 @@
 						behavior: 'smooth'
 					});
 				});
+			});
+		});
+	</script>
+	<script>
+		// Contact Form Submission
+		const form = document.getElementById('form');
+		const result = document.getElementById('result');
+	
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			// Disable button during submission
+			const submitBtn = form.querySelector('button[type="submit"]');
+			submitBtn.disabled = true;
+			submitBtn.innerHTML = "Sending...";
+			
+			const formData = new FormData(form);
+			const object = Object.fromEntries(formData);
+			const json = JSON.stringify(object);
+			
+			result.innerHTML = "Please wait...";
+			result.style.color = "inherit";
+			result.style.display = "block";
+	
+			fetch('https://api.web3forms.com/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: json
+			})
+			.then(async (response) => {
+				const json = await response.json();
+				if (response.status === 200) {
+					result.innerHTML = json.message;
+					result.style.color = "#4BB543"; // Green color for success
+					if (json.success) {
+						form.reset();
+						setTimeout(() => {
+							result.style.display = "none";
+						}, 5000);
+					}
+				} else {
+					console.log(response);
+					result.innerHTML = json.message || "Something went wrong!";
+					result.style.color = "#ff3333"; // Red color for error
+				}
+			})
+			.catch((error) => {
+				console.log(error);
+				result.innerHTML = "Something went wrong! Please check your connection.";
+				result.style.color = "#ff3333";
+			})
+			.finally(() => {
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = "Send Message";
 			});
 		});
 	</script>

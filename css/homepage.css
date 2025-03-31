@@ -460,6 +460,19 @@ h4 {
 	text-transform: uppercase !important;
 }
 
+/*Contact Us */
+
+.connect-container {
+	margin-left: 8.5vh;
+	position: flex;
+}
+
+.section-title p {
+	font-family: var(--section-p-text-font);
+	text-transform: none !important;
+	font-size: 2.7rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
 	from {
@@ -536,59 +549,63 @@ h4 {
 		min-height: 5vh;
 	}
 
-	.hero-bg {
-		margin-left: 5vh;
-	}
-
-	.about-content {
-		margin-left: 4.5vh;
-		width: 80%;
-		flex-direction: column-reverse;
-		text-align: center;
-	}
-
-	.services-content {
-		margin-left: 7vh;
-		width: 80%;
-		text-align: center;
-	}
-
-	.features,
-	.blog-posts,
-	.section-title,
-	.founder-text,
-	.founder-text h3 {
-		width: 80%;
+	.hero {
 		margin-left: 4.55vh;
 	}
 
-	.founder-text {
-		width: 80%;
-		text-align: justify;
-	}
-
-	h2,
-	h3 {
-		font-size: 3rem;
-	}
-
 	.hero h1 {
-		position: relative;
-		left: 55% !important;
-		transform: translateX(-50%) !important;
 		font-size: 5rem;
-		margin-bottom: 5vh;
 	}
 
 	.hero p {
 		font-size: 1rem;
 	}
 
-	.about-text {
-		position: flex;
-		justify-content: center;
-		align-content: center;
+	#about {
+		margin-left: 5vh;
+	}
+	.about-content {
+		margin-left: 0;
+		width: 90%;
+		flex-direction: column-reverse;
+		text-align: center;
+	}
 
+	#services, #why-us, #blog, #founder, #contact {
+		margin-left: 5vh;
+		position: relative;
+
+	}
+
+	.blog-posts, .founder-content {
+		margin-left: 0;
+		position: relative;
+		width: 90%;
+	}
+
+	.services-content {
+		position: relative;
+		width: 95%;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		align-content: center;
+	}
+	.services-image {
+		position: relative;
+	}
+
+	.services-text {
+		position: relative;
+	}
+
+	.founder-text {
+		text-align: center;
+	}
+
+	h2,
+	h3 {
+		font-size: 3rem;
 	}
 
 	.section {
@@ -599,18 +616,14 @@ h4 {
 		font-size: 3rem;
 	}
 
-	.services-content,
-	.founder-content {
-		flex-direction: column;
+	#contact>div>div.connect-container>div:nth-child(1) {
+		display: none;
 	}
 
-	.about-image,
-	.services-image,
-	.founder-image {
-		width: 100%;
-		height: 300px;
+	.connect-container {
+		margin: 0;
 	}
-
+	
 }
 
 
