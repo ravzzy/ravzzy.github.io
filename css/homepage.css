@@ -107,11 +107,14 @@ h2 {
 h3 {
 	font-family: var(--header-h3-text-font);
 	font-size: 6rem;
+	text-transform: none;
 }
 
 h4 {
 	font-family: var(--header-h3-text-font);
 	font-size: 3rem;
+	text-transform: none;
+
 }
 
 .about-text p,
