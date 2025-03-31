@@ -5,30 +5,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home | Rooting Research</title>
+	<title>Rooting Research | Home</title>
 	<link rel="stylesheet" href="./css/homepage.css">
 	<link rel="stylesheet" href="./css/vertical-ticker.css">
 	<link rel="stylesheet" href="./css/sidebar.css">
 	<link rel="stylesheet" href="./css/navbar.css">
-	<link rel="stylesheet" href="./css/contactus.css">
-
-	<link rel="preload" as="image" href="./images/loading.webp">
-	<link rel="preload" as="image" href="./images/what_we_do.webp">
-	<link rel="preload" as="image" href="./images/why_choose_us.webp">
-	<link rel="preload" as="image" href="./images/who_we_are.webp">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="preload" as="image" href="./images/rooting_research_transparent.webp">
 	<link rel="preload" as="image" href="./images/favicon.ico">
-	<link rel="preload" href="./images/globe_video.gif" as="image">
-	<link rel="preload" href="./images/globe_hand.webp" as="image">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Alata&family=Notable&family=Noto+Sans+JP:wght@100..900&display=swap"
+	<link href="https://db.onlinewebfonts.com/c/f1133d34c861b65dbfcd58acb2df0b4e?family=Schelter+Grotesk+NF+W01+Rg"
 		rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DynaPuff:wght@400..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Notable&display=swap"
 		crossorigin="anonymous">
 	<link rel="preload" href="fonts/lucidity-expand.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+	<link rel="preload" href="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" as="script">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer
 		integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -47,282 +38,330 @@
 			<div class="logo-image"></div>
 		</div>
 		<!-- Transparent Navigation Menu -->
-		<div id="navbar-container"></div> <!-- Navbar will be inserted here via js-->
+		<div id="navbar-container"></div> <!-- Navbar will be inserted here -->
 	</section>
 	<!-- Menu on the right side of the home page for Mobile Only-->
 	<button class="menu-btn">☰</button>
-	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here via js -->
+	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
 	<nav class="designer-footer">
 		<h1></h1>
 		<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
 	</nav>
-	<canvas id="canvas"> </canvas>
 	<div id="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
 	<div class="Header-swimlane"></div>
 	<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
-	<section class="page1-section">
-		<div class="page1-text-container">
+	<!-- Hero Section -->
+	<section class="hero">
+		<div class="hero-bg" id="parallax-bg"></div>
+		<div class="hero-content">
 			<h1 class="shining-text">Making evidence speak for the lives it cares</h1>
+			<a href="#about" class="btn">Discover More</a>
 		</div>
 	</section>
-	<!----test start-->
-	<section class="buffer-section"></section>
-	<div class="main-content">
-		<!--right section floating keywords-->
-		<div class="floating-keyword-7">Clinical trials</div>
-		<div class="floating-keyword-1">Manuscripts</div>
-		<div class="floating-keyword-2">Meta-Analysis</div>
-		<div class="floating-keyword-8">Preclinical</div>
-		<div class="floating-keyword-3">Publications</div>
-
-		<!--left section floating keywords-->
-		<div class="floating-keyword-9">HEOR</div>
-		<div class="floating-keyword-4">Biostatistics</div>
-		<div class="floating-keyword-10">Big Data</div>
-		<div class="floating-keyword-5">Info-graphics</div>
-		<div class="floating-keyword-6">Reimbursement</div>
-
-		<!--section 1-->
-		<section class="left-content-section">
-			<div class="left-section">
-				<div class="left-text-box">
-					<h2>We refine the known, discover the unknown</h2>
+	<!-- Who We Are Section -->
+	<section class="section" id="about">
+		<div class="container">
+			<div class="section-title">
+				<h2>Who We Are</h2>
+			</div>
+			<div class="about-content">
+				<div class="about-text">
+					<h3>We refine the known, discover the unknown.</h3>
 					<p>We combine the expertise of a global agency with the speed and agility of a boutique
-						firm—delivering high-impact, cost-effective solutions without the corporate red tape. </p>
-					<p>No delays. No inflated costs. No unnecessary intermediaries—just research done right, backed by
-						decades of experience in healthcare consulting.</p>
-					<p><a href="about.html">READ MORE</a></p>
-					<!--<img src="./images/who_we_are.webp" class="left-image-box-img" alt="Image Example" loading="lazy">-->
+						firm—delivering high-impact, cost-effective solutions without the corporate red tape.</p>
+					<a href="#" class="btn">Learn More About Us</a>
+				</div>
+				<div class="about-image">
+					<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+						alt="Our Team">
 				</div>
 			</div>
-			<div class="middle-divider"></div>
-			<div class="right-section">
-				<!--<div class="right-section-text  header-shuffle-text">
-					Who we are?</div> -->
-					<img src="./images/who_we_are-2.png" class="right-section-image" alt="Image Example" loading="lazy">
+		</div>
+	</section>
+
+	<!-- What We Do Section -->
+	<section class="section section-dark" id="services">
+		<div class="container">
+			<div class="section-title">
+				<h2>What We Do</h2>
 			</div>
-		</section>
-		<section class="quote-section">
-			<div class="quote-text">Let research go beyond journals - shaping policies, driving decisions, and making
-				real world impact</div>
-		</section>
-		<!--section 2-->
-		<section class="right-content-section">
-			<div class="left-section-2">
-				<!--<div class="left-section-text  header-shuffle-text">
-					What we do?</div>-->
-					<img src="./images/who_we_are-2.png" class="left-section-image" alt="Image Example" loading="lazy">
-			</div>
-			<div class="middle-divider"></div>
-			<div class="right-section-2">
-				<div class="right-text-box">
-					<h2>Numbers to narratives, we deliver all</h2>
+			<div class="services-content">
+				<div class="services-image">
+					<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+						alt="Our Services">
+				</div>
+				<div class="services-text">
+					<h3>Numbers to narratives, we deliver all.</h3>
 					<p>We make sure research doesn’t just get written—it gets noticed, acted upon, and drives
 						real-world change. From idea to execution, we transform complex data into strategies that
-						reach policymakers, healthcare leaders, and industry experts. </p>
-					<p>No clutter. No confusion. Just
-						clear, compelling, and impactful research solutions. We support your molecule’s journey from
-						early development to market access and real-world impact, ensuring seamless navigation
-						through preclinical, clinical, regulatory, and reimbursement landscapes</p>
-					<p class="p-center-align"><a href="about.html">READ MORE</a></p>
-					<!--<img src="./images/what_we_do.webp" class="left-image-box-img" alt="Evidence Review & Synthesis"
-						loading="lazy">-->
+						reach policymakers, healthcare leaders, and industry experts.</p>
+					<ul style="margin-bottom: 20px; list-style-position: inside;">
+						<li class="services-list" style="margin-bottom: 10px;">Strategic Asset Prioritization</li>
+						<li class="services-list" style="margin-bottom: 10px;">Biostatics & Trial Design</li>
+						<li class="services-list" style="margin-bottom: 10px;">HTA & Market Access Strategy</li>
+						<li class="services-list" style="margin-bottom: 10px;">Evidence Synthesis & Meta-Analysis</li>
+					</ul>
+					<a href="#" class="btn">Explore Our Services</a>
 				</div>
 			</div>
-		</section>
-		<section class="quote-section">
-			<div class="quote-text">We let the data speak and be heard</div>
-		</section>
-		<!--section 3-->
-		<section class="left-content-section">
-			<div class="left-section">
-				<div class="left-text-box">
-					<h2>Because we make your data speak louder and clearer</h2>
-					<p>We don’t just execute projects—we elevate them. Backed by renowned physicians,
+		</div>
+	</section>
+
+	<!-- Why Choose Us Section - Updated to match other sections -->
+	<section class="section" id="why-us">
+	    <div class="container">
+	        <div class="section-title">
+	            <h2>Why Choose Us</h2>
+	        </div>
+	        <div class="about-content">  <!-- Reusing the about-content class for consistent styling -->
+	            <div class="about-text">
+	                <h3>Because we make your data speak louder and clearer.</h3>
+	                <p>We don’t just execute projects—we elevate them. Backed by renowned physicians,
 						researchers, and interdisciplinary Key Opinion Leaders (KoLs), we bring scientific depth,
 						innovation, and real-world expertise to everything we do.</p>
-					<p>Along with a tailored and flexible
-						approach, we deliver research that is faster, sharper, and smarter ensuring high value for
-						every penny spent</p>
-					<p><a href="about.html">READ MORE</a></p>
-					<!--<img src="./images/why_choose_us.webp" class="left-image-box-img" alt="Image Example"
-						loading="lazy"> -->
-				</div>
-			</div>
-			<div class="middle-divider"></div>
-			<div class="right-section">
-				<!--<div class="right-section-text  header-shuffle-text">Why Choose Us?</div> -->
-				<img src="./images/who_we_are-2.png" class="right-section-image" alt="Image Example" loading="lazy">
-			</div>
-		</section>
-		<section class="quote-section">
-			<div class="quote-text">Ready to make an impact, together we can</div>
-		</section>
-	</div>
-	<!----test end-->
-	<div class="middle-section">
-		<div class="middle-overlay"></div>
-	</div>
-	<div class="avatars">
-	</div>
-	<div class="filler">
-	</div>
-	<section class="final">
-		<div class="title">
-			<div class="fat">MEET OUR FOUNDER</div>
-		</div>
-		<div class="dev">
-			<div class="text-spin">
-				<div class="first-line">
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-				</div>
-				<div class="second-line">
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-				</div>
-				<div class="third-line">
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-					<div>FOUNDER STORY* CONNECT WITH US *</div>
-				</div>
-			</div>
-			<img src="./images/Anshul.webp" alt="Founder Image" loading="lazy" />
-			<h1 class="founder-name">Dr. Anshul Sood</h1>
-			<p class="founder-title">Founder / Director</p>
-		</div>
-		<div class="founder-description-box">
-			<p class="founder-description">
-				Dr. Anshul Sood, founder of the company, holds a PhD in Medical Microbiology from PGIMER,
-				Chandigarh, one of India's premier medical institutes. With over a decade of experience in
-				healthcare, she has made significant contributions to anaerobic bacteriology, antimicrobial
-				resistance, and evidence-based medicine. Dr. Sood's expertise spans systematic and targeted
-				literature reviews across diverse therapeutic areas such as Gastroenterology, Hepatology,
-				Orthopedics, Health Economics, and more.</p>
-			<p class="founder-description">She has authored 14+ first-author publications in leading journals, including
-				Springer Nature and
-				Elsevier, and served as a peer reviewer for esteemed scientific journals. Dr. Sood's research acumen
-				includes successful grant proposal writing, contributing to a project that secured funding from the
-				Indian Council of Medical Research (ICMR). She is also certified in Basic Health Economics, Research
-				Methodology, and Biostatistics from PGIMER.Having worked in hospitals, academia, and industry—including
-				Parexel International and Quantify
-				Research—Dr. Sood brings a comprehensive understanding of research design, analysis, and
-				communication. This expertise allows her to bridge the gap between scientific research, clinical
-				practice, and healthcare policy, ensuring impactful outcomes across the sector.
-			</p>
-		</div>
-		<section class="blogs">
-		<div class="blog-header">Our Latest Blogs</div>
-		<div class="tile-container" id="tile-container"></div>
-		</section>
-		<div class="vertical-line"></div>
-		<div class="top">
-			<div class="thin">ROOTING RESEARCH TEAM</div>
-			<div class="fat">CONNECT WITH US TODAY</div>
-			<div>
-				<div class="thin">
-					BE IT TO BE OUR PARTNER OR IF YOU'RE LOOKING FOR WORKING WITH US.
-				</div>
-			</div>
-		</div>
-		<main>
-			<form action="" method="POST" class="form" id="form">
-				<!-- change the key, upto 250 per month free -->
-				<input type="hidden" name="access_key" value="f91b173c-cf9b-42d8-81bf-33c15db1c370">
-				<div class="input-group">
-					<input type="text" name="first_name" id="first-name" placeholder="First name" required>
-					<label for="first-name">First name</label>
-				</div>
-				<div class="input-group">
-					<input type="text" name="last_name" id="last-name" placeholder="Last Name" required>
-					<label for="last-name">Last name</label>
-				</div>
-				<div class="input-group">
-					<input type="email" name="e-mail" id="e-mail" placeholder="e-mail" required>
-					<label for="e-mail">e-mail</label>
-				</div>
-				<div class="textarea-group">
-					<textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
-					<label for="message">Message</label>
-				</div>
-				<div class="button-div">
-					<button class="form-btn" type="submit">SEND</button>
-				</div>
-				<div id="result"></div>
-			</form>
-		</main>
-		<div class="vertical-line"></div>
-		<footer>
-			<div class="socials">
-				<a href="mailto:rootingresearch@gmail.com?subject=Web Enquiry" class="btn">Email</a>
-				<a href="https://x.com/ravzzy" class="btn">Twitter</a>
-				<a href="https://www.instagram.com/swiftwindwalker" class="btn">Instagram</a>
-			</div>
-			<div class="footer-message">JOIN US ON OUR JOURNEY</div>
-			<p class="footer-branding">2025 &copy; Rooting Research<sup>&trade;</sup></p>
-		</footer>
+	                <a href="#contact" class="btn">Get in Touch</a>
+	            </div>
+	            <div class="about-image">
+	                <img src="https://images.unsplash.com/photo-1627634777217-c864268db30c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&auto=format&fit=crop&w=2070&q=80" alt="Our Team Working">
+	            </div>
+	        </div>
+	    </div>
 	</section>
+
+	<!-- Blog Section -->
+	<section class="section section-dark" id="blog">
+		<div class="container">
+			<div class="section-title">
+				<h2>Latest From Our Blog</h2>
+			</div>
+			<div class="blog-posts">
+				<!-- Loading state (will be replaced by JavaScript) -->
+				<div class="loading-message">
+					<p>Loading latest articles...</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Founder Section -->
+	<section class="section" id="founder">
+		<div class="container">
+			<div class="section-title">
+				<h2>Meet Our Founder</h2>
+			</div>
+			<div class="founder-content">
+				<div class="founder-image">
+					<img src="./images/Anshul.webp"
+						alt="Founder">
+				</div>
+				<div class="founder-text">
+					<h3>Dr. Anshul Sood</h3>
+					<p class="founder-quote">"Our mission has always been to bridge the gap between technology and human
+						needs, creating solutions that make a real difference in people's lives."</p>
+					<p>Dr. Anshul Sood, founder of the company, holds a PhD in Medical Microbiology from PGIMER,
+						Chandigarh, one of India's premier medical institutes. With over a decade of experience in
+						healthcare, she has made significant contributions to anaerobic bacteriology, antimicrobial
+						resistance, and evidence-based medicine. Dr. Sood's expertise spans systematic and targeted
+						literature reviews across diverse therapeutic areas such as Gastroenterology, Hepatology,
+						Orthopedics, Health Economics, and more.</p>
+					<p>She has authored 14+ first-author publications in leading journals, including
+						Springer Nature and Elsevier, and served as a peer reviewer for esteemed scientific journals</p>
+				</div>
+			</div>
+		</div>
+	</section>
+		<footer class="footer-branding">
+			<p class="footer-branding-text">2025 &copy; Rooting Research<sup>&trade;</sup></p>
+		</footer>
 	</div>
 	<script src="./js/loader.js" defer></script>
 	<script src="./js/navbar.js" defer></script>
 	<script src="./js/sidebar.js" defer></script>
 	<script src="./js/vertical-ticker.js" defer></script>
-	<script src="./js/contactus.js" defer></script>
-	<script src="./js/common.js" defer></script>
 	<script>
-		window.onbeforeunload = function () {
-			window.scrollTo(0, 0);
-		};
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-	<script>
+		// Parallax Effect for Hero Section
 		document.addEventListener('DOMContentLoaded', function () {
+			const parallaxBg = document.getElementById('parallax-bg');
+
+			window.addEventListener('scroll', function () {
+				const scrollPosition = window.pageYOffset;
+				parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+			});
+
+			// Medium RSS Feed Integration
+			const blogPostsContainer = document.querySelector('.blog-posts');
 			const feedUrl = 'https://medium.com/feed/@Happicamp';
-			const tileContainer = document.getElementById('tile-container');
 
 			fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
 				.then(response => response.json())
 				.then(data => {
 					const posts = data.items.slice(0, 3); // Get only 3 posts
+
+					// Clear any placeholder content
+					blogPostsContainer.innerHTML = '';
+
 					posts.forEach(post => {
-						const tile = document.createElement('div');
-						tile.classList.add('tile');
-						tile.setAttribute('data-tilt', '');
+						const blogCard = document.createElement('div');
+						blogCard.classList.add('blog-card');
 
-						let imageUrl = extractImageFromContent(post.content) || post.thumbnail || 'https://via.placeholder.com/400x150';
-						const truncatedDescription = truncateText(post.description, 80);
+						let imageUrl = extractImageFromContent(post.content) || post.thumbnail || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+						const truncatedDescription = truncateText(post.description, 50);
 
-						const tileLink = document.createElement('a');
-						tileLink.href = post.link;
-						tileLink.target = '_blank';
-						tileLink.innerHTML = `
-                            <img src="${imageUrl}" alt="Post Image">
-                            <h3>${post.title}</h3>
-                            <p>${truncatedDescription}</p>
-                        `;
+						// Format the date
+						const postDate = new Date(post.pubDate);
+						const formattedDate = postDate.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
+						});
 
-						tile.appendChild(tileLink);
-						tileContainer.appendChild(tile);
+						blogCard.innerHTML = `
+						    <a href="${post.link}" class="blog-card-link" target="_blank">
+								<div class="blog-image">
+									<img src="${imageUrl}" alt="Blog Post Image">
+								</div>
+								<div class="blog-content">
+									<div class="blog-date">${formattedDate}</div>
+									<h4 class="blog-title">${post.title}</h3>
+								</div>
+							</a>
+						`;
+
+						blogPostsContainer.appendChild(blogCard);
 					});
-					VanillaTilt.init(document.querySelectorAll(".tile"));
+
+					// Initialize animations for the new blog cards
+					animateBlogCards();
 				})
 				.catch(error => {
 					console.error('Error fetching Medium RSS feed:', error);
-					tileContainer.innerHTML = '<p>Sorry, there was an error fetching the posts.</p>';
+					blogPostsContainer.innerHTML = '<p class="error-message">Sorry, there was an error fetching the latest blog posts. Please try again later.</p>';
 				});
+
+			// Helper functions
+			function truncateText(text, maxLength) {
+				if (!text) return '';
+				const strippedText = text.replace(/<[^>]*>/g, ''); // Remove HTML tags
+				return strippedText.length > maxLength ?
+					strippedText.substring(0, maxLength) + '...' :
+					strippedText;
+			}
+
+			function extractImageFromContent(content) {
+				if (!content) return null;
+				const imageRegex = /<img[^>]*src="([^"]*)"/;
+				const match = content.match(imageRegex);
+				return match ? match[1] : null;
+			}
+
+			// Animation for blog cards
+			function animateBlogCards() {
+				const blogCards = document.querySelectorAll('.blog-card');
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry, index) => {
+						if (entry.isIntersecting) {
+							gsap.to(entry.target, {
+								y: 0,
+								opacity: 1,
+								duration: 0.8,
+								delay: index * 0.2,
+								ease: 'power3.out'
+							});
+							observer.unobserve(entry.target);
+						}
+					});
+				}, {
+					threshold: 0.1
+				});
+
+				blogCards.forEach(card => {
+					observer.observe(card);
+				});
+			}
+
+			// Original animation code for other sections
+			const animateOnScroll = function () {
+				const features = document.querySelectorAll('.feature');
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+						}
+					});
+				}, {
+					threshold: 0.1
+				});
+
+				features.forEach(feature => {
+					observer.observe(feature);
+				});
+			};
+
+			animateOnScroll();
+
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
 		});
+	</script>
+	<script>
+		// Parallax Effect for Hero Section
+		document.addEventListener('DOMContentLoaded', function () {
+			const parallaxBg = document.getElementById('parallax-bg');
 
-		function truncateText(text, maxLength) {
-			return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-		}
+			window.addEventListener('scroll', function () {
+				const scrollPosition = window.pageYOffset;
+				parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+			});
 
-		function extractImageFromContent(content) {
-			const imageRegex = /<img[^>]*src="([^\"]*)"/;
-			const match = content.match(imageRegex);
-			return match ? match[1] : null;
-		}
+			// Intersection Observer for animations
+			const animateOnScroll = function () {
+				const features = document.querySelectorAll('.feature');
+				const blogCards = document.querySelectorAll('.blog-card');
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+						}
+					});
+				}, {
+					threshold: 0.1
+				});
+
+				features.forEach(feature => {
+					observer.observe(feature);
+				});
+
+				blogCards.forEach(card => {
+					observer.observe(card);
+				});
+			};
+
+			animateOnScroll();
+
+			// Smooth scrolling for anchor links
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
+		});
+	</script>
+	<script>
+		window.onbeforeunload = function () {
+			window.scrollTo(0, 0);
+		};
 	</script>
 </body>
 
