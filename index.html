@@ -178,7 +178,7 @@
 				<p>We'd love to hear from you! Reach out through any of these channels.</p>
 			</div>
 
-			<div class="connect-container"	
+			<div class="connect-container"
 				style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
 				<!-- Contact Form -->
 				<div class="connect-card"
@@ -228,26 +228,34 @@
 					<!--<h4 style="margin-bottom: 20px;font-size: 3rem; color: black;">Other Ways to Connect</h4> -->
 
 					<div class="contact-method"
-						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; cursor: pointer;"
+						onclick="window.location.href='mailto:info@rootingresearch.com'">
+
 						<div
 							style="background: #e61618; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
 							<i class="fas fa-envelope" style="font-size: 2rem; color: white;"></i>
 						</div>
 						<div>
 							<h4 style="margin-bottom: 5px;">Email Us</h4>
-							<p style="color: #666; font-size:2rem; text-transform: none;">info@rootingresearch.com</p>
+							<p style="color: #666; font-size:2rem; text-transform: none;">
+								<a href="mailto:info@rootingresearch.com"
+									style="color: inherit; text-decoration: none;"></a>
+								info@rootingresearch.com</a>
+							</p>
 						</div>
 					</div>
 
 					<div class="contact-method"
-						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px;">
+						style="display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; ; cursor: pointer;"
+						onclick="window.open('tel:+919816222725', '_self')">
 						<div
 							style="background: #e61618; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
 							<i class="fas fa-phone-alt" style="font-size: 2rem; color: white;"></i>
 						</div>
 						<div>
 							<h4 style="margin-bottom: 5px;">Call Us</h4>
-							<p style="color: #666; font-size:2rem">+91 (981) 622-2725</p>
+							<p style="color: #666; font-size:2rem; cursor: pointer;"
+							onclick="window.open('tel:+919816222725', '_self')">+91 (981) 622-2725</p>
 							<p style="color: #666; font-size:2rem; text-transform: none;">Mon-Fri, 9am-5pm IST</p>
 						</div>
 					</div>
@@ -271,25 +279,25 @@
 							style="font-size: 3.5rem; background: white; color: #0A66C2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; border: 0.5px solid #0A66C2;">
 							<i class="fab fa-linkedin"></i>
 						</a>
-						
+
 						<!-- X (Twitter) -->
 						<a href="#" target="_blank" rel="noopener noreferrer"
 							style="font-size: 3.5rem; color: black !important; border: 0.5px solid black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
 							<i class="fa-brands fa-twitter"></i>
 						</a>
-						
+
 						<!-- Instagram -->
 						<a href="#" target="_blank" rel="noopener noreferrer"
 							style="font-size: 3.5rem; color: #e4405f !important; border: 0.5px solid #e4405f;width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
 							<i class="fa-brands fa-instagram"></i>
 						</a>
-						
+
 						<!-- Facebook -->
 						<a href="#" target="_blank" rel="noopener noreferrer"
 							style="font-size: 3.5rem; background: #1877F2; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
 							<i class="fab fa-facebook-f"></i>
 						</a>
-						
+
 						<!-- YouTube (optional addition) -->
 						<a href="#" target="_blank" rel="noopener noreferrer"
 							style="font-size: 3.5rem; background: #FF0000; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
@@ -493,23 +501,23 @@
 		// Contact Form Submission
 		const form = document.getElementById('form');
 		const result = document.getElementById('result');
-	
-		form.addEventListener('submit', function(e) {
+
+		form.addEventListener('submit', function (e) {
 			e.preventDefault();
-			
+
 			// Disable button during submission
 			const submitBtn = form.querySelector('button[type="submit"]');
 			submitBtn.disabled = true;
 			submitBtn.innerHTML = "Sending...";
-			
+
 			const formData = new FormData(form);
 			const object = Object.fromEntries(formData);
 			const json = JSON.stringify(object);
-			
+
 			result.innerHTML = "Please wait...";
 			result.style.color = "inherit";
 			result.style.display = "block";
-	
+
 			fetch('https://api.web3forms.com/submit', {
 				method: 'POST',
 				headers: {
@@ -517,37 +525,39 @@
 				},
 				body: json
 			})
-			.then(async (response) => {
-				const json = await response.json();
-				if (response.status === 200) {
-					result.innerHTML = json.message;
-					result.style.color = "#4BB543"; // Green color for success
-					if (json.success) {
-						form.reset();
-						setTimeout(() => {
-							result.style.display = "none";
-						}, 5000);
+				.then(async (response) => {
+					const json = await response.json();
+					if (response.status === 200) {
+						result.innerHTML = json.message;
+						result.style.color = "#4BB543"; // Green color for success
+						if (json.success) {
+							form.reset();
+							setTimeout(() => {
+								result.style.display = "none";
+							}, 5000);
+						}
+					} else {
+						console.log(response);
+						result.innerHTML = json.message || "Something went wrong!";
+						result.style.color = "#ff3333"; // Red color for error
 					}
-				} else {
-					console.log(response);
-					result.innerHTML = json.message || "Something went wrong!";
-					result.style.color = "#ff3333"; // Red color for error
-				}
-			})
-			.catch((error) => {
-				console.log(error);
-				result.innerHTML = "Something went wrong! Please check your connection.";
-				result.style.color = "#ff3333";
-			})
-			.finally(() => {
-				submitBtn.disabled = false;
-				submitBtn.innerHTML = "Send Message";
-			});
+				})
+				.catch((error) => {
+					console.log(error);
+					result.innerHTML = "Something went wrong! Please check your connection.";
+					result.style.color = "#ff3333";
+				})
+				.finally(() => {
+					submitBtn.disabled = false;
+					submitBtn.innerHTML = "Send Message";
+				});
 		});
 	</script>
 	<script>
-		window.onbeforeunload = function () {
+		window.onbeforeunload = function (e) {
+			if (performance.navigation.type === 1) { 
 			window.scrollTo(0, 0);
+			}
 		};
 	</script>
 </body>
