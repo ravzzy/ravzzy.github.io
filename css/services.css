@@ -6,6 +6,13 @@
 	/* Path to your TTF font */
 }
 
+@font-face {
+	font-family: 'Capraia SemiBold';
+	/* Define a name for your font */
+	src: url('../fonts/Capraia-SemiBold.otf') format('truetype');
+	/* Path to your TTF font */
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -31,6 +38,7 @@ html {
 	--body-text-font: 'Noto Sans JP', sans-serif;
 	--header-text-font: "Bebas Neue", sans-serif;
 	--header2-text-font: 'Notable', sans-serif;
+	--header-h3-text-font: 'Capraia SemiBold', sans-serif;
 	--brand-text-font: 'Lucidity Expand', sans-serif;
 	--default-text-font: 'Noto Sans KR', sans-serif;
 
@@ -81,84 +89,105 @@ body {
 .topper {
 	visibility: hidden;
 	min-height: 9vh;
-	background-color: var(--primary-background-color);
+	background-color: black;
 }
 
-  /* Particles.js container */
-  #particles-js {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-  }
-  
 
-
-h1 {
-	text-align: center;
+.final h1 {
 	text-transform: none;
-	font-family: var(--body-text-font);
-	margin-top: 5px;
-	font-size: 3.5rem;
-	color: var(--primary-background-color);
+	font-family: var(--header-h3-text-font);
+	font-size: 4rem;
+	margin-bottom: 0px;
+	position: relative;
+	color: white;
+	font-weight: 700;
+}
+
+.final h1::after {
+	content: '';
+	display: block;
+	width: 80px;
+	height: 4px;
+	background: var(--primary-background-color);
+	margin: 15px auto;
+	border-radius: 2px;
 }
 
 .accordion {
-	width: 60%;
+	margin-left: 4.5vh;
+	min-width: 50%;
 }
 
 .item {
-	/*border-bottom: 1px solid #ddd;*/
-	border-bottom: 0.5px solid grey;
-	padding: 15px;
-	cursor: pointer;
-	transition: background 0.3s;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	/* Softer border */
+	padding: 20px;
+	margin-bottom: 8px;
+	background: white;
+	border-radius: 8px;
+	/* Rounded corners */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	/* Subtle shadow */
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	text-transform: none;
 }
 
 .item:hover {
-	background: rgba(0, 0, 0, 0.05);
+	/*background: rgba(0, 0, 0, 0.02);*/
+	background: white;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+	/* Hover effect */
+	transform: translateY(-2px);
+	/* Lift effect */
 }
 
 .title {
+	font-size: 2rem;
+	color: #333;
+	font-weight: 600;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 18px;
-	color: black;
-	font-family: var(--body-text-font);
-	font-weight: bold;
-	transition: opacity 0.3s;
-}
-
-.content {
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-	opacity: 0;
-	font-family: var(--body-text-font);
-	font-size: 2rem;
-	color: grey;
-	padding-left: 5px;
-}
-
-.active .content {
-	max-height: 200px;
-	opacity: 1;
-	padding-top: 10px;
 }
 
 .icon {
-	font-weight:400;
-	font-size: 25px;
-	transition: transform 0.3s;
+	font-size: 3rem;
+	font-weight: 300;
+	transition: transform 0.3s ease;
 }
 
 .active .icon {
 	transform: rotate(45deg);
+}
+
+.content {
+	font-size: 1.6rem;
+	color: #555;
+	/* Softer text color */
+	line-height: 1.6;
+	/* Better readability */
+	padding-top: 10px;
+}
+
+/* Ensure content is initially hidden */
+.item .content {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition:
+		max-height 0.5s ease-out,
+		opacity 0.5s ease-out;
+	padding: 0 15px;
+	/* Adjust padding to match your design */
+}
+
+/* Active state (when clicked) */
+.item.active .content {
+	max-height: 500px;
+	/* Adjust based on your content's max height */
+	opacity: 1;
+	padding: 15px;
+	/* Match initial padding */
 }
 
 /* Fading effect */
@@ -171,9 +200,16 @@ h1 {
 }
 
 .footer-branding {
-	padding-bottom: 3vh;
+	position: relative;
+	color: white;
+	padding-top: 5vh;
 	text-align: center;
 }
+
+.designer-footer a {
+	color: white;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
 
@@ -192,19 +228,34 @@ h1 {
 	}
 
 	h1 {
-		word-wrap: break-word; /* Allow word wrapping */
-        word-break: break-word; /* Break long words if needed */
-		font-size: 5vw; /* Make the font size responsive to viewport width */
-        word-wrap: break-word; /* Ensure long words wrap */
-        word-break: break-word; /* Break long words to prevent overflow */
-        width: 100%; /* Ensure the h1 element doesn't overflow */
-        padding: 0 1rem; /* Add some padding to ensure text doesn't touch the edges */
-        box-sizing: border-box; /* Ensures padding is included in element's total width */
+		word-wrap: break-word;
+		/* Allow word wrapping */
+		word-break: break-word;
+		/* Break long words if needed */
+		font-size: 5vw;
+		/* Make the font size responsive to viewport width */
+		word-wrap: break-word;
+		/* Ensure long words wrap */
+		word-break: break-word;
+		/* Break long words to prevent overflow */
+		width: 100%;
+		/* Ensure the h1 element doesn't overflow */
+		text-align: center;
+		margin-left: 4.5vh;
+		padding: 0 1rem;
+		/* Add some padding to ensure text doesn't touch the edges */
+		box-sizing: border-box;
+		/* Ensures padding is included in element's total width */
 
 	}
+
 	.accordion {
-		margin-top: 2vh;
 		width: 80%;
+	}
+
+	.footer-branding {
+		margin-left: 4.5vh;
+
 	}
 
 
@@ -479,14 +530,14 @@ section>.title {
 }
 
 .final {
-	place-items: center; /* Centers both horizontally & vertically */
-	margin-left: 4.5vw;
+	/*background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);*/
 	width: 100%;
-	display: grid;
-	color: black;
-	/*border-top: 1px white dashed;*/
-	/*background-color: rgb(23, 16, 16); */
-	/*background-color: var(--secondary-background-color);*/
+	min-height: 91vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') no-repeat center center/cover;
 }
 
 @keyframes marquee {
@@ -548,6 +599,7 @@ section>.title {
 	.final {
 		width: 100%;
 	}
+
 	.Header-swimlane {
 		height: 5vh;
 	}

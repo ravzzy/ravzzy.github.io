@@ -43,15 +43,11 @@
 	<button class="menu-btn">☰</button>
 	<div id="sidebar-container"></div> <!-- Sidebar will be inserted here -->
 	<nav class="designer-footer">
-		<h1></h1>
 		<div><a href="http://www.ravzzy.com/">Designed by ravzzy</a></div>
 	</nav>
-	<canvas id="canvas"> </canvas>
 	<div id="Header-ticker-container" class="Header-ticker"></div> <!-- Ticker will be inserted here via js-->
 	<div class="Header-swimlane"></div>
 	<div class="Header-swimlane-Text">ROOTING RESEARCH &#8482;</div>
-	<!-- Floating particles background -->
-	<div id="particles-js"></div>
 	<section class="final">
 		<h1>Transform Your Business with Our Expert Services</h1>
 		<div class="accordion">
@@ -80,6 +76,10 @@
 				</div>
 				<div class="content">
 					<p>Content to be added</p>
+					<p>Content to be added 2</p>
+					<p>Content to be added 3</p>
+
+
 				</div>
 			</div>
 			<div class="item" onclick="toggleItem(this)">
@@ -156,52 +156,30 @@
 	<script src="./js/sidebar.js" defer></script>
 	<script src="./js/vertical-ticker.js" defer></script>
 	<script>
-		// Initialize particles.js background
-		document.addEventListener('DOMContentLoaded', () => {
-			particlesJS('particles-js', {
-				particles: {
-					number: { value: 80, density: { enable: true, value_area: 800 } },
-					color: { value: "#6b2712" },
-					shape: { type: "circle" },
-					opacity: { value: 0.5, random: true },
-					size: { value: 3, random: true },
-					line_linked: { enable: true, distance: 150, color: "#6b2712", opacity: 0.3, width: 1 },
-					move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
-				},
-				interactivity: {
-					detect_on: "canvas",
-					events: {
-						onhover: { enable: true, mode: "grab" },
-						onclick: { enable: true, mode: "push" }
-					}
-				}
-			});
-		});
-	</script>
-	<script>
 		function toggleItem(item) {
-			let content = item.querySelector(".content");
-			let icon = item.querySelector(".icon");
-			let allItems = document.querySelectorAll(".item");
+			const content = item.querySelector(".content");
+			const icon = item.querySelector(".icon");
+			const allItems = document.querySelectorAll(".item");
 
-			// Close all items except the clicked one
+			// Close all other items
 			allItems.forEach((i) => {
 				if (i !== item) {
 					i.classList.remove("active");
+					i.querySelector(".content").style.maxHeight = "0";
+					i.querySelector(".content").style.opacity = "0";
 				}
 			});
 
-			// Toggle the clicked item
+			// Toggle clicked item
 			item.classList.toggle("active");
-		}
-
-		// Auto-close when clicking outside
-		document.addEventListener("click", function (event) {
-			let accordion = document.querySelector(".accordion");
-			if (!accordion.contains(event.target)) {
-				document.querySelectorAll(".item").forEach(item => item.classList.remove("active"));
+			if (item.classList.contains("active")) {
+				content.style.maxHeight = content.scrollHeight + "px";
+				content.style.opacity = "1";
+			} else {
+				content.style.maxHeight = "0";
+				content.style.opacity = "0";
 			}
-		});
+		}
 	</script>
 	<script>
 		window.onbeforeunload = function () {
@@ -209,4 +187,5 @@
 		};
 	</script>
 </body>
+
 </html>
