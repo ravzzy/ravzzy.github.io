@@ -167,11 +167,12 @@ h4 {
 
 /* Hero Section */
 .hero {
-	height: 100vh;
+    align-items: flex-start; /* Aligns content to the top */
+
+	height: 91vh;
 	position: relative;
 	overflow: hidden;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	color: white;
 	text-align: center;
@@ -200,6 +201,8 @@ h4 {
 }
 
 .hero-content {
+	margin-top: 5vh;
+    text-align: center;
 	position: relative;
 	z-index: 2;
 	max-width: 800px;
