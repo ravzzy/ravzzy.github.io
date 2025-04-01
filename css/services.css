@@ -41,6 +41,8 @@ html {
 	--header-h3-text-font: 'Capraia SemiBold', sans-serif;
 	--brand-text-font: 'Lucidity Expand', sans-serif;
 	--default-text-font: 'Noto Sans KR', sans-serif;
+	--section-p-text-font: 'Schelter Grotesk NF W01 Rg';
+
 
 	/* Default color */
 	/* Default hover effect */
@@ -120,6 +122,8 @@ body {
 
 .item {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	font-family: var(--header-h3-text-font);
+	font-weight: 500;
 	/* Softer border */
 	padding: 20px;
 	margin-bottom: 8px;
@@ -142,7 +146,7 @@ body {
 }
 
 .title {
-	font-size: 2rem;
+	font-size: 2.2rem;
 	color: #333;
 	font-weight: 600;
 	display: flex;
@@ -161,7 +165,8 @@ body {
 }
 
 .content {
-	font-size: 1.6rem;
+	font-family: var(--section-p-text-font);
+	font-size: 2rem;
 	color: #555;
 	/* Softer text color */
 	line-height: 1.6;
