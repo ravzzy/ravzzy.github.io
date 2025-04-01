@@ -6,6 +6,13 @@
 	/* Path to your TTF font */
 }
 
+@font-face {
+	font-family: 'Capraia SemiBold';
+	/* Define a name for your font */
+	src: url('../fonts/Capraia-SemiBold.otf') format('truetype');
+	/* Path to your TTF font */
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -32,6 +39,10 @@ html {
 	--header2-text-font: 'Notable', sans-serif;
 	--brand-text-font: 'Lucidity Expand', sans-serif;
 	--default-text-font: 'Noto Sans KR', sans-serif;
+	--header-h1-text-font: 'Capraia SemiBold', sans-serif;
+	--section-text-font: 'Schelter Grotesk NF W01 Rg';
+
+
 
 	/* Default color */
 	/* Default hover effect */
@@ -92,7 +103,7 @@ body {
 h1 {
 	text-align: center;
 	text-transform: none;
-	font-family: var(--body-text-font);
+	font-family: var(--header-h1-text-font);
 	margin-top: 20px;
 	font-size: 3.5rem;
 	color: var(--secondary-background-color);
@@ -126,11 +137,18 @@ h1 {
 }
 
 .tile h3 {
-	font-family: var(--body-text-font);
+	font-family: var(--section-text-font);
 	text-transform: none;
 	font-size: 18px;
 	color: #333;
 	margin-top: 15px;
+}
+
+.tile h4 {
+	font-family: var(--section-text-font);
+	text-transform: none;
+	font-size: 12px;
+
 }
 
 .tile p {

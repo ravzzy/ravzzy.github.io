@@ -6,6 +6,14 @@
 	/* Path to your TTF font */
 }
 
+@font-face {
+	font-family: 'Capraia SemiBold';
+	/* Define a name for your font */
+	src: url('../fonts/Capraia-SemiBold.otf') format('truetype');
+	/* Path to your TTF font */
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -32,6 +40,8 @@ html {
 	--header2-text-font: 'Notable', sans-serif;
 	--brand-text-font: 'Lucidity Expand', sans-serif;
 	--default-text-font: 'Noto Sans KR', sans-serif;
+	--header-h1-text-font: 'Capraia SemiBold', sans-serif;
+	--section-text-font: 'Schelter Grotesk NF W01 Rg';
 
 	/* Default color */
 	/* Default hover effect */
@@ -259,8 +269,8 @@ section {
 /* Text animation */
 .career-section h2,
 .collab-section h2 {
-	font-size: 2.5em;
-	font-family: var(--body-text-font);
+	font-size: 3em;
+	font-family: var(--header-h1-text-font);
 	font-weight: bold;
 	margin-bottom: 20px;
 	letter-spacing: 2px;
@@ -272,9 +282,10 @@ section {
 
 .career-section p,
 .collab-section p {
+	font-family: var(--section-text-font);
 	color: var(--secondary-background-color);
 	text-transform: none;
-	font-size: 1.6em;
+	font-size: 2em;
 	line-height: 1.6;
 	margin-bottom: 20px;
 }
@@ -346,10 +357,10 @@ section {
 
 
 h1 {
-	font-family: var(--body-text-font);
+	font-family: var(--header-h1-text-font);
 	text-align: center;
 	text-transform: none;
-	font-size: 3rem;
+	font-size: 3.5rem;
 	color: black;
 	animation: slideDown 1s ease-in-out;
 }
@@ -359,11 +370,11 @@ h1 {
 }
 
 h3 {
-	font-family: var(--body-text-font);
+	font-family: var(--section-text-font);
 	text-align: center;
-	font-size: 2em;
+	font-size: 2.3em;
 	text-transform: none;
-	font-weight: 400;
+	font-weight: 300;
 	color: black;
 	animation: slideDown 1s ease-in-out;
 }
