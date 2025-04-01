@@ -516,7 +516,7 @@ section>.title {
 	padding: 10px 20px;
 	margin: 0 5px;
 	background: var(--file-color);
-	color: black;
+	color: white;
 	font-family: var(--body-text-font);
 	font-size: 1.3rem;
 	font-weight: 500;
@@ -621,7 +621,7 @@ section>.title {
 	max-width: 256px;
 	/* Limit image size */
 	max-height: 256px;
-	background-color: #f1c47c;
+	background: radial-gradient(circle at center, #333 0%, #000 100%);
 	border-radius: 10px;
 	/* Optional: Add rounded corners */
 	/*transition: filter 0.5s ease;*/
