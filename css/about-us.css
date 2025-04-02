@@ -755,7 +755,34 @@ section>.title {
 	margin-bottom: 10px;
   }
 
+  @media (max-width: 768px) {
+	
+	#section3{
+		width: 90vw;
+		left: 4.55vh;
+		padding: 30px;
+	}
 
+	.founder-info {
+		display: flex;
+        flex-direction: column; /* Stack vertically on mobile */
+		align-items: center;
+		gap: 20px; /* Adjust gap as needed */
+	}
+
+	.founder-image {
+		margin-bottom: 20px; /* Space between image and text */
+        text-align: center; /* Center the image if desired */
+    }
+	.founder-image img {
+        max-width: 100%; /* Ensure image doesn't overflow */
+        height: auto;
+    }
+	.founder-text {
+		flex: 1;
+	}
+
+  }
 
 @media (orientation: portrait) {
 	/* Mobile */
