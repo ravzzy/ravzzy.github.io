@@ -583,20 +583,21 @@ section>.title {
 	/* 3 columns */
 	grid-template-rows: repeat(4, auto);
 	/* 4 rows */
-	gap: 60px;
+	gap: 10px;
 	/* Space between grid items */
 	justify-content: center;
 	align-items: start;
-	max-width: 70vw;
+	max-width: 90vw;
 	/* Adjust width to fit content */
 	margin: auto;
-	top: 25vh;
-	left: 15vw;
+	top: 14vh;
+	left: 7vw;
 	z-index: 1;
 }
 
 .image-box {
-	max-width: 256px;
+	transform: scale(0.85);
+	max-width: 512px;
 	display: flex;
 	flex-direction: column;
 	/* Stack image and description vertically */
@@ -618,9 +619,9 @@ section>.title {
 	/* Ensure images take full width of their container */
 	/*filter: grayscale(100%);*/
 	/* Make the image black and white by default */
-	max-width: 256px;
+	max-width: 512px;
 	/* Limit image size */
-	max-height: 256px;
+	max-height: 512px;
 	background: radial-gradient(circle at center, #333 0%, #000 100%);
 	border-radius: 10px;
 	/* Optional: Add rounded corners */
@@ -647,12 +648,13 @@ section>.title {
 }
 
 .image-box p {
+	width: 100%;
 	font-family: var(--body-text-font);
 	text-transform: none;
 	text-align: left;
 	margin-top: 4px;
 	/* Space between image and description */
-	font-size: 1.5rem;
+	font-size: 1.7rem;
 	/* Adjust font size as needed */
 	color: #333;
 	/* Text color */
@@ -751,7 +753,7 @@ section>.title {
 		grid-template-rows: auto;
 		/* Automatically adjust rows */
 		gap: 30px;
-		left: 22vw;
+		left: 10vw;
 		/* Reduce spacing for better mobile layout */
 	}
 
