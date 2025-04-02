@@ -583,7 +583,7 @@ section>.title {
 	/* 3 columns */
 	grid-template-rows: repeat(4, auto);
 	/* 4 rows */
-	gap: 10px;
+	gap: 60px;
 	/* Space between grid items */
 	justify-content: center;
 	align-items: start;
