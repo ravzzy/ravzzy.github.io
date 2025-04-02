@@ -26,6 +26,13 @@ html {
 
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Disable main document scrolling */
+    height: 100%;
+}
+
 :root {
 	--nav-bg-color: black;
 	--nav-text-color: black;
@@ -553,7 +560,7 @@ section>.title {
 .section {
 	position: absolute;
 	max-height: 300vh !important;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	color: white;
@@ -571,6 +578,8 @@ section>.title {
 }
 
 .section.active {
+	display: block;
+
 	z-index: 10;
 	opacity: 1;
 	transform: translateY(0);
