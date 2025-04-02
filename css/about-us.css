@@ -6,6 +6,13 @@
 	/* Path to your TTF font */
 }
 
+@font-face {
+	font-family: 'Capraia SemiBold';
+	/* Define a name for your font */
+	src: url('../fonts/Capraia-SemiBold.otf') format('truetype');
+	/* Path to your TTF font */
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -32,6 +39,8 @@ html {
 	--header2-text-font: 'Notable', sans-serif;
 	--brand-text-font: 'Lucidity Expand', sans-serif;
 	--default-text-font: 'Noto Sans KR', sans-serif;
+	--header-h1-text-font: 'Capraia SemiBold', sans-serif;
+	--section-text-font: 'Schelter Grotesk NF W01 Rg';
 
 	/* Default color */
 	/* Default hover effect */
@@ -164,6 +173,7 @@ h1 {
 }
 
 .footer-branding {
+	position: relative;
 	padding-bottom: 3vh;
 	text-align: center;
 }
@@ -443,7 +453,7 @@ section>.title {
 }
 
 .final {
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	margin-left: 4.5vw;
 	width: 100%;
@@ -565,7 +575,7 @@ section>.title {
 	opacity: 1;
 	transform: translateY(0);
 }
-
+/*
 .content {
 	background: rgba(0, 0, 0, 0.6);
 	padding: 20px;
@@ -573,7 +583,7 @@ section>.title {
 	max-width: 600px;
 	border: 2px solid var(--file-color);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+}*/
 
 #section1 {
 	position: absolute;
@@ -658,6 +668,85 @@ section>.title {
 	color: #333;
 	/* Text color */
 }
+
+/* Section 3 */
+
+
+ #section3 h1 {
+	font-family: var(--header-h1-text-font);
+	font-size: 4rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+  }
+  
+  #section3 p {
+	font-family: var(--section-text-font);
+	text-transform: none;
+	font-size: 2rem;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: justify;
+
+  }
+
+  #section3 {
+	position: absolute;
+	width: 90%;
+	padding: 40px;
+	line-height: 1.6; 
+	z-index: 1;
+	top: 10vh;
+}
+  
+  .content {
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  /* Founder Info */
+  .founder-info {
+	display: flex;
+	position: relative;
+	align-items: flex-start;
+	padding: 40px 0;
+  }
+  
+  .founder-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 30px;
+  }
+  
+  .founder-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .founder-text {
+	font-family: var(--section-text-font);
+	text-align: left;
+	font-size: 2rem;
+	text-transform: none;
+	color: #333;
+	flex: 1;
+  }
+  
+  /* List Styles */
+  ul {
+	list-style-type: none;
+	padding-left: 20px;
+  }
+  
+  ul li {
+	margin-bottom: 10px;
+  }
+
+
 
 @media (orientation: portrait) {
 	/* Mobile */
