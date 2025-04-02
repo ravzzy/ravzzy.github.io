@@ -611,6 +611,7 @@ section>.title {
 	top: 14vh;
 	left: 7vw;
 	z-index: 1;
+	padding-bottom: 15vh;
 }
 
 .image-box {
