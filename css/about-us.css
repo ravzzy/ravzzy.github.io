@@ -80,7 +80,6 @@ body {
 .topper {
 	visibility: hidden;
 	min-height: 9vh;
-	background-color: var(--primary-background-color);
 }
 
 
