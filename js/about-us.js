@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Add active class to the clicked tab and corresponding section
             this.classList.add('active');
             document.querySelector(target).classList.add('active');
+
+            // Scroll the entire page to the top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
     });
@@ -32,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize Vanilla Tilt on each .image-box
     imageBoxes.forEach(imageBox => {
         VanillaTilt.init(imageBox, {
-            max: 15 , // Maximum tilt rotation (in degrees)
+            max: 15, // Maximum tilt rotation (in degrees)
             speed: 400, // Speed of the tilt effect
             glare: true, // Enable glare effect
             'max-glare': 0.5, // Maximum glare opacity
