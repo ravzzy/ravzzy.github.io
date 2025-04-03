@@ -716,15 +716,17 @@ section>.title {
   
   /* Founder Info */
   .founder-info {
+	flex-direction: column; /* Stack vertically on mobile */
 	display: flex;
 	position: relative;
-	align-items: flex-start;
+	align-items: center;
 	padding: 40px 0;
   }
   
   .founder-image {
-	width: 200px;
-	height: 200px;
+	text-align: center; /* Center the image if desired */
+	width: 256px;
+	height: 256px;
 	border-radius: 50%;
 	overflow: hidden;
 	margin-right: 30px;
